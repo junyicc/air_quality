@@ -1,0 +1,10 @@
+<div class="jimu-widget-swipe" data-dojo-attach-event="mouseenter:onMouseEnter, mouseleave:onMouseLeave">
+	<div class="swipe-icon" data-dojo-attach-point="swipeIcon" title="${nls.enableTips}" data-dojo-attach-event="click:onIconClick">
+		<div class="swipe-icon-inner" data-dojo-attach-point="swipeImg"></div>
+	</div>
+	<div class="swipe-layer-menu" data-dojo-attach-point="swipeLayersMenu" style="display:none">
+		<span class="hint" data-dojo-attach-point="hintNode"></span>
+		<div data-dojo-type="dijit/form/Select" style="width:100%" data-dojo-attach-point="swipeLayers"></div>
+	</div>
+	<div data-dojo-attach-point="layerSwipe"></div>
+</div>

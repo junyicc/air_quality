@@ -1,0 +1,17 @@
+{
+	"bookmarks2D": [{
+	    "name":"±±¾©",
+	       "extent":{
+	       "xmin":-27150828.956547454,
+	       "ymin":4834000.477831723,
+	       "xmax":-27077449.409393787,
+	       "ymax":4875085.380534951,
+	       "spatialReference":{
+	          "wkid":102100
+	       }
+	    },
+		"thumbnail":"images/thumbnail_forbidden_city.png"
+	}],
+	"bookmarks3D": [],
+	"flyTime": 3000
+}

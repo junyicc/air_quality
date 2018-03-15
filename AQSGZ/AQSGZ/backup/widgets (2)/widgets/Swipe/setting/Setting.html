@@ -1,0 +1,27 @@
+<div style="width:100%;height:100%;">
+  <div class="style-section">
+    <span class="style-text">${nls.styleText}</span>
+    <div class="style-items">
+      <div class="style-item jimu-float-leading jimu-leading-margin2" data-dojo-attach-point="verticalNode">
+        <div class="style-vertical style-item-image"></div>
+        <div data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group:'swipe'"></div>
+        <label>${nls.vertical}</label>
+      </div>
+      <div class="style-item jimu-float-leading jimu-leading-margin2" data-dojo-attach-point="horizontalNode">
+        <div class="style-horizontal style-item-image"></div>
+        <div data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group:'swipe'"></div>
+        <label>${nls.horizontal}</label>
+      </div>
+      <div class="style-item jimu-float-leading jimu-leading-margin2" data-dojo-attach-point="scopeNode">
+        <div class="style-scope style-item-image"></div>
+        <div data-dojo-type="jimu/dijit/RadioBtn" data-dojo-props="group:'swipe'"></div>
+        <label>${nls.scope}</label>
+      </div>
+    </div>
+  </div>
+  <div class="layer-section">
+    <span class="layer-text" data-dojo-attach-point="layerTextNode">${nls.layerText}</span>
+    <div data-dojo-type="dijit/form/Select" style="width:100%;" data-dojo-attach-point="swipeLayers"></div>
+    <label class="layer-hint">${nls.layerHint}</label>
+  </div>
+</div>

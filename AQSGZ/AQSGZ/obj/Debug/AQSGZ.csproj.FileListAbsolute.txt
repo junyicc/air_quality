@@ -1,0 +1,20 @@
+F:\AQSGZ\AQSGZ\obj\Debug\AQSGZ.csprojResolveAssemblyReference.cache
+F:\AQSGZ\AQSGZ\bin\AQSGZ.dll
+F:\AQSGZ\AQSGZ\bin\AQSGZ.pdb
+F:\AQSGZ\AQSGZ\obj\Debug\AQSGZ.dll
+F:\AQSGZ\AQSGZ\obj\Debug\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\bin\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\bin\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\obj\Debug\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\obj\Debug\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\obj\Debug\AQSGZ.csprojResolveAssemblyReference.cache
+F:\C197\1.C197开发源代码\AQSGZ (2)\AQSGZ\AQSGZ\bin\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ (2)\AQSGZ\AQSGZ\bin\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ (2)\AQSGZ\AQSGZ\obj\Debug\AQSGZ.csprojResolveAssemblyReference.cache
+F:\C197\1.C197开发源代码\AQSGZ (2)\AQSGZ\AQSGZ\obj\Debug\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ (2)\AQSGZ\AQSGZ\obj\Debug\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\AQSGZ\bin\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\AQSGZ\bin\AQSGZ.pdb
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\AQSGZ\obj\Debug\AQSGZ.csprojResolveAssemblyReference.cache
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\AQSGZ\obj\Debug\AQSGZ.dll
+F:\C197\1.C197开发源代码\AQSGZ\AQSGZ\AQSGZ\obj\Debug\AQSGZ.pdb

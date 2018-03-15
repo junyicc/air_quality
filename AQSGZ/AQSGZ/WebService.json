@@ -1,0 +1,42 @@
+﻿{
+    "GuangZhouBound":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/GZ_Bound/MapServer",
+
+	"AirContour":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AirContour/GPServer/AirContour",
+
+	"AQI":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQI/GPServer/GPAirSystem",
+	"AQI_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"CO":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/CO/GPServer/GPAirSystem",
+	"CO_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"NO2":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/NO2/GPServer/GPAirSystem",
+	"NO2_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"O3":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/O3/GPServer/GPAirSystem",
+	"O3_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"PM10":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/PM10/GPServer/GPAirSystem",
+	"PM10_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"PM25":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/PM25/GPServer/GPAirSystem",
+	"PM25_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"SO2":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/SO2/GPServer/GPAirSystem",
+	"SO2_Mask":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/AQIMask/GPServer/GPAirSystemMask",
+
+	"Air_Warning":"http://192.168.43.8:6080/arcgis/rest/services/GPGZAS/Air_Warning/GPServer/Air_Warning",
+
+	"AQI_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/AQI_GP/GPServer/Air_Kriging",
+
+	"CO_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/CO_GP/GPServer/CO_Kriging",
+
+	"NO2_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/NO2_GP/GPServer/NO2_Kriging",
+
+	"O3_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/O3_GP/GPServer/O3_Kriging",
+
+	"PM10_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/PM10_GP/GPServer/PM10_Kriging",
+
+	"PM25_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/PM25_GP/GPServer/PM25_Kriging",
+
+	"SO2_Kriging":"http://192.168.43.7:6080/arcgis/rest/services/GPService/SO2_GP/GPServer/SO2_Kriging"
+}

@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "Portal altlık haritalarını dahil et",
+    settings: "Ayarlar",
+    add: "Yeni Altlık Haritası Eklemek için tıkla",
+    edit: "Özellikler",
+    title: "Başlık",
+    titlePH: "Altlık Haritası Başlığı",
+    thumbnail: "Küçük Resim",
+    thumbnailHint: "Güncellemek için resme tıkla",
+    url: "URL",
+    urlPH: "Katman URL\'si",
+    addlayer: "Altlık Haritası Ekle",
+    actions: "İşlemler",
+    warning: "Hatalı girdi",
+    save: "Dön ve Kaydet",
+    back: "Dön ve İptal Et",
+    addUrl: "URL Ekle",
+    autoCheck: "Otomatik Denetle",
+    checking: "Denetleniyor...",
+    ok: "Tamam",
+    cancel: "İptal",
+    result: "Başarıyla kaydedildi",
+    spError: "Galeriye eklenen tüm altlık haritalar aynı mekansal başvurulara sahip olmalıdır.",
+    invalidTitle1:"Bir altlık haritası '",
+    invalidTitle2:"' zaten mevcut. Başka bir başlık seçin.",
+    invalidBasemapUrl1: "Bu katman türü altlık haritası olarak kullanılamaz.",
+    invalidBasemapUrl2: "Geçerli haritadan farklı mekansal başvuru geliyor.",
+    addBaselayer: "Altlık Haritası Katmanı Ekle"
+  })
+);

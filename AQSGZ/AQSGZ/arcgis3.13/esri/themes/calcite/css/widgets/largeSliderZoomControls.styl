@@ -1,0 +1,103 @@
+.calcite
+  .esriLargeSlider
+    position absolute
+
+  .esriLargeSliderVertical
+    height 200px
+    position absolute
+    float left
+    display inline-block
+    clear none
+    width 25px
+
+  .esriLargeSliderTL
+    top 20px
+    left 20px
+
+  .dijitSliderHover .dijitSliderButtonContainer,
+  .dijitSliderButtonContainer
+    border none
+
+  .dijitSliderIncrementIconV,
+  .dijitSliderDecrementIconV
+    position relative
+    width 20px
+    height 20px
+    calciteArcGISPro_ButtonDefault();
+    calciteArcGISPro_ButtonBorder();
+    calciteWeb_RoundRadius($borderRadiusSize2);
+    border-color: CalciteColorWhite;
+    /*text-indent -9999px;*/
+    background-image none
+    background-repeat no-repeat
+    background-position center
+    calciteWeb_BoxShadow();
+
+    color: $textColorDefault
+
+    &:hover {
+      calciteArcGISPro_ButtonHover();
+      //color CalciteColorBlueDark
+      //border-color: CalciteColorBlue1;
+      border none
+      color $textColorHover
+    }
+    &:focus {
+      calciteArcGISPro_ButtonActive();
+      //border-color: CalciteColorBlue1;
+      border none
+      color $textColorHover
+    }
+    &:disabled,
+    &:disabled:hover {
+      color: $textColorDisabled
+    }
+
+    .dijitSliderButtonInner
+      display none
+
+  .dijitSliderIncrementIconV:before {
+    iconfont("esriIconZoomIn");
+    position: relative;
+    top: 2px
+    left 0px
+  }
+  .dijitSliderDecrementIconV:before {
+    iconfont("esriIconZoomOut");
+    position: relative;
+    top: 2px;
+    left: 0px;
+  }
+
+  .dijitSlideHover .dijitSliderButtonContainer.dijitSliderButtonContainerV,
+  .esriLargeSliderVertical .dijitSliderButtonContainer.dijitSliderButtonContainerV
+    border none
+    padding 3px 1px 2px 1px
+
+/*
+  .dijitSliderIncrementIconV {
+    background-position: -143px 49%;
+  }
+
+.calcite .dijitSliderDecrementIconV,
+.calcite .dijitSliderIncrementIconV {
+  height: 9px;
+  width: 12px;
+}
+.calcite .dijitSliderDecrementIconH,
+.calcite .dijitSliderIncrementIconH,
+.calcite .dijitSliderDecrementIconV,
+.calcite .dijitSliderIncrementIconV {
+  background-image: url("form/images/commonFormArrows.png");
+  background-repeat: no-repeat;
+  background-color: #efefef;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: solid 1px #b5bcc7;
+  font-size: 1px;
+}
+*/
+.calcite .dijitSliderButtonContainer * {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}

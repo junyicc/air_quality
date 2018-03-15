@@ -1,0 +1,497 @@
+/* ======================================================================================================= */
+/* ArcGIS API for JavasScript: Calcite Theme - API Widgets */
+/* (Added 2014-09-11 by FG) */
+/* Note: 
+	- Features of Stylus CSS: http://learnboost.github.io/stylus/
+	- Dojo Doc on Themes: http://dojotoolkit.org/reference-guide/1.10/dijit/themes.html
+/* ======================================================================================================= */
+
+@require "../dijit/variables.styl";
+
+/* ======================================================================================================= */
+/* CSS Classes */
+/* ======================================================================================================= */
+// body {
+//  font-family: $fontFamilyDefault;
+//  color: $textColorDefault;
+//  font-size: 14px/100%;
+//}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Icon Font - CSS Classes */
+/* ------------------------------------------------------------------------------------------------------- */
+iconfont_init("../"); // within iconfonts.styl
+iconfont_classes(); // within iconfonts.styl
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Map - container */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .map
+  background-image url( $imageLoadingIndicatorBlue )
+  background-repeat no-repeat
+  background-position center
+  box-sizing border-box
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  border 1px solid $borderColorDivider
+
+@import "resources/loadingIndicators.styl"
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Map Controls */
+/* ------------------------------------------------------------------------------------------------------- */
+@import "widgets/simpleSliderZoomControls.styl"
+@import "widgets/largeSliderZoomControls.styl"
+
+@import "widgets/BasemapGallery.styl"
+
+@import "widgets/HomeLocateButtons.styl"
+
+@import "widgets/BasemapToggle.styl"
+
+@import "widgets/Bookmarks.styl"
+
+@import "widgets/ColorPicker.styl"
+
+@import "widgets/simpleDirections.styl"
+
+
+@import "widgets/HorizontalSlider.styl"
+
+@import "widgets/Legend.styl"
+
+@import "widgets/Measurement.styl"
+
+@import "widgets/AttributeInspector.styl"
+
+@import "widgets/TemplatePicker.styl"
+
+@import "widgets/LayerSwipe.styl"
+
+@import "widgets/OverviewMap.styl"
+
+@import "widgets/EsriPopup.styl"
+
+@import "widgets/geocodeSimple.styl"
+@import "widgets/geocodeSearch.styl"
+
+/* ======================================================================================================= */
+
+
+
+/* ======================================================================================================= */
+
+/* OLD */
+
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Dialog Styles */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitDialog,
+.calcite .dijitTitlePane {
+  background: CalciteColorWhite;
+  padding: $paddingDefaultSpacer * 2; /*20px;*/
+  /*border: 1px solid #DDD;*/
+
+  /* -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; */
+  calciteWeb_RoundRadius($borderRadiusSize2);
+
+  calciteWeb_BoxShadow();
+  /*-webkit-box-shadow: 0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+  -moz-box-shadow:    0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+  box-shadow:         0px 3px 6px 0px rgba(50, 50, 50, 0.6);*/
+}
+.calcite .dijitDialogTitleBar {
+  margin-bottom: $marginDefaultSpacer * 3; /*15px;*/
+}
+.calcite .dijitDialogUnderlayWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  display: none;
+  background: transparent !important;
+}
+.calcite .dijitDialogUnderlay {
+  background: CalciteColorWhite;
+  opacity: 0.5;
+}
+.calcite .dijitDialogCloseIcon {
+  cursor: pointer;
+  float: right;
+  width: 16px;
+  height: 16px;
+  background-image: url( $imageSpriteArcGISOnline ); /*"../images/ago_sprite.png");*/
+  background-position: -117px -17px;
+}
+.calcite .closeText {
+  display: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Content Pane */
+/* ------------------------------------------------------------------------------------------------------- */
+/*.calcite .esriAnalysisCloseIcon {
+  width: 16px;
+  height: 16px;
+  background-image: url( $imageSpriteArcGISOnline ); //"../images/ago_sprite.png");
+  background-position: -117px -17px;
+  margin-left: $paddingDefaultSpacer;
+  padding-left: $paddingDefaultSpacer * 4;
+}
+.calcite .dijitContentPane {
+  padding: 8px;
+}
+.calcite .dijitContentPane {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+*/
+
+
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calendar */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitCalendarContainer {
+  background: CalciteColorWhite;
+  border: 1px solid #CBCBCB;
+  border-collapse: collapse;
+  margin-top: -1px;
+
+  /*  -webkit-box-shadow: 0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+    -moz-box-shadow:    0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+    box-shadow:         0px 3px 6px 0px rgba(50, 50, 50, 0.6);*/
+}
+.calcite .dijitCalendarArrow {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.calcite .dijitCalendarMonthContainer {
+  height: 40px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.calcite .dijitCalendarMonthContainer .dijitArrowButtonInner {
+  display: none;
+}
+.calcite .dijitCalendarDayLabelTemplate {
+  font-size: 12px;
+  text-align: center;
+}
+.calcite .dijitCalendarBodyContainer tr td {
+  padding: 10px 10px;
+  text-align: center;
+  border: 1px solid #AAA;
+}
+.calcite .dijitSpacer {
+  position: relative;
+  height: 1px;
+  overflow: hidden;
+  visibility: hidden;
+}
+.calcite .dijitCalendarSelectedDate {
+  background: #5daddd;
+  outline: none;
+}
+.calcite .dijitCalendarCurrentDate {
+  background: #e8f6ff;
+}
+.calcite .dijitCalendarPreviousMonth, .calcite .dijitCalendarNextMonth {
+  background: #f3f3f3;
+}
+.calcite .dijitCalendarYearContainer {
+  display: none;
+}
+.calcite .dijitA11ySideArrow {
+  display: none;
+}
+.calcite .dijitCalendarDecrease, .calcite .dijitCalendarIncrease {
+  background-image:  url( $imageSpriteArcGISOnline );
+  width: 16px;
+  height: 16px;
+}
+.calcite .dijitCalendarDecrease {
+  background-position: -68px -9px;
+}
+.calcite .dijitCalendarIncrease {
+  background-position: -82px -9px;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Picker Styles */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitTimePickerPopup {
+  background: CalciteColorWhite;
+  border: 1px solid #CBCBCB;
+  text-align: center;
+  width: 200px;
+  overflow: none;
+
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+  -moz-box-shadow:    0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+  box-shadow:         0px 3px 6px 0px rgba(50, 50, 50, 0.6);
+}
+
+.calcite .dijitTimePickerMarker {
+  color: CalciteColorWhite;
+  background-color: #5daddd;
+}
+
+.calcite .dijitTimePickerTick {
+  color: #4d4d4d;
+}
+
+.calcite .dijitTimePickerTick, .calcite .dijitTimePickerMarker {
+  border-bottom: 1px solid gray;
+  padding: 3px 0px 1px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Spinner Styles */
+/* ------------------------------------------------------------------------------------------------------- */
+/*
+.calcite .dijitSpinnerButtonContainer {
+  margin-left: -1px;
+  height: 14px;
+}
+.calcite .dijitSpinner .dijitArrowButtonInner .dijitInputField {
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: center top;
+  -webkit-transform: scale(0.5);
+  -webkit-transform-origin: center top;
+  -o-transform: scale(0.5);
+  -o-transform-origin: center top;
+  transform: scale(0.5);
+  transform-origin: left top;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+  visibility: hidden;
+}
+.calcite .dijitSpinner .dijitSpinnerButtonInner {
+  width: 1em;
+  visibility: hidden !important;
+  overflow-x: hidden;
+}
+.calcite .dijitSpinner .dijitUpArrowButton {
+  height: 11px;
+  border: 1px solid #CBCBCB;
+  padding: 3px 0 0 10px;
+}
+.calcite .dijitSpinner .dijitDownArrowButton {
+  height: 13px;
+  border: 1px solid #CBCBCB;
+  margin-top: -1px;
+}
+.calcite .dijitSpinner .dijitDownArrowButton .dijitArrowButtonInner {
+  margin: -7px 0px 0px 4px;
+}
+*/
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Rich Text Editor */
+/* ------------------------------------------------------------------------------------------------------- */
+/*
+.calcite .dijitEditor {
+ border: 1px solid #CBCBCB;
+ background: CalciteColorWhite;
+ padding: $paddingDefaultSpacer * 2;
+}
+.calcite .dijitEditorIcon {
+ background-image: url( $imageSpriteTextEditor ); //url("../images/richTextSprite.png");
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+}
+.calcite .dijitDisabled .dijitEditorIcon {
+  background-image: url( $imageSpriteTextEditor ); //url("../images/richTextSprite.png");
+}
+.dijitEditorIFrameContainer {
+  border: 1px solid #CBCBCB;
+  padding: 0px 10px;
+  margin: 10px 0px 0px;
+}
+.calcite .dijitToolbar .dijitButtonContents {
+  padding: 1px 2px;
+  display: block;
+}
+.calcite .dijitToolbar .dijitButton {
+  margin: 0;
+}
+.calcite .dijitToolbar .dijitButton:hover, .calcite .dijitToolbar .dijitToggleButton:hover, .calcite .dijitToolbar .dijitToggleButtonFocused, .calcite .dijitToolbar .dijitChecked {
+  background: #DCDCDC;
+  border-radius: 4px;
+}
+*/
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Rich Text Editor: Icons */
+/* ------------------------------------------------------------------------------------------------------- */
+/*
+.calcite .dijitEditorIconSep {background-position: 0;}
+.calcite .dijitEditorIconSave {background-position: -18px;}
+.calcite .dijitEditorIconPrint {background-position: -36px;}
+.calcite .dijitEditorIconCut {background-position: -54px;}
+.calcite .dijitEditorIconCopy {background-position: -72px;}
+.calcite .dijitEditorIconPaste {background-position: -90px;}
+.calcite .dijitEditorIconDelete {background-position: -108px;}
+.calcite .dijitEditorIconCancel {background-position: -126px;}
+.calcite .dijitEditorIconUndo {background-position: -144px;}
+.calcite .dijitEditorIconRedo {background-position: -162px;}
+.calcite .dijitEditorIconSelectAll {background-position: -180px;}
+.calcite .dijitEditorIconBold {background-position: -198px;}
+.calcite .dijitEditorIconItalic {background-position: -216px;}
+.calcite .dijitEditorIconUnderline {background-position: -234px;}
+.calcite .dijitEditorIconStrikethrough {background-position: -252px;}
+.calcite .dijitEditorIconSuperscript {background-position: -270px;}
+.calcite .dijitEditorIconSubscript {background-position: -288px;}
+.calcite .dijitEditorIconJustifyCenter {background-position: -306px;}
+.calcite .dijitEditorIconJustifyFull {background-position: -324px;}
+.calcite .dijitEditorIconJustifyLeft {background-position: -342px;}
+.calcite .dijitEditorIconJustifyRight {background-position: -360px;}
+.calcite .dijitEditorIconIndent {background-position: -378px;}
+.calcite .dijitEditorIconOutdent {background-position: -396px;}
+.calcite .dijitEditorIconListBulletIndent {background-position: -414px;}
+.calcite .dijitEditorIconListBulletOutdent {background-position: -432px;}
+.calcite .dijitEditorIconListNumIndent {background-position: -450px;}
+.calcite .dijitEditorIconListNumOutdent {background-position: -468px;}
+.calcite .dijitEditorIconTabIndent {background-position: -486px;}
+.calcite .dijitEditorIconLeftToRight {background-position: -504px;}
+.calcite .dijitEditorIconRightToLeft, .dijitEditorIconToggleDir {background-position: -522px;}
+.calcite .dijitEditorIconBackColor {background-position: -540px;}
+.calcite .dijitEditorIconForeColor {background-position: -558px;}
+.calcite .dijitEditorIconHiliteColor {background-position: -576px;}
+.calcite .dijitEditorIconNewPage {background-position: -594px;}
+.calcite .dijitEditorIconInsertImage {background-position: -612px;}
+.calcite .dijitEditorIconInsertTable {background-position: -630px;}
+.calcite .dijitEditorIconSpace {background-position: -648px;}
+.calcite .dijitEditorIconInsertHorizontalRule {background-position: -666px;}
+.calcite .dijitEditorIconInsertOrderedList {background-position: -684px;}
+.calcite .dijitEditorIconInsertUnorderedList {background-position: -702px;}
+.calcite .dijitEditorIconCreateLink {background-position: -720px;}
+.calcite .dijitEditorIconUnlink {background-position: -738px;}
+.calcite .dijitEditorIconViewSource {background-position: -756px;}
+.calcite .dijitEditorIconRemoveFormat {background-position: -774px;}
+.calcite .dijitEditorIconFullScreen {background-position: -792px;}
+.calcite .dijitEditorIconWikiword {background-position: -810px;}
+*/
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Color Picker */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitPaletteTable {
+  padding: 6px;
+  border: 1px solid #CBCBCB;
+  position: relative;
+  overflow: hidden;
+  outline: 0;
+  border-collapse: separate;
+}
+.calcite .dijitColorPalette .dijitColorPaletteSwatch {
+  width: 12px;
+  height: 12px;
+}
+.calcite .dijitColorPalette {
+  background: CalciteColorWhite;
+  position: relative;
+}
+.calcite .dijitColorPalette .dijitPaletteCell {
+  font-size: 1px;
+  vertical-align: middle;
+  text-align: center;
+  background: none;
+}
+.calcite .dijitColorPalette .dijitPaletteImg {
+  padding: 1px;
+  border: 1px solid #CBCBCB;
+  margin: 2px;
+  cursor: default;
+  font-size: 1px;
+}
+.calcite .dijitColorPalette .dijitPaletteCell:active .dijitPaletteImg, .calcite .dijitColorPalette .dijitPaletteTable .dijitPaletteCellSelected .dijitPaletteImg {
+  border: 1px solid #000;
+  margin: 1px 0;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Dijit Toolbar */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitToolbar {
+  background: CalciteColorWhite;
+  border: 1px solid #CBCBCB;
+}
+.calcite .dijitToolbar .dijitDropDownButton {
+  border: 1px solid transparent;
+}
+.calcite .dijitToolbar .dijitDropDownButtonHover {
+  background: CalciteColorWhite;
+  border: 1px solid #5daddd;
+  calciteWeb_RoundRadius($borderRadiusSize1);
+  /*border-radius: 4px; */
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Dijit Tree */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite .dijitTreeRow .dijitTreeExpandoOpened {
+  background-image: url( $imageSpriteArcGISOnline );
+  background-position: -64px -184px;
+  width: 16px;
+  height: 16px;
+}
+.calcite .dijitTreeRow .dijitTreeExpandoClosed {
+  background-image: url( $imageSpriteArcGISOnline );
+  background-position: 21px -159px;
+  width: 16px;
+  height: 16px;
+}
+.calcite .dijitTreeRow .dijitExpandoText {
+  display: none;
+}
+.calcite .dijitTreeRow .dijitTreeExpandoLeaf {
+  background-image: url( $imageSpriteArcGISOnline );
+  background-position: -64px -184px;
+  width: 16px;
+  height: 16px;
+}
+
+
+/* ======================================================================================================= */
+/* EXTRAS */
+/* ======================================================================================================= */
+
+.dijitBackgroundIframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.esriFormWarning {
+	padding: 1.2em;
+	margin: 0.7em 0;
+	border: 1px solid #e6e5b7;
+	border-color: #e6e5b7;
+	background-color: #ffffcb;
+}
+.esriRoundedBox {
+	calciteWeb_RoundRadius($borderRadiusSize2);
+	/* -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px 4px 4px 4px; */
+}

@@ -1,0 +1,63 @@
+// =======================================================================================================
+// ArcGIS API for JavasScript: Calcite Theme - Mixins */
+// =======================================================================================================
+
+// =======================================================================================================
+// Find Stylus Source - list of the function the current function was called from in reverse order
+//
+//  Dependencies:
+//    Stlyus "called-from" method: http://learnboost.github.io/stylus/docs/bifs.html#called-from-property
+// =======================================================================================================
+findSource()
+  return called-from
+
+// =======================================================================================================
+// Right to Left & Left to Right
+// =======================================================================================================
+bidi-style(prop, value, inverse-prop, default-value) {
+  {prop}: value;
+
+  html.esriRtl &,
+  html[dir=rtl] & {
+    {inverse-prop}: value;
+    {prop}: default-value;
+  }
+
+  // html[class^="esriRtl"],
+  // html[class*=" esriRtl"] & {
+  //    {inverse-prop}: value;
+  //    {prop}: default-value;
+  // }
+}
+
+bidi-value(prop, ltr, rtl, make-important = false) {
+  bidi-style(prop, ltr, prop, rtl, make-important);
+}
+
+
+// =======================================================================================================
+// Language Localization & Fonts
+//  example: fontFamilyLanguage(selector(), '"Avenir LT W01 65 Medium",Arial,Helvetica,sans-serif', '');
+//
+//  Dependencies:
+//    Stlus add-property function: http://learnboost.github.io/stylus/docs/bifs.html#add-propertyname-expr
+//    Stylus selector function: http://learnboost.github.io/stylus/docs/bifs.html#selector
+// =======================================================================================================
+fontFamilyLanguage(default-font, fallback-font) {
+
+  add-property('font-family', default-font);
+
+  // Fall-back languages:
+  //  lt  Lithuanian
+  //  vi  Vietnamese
+  html.lt &,
+  html.vi & {
+    font-family fallback-font
+  }
+  // html[class^=" li"] {class-name},   // Lithuanian
+  // html[class*=" li"] {class-name},
+  // html[class^=" vi"] {class-name},   // Vietnamese
+  // html[class*=" vi"] {class-name} {
+  //    font-family fallback-font
+  // }
+}

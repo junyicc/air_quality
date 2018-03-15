@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.13/esri/copyright.txt for details.
+//>>built
+require({cache:{"url:esri/dijit/metadata/base/templates/OptionalLabel.html":'\x3cdiv class\x3d"gxeLabelContainer gxeOptionalLabel"\x3e\r\n  \x3cinput id\x3d"${id}_chk" type\x3d"checkbox" ${checkedAttr} \r\n    data-dojo-attach-point\x3d"checkBoxNode" \r\n    data-dojo-attach-event\x3d"onclick: _onClick"/\x3e\x3clabel \r\n    \tfor\x3d"${id}_chk" data-dojo-attach-point\x3d"labelNode"\x3e${label}\x3c/label\x3e\r\n\x3c/div\x3e'}});
+define("esri/dijit/metadata/base/OptionalLabel","dojo/_base/declare dojo/_base/lang dojo/has ./Templated dojo/text!./templates/OptionalLabel.html ../../../kernel".split(" "),function(a,b,c,d,e,f){a=a([d],{checkedAttr:"",label:null,templateString:e,postCreate:function(){this.inherited(arguments)},_onClick:function(){this.onClick(this.checkBoxNode.checked)},onClick:function(a){}});c("extend-esri")&&b.setObject("dijit.metadata.base.OptionalLabel",a,f);return a});

@@ -1,0 +1,39 @@
+.calcite
+  .templatePicker
+    border: 1px solid $borderColorDivider;
+    padding: $paddingDefaultSpacer;
+    calciteWeb_RoundRadius($borderRadiusSize2)
+    background-color CalciteColorWhite
+
+    .grid
+      .groupLabel
+        font-weight:normal;
+        font-size: $textSectionTitleSize;
+        border: none;
+        border-bottom: 1px solid $borderColorDivider;
+
+      .dojoxGridRowTable tr:first-child .dojoxGridCellOver
+        calciteArcGISPro_ButtonHover();
+        calciteWeb_RoundRadius($borderRadiusSize1);
+
+      .selectedItem,
+      .dojoxGridRowTable tr:first-child .selectedItem
+        /*background: #D1E9F9 !important;
+        border: 1px solid #0079C1 !important;*/
+        calciteArcGISPro_ButtonActive();
+        calciteWeb_RoundRadius($borderRadiusSize1);
+
+      .dojoxGridRowTable tr:first-child .selectedItem.dojoxGridCellOver
+        calciteArcGISPro_ButtonActiveHover();
+        calciteWeb_RoundRadius($borderRadiusSize1);
+
+    .grid .dojoxGridCell,
+    .dojoxGrid .dojoxGridCell
+      border: 1px solid;
+      border-color: CalciteColorWhite;
+      border-right-color: CalciteColorWhite;
+      padding: 3px;
+      text-align: left;
+      overflow: hidden;
+      word-wrap: break-word;
+      outline: none;

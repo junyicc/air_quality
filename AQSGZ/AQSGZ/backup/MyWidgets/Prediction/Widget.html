@@ -1,0 +1,51 @@
+﻿<div style="width: 100%; height: 100%">
+    <hr />
+    <div class="heading">
+        <a id="PM25" class="DataType selected" data-dojo-attach-point="DT_PM25">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM2.5.png">
+        </a>
+        <a id="PM10" class="DataType" data-dojo-attach-point="DT_PM10">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM10.png">
+        </a>
+        <a id="CO" class="DataType" data-dojo-attach-point="DT_CO">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/CO.png">
+        </a>
+        <a id="NO2" class="DataType" data-dojo-attach-point="DT_NO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/NO2.png">
+        </a>
+        <a id="O3_1" class="DataType" data-dojo-attach-point="DT_O3">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/O3.png">
+        </a>
+        <a id="SO2" class="DataType" data-dojo-attach-point="DT_SO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/SO2.png">
+        </a>
+    </div>
+    <div class="body">
+        <div class="Highchart">
+            <label for="FromDate" style="width: 10%">开始时间：</label>
+            <input type="date" id="FromDate" style="width: 30%" data-dojo-attach-event="onchange:OptChange" />
+            <label for="ToDate" style="width: 10%">结束时间：</label>
+            <input type="date" id="ToDate" style="width: 30%" data-dojo-attach-event="onchange:OptChange" />
+            </br>
+            <label for="Location" style="width: 10%">监测站点：</label>
+            <select id="Location" style="width: 30%;" data-dojo-type="dijit/form/Select" data-dojo-attach-event="onchange:OptChange">
+                <option value="1" selected = "selected">广雅中学</option>
+                <option value="2">市五中</option>
+                <option value="3">天河职幼</option>
+                <option value="4">广东商学院</option>
+                <option value="5">市八十六中</option>
+                <option value="6">番禺中学</option>
+                <option value="7">花都师范</option>
+                <option value="8">市监测站</option>
+                <option value="9">九龙镇镇龙</option>
+                <option value="10">麓湖</option>
+                <option value="11">帽峰山森林公园</option>
+                <option value="12">体育西</option>
+            </select>
+            <label for="PDays" style="width: 10%">预测天数：</label>            
+            <input type="text" id="PDays" style="width: 30%" data-dojo-attach-event="onblur:OptChange"/>
+
+            <div id="PredictionChart" style="width: 100%; height: 100%"></div>
+        </div>
+    </div>
+</div>

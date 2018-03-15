@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Utwórz widoczność</h2><p/>
+        <h2><img src="../images/GUID-DB51F8AF-EF67-4656-942D-8F629B7FC2F5-web.png" alt="Utw&oacute;rz widoczność"></h2>
+        <hr/>
+    <p>Za pomocą narzędzia Utw&oacute;rz widoczność można tworzyć obszary, 
+z&nbsp;kt&oacute;rych obserwator widzi obiekty znajdujące się na ziemi. Punkty analizy 
+mogą odzwierciedlać obserwator&oacute;w (np. osoby na ziemi lub 
+obserwator&oacute;w w&nbsp;wieży pożarowej) lub obserwowane obiekty (np. turbiny wiatrowe,
+ wieże ciśnień lub inne osoby). Obszary wynikowe to obszary, z&nbsp;kt&oacute;rych obserwatorzy 
+mogą zobaczyć obserwowane obiekty i&nbsp;odwrotnie: obserwowane obiekty 
+mogą widzieć obserwator&oacute;w.
+    </p>
+    <p>Zar&oacute;wno 
+obserwatorzy, jak i obserwowane obiekty, mogą znajdować się na wysokości nad powierzchnią ziemi. Wysokości te są wykorzystywane przy określaniu widoczności.
+Przykład: widoczność obliczona dla 122-metrowych turbin wiatrowych i&nbsp;os&oacute;b o wzroście 180&nbsp;cm stojących na ziemi będzie przeważnie większa niż widoczność obliczona dla 60-metrowych turbin i&nbsp;os&oacute;b o&nbsp;wzroście 180&nbsp;cm.
+    </p>
+    <p>Należy pamiętać, że podczas obliczania widoczności 
+nie są uwzględniane przeszkody, np. drzewa lub budynki. Należy przyjmować, 
+że obliczenia przeprowadzane są na otwartym terenie, na kt&oacute;rym nie znajduje 
+się nic poza obserwatorem i&nbsp;obserwowanymi obiektami.
+    </p>
+    <p>Warstwa wynikowa zawiera obiekty powierzchniowe przedstawiające widoczne obszary. Pole  <i>Frequency</i> zapisuje liczbę punkt&oacute;w analizy, kt&oacute;re mogą widzieć każdy obszar. Jeśli na przykład mamy pięć punkt&oacute;w wejściowych, przedstawiających obserwacyjne wieże pożarowe, to pole <i>Frequency</i> będzie mieć wartości od jeden do pięciu, gdzie obszary o&nbsp;wartości jeden mogą być widziane tylko przez jedną wieżę, a&nbsp;te o&nbsp;wartości pięć mogą być widziane przez wszystkie wieże. Warstwa wynikowa zawiera r&oacute;wnież pole <i>DEMResolution</i>, kt&oacute;re zapisuje rozdzielczość numerycznego modelu terenu (DEM) użytego do tworzenia widoczności.
+    </p>
+    <p>Jeśli zaznaczono opcję  <b>Użyj bieżącego zasięgu mapy</b>, analizowane będą tylko obiekty widoczne w&nbsp;bieżącym zasięgu mapy. Jeśli opcja ta nie jest zaznaczona, przeanalizowane zostaną wszystkie obiekty w&nbsp;warstwie analizy, nawet jeśli znajdują się one poza bieżącym zasięgiem mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="ObserverHeight">
+        <div><h2>Wysokość punktów analizy</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to wysokość nad powierzchnią ziemi Twoich punkt&oacute;w analizy. Domyślnie przyjmuje się przeciętny wzrost człowieka. 
+            </p>
+        </div>
+    </div>
+    <div id="TargetHeight">
+        <div><h2>Wysokość innych obiektów na ziemi</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to wysokość obiekt&oacute;w lub os&oacute;b na ziemi używanych do ustalenia widoczności. Wynikowa widoczność to obszary, na kt&oacute;rych punkt analizy może widzieć inne obiekty. Może być r&oacute;wnież odwrotnie; inne obiekty mogą widzieć punkt analizy. 
+            </p>
+            <p>
+                <ul>
+                    <li>Jeżeli Tw&oacute;j punkt analizy przedstawia turbiny wiatrowe i&nbsp;chcesz określić, skąd osoby stojące na ziemi mogą zobaczyć turbiny, wprowadź przeciętny wzrost człowieka (około 180&nbsp;cm). Wynikiem będą te obszary, na kt&oacute;rych osoba stojąca na ziemi może zobaczyć turbiny wiatrowe.
+                    </li>
+                    <li>Jeżeli Tw&oacute;j punkt analizy przedstawia obserwacyjne wieże pożarowe i&nbsp;chcesz określić, z&nbsp;kt&oacute;rych wież można zobaczyć słup dymu o&nbsp;wysokości co najmniej 6&nbsp;metr&oacute;w, wpisz wysokość 6&nbsp;metr&oacute;w. Wynikiem będą obszary, na kt&oacute;rych z&nbsp;obserwacyjnej wieży pożarowej można zobaczyć słup dymu o&nbsp;wysokości co najmniej 6&nbsp;metr&oacute;w.
+                    </li>
+                    <li>Jeżeli Tw&oacute;j punkt analizy przedstawia malownicze okolice przy drogach oraz ścieżkach i&nbsp;chcesz określić, skąd można zobaczyć turbiny wiatrowe o&nbsp;wysokości co najmniej 120&nbsp;metr&oacute;w, wpisz wysokość 120 metr&oacute;w. Wynikiem będą te obszary, na kt&oacute;rych osoba stojąca w&nbsp;malowniczym miejscu może zobaczyć turbinę wiatrową o&nbsp;wysokości co najmniej 120&nbsp;metr&oacute;w.
+                    </li>
+                    <li>Jeżeli Twoje punkty analizy przedstawiają malownicze okolice i&nbsp;chcesz określić, jaką część obszaru mogą zobaczyć osoby stojące na nich, wpisz zero. Wynikiem będą obszary, kt&oacute;re można zobaczyć z&nbsp;malowniczego miejsca. 
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MaximumDistance">
+        <div><h2>Maksymalna odległość</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to maksymalna odległość, na kt&oacute;rej kończy się wyznaczanie widocznych obszar&oacute;w. Nie wiadomo, czy poza tą odległością punkty analizy oraz inne obiekty mogą widzieć siebie nawzajem. Duże wartości zwiększają czas obliczeń. Maksymalna dopuszczalna wartość to 50&nbsp;kilometr&oacute;w.
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nazwa warstwy 
+wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w&nbsp;zakładce  <b>Moje zasoby</b> i&nbsp;zostanie dodana do mapy. Nazwa domyślna jest tworzona na podstawie typu analizy i&nbsp;nazwy warstwy analizy. Jeśli warstwa już istnieje, wyświetlony zostanie komunikat z&nbsp;prośbą o&nbsp;podanie innej nazwy.
+            </p>
+            <p>Za pomocą listy rozwijanej  <b>Zapisz wynik&nbsp;w</b> można podać nazwę folderu w&nbsp;zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

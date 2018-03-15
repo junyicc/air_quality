@@ -1,0 +1,166 @@
+/* Button | DropDownButton | ComboButton | ToggleButton
+ * 
+ * Styling Buttons mainly includes:
+ *
+ * 1. Containers
+ * 		.dijitButton
+ * 		.dijitDropDownButton 
+ * 		.dijitComboButton
+ * 		.dijitButtonNode - common button/arrow wrapper shared across all three button types 
+ *
+ * 2. Button text
+ * 		.dijitButtonText
+ * 
+ * 3. Arrows - only for DropDownButton and ComboButton
+ * 	     There are total four directions arrows - down, left, right, up:
+ * 		.dijitArrowButtonInner - down arrow by default
+ *      .dijitLeftArrowButton .dijitArrowButtonInner - left arrow
+ *      .dijitRightArrowButton .dijitArrowButtonInner - right arrow
+ *      .dijitUpArrowButton .dijitArrowButtonInner - up arrow
+ *
+ * 4. States - Hover, Active, Disabled, e.g.
+ * 		.dijitButtonHover .dijitButtonNode
+ * 		.dijitButtonActive .dijitButtonNode
+ * 		.dijitButtonDisabled .dijitButtonNode
+ *
+ *      .dijitDisabled .dijitArrowButtonInner  - disabled arrow states
+ */
+@import "../variables";
+
+.calcite .dijitButtonNode {
+	/* rules for dijit.form.*Button widgets and arrow nodes on ComboBox, Spinner etc. */
+	transition-property: background-color;
+ 	transition-duration: .3s;
+}
+
+.calcite .dijitButton .dijitButtonNode,
+.calcite .dijitDropDownButton .dijitButtonNode,
+.calcite .dijitComboButton .dijitButtonNode,
+.calcite .dijitToggleButton .dijitButtonNode {
+	/* rules for the dijit.form.*Button widgets (see also ComboButton section below) */
+	border: 1px solid $button-border-color;
+	padding: 2px 4px 4px 4px;
+	color: $text-color;
+	border-radius: $button-border-radius;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+
+	background-color: desaturate(darken($button-background-color, 10), 20);
+
+	// Alpha transparency layer to add gradient to above background color.
+	// Use CSS gradient with fallback to image for IE.
+	background-image: url("images/buttonEnabled.png");
+	background-repeat: repeat-x;
+	alpha-white-gradient((1 0px), (0 3px), (0.75 100%));
+	_background-image: none;	// IE6 can't handle background-color and background-image at once.
+}
+
+
+.calcite .dijitComboButton .dijitArrowButton {
+	border-left-width: 0;
+	padding: 4px 2px 4px 2px;	/* TODO: still needed? */
+}
+
+/*arrow styles for down/up/left/right directions*/
+.calcite .dijitArrowButtonInner {
+	width: 15px;
+	height: 15px;
+	margin: 0 auto;
+	//background-image:url("../" + $image-form-button-arrows );
+	background-repeat: no-repeat;
+	background-position: -51px 53%;
+}
+.calcite .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -77px 53%;
+}
+.calcite .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -26px 53%;
+}
+.calcite .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: 0 53%;
+}
+.calcite .dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 53%;
+}
+.calcite .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -177px 53%;
+}
+.calcite .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -126px 53%;
+}
+.calcite .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: -100px 53%;
+}
+
+.calcite .dijitButtonText {
+	padding: 0 0.3em;
+	text-align: center;
+}
+
+
+/* hover status */
+.calcite .dijitButtonHover .dijitButtonNode,
+.calcite .dijitDropDownButtonHover .dijitButtonNode,
+.calcite .dijitComboButton .dijitButtonNodeHover,
+.calcite .dijitComboButton .dijitDownArrowButtonHover,
+.calcite .dijitToggleButtonHover .dijitButtonNode {
+	background-color: desaturate(darken($button-hovered-background-color, 10), 20);
+	color:$text-color;
+	transition-duration: .2s;
+}
+
+/* active, checked status */
+.calcite .dijitButtonActive .dijitButtonNode,
+.calcite .dijitDropDownButtonActive .dijitButtonNode,
+.calcite .dijitComboButtonActive .dijitButtonNode,
+.calcite .dijitToggleButtonActive .dijitButtonNode,
+.calcite .dijitToggleButtonChecked .dijitButtonNode {
+	background-color: desaturate(darken($button-pressed-background-color, 10), 20);
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+	transition-duration: .1s;
+}
+
+/* disabled status */
+.calcite .dijitButtonDisabled,
+.calcite .dijitDropDownButtonDisabled,
+.calcite .dijitComboButtonDisabled,
+.calcite .dijitToggleButtonDisabled {
+	background-image: none;
+	outline: none;
+}
+
+.calcite .dijitButtonDisabled .dijitButtonNode,
+.calcite .dijitDropDownButtonDisabled .dijitButtonNode,
+.calcite .dijitComboButtonDisabled .dijitButtonNode,
+.calcite .dijitToggleButtonDisabled .dijitButtonNode {
+	background-color: $disabled-background-color;
+	border: solid 1px $disabled-border-color;
+	color: $disabled-text-color;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+
+	// Change the gradient from light to dark.
+	// Again using CSS gradient with fallback to image for IE.
+	background-image: url("images/buttonDisabled.png");
+	alpha-white-gradient((1 0%), (0 40%));
+	_background-image: none;	// IE6 can't handle background-color and background-image at once.
+}
+
+.calcite .dijitComboButtonDisabled .dijitArrowButton{
+	border-left-width: 0;
+}
+/* for ComboButton */
+.calcite table.dijitComboButton {
+	border-collapse: separate;	/* override dijit.css so that ComboBox rounded corners work */
+}
+
+.calcite .dijitComboButton .dijitStretch {
+	border-radius: $button-border-radius 0 0 $button-border-radius;
+}
+.calcite .dijitComboButton .dijitArrowButton {
+	border-radius: 0 $button-border-radius $button-border-radius 0;
+}
+/*!
+//=======================================================================================================
+// Calcite Web Buttons
+// =======================================================================================================
+*/
+@import "../Calcite_Buttons.styl";

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Criar Viewshed</h2><p/>
+        <h2><img src="../images/GUID-DB51F8AF-EF67-4656-942D-8F629B7FC2F5-web.png" alt="Criar Viewshed"></h2>
+        <hr/>
+    <p>A ferramenta Criar Viewshed cria &aacute;reas em que um observador pode visualizar objetos no terreno.Os pontos de an&aacute;lise podem representar observadores (tais como pessoas no terreno ou vigilantes numa torre de controlo de inc&ecirc;ndios) ou objetos observados (tais como turbinas e&oacute;licas, reservat&oacute;rios de &aacute;gua, ve&iacute;culos ou outras pessoas).As &aacute;reas de resultados s&atilde;o as &aacute;reas em que os observadores podem ver os objectos observados e vice-versa: os objectos observados podem ver os observadores.
+    </p>
+    <p>Ambos os observadores e os objectos observados podem ter uma altura acima do solo, e essas alturas s&atilde;o utilizados na determina&ccedil;&atilde;o de visibilidade.Por exemplo, uma viewshed programada para turbinas de 400 p&eacute;s e pessoas de seis p&eacute;s de altura no terreno ser&aacute; tipicamente maior do que uma viewshed programada para turbinas de 200 p&eacute;s e pessoas com 6 p&eacute;s de altura.
+    </p>
+    <p>Note-se que o c&aacute;lculo do Viewshed n&atilde;o tem em conta as obstru&ccedil;&otilde;es, como &aacute;rvores ou edif&iacute;cios.Pode pensar na computa&ccedil;&atilde;o como ocorrendo em terreno &quot;nu&quot; desprovido de qualquer coisa, exceptuando o observador e os objectos observados.
+    </p>
+    <p>A camada de resultados cont&eacute;m elementos de &aacute;rea que representam &aacute;reas vis&iacute;veis.O campo  <i>Frequency</i> grava o n&uacute;mero de pontos de an&aacute;lise que podem ver cada &aacute;rea. Por exemplo, se tem cinco pontos de entrada, cada representando uma torre de vigia de inc&ecirc;ndios, o campo <i>Frequency</i> ter&aacute; valores entre o um e o cinco; &aacute;reas com valor de um apenas podem ser vistas por uma torre, e &aacute;reas com o valor de cinco podem ser por todas as torres. A camada resultante tamb&eacute;m contem o campo <i>DEMResolution</i> , que grava a resolu&ccedil;&atilde;o do modelo digital de eleva&ccedil;&atilde;o (DEM) usado para criar os Viewsheds.
+    </p>
+    <p>Se a op&ccedil;&atilde;o  <b>Utilizar extens&atilde;o do mapa actual</b> est&aacute; validada, ser&atilde;o analisados apenas os elementos que se encontrem vis&iacute;veis na actual extens&atilde;o do mapa. Se n&atilde;o marcar a op&ccedil;&atilde;o, ser&atilde;o analisados todos os elementos na camada de an&aacute;lise, mesmo que estejam fora da extens&atilde;o actual do mapa.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="ObserverHeight">
+        <div><h2>Altura dos pontos de análise</h2></div>
+        <hr/>
+        <div>
+            <p>Esta &eacute; a altura acima do solo dos seus pontos de an&aacute;lise.O padr&atilde;o &eacute; aproximadamente a altura m&eacute;dia de uma pessoa. 
+            </p>
+        </div>
+    </div>
+    <div id="TargetHeight">
+        <div><h2>Altura de outros objetos no solo</h2></div>
+        <hr/>
+        <div>
+            <p>Esta &eacute; a altura de estruturas ou pessoas no terreno usado para estabelecer visibilidade.O Viewshed resultante &eacute; a &aacute;rea em que um ponto de an&aacute;lise pode ver esses outros objectos.O inverso tamb&eacute;m &eacute; verdadeiro; os outros objectos podem ver um ponto de an&aacute;lise. 
+            </p>
+            <p>
+                <ul>
+                    <li>Se os seus pontos de an&aacute;lise representam turbinas e&oacute;licas e pretende determinar onde pessoas de p&eacute; no ch&atilde;o podem ver as turbinas, insira a altura m&eacute;dia de uma pessoa (aproximadamente 6 p&eacute;s). O resultado s&atilde;o as &aacute;reas onde uma pessoa de p&eacute;, no ch&atilde;o, pode ver as turbinas de vento.
+                    </li>
+                    <li>Se os seus pontos de an&aacute;lise representam torres de vigia de inc&ecirc;ndios e pretende determinar que torres de vigia podem ver uma coluna de fumo a 20 metros de altura ou mais alto, introduza 20 p&eacute;s para a altura. O resultado s&atilde;o as &aacute;reas onde uma torre de vigia de inc&ecirc;ndio pode ver uma coluna de fumo a pelo menos 20 metros de altura.
+                    </li>
+                    <li>Se os seus pontos de an&aacute;lise representam miradores ao longo de estradas e trilhas e quer determinar onde as turbinas e&oacute;licas a 400 p&eacute;s ou mais elevadas podem ser vistas, introduzir 400 p&eacute;s de altura. O resultado s&atilde;o as &aacute;reas onde uma pessoa que esteja numa vista panor&acirc;mica pode ver uma turbina de vento, a pelo menos 400 p&eacute;s de altura.
+                    </li>
+                    <li>Se os seus pontos de an&aacute;lise representam miradores e pretende determinar quanta &aacute;rea as pessoas de p&eacute; no mirador podem ver, introduza zero. O resultado &eacute; que essas &aacute;reas podem ser vistas a partir do miradouro.  
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MaximumDistance">
+        <div><h2>Máxima distancia</h2></div>
+        <hr/>
+        <div>
+            <p>Isto &eacute; uma dist&acirc;ncia de corte, onde o c&aacute;lculo das zonas vis&iacute;veis p&aacute;ra.Para al&eacute;m desta dist&acirc;ncia, n&atilde;o se sabe se os pontos de an&aacute;lise e os outros objectos podem se ver uns aos outros.Valores altos aumentam o tempo de computa&ccedil;&atilde;o.O valor m&aacute;ximo permitido &eacute; de 31 milhas (50 km).
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nome da camada resultante</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; o nome da camada que ser&aacute; criada em  <b>O Meu Conte&uacute;do</b> e adicionada ao mapa. O nome por omiss&atilde;o &eacute; baseado no tipo de an&aacute;lise e no nome da camada de an&aacute;lise.Se a camada j&aacute; existir, ser-lhe-&aacute; pedido que forne&ccedil;a outro nome.
+            </p>
+            <p>Ao utilizar a caixa suspensa  <b>Guardar resultado em</b> pode definir o nome da pasta em <b>O Meu Conte&uacute;do</b> onde o resultado ser&aacute; guardado.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

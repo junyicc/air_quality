@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "Zahrnout podkladové mapy portálu",
+    settings: "Nastavení",
+    add: "Kliknutím přidáte novou podkladovou mapu.",
+    edit: "Vlastnosti",
+    title: "Nadpis",
+    titlePH: "Název podkladové mapy",
+    thumbnail: "Miniatura",
+    thumbnailHint: "Kliknutím na obrázek jej aktualizujete.",
+    url: "URL",
+    urlPH: "Adresa URL vrstvy",
+    addlayer: "Přidat podkladovou mapu",
+    actions: "Akce",
+    warning: "Nesprávný vstup",
+    save: "Zpět a Uložit",
+    back: "Zpět a Zrušit",
+    addUrl: "Přidat URL",
+    autoCheck: "Automatická kontrola",
+    checking: "Probíhá kontrola…",
+    ok: "OK",
+    cancel: "Storno",
+    result: "Úspěšně uloženo",
+    spError: "Všechny podkladové mapy přidané do galerie musí mít stejný souřadnicový systém.",
+    invalidTitle1:"Podkladová mapa \'",
+    invalidTitle2:"\' již existuje. Zvolte jiný název.",
+    invalidBasemapUrl1: "Vrstvu tohoto typu nelze použít jako podkladovou mapu.",
+    invalidBasemapUrl2: "Souřadnicový systém se liší od systému aktuální mapy.",
+    addBaselayer: "Přidat vrstvu podkladové mapy"
+  })
+);

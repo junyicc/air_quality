@@ -1,0 +1,39 @@
+.esriHorizontalSlider
+  &.dijitSlider
+    &.dijitDisabled
+      opacity: 0.50
+
+    .dijitSliderBumper
+      background: #999 none
+
+    .dijitSliderBar
+      border-color: #999
+
+    .dijitSliderProgressBar
+      background: #ddd none
+
+    .dijitSliderImageHandle
+    .dijitSliderImageHandle.dijitSliderThumbHover
+      background: url("../../images/slider/sliderThumb.png")
+      width: 10px
+      border: none
+      height: 14px
+
+  .dijitRuleContainer
+    padding: 6px 0 20px
+    color: #4d4d4d
+
+  .dijitRuleLabel
+    z-index: 2
+    font-size: 12px
+
+.esriRtl
+  .esriHorizontalSlider
+    &.dijitSlider
+      .dijitSliderImageHandle
+        left: auto
+        right: 50%
+
+    .dijitSliderMoveableH
+      right: auto
+      left: 0

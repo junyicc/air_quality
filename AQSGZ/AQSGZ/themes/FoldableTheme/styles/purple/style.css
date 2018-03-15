@@ -1,0 +1,46 @@
+.jimu-main-bgcolor{
+  background-color: #ab6dae;
+}
+.jimu-widget-header-controller .jimu-drop-menu{
+  background-color: #904f93;
+}
+.jimu-widget-header-controller .jimu-drop-menu .menu-item {
+	border-top: 1px solid #ab6dae;
+}
+.jimu-widget-header-controller .jimu-drop-menu .menu-item:hover{
+  background-color: #ab6dae;
+}
+.jimu-widget-header-controller .subtitle{
+  color: #eed6ef;
+}
+.jimu-widget-header-controller .links .link{
+  color: #eed6ef;
+}
+.jimu-widget-header-controller .icon-node{
+  border-right: 1px solid #904f93;
+}
+.jimu-widget-header-controller .icon-node.jimu-state-selected{
+  background-color: #be87c1 !important;
+}
+
+.jimu-header-more-popup {
+	background-color: #be87c1;
+}
+.jimu-header-more-popup .icon-node {
+	background-color: #ab6dae;
+}
+.jimu-header-more-popup .close {
+	background-color: #be87c1;
+}
+.jimu-header-more-popup .close-inner {
+	background-color: #ab6dae;
+}
+.jimu-preload-widget-icon-panel>.title,
+.jimu-foldable-panel>.title,
+.jimu-title-panel>.title{
+  background-color: #ab6dae;
+}
+.foldable-widget-frame>.title{
+	color: #eed6ef;
+	background-color: #be87c1;
+}

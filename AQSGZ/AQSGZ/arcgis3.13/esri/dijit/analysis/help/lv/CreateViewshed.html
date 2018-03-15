@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Izveidot skata aizsegumus</h2><p/>
+        <h2><img src="../images/GUID-DB51F8AF-EF67-4656-942D-8F629B7FC2F5-web.png" alt="Izveidot skata aizsegumus"></h2>
+        <hr/>
+    <p>Skata aizseguma izveides rīks veido apgabalus, kuros novērotājs var redzēt uz zemes eso&scaron;us objektus.Analīzes punkti var apzīmēt vai nu novērotājus (piemēram, cilvēkus, kas stāv uz zemes vai ugunsgrēku novēro&scaron;anas tornī), vai novērotos objektus (piemēram, vējturbīnas, ūdenstorņus, transportlīdzekļus vai citus cilvēkus).Rezultātu apgabali ir tādi apgabali, kuros novērotāji var redzēt novērotos objektus, un pretēji&nbsp;&mdash; novērotie objekti var redzēt novērotājus.
+    </p>
+    <p>Gan novērotāji, gan novērotie objekti var atrasties virs zemes, un &scaron;is augstums virs zemes tiek izmantots, lai noteiktu redzamību.Piemēram, skata aizsegums, kas tiek aprēķināts 400&nbsp;pēdu augstām vējturbīnām un 6&nbsp;pēdas gariem cilvēkiem, kas stāv uz zemes, parasti būs lielāks nekā skata aizsegums, kas aprēķināts 200&nbsp;pēdu augstām vējturbīnām un 6&nbsp;pēdas gariem cilvēkiem.
+    </p>
+    <p>Ņemiet vērā, ka skata aizseguma aprēķinos netiek ņemti vērā tādi &scaron;ķēr&scaron;ļi kā koki un celtnes.Varat pieņemt, ka aprēķini tiek veikti tuk&scaron;ā vietā, kur nav nekā cita kā tikai novērotājs un novērotie objekti.
+    </p>
+    <p>Rezultāta slānis satur apgabala elementus, kas apzīmē redzamos apgabalus.Laukā  <i>Frequency</i> tiek reģistrēts analīzes punktu skaits, no kuriem var redzēt katru no apgabaliem. Piemēram, ja jums ir pieci ievades punkti, kas visi apzīmē ugunsgrēku novēro&scaron;anas torņus, laukā <i>Frequency</i> būs vērtības no &ldquo;1&rdquo; līdz &ldquo;5&rdquo;; apgabali ar vērtību &ldquo;1&rdquo; būs redzami tikai no viena torņa, un apgabali ar vērtību &ldquo;5&rdquo; būs redzami no visiem pieciem torņiem. Rezultāta slānis satur arī lauku <i>DEMResolution</i>, kurā tiek reģistrēta digitālās evolūcijas modeļa (DEM) iz&scaron;ķirtspēja, kas tiek izmantota, lai veidotu skata aizsegumus.
+    </p>
+    <p>Ja ir izvēlēts  <b>Izmantot pa&scaron;reizējo kartes apmēru</b>, tad tikai tie elementi, kas ir redzami pa&scaron;reizējā kartes skatā, tiks analizēti. Ja nav atzīmēts, visi analīzes slāņa elementi tiks analizēti, arī pa&scaron;reizējā kartes pārklājuma ārpusē.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="ObserverHeight">
+        <div><h2>Analīzes punktu augstums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir jūsu analīzes punktu augstums virs zemes.Noklusējums ir aptuvenais vidējais cilvēka garums. 
+            </p>
+        </div>
+    </div>
+    <div id="TargetHeight">
+        <div><h2>Citu objektu, kas atrodas uz zemes, augstums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir uz zemes eso&scaron;u celtņu vai cilvēku augstums, kas tiek izmantots, lai noteiktu redzamību.Rezultātā iegūtais skata aizsegums ir tie apgabali, kuros no analīzes punkta var redzēt &scaron;os citus objektus.Ir pareizs arī pretējais apgalvojums&nbsp;&mdash; &scaron;ie citi objekti var redzēt analīzes punktu. 
+            </p>
+            <p>
+                <ul>
+                    <li>Ja analīzes punkti apzīmē vējturbīnas un jūs vēlaties noteikt, kurā vietā uz zemes cilvēki var redzēt &scaron;īs turbīnas, ievadiet vidējo cilvēka garumu (apmēram 6&nbsp;pēdas). Rezultāts ir tie apgabali, kuros cilvēks stāvot uz zemes var redzēt &scaron;īs vējturbīnas.
+                    </li>
+                    <li>Ja analīzes punkti apzīmē ugunsgrēku novēro&scaron;anas torņus un jūs vēlaties noteikt, no kuriem novēro&scaron;anas torņiem var redzēt dūmu grīstes 20&nbsp;pēdu augstumā vai augstāk, ievadiet augstuma vērtību 20&nbsp;pēdas. Rezultāts ir tie apgabali, kuros no ugunsgrēku novēro&scaron;anas torņa var redzēt dūmu grīstes vismaz 20&nbsp;pēdu augstumā.
+                    </li>
+                    <li>Ja analīzes punkti apzīmē ainavu skatu laukumus ceļa vai takas malā un jūs vēlaties noteikt, kur var saskatīt 400&nbsp;pēdu augstas vai augstākas vējturbīnas, ievadiet augstuma vērtību 400&nbsp;pēdas. Rezultāts ir tie apgabali, kuros cilvēks, kas stāv ainavas skatu laukumā, var redzēt vismaz 400&nbsp;pēdu augstu vējturbīnu.
+                    </li>
+                    <li>Ja analīzes punkti apzīmē ainavu skatu laukumus un jūs vēlaties noteikt, cik lielu apgabalu uz zemes var redzēt cilvēki, kas stāv &scaron;ajā skatu laukumā, ievadiet nulli. Rezultāts ir tie apgabali, ko var redzēt no ainavas skatu laukuma. 
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MaximumDistance">
+        <div><h2>Maksimālais attālums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir attālums, kurā tiek pārtraukta redzamo apgabalu aprēķinā&scaron;ana.Tālāk par &scaron;o vietu nav zināms, vai analīzes punkti un citi objekti var redzēt cits citu.Lielas vērtības palielina aprēķinā&scaron;anas laiku.Maksimālā atļautā vērtība ir 31&nbsp;jūdzes (50&nbsp;kilometru).
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>Tas ir slāņa nosaukuns, kas tiks izveidots  <b>Mans saturs</b> un pievienots kartei. Noklusējuma nosaukums ir balstīts uz analīzes tipu un ievades slāņa nosaukumu.Ja slānis jau pastāv, jums tiks lūgts norādīt citu nosaukumu.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātus</b> nolaižamajā sarakstlodziņā, jūs varat norādīt nosaukumu mapē <b>Mans saturs</b>, kur tiks saglabāti rezultāti.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

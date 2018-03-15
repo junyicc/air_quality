@@ -1,0 +1,186 @@
+// =======================================================================================================
+// ArcGIS API for JavasScript: Calcite Theme - Stylus CSS Variables */
+// (Added 2014-10-08 by FG)
+// =======================================================================================================
+
+// =======================================================================================================
+// Included files: Mixins & Icon Fonts
+// =======================================================================================================
+@import "resources/mixins.styl"
+@import "resources/iconfonts.styl"
+
+
+// =======================================================================================================
+// "Calcite" ArcGIS Pro Colors: https://esri.box.com/CalciteColorPalette
+// =======================================================================================================
+ CalciteColorWhite 	    = #fff;			/* Calcite: White...........	Esri_White */
+ CalciteColorGray100 	= #F7F8F8;		/* Calcite: Gray 100........	Esri_Gray100 */
+ CalciteColorGray105 	= #F2F3F3;		/* Calcite: Gray 105........	Esri_Gray105 */
+ CalciteColorGray110 	= #EFEEEF;		/* Calcite: Gray 110........	Esri_Gray110 */
+ CalciteColorGray110 	= #EFEEEF;		/* Calcite: Gray 110........	Esri_Gray110 */
+ CalciteColorGray115 	= #E5E6E7;		/* Calcite: Gray 115........	Esri_Gray115 */
+ CalciteColorGray120 	= #E0E0DF;		/* Calcite: Gray 120........	Esri_Gray120 */
+ CalciteColorGray125 	= #CBCBCB;		/* Calcite: Gray 125........	Esri_Gray125 */
+ CalciteColorGray130 	= #A6A8AB;		/* Calcite: Gray 130........	Esri_Gray130 */
+ CalciteColorGray135 	= #929497;		/* Calcite: Gray 135........	Esri_Gray135 */
+ CalciteColorGray140 	= #7F8183;		/* Calcite: Gray 140........	Esri_Gray140 */
+ CalciteColorGray145 	= #6C6D70;		/* Calcite: Gray 145........	Esri_Gray145 */
+ CalciteColorGray150 	= #57585A;		/* Calcite: Gray 150........	Esri_Gray150 */
+ CalciteColorGray155 	= #4C4C4C;		/* Calcite: Gray 155........	Esri_Gray155 */
+ CalciteColorGray160 	= #323232;		/* Calcite: Gray 160........	Esri_Gray160 */
+ 
+ CalciteColorBlue1 	    = #E1F0FB;		/* Calcite: Blue 1..........	Esri_Blue1  - Hovered */
+ CalciteColorBlue2  	= #D1E9F9;		/* Calcite: Blue 2..........	Esri_Blue2 */
+ CalciteColorBlue3 	    = #7FBBDF;		/* Calcite: Blue 3..........	Esri_Blue3 */
+ CalciteColorBlue5 	    = #C5E5F9;		/* Calcite: Blue 5..........	Esri_Blue5  - Hovered & Selected */
+ CalciteColorBlue6 	    = #AADBFA;		/* Calcite: Blue 6..........	Esri_Blue6  - Selected (toggled) */
+ CalciteColorBlue7 	    = #90CDF2;		/* Calcite: Blue 7..........	Esri_Blue7  - Pressed */
+ CalciteColorBlue 		= #0079C1;		/* Calcite: Blue ...........	Esri_Blue */
+ CalciteColorBlueDark 	= #005E95;		/* Calcite: Blue Dark.......	Esri_BlueDark */
+ CalciteColorBlueA 	    = #D2E9F9;		/* Calcite: Blue ...........	 */
+ CalciteColorBlueB 	    = #BCDAED;		/* Calcite: Blue ...........	 */
+ CalciteColorBlueC  	= #6CB4E2;		/* Calcite: Blue ...........	 */
+ CalciteColorBlueD 	    = #56A5D8;		/* Calcite: Blue ...........	 */
+ 
+ CalciteColorYellow1 	= #F3EDC7;		/* Calcite: Yellow 1........	Esri_Yellow1 */
+ CalciteColorYellow2 	= #EFE397;		/* Calcite: Yellow 2........	Esri_Yellow2 */
+ CalciteColorYellow3 	= #E4D154;		/* Calcite: Yellow 3........	Esri_Yellow3 */
+ CalciteColorYellow4 	= #D8C34B;		/* Calcite: Yellow 4........	Esri_Yellow4 */
+ CalciteColorYellow5 	= #F4DA6E;		/* Calcite: Yellow 5........	Esri_Yellow5 */
+ CalciteColorYellow6 	= #A68D00;		/* Calcite: Yellow 6........	Esri_Yellow6 */
+ 
+ CalciteColorOrange1 	= #FBE1C2;		/* Calcite: Orange 1........	Esri_Orange1 */
+ CalciteColorOrange2 	= #F6CA92;		/* Calcite: Orange 2........	Esri_Orange2 */
+ CalciteColorOrange3 	= #EDA959;		/* Calcite: Orange 3........	Esri_Orange3 */
+ CalciteColorOrange4 	= #E79C47;		/* Calcite: Orange 4........	Esri_Orange4 */
+ 
+ CalciteColorGreen1 	= #DDEEDB;		/* Calcite: Green 1.........	Esri_Green1 */
+ CalciteColorGreen2 	= #9BC19C;		/* Calcite: Green 2.........	Esri_Green2 */
+ CalciteColorGreen3 	= #67A966;		/* Calcite: Green 3.........	Esri_Green3 */
+ CalciteColorGreen4 	= #5A9359;		/* Calcite: Green 4.........	Esri_Green4 */
+ CalciteColorGreen5 	= #257824;		/* Calcite: Green 5.........	Esri_Green5 */
+ CalciteColorGreen11 	= #CFEDCC;		/* Calcite: Green 11........	Esri_Green11  - Hovered */
+ CalciteColorGreen13 	= #7BB974;		/* Calcite: Green 13........	Esri_Green13 */
+ CalciteColorGreen15 	= #B0E2B0;		/* Calcite: Green 15........	Esri_Green15  - Hovered & Selected */
+ CalciteColorGreen16 	= #96CE96;		/* Calcite: Green 16........	Esri_Green16  - Selected (toggled) */
+ CalciteColorGreen17 	= #7DC17D;		/* Calcite: Green 17........	Esri_Green17  - Pressed */
+ CalciteColorGreen      = #31872E;		/* Calcite: Green ..........	Esri_Green */
+ CalciteColorGreenDark = #2B622B;		/* Calcite: Green Dark .....	Esri_GreenDark */
+ 
+ CalciteColorRed1 		= #F3DED7;		/* Calcite: Red 1...........	Esri_Red1 */
+ CalciteColorRed2 		= #E4A793;		/* Calcite: Red 2...........	Esri_Red2 */
+ CalciteColorRed3 		= #C86A4A;		/* Calcite: Red 3...........	Esri_Red3 */
+ CalciteColorRed4 		= #C6542D;		/* Calcite: Red 4...........	Esri_Red4 */
+ CalciteColorRed5 		= #FFCCBA;		/* Calcite: Red 5...........	Esri_Red5 */
+ CalciteColorRed6 		= #D94C1D;		/* Calcite: Red 6...........	Esri_Red6 */
+ CalciteColorError1 	= #f4dfd8;		/* Calcite: Form Field Fill		*/
+ CalciteColorError2 	= #e5a894;		/* Calcite: Form Field Border 1	*/
+ CalciteColorError3 	= #c7552e;		/* Calcite: Form Field Border 2	*/
+ 
+ CalciteColorPurple1 	= #E5E1EF;		/* Calcite: Purple 1........	Esri_Purple1 */
+ CalciteColorPurple2 	= #C4BCDC;		/* Calcite: Purple 2........	Esri_Purple2 */
+ CalciteColorPurple3 	= #9081BC;		/* Calcite: Purple 3........	Esri_Purple3 */
+ CalciteColorPurple4 	= #7B6CA7;		/* Calcite: Purple 4........	Esri_Purple4 */
+ 
+ CalciteColorBrown1 	= #E8DDD3;		/* Calcite: Brown 1.........	Esri_Brown1 */
+ CalciteColorBrown2 	= #D2B38F;		/* Calcite: Brown 2.........	Esri_Brown2 */
+ CalciteColorBrown3 	= #B78A54;		/* Calcite: Brown 3.........	Esri_Brown3 */
+ CalciteColorBrown4 	= #A57946;		/* Calcite: Brown 4.........	Esri_Brown4 */
+
+ EsriColor1             = #000000;
+ EsriColor12            = #007AC2;
+ EsriColor13            = #00B9F2;
+
+// =======================================================================================================
+ 
+/* Hover & Selected colors (Added 2014-09-11 by FG, following "Calcite" ArcGIS Pro) */
+$backgroundFillDefault 	    = CalciteColorWhite;		/* Default - Background  */
+$borderColorDefault 		= CalciteColorGray150;		/* Default - Border  */
+$backgroundFillActive 		= CalciteColorBlue6;		/* Active - Background  */
+$borderColorActive			= CalciteColorBlueDark;	    /* Active - Border */
+$backgroundFillHover 		= CalciteColorBlue1; 		/* Hover - Background */
+$borderColorHover 			= CalciteColorBlue3;		/* Hover - Border */
+$backgroundFillActiveHover  = CalciteColorBlue5;		/* Active & Hover  */
+$borderColorActiveHover 	= CalciteColorBlueDark;	    /* Active & Hover - Border */
+$backgroundFillDisabled 	= CalciteColorWhite;		/* Disabled */
+$borderColorDisabled 		= CalciteColorGray135;		/* Disabled - Border */
+$borderColorDivider 		= CalciteColorGray120;		/* Divider - Border  */
+
+$formBorderColorDefault 	= CalciteColorGray135;		/* Form Default - Border  */
+
+$borderRadiusSize1			= 3px;
+$borderRadiusSize2 		    = 5px;
+$borderRadiusSize3 		    = 10px;
+
+$paddingDefaultSpacer 		= 5px;
+$marginDefaultSpacer 		= 5px;
+
+// Text & Fonts
+$textColorDefault 			= CalciteColorGray155;		/* Default - Text */
+$textColorDisabled 		    = CalciteColorGray135;		/* Disabled - Text */
+$textColorActive			= CalciteColorBlueDark;	    /* Active - Text */
+$textColorHover 			= CalciteColorBlue;		    /* Hover - Text */
+
+$fontSizeDefault 			= 14px;
+$textSectionTitleSize 		= 16px;						/* Text Section Title - text */
+
+$fontSizeIconDefault        = 24px;
+$fontSizeIconSmall          = 16px;
+
+$fontFamilyDefault 		    = "Lucida Grande", "Arial", sans-serif;
+$fontFamilyArcGIS 			= "Avenir LT W01 65 Medium", "Lucida Grande", Arial, Helvetica, sans-serif;
+
+// Images
+$imageSpriteArcGISOnline 		= "../images/ago_sprite.png";
+$imageSpriteForms 				= "../images/formFields/form-sprite.png";
+$imageSpritePopup 				= "../images/popup-sprite.png";
+$imageSpriteTextEditor 		    = "../images/textEditor/richTextSprite.png";
+$imageArrowUp 					= "../images/arrow-up.png";
+
+$imageDirectionsStopOrigin 	      = "../images/mapSymbols/pin_GreenBlank36.png";
+$imageDirectionsStopOrigin_SVG    = "../images/mapSymbols/GreenPin36.svg";
+$imageDirectionsStopDestination   = "../images/mapSymbols/pin_RedBlank36.png";
+$imageDirectionsStopDestination_SVG = "../images/mapSymbols/RedPin36.svg";
+$imageDirectionsStopRemove 	    = $imageSpriteArcGISOnline; /*"../dijit/images/Directions/remove-destination.png"; */
+//$imageDirectionsStopReverse 	= "http://js.arcgis.com/3.10/js/esri/dijit/images/Directions/reverse.png";
+//$imageSimpleGeocoder            = "http://js.arcgis.com/3.10/js/esri/dijit/images/simpleGeocoder.png";
+
+$imageMeasurementArea           = "../icons/images/png/Measure_Area_16.png";
+$imageMeasurementArea_SVG       = "../icons/images/svg/Measure_Area_16.svg";
+$imageMeasurementDistance       = "../icons/images/png/Measure_Tool_16.png";
+$imageMeasurementDistance_SVG   = "../icons/images/svg/Measure_Tool_16.svg";
+$imageMeasurementLocation       = "../icons/images/png/Geocode_Pick_From_Map_16.png";
+$imageMeasurementLocation_SVG   = "../icons/images/svg/Geocode_Pick_From_Map_16.svg";
+
+$imageLoadingIndicator 		    = "../images/loadingIndicator/loading-grey.gif";
+$imageLoadingIndicatorDark 	    = "../images/loadingIndicator/loading-dark.gif";
+$imageLoadingIndicatorLight 	= "../images/loadingIndicator/loading-light.gif";
+$imageLoadingIndicatorBlue 		= "../images/loadingIndicator/loading-blue.gif";
+$imageLoadingIndicatorBlueLarge = "../images/loadingIndicator/loading-blue-large.gif";
+$imageLoadingCircular1          = "../images/loadingIndicator/LoadingAnimation16_Trans.gif";
+$imageLoadingCircularWhite16    = "../images/loadingIndicator/LoadingAnimation16.gif";
+
+// ======================================================================================================= 
+// ArcGIS Pro Styles / Use cases
+// =======================================================================================================
+@import "resources/CalciteArcGISProButtons.styl"
+
+// =======================================================================================================
+// Calcite Action Buttons
+// =======================================================================================================
+@import "resources/CalciteCSSButtons.styl"
+
+// =======================================================================================================
+// Calcite Messaging
+// =======================================================================================================
+@import "resources/CalciteMessaging.styl"
+
+// =======================================================================================================
+// Border Radius
+// =======================================================================================================
+@import "resources/BorderRadius.styl"
+
+// =======================================================================================================
+// Box Shadows & Box Insets
+// =======================================================================================================
+@import "resources/BoxShadow.styl"

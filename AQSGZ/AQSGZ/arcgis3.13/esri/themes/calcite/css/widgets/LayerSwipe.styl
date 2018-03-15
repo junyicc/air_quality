@@ -1,0 +1,43 @@
+.calcite
+  .LayerSwipe .vertical
+    position: absolute;
+    border-left 1px solid CalciteColorGray150 //#848484;
+    border-right 1px solid CalciteColorGray150 //#848484;
+    background-color CalciteColorGray120 //#dadada;
+    width: 6px;
+    height: 100%;
+    padding: 0!important;
+    margin: 0;
+    z-index: 30;
+    cursor: col-resize;
+    
+    .handle
+      width: 24px;
+      height: 32px;
+      margin: -16px 0 0 -12px;
+      position: absolute;
+      z-index: 30;
+      top: 50%;
+      left: 50%;
+      background-color CalciteColorGray120 //#dadada;
+      border 1px solid CalciteColorGray150 //#848484;
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      //background-image: url("../dijit/images/vDrag.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image none
+
+      color CalciteColorGray130 //$textColorDefault
+      &:before {
+        iconfont("esriIconvDragSmall")
+        font-size $fontSizeIconDefault
+        position relative
+        top 4px
+        left 0px
+        line-height $fontSizeIconDefault
+      }
+      &:hover,
+      &:focus {
+        opacity 1
+        color: $textColorHover
+      }

@@ -1,0 +1,37 @@
+﻿<div data-dojo-type="dijit/layout/BorderContainer" style="width: 100%; height: 100%; overflow:hidden">
+    <div class="MenuBody">
+        <div class="Datatype">
+            <span class="DT_left" data-dojo-attach-event="onclick:selectDataTypeleft">
+                <img src="widgets/MyWidgets/Interpolation/images/left.png" /></span>
+            <span class="DT_content">AQI</span>
+            <span class="DT_right" data-dojo-attach-event="onclick:selectDataTyperight">
+                <img src="widgets/MyWidgets/Interpolation/images/right.png" /></span>
+        </div>
+        <div class="Time">
+            <hr />
+            <img class="leftLine" src="widgets/MyWidgets/Interpolation/images/time1.png" />
+            <img class="rightLine" src="widgets/MyWidgets/Interpolation/images/time1.png" />
+            <!--<span class="CheckYMD checked" data-dojo-attach-point="YMD"></span>-->
+            <span class="CheckHour unchecked" data-dojo-attach-point="Hour"></span>
+            <input id="SelectDate" class="YMD" type="date" data-dojo-attach-event="onchange:InitHourPicker"/>
+            <span id="Hour_date" class="Hour" data-dojo-attach-event="onclick:ToggleSelectHour">--:--</span>
+            <div id="hoursPicker" class="Hours" >
+                <span  data-dojo-attach-event="onclick:SelectHour">--:--</span>
+            </div>
+            <div class="Methods">
+                <span id="ChaZhi" data-dojo-attach-point="ChaZhi" data-dojo-attach-event="onclick:SelectMethod">
+                    <hr />
+                    查看插值图</span>
+                <span id="DengZhiXian" data-dojo-attach-point="DengZhiXian" data-dojo-attach-event="onclick:SelectMethod">
+                    <hr />
+                    等值线</span>
+                <span id="ZiDingYi" data-dojo-attach-point="ZiDingYi" data-dojo-attach-event="onclick:SelectMethod">
+                    <hr />
+                    自定义区域</span>
+                <span id="Remove" data-dojo-attach-point="Remove" data-dojo-attach-event="onclick:SelectMethod">移除图层<hr />
+                </span>
+            </div>
+            <div id="OK" data-dojo-attach-point="OK" data-dojo-attach-event="onclick:Excute">确定</div>
+        </div>
+    </div>
+</div>

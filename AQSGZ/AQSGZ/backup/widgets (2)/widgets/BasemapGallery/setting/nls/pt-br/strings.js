@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "Inclui Mapas Base do Portal",
+    settings: "Configurações",
+    add: "Clique para Adicionar um Novo Mapa Base",
+    edit: "Propriedades",
+    title: "Título",
+    titlePH: "Título do Mapa Base",
+    thumbnail: "Miniatura",
+    thumbnailHint: "Clique na imagem para atualizar",
+    url: "URL",
+    urlPH: "URL da Camada",
+    addlayer: "Adicionar Mapa Base",
+    actions: "Ações",
+    warning: "Entrada incorreta",
+    save: "Voltar e Salvar",
+    back: "Voltar e Cancelar",
+    addUrl: "Adicionar URL",
+    autoCheck: "Verificação Automática",
+    checking: "Verificando...",
+    ok: "OK",
+    cancel: "Cancelar",
+    result: "Salvo com sucesso",
+    spError: "Todos os mapas base adicionados na galeria devem ter as mesmas referências espaciais.",
+    invalidTitle1:"Um mapa base '",
+    invalidTitle2:"' já existe. Escolha outro título.",
+    invalidBasemapUrl1: "Este tipo de camada não pode ser utilizada como um mapa base.",
+    invalidBasemapUrl2: "Referência espacial diferente do mapa atual.",
+    addBaselayer: "Adicionar Camada de Mapa Base"
+  })
+);

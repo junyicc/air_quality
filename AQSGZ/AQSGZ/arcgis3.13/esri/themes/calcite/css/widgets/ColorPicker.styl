@@ -1,0 +1,175 @@
+@require "../../dijit/variables"
+
+.calcite
+  .esriColorPicker
+    width 195px
+    font-family $fontFamilyDefault
+    font-size $fontSizeDefault
+    color $textColorDefault
+
+    &.esriColorPickerTransparencySlider
+      padding-top $paddingDefaultSpacer
+
+    &.esriColorPickerContainer
+      border solid 1px $borderColorDivider
+      display inline-block
+      padding $paddingDefaultSpacer ($paddingDefaultSpacer * 3) ($paddingDefaultSpacer * 2) ($paddingDefaultSpacer * 3)
+      background-color CalciteColorWhite
+      //border-radius 4px
+      calciteWeb_RoundRadius($borderRadiusSize2)
+
+    .esriColorPickerHexInput
+      display inline-block
+      width 5.6em
+      direction ltr
+
+      .dijitInputInner
+        text-transform uppercase
+
+      .dijitInputContainer
+        height auto
+
+    .dijitRuleContainer
+      padding $paddingDefaultSpacer
+      color CalciteColorGray155
+
+    .esriColorPickerPaletteOptions
+      padding 6px 0 0
+      position relative
+
+      .esriColorPickerSwatchEmpty
+        margin 0 10px 0
+
+      .esriColorPickerPaletteToggle
+        position absolute
+        right 0
+        vertical-align middle
+        box-shadow none
+        border none
+        padding 0
+
+        .dijitButtonNode
+          background url("../../images/right-arrows.png") no-repeat
+          width 17px
+          box-shadow none
+          border none
+          padding 0
+
+        &.dijitChecked
+          background-color transparent
+
+          .dijitButtonNode
+            vendor(transform, rotate(180deg))
+
+          .esriColorPickerPaletteToggle.dijitHover .dijitButtonNode
+            background-position-x -17px
+
+
+  .esriColorPickerInputLabel
+    display inline-block
+    vertical-align middle
+
+
+  .esriColorPickerSwatch
+    box-sizing border-box
+    vertical-align middle
+    height 15px
+    width 15px
+    display inline-block
+    cursor pointer
+    margin 0
+    border-radius 0
+    transition background-color .25s
+
+
+  .esriColorPickerDisplayNone
+    display none
+
+
+  .esriColorPickerSwatchEmpty
+    position relative
+    overflow hidden
+    border solid 1px CalciteColorGray155
+    background-color CalciteColorWhite
+
+    &:before
+      display inline-block
+      background-color #f00
+      position absolute
+      height 1px
+      bottom 0
+      left 0
+      width 200%
+      content ""
+      z-index 1
+      vendor(transform, rotate(-45deg))
+      vendor(transform-origin, top left)
+
+
+  .esriRtl
+    .esriColorPicker
+      .esriColorPickerPaletteOptions
+        .esriColorPickerPaletteToggle
+          left 0
+          right auto
+
+          .dijitButtonNode
+            vendor(transform, rotate(0deg))
+
+
+  .esriColorPickerSwatchPreview
+    box-sizing border-box
+    margin 0
+    vertical-align middle
+    display inline-block
+    height 25px
+    width 100%
+
+    &.esriColorPickerContainer
+      position relative
+      left 0
+      right 0
+      display block
+      text-align center
+
+    .esriColorPickerSwatch
+      position absolute
+      cursor auto
+      margin 0
+      right 0
+      top 0
+      bottom 0
+      left 0
+      height 25px
+      width 100%
+      border 1px solid
+
+      &.esriColorPickerSwatchEmpty
+        display none
+
+
+  .esriColorPickerSwatchRow
+    font-size 0
+    white-space nowrap
+
+
+  .esriColorPickerSwatch
+    &.esriColorPickerSwatchTransparencyBackground
+      background-image url("../../images/transparent-bg.png")
+
+    &.esriColorPickerSelected
+      border 1px solid
+      vendor(animation, highlight-selection 0.2s ease)
+
+
+  @keyframes highlight-selection
+    50%
+      vendor(transform, scale(1.5))
+
+
+  .esriColorPickerHeader,
+  .esriColorPickerFooter
+    margin 8px 0 10px
+
+    .esriColorPickerLabel
+      margin 10px 0 4px 0

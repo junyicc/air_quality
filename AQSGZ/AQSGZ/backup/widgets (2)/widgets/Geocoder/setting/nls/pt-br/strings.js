@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Placeholder Text",
+    url: "URL do Geocodificador",
+    name: "Nome do Geocodificador",
+    example: "Exemplo",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Não é possível obter as configurações do geocodificador a partir do portal',
+    actions: "Ações",
+    warning: "Esta não é uma versão suportada do serviço de geocodificação. Este widget suporta serviço de geocodificação 10.1 e superior.",
+    instruction: "Estabeleça os geocodificadores neste widget. Clique em Adicionar Geocodificador para referenciar uma URL, especificar um nome de usuário amigável e configurar outras propriedades. Você também pode reordenar, configurar ou excluir seus geocodificadores abaixo.",
+    layerInstruction1: "Você pode configurar a condição de pesquisa em ",
+    layerInstruction2: "página de detalhes do mapa da web",
+    searchAddress: "Procurar por endereço",
+    searchLayer: "Procurar por camada",
+    layer: "Camada",
+    field: "Campo",
+    condition: "Condição",
+    contains: "Contém",
+    deleteLastGeocoderError: "O último geocodificador não pode ser excluído.",
+    noSearchFactorError: "Você tem que selecionar um recurso (Procurar por endereço ou Procurar por camada) pelo menos.",
+    equals: "Igual",
+    add: "Adicionar Geocodificador",
+    edit: "Editar Geocodificador",
+    ok: "OK",
+    cancel: "Cancelar",
+    geocoderNamePlaceHolder: "Meu Geocodificador",
+    geocodePlaceHolder: "Encontrar endereço ou lugar",
+    REPEATING_ERROR: "Os seguintes campos estão repetidos: "
+  })
+);

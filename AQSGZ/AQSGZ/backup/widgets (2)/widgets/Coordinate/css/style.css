@@ -1,0 +1,43 @@
+.jimu-widget-coordinate{
+  z-index: 99;
+}
+.jimu-widget-coordinate .coordinate-background{
+	padding: 2px 5px 2px 5px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.jimu-widget-coordinate .coordinate-background:hover{
+  background-color: rgba(255,255,255,0.6);
+}
+.jimu-widget-coordinate .coordinate-locate{
+  width: 14px;
+  height: 14px;
+  background: url(images/locate.png) center no-repeat;
+}
+.jimu-widget-coordinate .coordinate-locate-container{
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+}
+.jimu-widget-coordinate .coordinate-locate-container:hover{
+  background: url(images/locate-hover.png) center no-repeat;
+  cursor: pointer;
+}
+.jimu-widget-coordinate .coordinate-locate-container-active{
+  background: url(images/locate-active.png) center no-repeat !important;
+}
+.jimu-widget-coordinate .coordinate-info{
+  margin: 0 5px;
+}
+.jimu-widget-coordinate .coordinate-info-menu{
+  overflow: hidden;
+  z-index: 999;
+}
+.jimu-widget-coordinate .coordinate-foldable{
+  background: url(images/unfold01.png) center no-repeat;
+  width: 10px;
+  height: 20px;
+}
+.jimu-widget-coordinate:hover .coordinate-foldable{
+  background-image: url(images/unfold02.png);
+};

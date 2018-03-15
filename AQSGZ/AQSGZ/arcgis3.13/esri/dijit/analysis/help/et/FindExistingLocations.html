@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Leia olemasolevad asukohad</h2><p/>
+        <h2><img src="../images/GUID-C5409FC7-EC93-45C5-8B00-3D6EA80A0A77-web.png" alt="Leia olemasolevad asukohad"></h2>
+        <hr/>
+    <p>See t&ouml;&ouml;riist selekteerib olemasolevad n&auml;htused teid huvitavast piirkonnast, mis vastavad t&auml;psustatud kriteeriumitele.Need kriteeriumid v&otilde;ivad baseeruda atribuutide p&auml;ringutel (n&auml;iteks vabad maat&uuml;kid) ja ruumilistel p&auml;ringutel (n&auml;iteks k&otilde;ik maat&uuml;kid &uuml;he kilomeetri ulatuses j&otilde;est jne)
+
+    </p>
+    <p>Kui  <b>Kasuta kaardi ulatust</b> on sisse l&uuml;litatud, kasutatakse anal&uuml;&uuml;sikihist arvutusteks ainult neid objekte, mis antud hetkel on ekraanil n&auml;htavad. Kui ei ole m&auml;rgistatud, anal&uuml;&uuml;sitakse k&otilde;iki objekte, sh neid, mis asuvad kaardi kuvaulatusest v&auml;ljaspool.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expression">
+        <div><h2>Leia objektid, mis vastavad järgnevatele päringu(te)le</h2></div>
+        <hr/>
+        <div>
+            <p>Avaldise m&auml;&auml;ratlemiseks klikkige nupul  <b>Lisa avaldis</b>. V&otilde;ite lisada mitu avaldist.P&auml;rast avaldise sisestamist ja nupu <b>K&auml;ivita anal&uuml;&uuml;s</b> kl&otilde;psamist filtreeritakse anal&uuml;&uuml;sitava kihi objektid vastavalt igale avaldisele. Need objektid, mis vastavad k&otilde;ikidele avaldistele, kirjutatakse tulemuste kihti.
+            </p>
+            <p>V&otilde;ite luua kaht t&uuml;&uuml;pi avaldisi: atribuutide ja ruumip&otilde;hiseid.Atribuutide avaldised on p&auml;ringud v&auml;lja v&auml;&auml;rtustest, n&auml;iteks  <code>kus nimi on 'Tallinn'</code>. Esineb nelja t&uuml;&uuml;pi ruumilisi avaldisi:
+                <ul>
+                    <li> <b>raadiuses</b>: objekt peab sisalduma konkreetse vahemaa sees teise kihi objektist. N&auml;iteks, leidke maat&uuml;kid, mis paiknevad Pirita j&otilde;est maksimaalselt 500 meetri raadiuses.
+                    </li>
+                    <li> <b>sisaldub t&auml;ielikult</b>: objekt peab sisaldama tervet objekti teisest kihist. N&auml;iteks leia j&otilde;elahkmed, mis t&auml;ielikult sisaldavad t&ouml;&ouml;stusalasid.&Uuml;kski maa-ala osa ei tohi olla veelahkmest v&auml;ljaspool.
+                    </li>
+                    <li> <b>asub t&auml;ielikult</b>: objekt peab olema t&auml;ielikult &uuml;mbritsetud teise kihi objektist. N&auml;iteks leia koolide piirkonnad, mis on terviklikult linna piirides.&Uuml;kski kooli piirkonna osa ei tohi olla linna piiridest v&auml;ljaspool.
+                    </li>
+                    <li> <b>l&otilde;ikub</b>: objekt peab sisaldab objekti osa teises kihis. N&auml;iteks leia maad, mis l&otilde;ikuvad j&otilde;gedega.Iga j&otilde;e osa, mis l&auml;bib maat&uuml;kki v&otilde;i puudutab selle piiri, l&otilde;ikub selle maat&uuml;kiga.
+                    </li>
+                </ul>
+                
+            </p>
+            <p>Iga ruumiline avaldis omab ka vastavat eitust;  <b>ei ole raadiuses</b>, <b>ei sisaldu t&auml;ielikult</b>, <b>ei asu t&auml;ielikult</b> ja <b>ei l&otilde;iku</b>.
+            </p> 
+        </div>
+    </div>
+    <div id="OuputName">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on selle kihi nimi, mis luuakse  <b>Minu sisu</b> alla ja lisatakse kaardile. Vaikenimi p&otilde;hineb anal&uuml;&uuml;sit&uuml;&uuml;bil ja anal&uuml;&uuml;sitava kihi nimel.Kui see kiht juba eksisteerib, palutakse teil esitada m&otilde;ni muu nimi.
+            </p>
+            <p>Rippmen&uuml;&uuml;  <b>Salvesta tulemused</b> kaudu saate m&auml;&auml;rata selle kausta nime jaotises <b>Minu sisu</b>, kuhu tulemused salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

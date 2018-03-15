@@ -1,0 +1,5 @@
+﻿define(
+   ({
+    showLegend: "Mostra legenda"
+  })
+);

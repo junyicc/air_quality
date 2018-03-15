@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Tekst zastępczy",
+    url: "Adres URL geokodera",
+    name: "Nazwa geokodera",
+    example: "Przykład",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Nie można pobrać z portalu konfiguracji geokodera',
+    actions: "Operacje",
+    warning: "Ta wersja usługi geokodowania nie jest obsługiwana.  Ten widżet nie obsługuje usługi geokodowania w wersji 10.1 ani wyższej.",
+    instruction: "Zdefiniuj geokodery w tym widżecie.  Kliknij przycisk Dodaj geokoder, aby utworzyć odnośnik do adresu URL z nazwą przyjazną dla użytkownika i wartościami innych właściwości.  Poniżej możesz również zmienić kolejność geokoderów, skonfigurować je lub usunąć.",
+    layerInstruction1: "Możesz skonfigurować warunek wyszukiwania na ",
+    layerInstruction2: "stronie szczegółów mapy internetowej",
+    searchAddress: "Szukaj według adresu",
+    searchLayer: "Szukaj według warstwy",
+    layer: "Warstwa",
+    field: "Pole",
+    condition: "Warunek",
+    contains: "Zawiera",
+    deleteLastGeocoderError: "Nie można usunąć ostatniego geokodera.",
+    noSearchFactorError: "Musisz wybrać co najmniej jedną funkcję (wyszukaj wg adresu lub warstwy).",
+    equals: "Równa się",
+    add: "Dodaj geokoder",
+    edit: "Edytuj geokoder",
+    ok: "OK",
+    cancel: "Anuluj",
+    geocoderNamePlaceHolder: "Mój geokoder",
+    geocodePlaceHolder: "Znajdź adres lub miejsce",
+    REPEATING_ERROR: "Następujące pola powtarzają się: "
+  })
+);

@@ -1,0 +1,227 @@
+.interpolationDiv {
+	width: 700px;
+	height: 100px;
+	margin-top:30px;
+	vertical-align: middle;
+	z-index: 100;  
+	clear:both;  
+}
+
+.timeliner{
+	margin:0;
+	padding:0;
+	position:relative;
+	display:none;
+}
+.timeliner .slide{
+	margin:0;
+	padding:0;
+	list-style:none;
+	overflow:hidden;
+	position:absolute;
+	display:block;
+}
+.timeliner .timeline{
+	display:block;
+	position:absolute;
+	z-index:2;
+	list-style:none;
+}
+.timeliner .innertimeline{
+	position:absolute;
+	bottom:0;
+	z-index:3;
+	overflow:hidden;
+}
+.timeliner .timedisplay{
+	position:absolute;
+	text-align:right;
+	cursor:default;
+	white-space:nowrap;
+}
+.timeliner .node{
+	position:absolute;
+	z-index:4;
+	cursor:pointer;
+}
+.timeliner .tooltip{
+	position:absolute;
+	white-space:nowrap;
+	display:none;
+}
+.timeliner .pause, .timeliner .play, .timeliner .previous, .timeliner .next{
+	position:absolute;
+	list-style:none;
+	z-index:3;
+	cursor:pointer;
+}
+.timeliner .previous, .timeliner .next{
+	z-index:2;
+}
+
+/*
+ * CSS for Timeliner 1.2
+ *
+ * This CSS is for styling the plugin.
+ * Use timeliner.css for functionality changes.
+ */
+
+/* The container */
+/*#timeInterpolation{
+	background:#fff url(../images/loading.gif) center no-repeat;
+	border:1px solid #dedede;
+}*/
+/* Each slide */
+#timeInterpolation .slide{
+	background-color:#646464;
+}
+/* The timeline background */
+#timeInterpolation .timeline{
+	background:#FCFAFA;
+}
+/* The timeline fill bar */
+#timeInterpolation .innertimeline{
+	background:#cf3300;
+}
+/* The time display */
+#timeInterpolation .timedisplay{
+	color:#777;
+}
+/* Each node */
+#timeInterpolation .node{
+	background:url(../images/node.png) center no-repeat;
+	width:26px;
+	height:26px;
+}
+/* The active node */
+#timeInterpolation .node_active{
+	background:url(../images/node_active.png) center no-repeat;
+}
+/* Each node tooltip */
+#timeInterpolation .tooltip{
+	background:#fff;
+	padding:5px 8px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
+/* The time display inside a tooltip */
+#timeInterpolation .tooltiptime{
+	font-size:8pt;
+	font-weight:bold;
+}
+/* The pause/play button */
+#timeInterpolation .pause, #timeInterpolation .play{
+	width:20px;
+	height:20px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow:0 0 10px #bbb;
+	-moz-box-shadow:0 0 10px #bbb;
+	box-shadow:0 0 10px #bbb;
+}
+/* The pause button */
+#timeInterpolation .pause{
+	background:#fff url(../images/pause.gif) center no-repeat;
+}
+/* The play button */
+#timeInterpolation .play{
+	background:#fff url(../images/play.gif) center no-repeat;
+}
+/* The previous/next buttons */
+#timeInterpolation .previous, #timeInterpolation .next{
+	width:43px;
+	height:50px;
+}
+/* The previous button */
+#timeInterpolation .previous{
+	background:#fff url(../images/previous.gif) center no-repeat;
+	-webkit-border-radius:6px 0 0 6px;
+	-moz-border-radius:6px 0 0 6px;
+	border-radius:6px 0 0 6px;
+}
+/* The next button */
+#timeInterpolation .next{
+	background:#fff url(../images/next.gif) center no-repeat;
+	-webkit-border-radius:0 6px 6px 0;
+	-moz-border-radius:0 6px 6px 0;
+	border-radius:0 6px 6px 0;
+}
+
+.jimu-widget-timeinterpolation .mainDiv .DataType {
+    position: absolute;
+    left: 310px;
+}
+
+    .jimu-widget-timeinterpolation .mainDiv .DataType img {
+        position: relative;
+        margin-left: 10px;
+        background-color: rgb(99, 108, 108);
+        -webkit-transition: all 0.2s linear;
+        width: 30px;
+        opacity: 0.5;
+        border-radius: 15px;
+    }
+
+        .jimu-widget-timeinterpolation .mainDiv .DataType img:hover {
+            opacity: 1;
+        }
+
+    .jimu-widget-timeinterpolation .mainDiv .DataType .selected {
+        background-color: rgb(53, 53, 53);
+        opacity: 1;
+        width: 35px;
+    }
+
+            .jimu-widget-timeinterpolation .mainDiv input {
+        background-color: rgb(40, 40, 40);
+        border: none;
+        opacity: 1;
+        border-radius: 6px;
+    
+        margin-top: 8px;
+        color: white;
+        height: 23px;
+}
+        .jimu-widget-timeinterpolation .mainDiv button {
+        background-color: rgb(40, 40, 40);
+        border: none;
+        opacity: 1;
+        border-radius: 4px;    
+        margin-top: 8px;
+        margin-right: 8px;
+        color: white;
+        height: 23px;
+        width: 50px;
+}
+.jimu-widget-timeinterpolation .mainDiv .PlayTime {
+    position: absolute;
+    left: 235px;
+    font-size: 20px;
+    top: 7px;
+}
+
+
+.jimu-widget-timeinterpolation .mainDiv .Loading {
+width:700px;
+height:100px;
+position:absolute;
+top:0;
+left:0;
+background-color:rgb(33, 33, 34);
+opacity:0.5;
+}
+.jimu-widget-timeinterpolation .mainDiv .Loading img {
+  height: 100%;
+  margin-left: 297px;
+}
+.jimu-widget-timeinterpolation .mainDiv .Loading p {
+  position:absolute;
+  top:60%;
+  left:350px;
+  font-size:20px;
+  color:white;
+}

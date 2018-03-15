@@ -1,0 +1,86 @@
+﻿<div style="width: 100%; height: 100%; overflow: hidden">
+    <hr />
+    <div class="heading">
+          <a title="AQI" class="DataType AnAQI selected" data-dojo-attach-point="DT_AQI">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/AQI.png">
+        </a>
+        <a title="CO" class="DataType AnCO" data-dojo-attach-point="DT_CO">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/CO.png">
+        </a>
+        <a title="NO2" class="DataType AnNO2" data-dojo-attach-point="DT_NO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/NO2.png">
+        </a>
+        <a title="O3_1" class="DataType AnO3" data-dojo-attach-point="DT_O3">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/O3.png">
+        </a>
+        <a title="PM10" class="DataType AnPM10" data-dojo-attach-point="DT_PM10">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM10.png">
+        </a>
+        <a title="PM25" class="DataType AnPM25" data-dojo-attach-point="DT_PM25">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM2.5.png">
+        </a>
+        <a title="SO2" class="DataType AnSO2" data-dojo-attach-point="DT_SO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/SO2.png">
+        </a>
+        <input type="date" id="DateOfTable" class="AnDate" data-dojo-attach-event="onchange:ReGetData" />
+
+    </div>
+    <div class="body">
+        <div class="body Datatable">
+            <table style="width: 100%; font-size: 15px; margin-top: 5px; margin-bottom: 5px;">
+                <tr>
+                    <td style="text-align: center" id="V0">广州各监测站点空气质量指数(AQI)统计表</td>
+                </tr>
+            </table>
+            <table class="altrowstable" style="width: 100%">
+                <tr>
+                    <td>监测站</td>
+                    <td>数值</td>
+                    <td>监测站</td>
+                    <td>数值</td>
+                </tr>
+                <tr>
+                    <td>广雅中学</td>
+                    <td id="V1" class="value"></td>
+                    <td>市五中</td>
+                    <td id="V2" class="value"></td>
+                </tr>
+                <tr>
+                    <td>天河职幼</td>
+                    <td id="V3" class="value"></td>
+                    <td>广东商学院</td>
+                    <td id="V4" class="value"></td>
+                </tr>
+                <tr>
+                    <td>市八十六中</td>
+                    <td id="V5" class="value"></td>
+                    <td>番禺中学</td>
+                    <td id="V6" class="value"></td>
+                </tr>
+                <tr>
+                    <td>花都师范</td>
+                    <td id="V7" class="value"></td>
+                    <td>市监测站</td>
+                    <td id="V8" class="value"></td>
+                </tr>
+                <tr>
+                    <td>九龙镇镇龙</td>
+                    <td id="V9" class="value"></td>
+                    <td>麓湖</td>
+                    <td id="V10" class="value"></td>
+                </tr>
+                <tr>
+                    <td>帽峰山森林公园</td>
+                    <td id="V11" class="value"></td>
+                    <td>体育西</td>
+                    <td id="V12" class="value"></td>
+                </tr>
+            </table>
+            <img src="widgets/MyWidgets/BasicDataChart/images/right.png" data-dojo-attach-event="click:ShowChart">
+        </div>
+        <div class="body Highchart">
+            <div id="DataChart" style="width: 100%; height: 400px"></div>
+            <img src="widgets/MyWidgets/BasicDataChart/images/left.png" data-dojo-attach-event="click:ShowTable">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Izveidot ūdenskrātuves</h2><p/>
+        <h2><img src="../images/GUID-D0CDF046-A296-4A66-B0D8-F1F4A8EEA0FC-web.png" alt="Izveidot ūdenskrātuves"></h2>
+        <hr/>
+    <p>&Scaron;is rīks katram analīzes slāņa punktam nosaka ūdensgūtves baseinu vai aug&scaron;teces apgabalu. 
+    </p>
+    <p>Piemēram, pieņemsim, ka jums ir punktu elementi, kas apzīmē ūdens piesārņojuma vietas, un jūs vēlaties noskaidrot &scaron;ī piesārņojuma iespējamos avotus.Tā kā piesārņojuma avotam ir jābūt kaut kur ūdensgūtves baseina tuvumā aug&scaron;tecē no &scaron;ī punkta, varat izmantot &scaron;o rīku, lai noteiktu ūdensgūtves baseinus, kuros ir piesārņojuma avoti.
+    </p>
+    <p>Ir svarīga jūsu analīzes punktu atra&scaron;anās vieta.Ja tie neatrodas precīzi uz ūdens noteces kanāla, rezultātā iegūtie ūdensgūtves baseini var būt ļoti mazi un nederīgi analīzes veik&scaron;anai.Funkciju  <b>Meklēt attālumu līdz tuvākajam ūdens noteces kanālam</b> var izmantot, lai pielāgotu savu analīzes punktu atra&scaron;anās vietu tā, lai tā precīzi sakristu ar ūdens noteces kanālu un tādējādi varētu atrast ūdensgūtves baseinus, no kuriem ūdens ieplūst noteces kanālā eso&scaron;ā punktā. Pielāgotās atra&scaron;anās vietas, kas tiek izmantotas, lai noteiktu ūdensgūtves baseinus, tiek ierakstītas izvades slānī&nbsp;&mdash; jūsu ievades analīzes punkti netiek mainīti.
+    </p>
+    <p>Rezultāts ir slāņu grupa, kurā ir divi slāņi: ūdensgūtves baseini un pielāgotie punkti, kas izmantoti, lai aprēķinātu ūdensgūtves baseinus. 
+    </p>
+    <p>Rezultāta ūdensgūtves baseiniem būs visi jūsu ievades punktu atribūti, kā arī &scaron;ādi papildu atribūti: 
+        <ul>
+            <li> <i>PourPtID</i>&nbsp;&mdash; satur ID vērtību no ievades punkta
+            </li>
+            <li> <i>Area Square Kilometers</i>&mdash; satur aug&scaron;teces ūdensgūtves baseina apgabalu kvadrātkilometros
+            </li>
+            <li> <i>Description</i> un <i>DataResolution</i>&nbsp;&mdash; satur informāciju, kas attiecas uz hidroloģiskajiem datiem, kas tika izmantoti, lai aprēķinātu ceļu
+            </li>
+        </ul>
+        
+    </p>
+    <p>Ja ir atzīmēta opcija  <b>Lietot pa&scaron;reizējo kartes pārklājumu</b>, ūdensgūtves baseinu aprēķinā&scaron;anai tiks izmantoti tikai pa&scaron;reizējā kartes pārklājuma elementi. Ja nav atzīmēts, visi analīzes slāņa elementi tiks analizēti, arī pa&scaron;reizējā kartes pārklājuma ārpusē.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="SearchDistance">
+        <div><h2>Meklēt attālumu līdz tuvākajam ūdens noteces kanālam</h2></div>
+        <hr/>
+        <div>
+            <p>Ja jūsu analīzes punkti atrodas tālu prom no ūdens noteces kanāla, rezultāta ūdensgūtves baseini visdrīzāk būs ļoti mazi un nebūs īpa&scaron;i noderīgi, lai noteiktu aug&scaron;teces piesārņojuma avotu.Vairākumā gadījumu jūs vēlaties vienkār&scaron;i pārspraust analīzes punktus pie tuvākā ūdens noteces kanāla, lai noskaidrotu ūdensgūtves baseinus, kuru ūdens plūst uz noteces kanālā eso&scaron;u punktu.Lai atrastu tuvāko ūdens noteces kanālu, norādiet meklē&scaron;anas attālumu.Ja nenorādīsiet meklē&scaron;anas attālumu, rīks veiks aprēķinus un izmantos mērenu meklē&scaron;anas attālumu. 
+            </p>
+            <p>Lai izmantotu precīzu sava ievades punkta atra&scaron;anās vietu, kā meklē&scaron;anas attālumu norādiet nulli. 
+            </p>
+            <p>Analīzes nolūkā Esri ir sākotnēji aprēķinājis ūdens noteces kanālus, izmantojot standarta hidroloģiskos modeļus.Ja meklē&scaron;anas attālumā nav neviena ūdens noteces kanāla, tiek izmantota meklē&scaron;anas attālumā eso&scaron;a atra&scaron;anās vieta ar visaugstāko plūsmas akumulē&scaron;anas rādītāju.
+            </p> 
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>Tas ir slāņa nosaukuns, kas tiks izveidots  <b>Mans saturs</b> un pievienots kartei. Noklusējuma nosaukums ir balstīts uz analīzes tipu un ievades slāņa nosaukumu.Ja slānis jau pastāv, jums tiks lūgts norādīt citu nosaukumu.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātus</b> nolaižamajā sarakstlodziņā, jūs varat norādīt nosaukumu mapē <b>Mans saturs</b>, kur tiks saglabāti rezultāti.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

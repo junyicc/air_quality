@@ -1,0 +1,25 @@
+/*.calcite .esriPopup .contentPane .esriAttributeInspector*/
+
+.calcite .esriAttributeInspector
+  .atiAttachmentEditor
+    padding: 0;
+    z-index: 1;
+
+  .atiButtons
+    margin: $marginDefaultSpacer auto;
+    padding-top: 5px;
+    border-top: 1px solid $borderColorDivider;
+
+  .atiButton.atiDeleteButton .dijitButtonNode
+    margin: auto; /*0px;*/
+    width: auto; /* 16px */
+    height: auto; /* 16px; */
+    background-image:none;
+    calciteCSS_ActionButton("red");
+
+  .atiButton.atiDeleteButton .dijitButtonNode.dijitHover,
+  .atiButton.atiDeleteButton .dijitButtonNode.dijitFocused
+    calciteCSS_ActionButton_Hover("red");
+
+  .atiButton.atiDeleteButton .dijitButtonNode.dijitDisabled
+    calciteCSS_ActionButton_Disabled("red");

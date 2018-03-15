@@ -1,0 +1,304 @@
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton(in_color) {
+  calciteWeb_RoundRadius(0);
+  background: CalciteColorGray125;
+  font-size: $fontSizeDefault;
+  line-height: ($fontSizeDefault + 10px);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-transition: all .05s linear;
+  -moz-transition: all .05s linear;
+  -o-transition: all .05s linear;
+  transition: all .05s linear;
+  fontFamilyLanguage($fontFamilyArcGIS, $fontFamilyDefault);
+  padding: .6em 1.25em .6em;
+  border: none;
+  color: CalciteColorWhite;
+  display: inline-block;
+  text-transform capitalize
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.125);
+  letter-spacing: 1px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+
+  /* Determine Button Color */
+  if (in_color == "blue") {
+    background-color: CalciteColorBlue;
+  } else if (in_color == "transparent") {
+    background: none;
+    color: EsriColor12;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  } else if (in_color == "transparentoutline") {
+    calciteArcGISPro_ButtonDefault()
+    calciteArcGISPro_ButtonBorder()
+    background: none;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  } else if (in_color == "whiteoutline") {
+    calciteArcGISPro_ButtonDefault()
+    calciteArcGISPro_ButtonBorder()
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  } else if (in_color == "red") {
+    background-color: CalciteColorRed6;
+  } else if (in_color == "green") {
+    background-color: CalciteColorGreen3;
+  } else if (in_color == "greenplaceholder") {
+    background-color: CalciteColorGreen1;
+    background: CalciteColorGreen1;
+    border:1px dashed CalciteColorGreen4;
+    color: $textColorDefault;
+  } else if (in_color == "orange") {
+    background-color: #e67e08;
+  } else if (in_color == "light") {
+    background-color: CalciteColorGray120;
+    color: CalciteColorGray145
+  } else {
+    background: CalciteColorGray130;
+    color: CalciteColorWhite;
+  }
+
+  &:hover {
+    calciteCSS_ActionButton_Hover(in_color);
+  }
+  &:disabled {
+    calciteCSS_ActionButton_Disabled(in_color);
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* calciteCSS_ActionButton - HOVER BUTTON */
+calciteCSS_ActionButton_Hover(in_color) {
+  if (in_color == "blue") {
+    background-color: CalciteColorBlueDark;
+  } else if (in_color == "transparent") {
+    color: EsriColor13;
+    background: none;
+  } else if (in_color == "transparentoutline" || in_color == "whiteoutline") {
+    calciteArcGISPro_ButtonHover();
+  } else if (in_color == "red") {
+    background-color: CalciteColorRed4;
+  } else if (in_color == "green") {
+    background-color: CalciteColorGreen4;
+  } else if (in_color == "greenplaceholder") {
+    background-color: CalciteColorGreen4;
+    border-color: CalciteColorGreen4;
+    color: CalciteColorWhite;
+  } else if (in_color == "orange") {
+    background-color: CalciteColorOrange4;
+  } else if (in_color == "light") {
+    background-color: CalciteColorGray110;
+    color: CalciteColorGray120
+  } else {
+    background: CalciteColorGray135;
+    color: CalciteColorWhite;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* calciteCSS_ActionButton - Active BUTTON */
+calciteCSS_ActionButton_Active(in_color) {
+  if (in_color == "blue") {
+    background-color: CalciteColorBlueDark;
+  } else if (in_color == "transparent") {
+    color: EsriColor13;
+    background: none;
+  } else if (in_color == "transparentoutline" || in_color == "whiteoutline") {
+    calciteArcGISPro_ButtonActive()
+  } else if (in_color == "red") {
+    background-color: CalciteColorRed4;
+  } else if (in_color == "green") {
+    background-color: CalciteColorGreen17;
+  } else if (in_color == "greenplaceholder") {
+    background-color: CalciteColorGreen17;
+    border-color: CalciteColorGreen17;
+    color: CalciteColorWhite;
+  } else if (in_color == "orange") {
+    background-color: CalciteColorOrange4;
+  } else if (in_color == "light") {
+    background-color: CalciteColorGray115;
+    color: CalciteColorGray120
+  } else {
+    background: CalciteColorGray130;
+    color: CalciteColorWhite;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* calciteCSS_ActionButton - DISABLED BUTTON */
+calciteCSS_ActionButton_Disabled(in_color) {
+  cursor default
+  background-position initial initial
+  background-repeat initial initial
+  opacity 0.5
+
+  if (in_color == "blue") {
+    background-color: rgb(93, 173, 221);
+    &:hover {
+      background-color: rgb(93, 173, 221);
+    }
+  } else if (in_color == "transparent") {
+    color: EsriColor1
+    background: transparent;
+    &:hover {
+      color: EsriColor1
+      background: transparent;
+    }
+  } else if (in_color == "transparentoutline" || in_color == "whiteoutline") {
+    calciteArcGISPro_ButtonDisabled()
+    &:hover {
+      calciteArcGISPro_ButtonDisabled()
+    }
+  } else if (in_color == "red") {
+    // Red
+    background-color: rgb(185, 57, 47);
+    &:hover {
+      background-color: rgb(185, 57, 47);
+    }
+  } else if (in_color == "green" || in_color == "greenplaceholder") {
+    // Green
+    background-color: rgb(106, 162, 63);
+    &:hover {
+      background-color: rgb(106, 162, 63);
+    }
+  } else if (in_color == "orange") {
+    // Orange
+    background-color: rgb(233, 141, 50);
+    &:hover {
+      background-color: rgb(233, 141, 50);
+    }
+  } else if (in_color == "light") {
+    // Light
+    background-color: $borderColorDisabled;
+    color:  $textColorDisabled;
+    &:hover {
+      background-color: $borderColorDisabled;
+      color:  $textColorDisabled;
+    }
+  } else {
+    background-color CalciteColorGray130
+    border-color CalciteColorGray130
+    color CalciteColorWhite
+    &:hover {
+      background-color CalciteColorGray130
+      color CalciteColorWhite
+      border-color CalciteColorGray130
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Placeholder Green  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_PlaceholderAction_Green_Hover() {
+  calciteCSS_ActionButton_Hover("greenplaceholder");
+}
+calciteCSS_ActionButton_PlaceholderAction_Green_Disabled() {
+  calciteCSS_ActionButton_Disabled("greenplaceholder");
+}
+calciteCSS_ActionButton_PlaceholderAction_Green() {
+  calciteCSS_ActionButton("greenplaceholder");
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Orange (Delete Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Orange_Hover() {
+  calciteCSS_ActionButton_Hover("orange");
+}
+calciteCSS_ActionButton_Orange_Disabled() {
+  calciteCSS_ActionButton_Disabled("orange");
+}
+calciteCSS_ActionButton_Orange() {
+  calciteCSS_ActionButton("orange");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Blue (Primary Action Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Blue_Hover() {
+  calciteCSS_ActionButton_Hover("blue");
+}
+calciteCSS_ActionButton_Blue_Disabled() {
+  calciteCSS_ActionButton_Disabled("blue");
+}
+calciteCSS_ActionButton_Blue() {
+  calciteCSS_ActionButton("blue");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Green (Secondary Action Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Green_Hover() {
+  calciteCSS_ActionButton_Hover("green");
+}
+calciteCSS_ActionButton_Green_Disabled() {
+  calciteCSS_ActionButton_Disabled("green");
+}
+calciteCSS_ActionButton_Green() {
+  calciteCSS_ActionButton("green");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Gray Light (Tiertary Action Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_GrayLight_Hover() {
+  calciteCSS_ActionButton_Hover("light");
+}
+calciteCSS_ActionButton_GrayLight_Disabled() {
+  calciteCSS_ActionButton_Disabled("light");
+}
+calciteCSS_ActionButton_GrayLight() {
+  calciteCSS_ActionButton("light");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Red (Delete Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Red_Hover() {
+  calciteCSS_ActionButton_Hover("red");
+}
+calciteCSS_ActionButton_Red_Disabled() {
+  calciteCSS_ActionButton_Disabled("red");
+}
+calciteCSS_ActionButton_Red() {
+  calciteCSS_ActionButton("red");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Transparent (Clear / Cancel Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Transparent_Hover() {
+  calciteCSS_ActionButton_Hover("transparent");
+}
+calciteCSS_ActionButton_Transparent_Disabled() {
+  calciteCSS_ActionButton_Disabled("transparent");
+}
+calciteCSS_ActionButton_Transparent() {
+  calciteCSS_ActionButton("transparent");
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* Calcite Action Buttons: Gray (Delete Buttons)  */
+/* ------------------------------------------------------------------------------------------------------- */
+calciteCSS_ActionButton_Gray_Hover() {
+  calciteCSS_ActionButton_Hover("gray");
+}
+calciteCSS_ActionButton_Gray_Disabled() {
+  calciteCSS_ActionButton_Disabled("gray");
+}
+calciteCSS_ActionButton_Gray() {
+  calciteCSS_ActionButton("gray");
+}

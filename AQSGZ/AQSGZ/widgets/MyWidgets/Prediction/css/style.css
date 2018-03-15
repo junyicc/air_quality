@@ -1,0 +1,55 @@
+﻿.jimu-widget-PredictionChart div p {
+    display: none;
+}
+
+
+.jimu-widget-PredictionChart hr {
+    border: none;
+    border-top: 1px solid rgb(24, 145, 155);
+    position: relative;
+    top: 31px;
+}
+
+.jimu-widget-PredictionChart .heading {
+    position:relative;
+    height: 45px;
+}
+
+.jimu-widget-PredictionChart .heading a {
+    float: left;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 25px;
+    margin-left: 15px;
+    background-color: rgb(83, 184, 67);
+    -webkit-transition:transform 0.2s linear;
+}
+
+.jimu-widget-PredictionChart .heading a img {
+    width: 100%;
+}
+
+.jimu-widget-PredictionChart .heading a.selected {
+    -webkit-transform: scale(1.2);
+    background-color:rgb(61, 132, 50);
+}
+
+.jimu-widget-PredictionChart .heading a:hover {
+    background-color:rgb(61, 132, 50);
+}
+
+.jimu-widget-PredictionChart .body .Highchart input {
+    width: 30%;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgb(209, 245, 218);
+}
+.jimu-widget-PredictionChart .body .Highchart select {
+    width: 30%;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgb(209, 245, 218);
+}

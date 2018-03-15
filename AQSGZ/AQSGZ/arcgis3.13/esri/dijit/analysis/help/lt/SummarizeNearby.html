@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Sumuoti šalia</h2><p/>
+        <h2><img src="../images/GUID-8CA4374B-AB5E-44A5-ADD3-4C85E5F0AF71-web.png" alt="Sumuoti &scaron;alia"></h2>
+        <hr/>
+    <p>  Įrankis randa ir sumuoja elementus esančius tam tikru atstumu nuo analizės sluoksnyje esančių elementų. Atstumas gali būti matuojamas tiesia linija arba naudojant pasirinktą kelionės režimą.Kelionės režimo parinktys: važiavimo atstumas, važiavimo trukmė, važiavimo sunkvežimiu atstumas, važiavimo sunkvežimiu trukmė, ėjimo atstumas ir ėjimo trukmė.Statistiniai rodikliai apskaičiuojami greta esantiems elementams.Pavyzdžiui
+        <ul>
+            <li>Apskaičiuoti gyventojų, gyvenančių 5 min. atstumu nuo planuojamos parduotuvės vietos, skaičių.
+            </li>
+            <li>Apskaičiuoti reguliuojamų sankryžų skaičių vieno kilometro atstumu nuo pasiūlytos naujos parduotuvės, vertinant pasiekiamumą.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jei pažymėta <b>Naudoti esamą žemėlapio aprėptį</b>, bus analizuojami tik aprėptyje matomi elementai. Jei nepažymėta, analizuojami bus visi sluoksnių elementai.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Pasirinkite sluoksnį sumavimui</h2></div>
+        <hr/>
+        <div>
+            <p>Bus sumuojami elementai i&scaron; &scaron;io sluoksnio, kurie yra nurodytu atstumu nuo analizės sluoksnio. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Sumuoti artimiausius elementus naudojant</h2></div>
+        <hr/>
+        <div>
+            <p>Galite nustatyti, kokį atstumo matavimo būdą &ndash; tiesia linija ar pagal pasirinktą kelionės režimą &ndash; naudosite.Kelionės režimus galima įgalinti tik tada, kai analizės sluoksnyje yra ta&scaron;kų.Galimos parinktys: važiavimo atstumas, važiavimo trukmė, važiavimo sunkvežimiu atstumas, važiavimo sunkvežimiu trukmė, ėjimo atstumas ir ėjimo trukmė.Naudojant vieną i&scaron; kelionės režimų, matavimai atliekami nudojant kelių ir pėsčiųjų takų geometriją, laikomasis taikomų taisyklių, pvz., važiavimo vienpusėmis gatvėmis, neleistino apsisukimo ir kt.Važiavimo metu laikomasi kelionės greičio remiantis esama arba tipiniu eismo būsenos informacija.Realaus laiko greičių informacija sukaupiama i&scaron; esamų sensorių, o tipiniai greičiai apskaičiuojami pagal istorinius vidurkius. 
+            </p>
+            <p>Galite įvesti keletą atstumų.Bus apskaičiuojama elementų, pasiekiamų nurodytu atstumu, statistika. 
+            </p>
+            <p>Jei pažymėta  <b>Grąžinti ribojančius plotus</b>, bus grąžintas plotų, nustatytų pagal konkretų atstumo matavimą, rezultatų sluoksnis. Rezultatų sluoksnyje bus visa pra&scaron;oma sumavimo informacija.Pavyzdžiui, jei sumuojant netoli esančius ta&scaron;kus naudojama 5 kilometrų <b>Tiesinis atstumas</b> , rezultatas apims 5 kilometrų spindulio plotą aplink įvesties elementus ir visą sumuotą informaciją, pvz., ta&scaron;kų skaičių ir visą įtrauktą statistiką. Jei nepažymėta, rezultatų sluoksnis pateiks tuos pačius įvesties analizės sluoksnio elementus su visa pra&scaron;oma sumavimo informacija.
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti &scaron;alia esančių ta&scaron;kų skaitinių atributų statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Ta&scaron;kų kiekis</b> apskaičiuos bendrą &scaron;alia esančių ta&scaron;kų skaičių. Galite apskaičiuoti &scaron;alia esančių ta&scaron;kų skaitinių atributų statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &ndash; bendra nurodyto lauko reik&scaron;mių suma
+                </li>
+                <li> <b>Vidurkis</b> &ndash; lauko reik&scaron;mių vidurkis
+                </li>
+                <li> <b>Minimumas</b> &ndash; Mažiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>Maksimumas</b> &ndash; Didžiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>St. nuokrypis</b> &ndash; standartinis reik&scaron;mių nuokrypis nurodytame lauke
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti &scaron;alia esančių linijų bet kurių skaitinių atributų statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Bendras ilgis</b> apskaičiuos bendrą &scaron;alia esančių linijų ilgį. Galite apskaičiuoti &scaron;alia esančių linijų skaitinių atributų statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &ndash; bendra nurodyto lauko reik&scaron;mių suma
+                </li>
+                <li> <b>Vidurkis</b> &ndash; lauko reik&scaron;mių vidurkis
+                </li>
+                <li> <b>Minimumas</b> &ndash; mažiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>Maksimumas</b> &ndash; didžiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>Std. nuokrypis</b> &ndash; standartinis reik&scaron;mių nuokrypis nurodytame lauke
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti &scaron;alia esančių plotinių elementų skaitinių atributų statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Bendras plotas</b> apskaičiuos bendrą &scaron;alia esančių plotinių elementų plotą. Galite apskaičiuoti &scaron;alia esančių elementų skaitinių atributų statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &ndash; bendra nurodyto lauko reik&scaron;mių suma
+                </li>
+                <li> <b>Vidurkis</b> &ndash; lauko reik&scaron;mių vidurkis
+                </li>
+                <li> <b>Minimumas</b> &ndash; mažiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>Maksimumas</b> &ndash; didžiausia lauko reik&scaron;mė
+                </li>
+                <li> <b>Std. nuokrypis</b> &ndash; standartinis reik&scaron;mių nuokrypis nurodytame lauke
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Pasirinkite grupavimo lauką</h2></div>
+        <hr/>
+        <div>
+            <p>Tai arti esančių elementų atributas, pagal kurį bus skaičiuojama statistiką kiekvienai unikaliai atributo reik&scaron;mei.Pavyzdžiui, jei analizuojamas pardavimui skirtų laisvų sklypų sluoksnis, o artimi elementai yra pastatų kontūrai.Vienas i&scaron; pastatų kontūrų sluoksnio atributų yra  <i>UseType</i>, galintis turėti reik&scaron;mes PREKYBOS, GYVENAMOJI, PRAMONĖS, ADMINISTRACINĖ ir pan. Siekdami apibūdinti pastato naudojimo įvairovę &scaron;alia kiekvieno laisvo sklypo, jūs galite apskaičiuoti suminę kiekvieno unikalaus pastato naudojimo tipo plotą dviejų kilometrų atstumu nuo laisvų sklypų, naudodami <i>UseType</i> kaip grupavimo atributą. Kiekvienos grupės statistika ir &scaron;alia esančių elementų kiekis bus rodomi rezultatų sluoksnio i&scaron;kylančiame lange.
+            </p>    
+        </div>
+    </div>
+    <div id="MinorityMajority">
+        <div><h2>Pridėti mažumą, daugumą</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is žymės langelis įgalinamas, kai pasirenkate lauką, pagal kurį grupuosite.Jei norite sužinoti, kurios kiekvienos grupės atributų reik&scaron;mės, patenkančios į nurodytą atstumą ar laiką, yra analizuojamo sluoksnio mažuma (mažiausiai dominuojančios) arba dauguma (labiausiai dominuojančios), pasirinkite  <b>Pridėti mažumą, daugumą</b>. Kai pasirenkate <b>Pridėti mažumą, daugumą</b>, į rezultatų sluoksnį įtraukiami du nauji laukai. Jei pasirinksite ir <b>Pridėti procentus</b>, į rezultatų sluoksnį bus įtraukti du papildomi laukai, kuriuose bus nurodytos kiekvienos grupės mažumos ir daugumos atributų reik&scaron;mių procentai.
+            </p>
+            <ul>
+                <li>Jei sumuojami &scaron;alia esantys ta&scaron;kai, mažumos ir daugumos reik&scaron;mės apskaičiuojamos pagal ta&scaron;kų, priklausančių kiekvienam nurodytam atstumui ar laikui, skaičių.
+                </li>
+                <li>Jei sumuojamos &scaron;alia esančios linijos, mažumos ir daugumos reik&scaron;mės apskaičiuojamos pagal linijų, priklausančių kiekvienam nurodytam atstumui ar laikui, ilgį. 
+                </li>
+                <li>Jei sumuojami &scaron;alia esantys plotai, mažumos ir daugumos reik&scaron;mės apskaičiuojamos remiantis kiekvienam nurodytam atstumui ar laikui priklausančiu plotu.
+                </li>
+            </ul>
+             
+        </div>
+    </div>
+    <div id="PercentShape">
+        <div><h2>Pridėti procentus</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is žymės langelis aktyvus, pasirenkus lauką, pagal kurį grupuosite. Pasirinkite  <b>Pridėti procentus</b>, jei norite sužinoti kiekvienos grupės kiekvienos atributo reik&scaron;mės procentą. Į rezultatų lentelę įtraukiamas naujas laukas, kuriame nurodytas kiekvienos grupės kiekvienos atributo reik&scaron;mės procentas. Jei pažymėta ir <b>Pridėti mažumą, daugumą</b>, į rezultatų sluoksnį bus įtraukti du papildomi laukai, kuriuose bus nurodytos kiekvienos grupės mažumos ir daugumos atributų reik&scaron;mių procentai.
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Rezultatų sluoksnio pavadinimas</h2></div>
+        <hr/>
+        <div>
+            <p>Tai sluoksnio, kuris bus sukurtas ir patalpintas  <b>Turinyje</b> ir pridėtas į žemėlapį, pavadinimas. Pagal nutylėjimą pavadinimas atspindi analizės tipą ir analizės sluoksnio pavadinimą.Jei toks sluoksnis jau egzistuoja, jūsų papra&scaron;ys pateikti kitą pavadinimą.
+            </p>
+            <p>Pasirinkę  <b>Rezultatą įra&scaron;yti į</b>, galite nurodyti <b>Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

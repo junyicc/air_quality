@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "ポータルのベースマップを含める",
+    settings: "設定",
+    add: "クリックして新規ベースマップを追加",
+    edit: "プロパティ",
+    title: "タイトル",
+    titlePH: "ベースマップ タイトル",
+    thumbnail: "サムネイル",
+    thumbnailHint: "画像を変更するにはサムネイルをクリックします",
+    url: "URL",
+    urlPH: "レイヤー URL",
+    addlayer: "ベースマップの追加",
+    actions: "アクション",
+    warning: "不正な入力",
+    save: "保存して戻る",
+    back: "キャンセルして戻る",
+    addUrl: "URL の追加",
+    autoCheck: "自動チェック",
+    checking: "チェック中...",
+    ok: "OK",
+    cancel: "キャンセル",
+    result: "正常に保存されました",
+    spError: "ギャラリーに追加されるすべてのベースマップの空間参照は同じである必要があります。",
+    invalidTitle1:"ベースマップ '",
+    invalidTitle2:"' すでに存在しています。別のタイトルを選択してください。",
+    invalidBasemapUrl1: "このタイプのレイヤーは、ベースマップとして使用できません。",
+    invalidBasemapUrl2: "現在のマップとは空間参照が異なります。",
+    addBaselayer: "ベースマップ レイヤーの追加"
+  })
+);

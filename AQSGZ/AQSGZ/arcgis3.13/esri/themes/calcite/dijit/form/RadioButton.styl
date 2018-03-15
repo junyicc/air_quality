@@ -1,0 +1,85 @@
+/* RadioButton
+ * 
+ * Styling RadioButton mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitRadio|.dijitRadioIcon - for border, padding, width|height and background image
+ * 
+ * 2. RadioButton within ToggleButton
+ * 		.dijitToggleButton|.dijitToggleButtonChecked .* - for background image
+ * 
+ * 3. Checked state
+ * 		.dijitRadioChecked - for checked background-color|image
+ * 		.dijitToggleButtonChecked - for border, background-color|image, display and width|height
+ * 
+ * 4. Hover state
+ * 		.dijitRadioHover|.dijitRadioCheckedHover - for background image
+ * 
+ * 5. Disabled state
+ * 		.dijitRadioDisabled|.dijitRadioCheckedDisabled - for background image
+ */
+
+@import "../variables";
+
+.calcite .dijitToggleButton .dijitRadio,
+.calcite .dijitToggleButton .dijitRadioIcon {
+	background-image: url("../" + $image-form-checkbox-and-radios);
+}
+
+.dj_ie6 .calcite .dijitToggleButton .dijitRadio,
+.dj_ie6 .calcite .dijitToggleButton .dijitRadioIcon {
+	background-image: url("../" + $image-form-checkbox-and-radios-ie6);
+}
+
+.calcite .dijitRadio,
+.calcite .dijitRadioIcon	{		/* inside a toggle button */
+	background-image: url("../" + $image-form-checkbox-and-radios); /* checkbox sprite image */
+	background-repeat: no-repeat;
+	width: 15px;
+	height: 15px;
+	margin: 0 2px 0 0;
+	padding: 0;
+}
+
+.dj_ie6 .calcite .dijitRadio,
+.dj_ie6 .calcite .dijitRadioIcon	{		/* inside a toggle button */
+	background-image: url("../" + $image-form-checkbox-and-radios-ie6); /* checkbox sprite image */
+}
+
+.calcite .dijitRadio{
+	/* unselected */
+	background-position: -105px;
+}
+
+.calcite .dijitToggleButton .dijitRadioIcon {
+	/* unselected */
+	background-position: -107px;
+}
+
+.calcite .dijitRadioDisabled {
+	/* unselected and disabled */
+	background-position: -165px;
+}
+
+.calcite .dijitRadioHover {
+	/* hovering over an unselected enabled radio button */
+	background-position: -135px;
+}
+
+.calcite .dijitRadioChecked{
+	background-position: -90px;
+}
+
+.calcite .dijitToggleButtonChecked .dijitRadioIcon {
+	background-position: -92px;
+}
+
+.calcite .dijitRadioCheckedHover{
+	background-position: -120px;
+}
+
+.calcite .dijitRadioCheckedDisabled {
+	/* selected but disabled */
+	background-position: -150px;
+}
+

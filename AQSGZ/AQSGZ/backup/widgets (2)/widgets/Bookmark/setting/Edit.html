@@ -1,0 +1,21 @@
+<div style="width: 100%">
+  <table class="setting-table input-table" cellspacing="0">
+      <tbody>
+        <tr>
+          <td title="${nls.title}" class="first">*${nls.title}</td>
+          <td class="second">
+            <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="name" 
+            required="true" placeHolder=${nls.title} data-dojo-props='style:{width:"100%"}'/>
+          </td>
+        </tr>
+        <tr>
+          <td title="${nls.thumbnail}" class="first">${nls.thumbnail}</td>
+          <td class="second">
+            <div data-dojo-attach-point="imageChooserBase"></div>
+            <img class="thumbnail-img" src="" data-dojo-attach-point="showImageChooser">&nbsp;&nbsp;&nbsp;&nbsp;(${nls.thumbnailHint})
+          </td>
+        </tr>                                                                  
+      </tbody>
+    </table> 
+    <div class="extent-chooser" style="height: 400px" data-dojo-attach-point="extentChooserNode"></div>
+</div>

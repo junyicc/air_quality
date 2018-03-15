@@ -1,0 +1,64 @@
+/* ======================================================================================================= */
+/* Calcite Web Classes - Forms Common */
+/* ======================================================================================================= */
+@import "variables.styl";
+
+.calcite
+
+  .dijitSelect
+
+    .dijitButtonContents
+      padding 2px
+      border-right-color $borderColorDivider
+
+    .dijitArrowButton,
+    .dijitArrowButtonInner
+      background none
+      background-image none
+
+
+    .dijitArrowButtonInner
+      width 0
+
+    .dijitArrowButtonContainer
+      background none
+      background-image none
+      border none
+      width 20px
+      padding 0
+
+      &:before {
+        iconfont("esriIconDownArrow");
+        position relative
+        top 2px
+        left 0px
+        //font-size $fontSizeIconSmall
+      }
+
+  .dijitSelect.dijitSelectOpened  .dijitArrowButtonContainer,
+  .dijitSelect.dijitSelectOpened  .dijitArrowButtonContainer:before
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+
+  .dijitSelectLabel
+    font-family $fontFamilyDefault
+
+  .dijitSelectFocused
+    outline none !important
+
+  .dijitSelectHover
+    background none
+    background-image none
+    calciteArcGISPro_ButtonHover()
+
+  .dijitSelectSelectedOption .dijitMenuItemLabel,
+  .dijitMenu .dijitMenuItem.dijitSelectSelectedOption td
+    border none
+    font-weight normal
+    calciteArcGISPro_ButtonActive()
+
+  .dijitMenu .dijitMenuItem.dijitSelectSelectedOption.dijitMenuItemSelected.dijitMenuItemHover td
+    calciteArcGISPro_ButtonActiveHover()

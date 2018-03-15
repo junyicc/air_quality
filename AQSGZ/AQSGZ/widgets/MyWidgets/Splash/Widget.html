@@ -1,0 +1,56 @@
+<div>
+    <div class="overlay" data-dojo-attach-point="overlayNode"></div>
+    <div class="envelope" data-dojo-attach-point="envelopeNode">
+        <div class="splash-container" data-dojo-attach-point="splashContainerNode">
+            <div class="custom-content" data-dojo-attach-point="customContentNode" style="margin-top: 20px; height: 200px;">
+                <div class="welcomeLogo" data-dojo-attach-point="welcomeLogo" style="position: absolute">
+                    <img class="one" src="widgets/MyWidgets/splash/images/Welcome.png" style="width: 145px;opacity:0;">
+                    <img class="two" src="widgets/MyWidgets/splash/images/Welcome2.png" style="width: 170px;opacity:0; position: absolute; top: 32px; left: 33px;">
+                </div>
+                <div class="airQuality" data-dojo-attach-point="airQuality" style="position: absolute; top: 35%; left: 12%;">
+                    <img class="AQIlogo" data-dojo-attach-point="airlogo" style="opacity:0;max-width: 100px;position:relative;left:0;">
+                    <img class="AQItext" src="widgets/MyWidgets/splash/images/AQItext.png" style="opacity:0;width: 101px; position: relative; top: -7px; left: -12px;">
+                    <hr style="opacity:0;position: relative; top: -22px; width: 134px; left: 45px;">
+                    <p style="opacity:0;position: absolute; top: 90px; left: 4px;font-size: 18px;" data-dojo-attach-point="TIMENOW">
+                    </p>
+                </div>
+                <div class="GZmap" data-dojo-attach-point="GZmap" style="opacity:0;position: absolute; left: 37%; top: 10%; width: 200px;">
+                    <img style="width: 190px;" src="widgets/MyWidgets/splash/images/map.png">
+                </div>
+                <div class="Zone" data-dojo-attach-point="Zone" style="position: absolute; left: 52%;">
+                    <div>
+                        <span class="one" style="opacity:0;display: block; position: relative; width: 200px; height: 40px; top: 22px; left: 17px; background-image: url('widgets/MyWidgets/splash/images/Zone1.png'); background-position: left; background-repeat: no-repeat;">
+                            <p style="display:block;opacity:0;position: absolute; width: 50px;height:18px; left: 105%; top: -17%;">
+                                ${nls.conghuaqu}
+                            </p>
+                        </span>
+                        <span class="two" style="opacity:0;display: block; position: relative; width: 222px; height: 29px; top: 19px; left: -41px; background-image: url('widgets/MyWidgets/splash/images/Zone2.png'); background-position: left; background-repeat: no-repeat;">
+                            <p style="display:block;opacity:0;position: absolute; width: 50px;height:18px; left: 105%; top: -17%;">
+                                ${nls.huaduqu}
+                            </p>
+                        </span>
+                        <span class="three" style="opacity:0;display: block; position: relative; width: 130px; height: 6px; top: 27px; left: 25px; background-image: url('widgets/MyWidgets/splash/images/Zone3.png'); background-position: left; background-repeat: no-repeat;">
+                            <p style="display:block;opacity:0;position: absolute; width: 50px;height:18px; left: 105%; top: -109%;">
+                                ${nls.zengchengqu}
+                            </p>
+                        </span>
+                        <span class="four" style="opacity:0;display: block; position: relative; width: 204px; height: 30px; top: 35px; left: -23px; background-image: url('widgets/MyWidgets/splash/images/Zone4.png'); background-position: left; background-repeat: no-repeat;">
+                            <p style="display:block;opacity:0;position: absolute; width: 50px;height:18px; left: 105%; top: 60%;">
+                                ${nls.guangzhoushi}
+                            </p>
+                        </span>
+                        <span class="five" style="opacity:0;display: block; position: relative; width: 226px; height: 22px; top: 52px; left: -11px; background-image: url('widgets/MyWidgets/splash/images/Zone5.png'); background-position: left; background-repeat: no-repeat;">
+                            <p style="display:block;opacity:0;position: absolute; width: 50px; height:18px; left: 105%; top: 54%;">
+                                ${nls.panyuqu}
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" data-dojo-attach-point="footerNode">
+                <div data-dojo-attach-point="confirmCheck" style="position: absolute; top: 40px;"></div>
+                <div class="jimu-btn" data-dojo-attach-point="okNode" data-dojo-attach-event="onclick:onOkClick">${nls.ok}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+{
+  "basemapGallery": {
+    "basemaps": [
+      {
+        "layers": [
+          {
+            "id": "ChinaOnlineCommunityENG_3783",
+            "opacity": 1,
+            "visibility": true,
+            "url": "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunityENG/MapServer"
+          }
+        ],
+        "title": "中国基础地图",
+        "thumbnailUrl": "//www.arcgisonline.cn/portal/sharing/rest/content/items/53be14bfff6f4e4287ed3ae208ecf6ae/info/thumbnail/_E5_9F_BA_E7_A1_80_E5_9C_B0_E5_9B_BE.png",
+        "spatialReference": {
+          "wkid": 102100
+        }
+      },
+      {
+        "layers": [
+          {
+            "id": "ChinaOnlineCommunity_7434",
+            "opacity": 1,
+            "visibility": true,
+            "url": "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"
+          }
+        ],
+        "title": "中国基础地图",
+        "thumbnailUrl": "//www.arcgisonline.cn/portal/sharing/rest/content/items/18f5ee3b59834c19b395f4b3d0188c63/info/thumbnail/_E4_B8_AD_E5_9B_BD_E5_9F_BA_E7_A1_80_E5_BA_95_E5_9B_BE1.png",
+        "spatialReference": {
+          "wkid": 102100
+        }
+      },
+      {
+        "layers": [
+          {
+            "id": "ChinaOnlineCommunityOnlyENG_2688",
+            "opacity": 1,
+            "visibility": true,
+            "url": "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunityOnlyENG/MapServer"
+          }
+        ],
+        "title": "中国基础地图英文",
+        "thumbnailUrl": "//www.arcgisonline.cn/portal/sharing/rest/content/items/44893d1f6d454e0fa2c75067714dd766/info/thumbnail/2222.png",
+        "spatialReference": {
+          "wkid": 102100
+        }
+      },
+      {
+        "layers": [
+          {
+            "id": "ChinaOnlineStreetColor_266",
+            "opacity": 1,
+            "visibility": true,
+            "url": "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineStreetColor/MapServer"
+          }
+        ],
+        "title": "中国基础地图（背景图）",
+        "thumbnailUrl": "//www.arcgisonline.cn/portal/sharing/rest/content/items/bfba6704dcf5405d9c560ea22d5af695/info/thumbnail/_E5_9F_BA_E7_A1_80_E5_9C_B0_E5_9B_BE_E8_83_8C_E6_99_AF.png",
+        "spatialReference": {
+          "wkid": 102100
+        }
+      },
+      {
+        "layers": [
+          {
+            "id": "ChinaOnlineStreetGray_5510",
+            "opacity": 1,
+            "visibility": true,
+            "url": "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer"
+          }
+        ],
+        "title": "中国基础地图（背景图）",
+        "thumbnailUrl": "//www.arcgisonline.cn/portal/sharing/rest/content/items/80ad27c1fe894f30971be0d74c5e25ca/info/thumbnail/_E7_81_B0_E8_89_B2.png",
+        "spatialReference": {
+          "wkid": 102100
+        }
+      }
+    ]
+  }
+}

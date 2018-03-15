@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Yer Tutucu Metni",
+    url: "Coğrafi Kodlayıcı URL\'si",
+    name: "Coğrafi Kodlayıcı Adı",
+    example: "Örnek",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Portaldan coğrafi kodlayıcının yapılandırmaları alınamıyor',
+    actions: "İşlemler",
+    warning: "Bu, coğrafi kodlama hizmetinin desteklenen bir sürümü değildir. Bu gereç, coğrafi kodlama hizmetini 10.1 ve üstü sürümde destekler.",
+    instruction: "Bu araçtaki coğrafi kodlayıcıları oluşturun. URL başvurusu yapmak, kullanıcı dostu ad belirtmek ve diğer özellikleri ayarlamak için Coğrafi Kodlayıcı Ekle seçeneğine tıklayın. Ayrıca coğrafi kodlayıcılarınızı aşağıda yeniden sıralayabilir, yapılandırabilir veya silebilirsiniz.",
+    layerInstruction1: "Şuradaki her arama koşulunu yapılandırabilirsiniz: ",
+    layerInstruction2: "web haritası ayrıntıları sayfası",
+    searchAddress: "Adrese göre ara",
+    searchLayer: "Katmana göre ara",
+    layer: "Katman",
+    field: "Alan",
+    condition: "Koşul",
+    contains: "İçerir",
+    deleteLastGeocoderError: "En son coğrafi kodlayıcı silinemez.",
+    noSearchFactorError: "En az bir özellik (Adrese göre ara veya Katmana göre ara) seçmeniz gerekir.",
+    equals: "Eşittir",
+    add: "Coğrafi Kodlayıcı Ekle",
+    edit: "Coğrafi Kodlayıcıyı Düzenle",
+    ok: "Tamam",
+    cancel: "İptal",
+    geocoderNamePlaceHolder: "Coğrafi Kodlayıcım",
+    geocodePlaceHolder: "Adres ya da yer bul",
+    REPEATING_ERROR: "Aşağıdaki alanlar yinelenmektedir: "
+  })
+);

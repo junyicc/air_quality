@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "占位符文本",
+    url: "地理编码器 URL",
+    name: "地理编码器名称",
+    example: "示例",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: '无法从门户获取地理编码器的配置',
+    actions: "操作",
+    warning: "此版本的地理编码服务不受支持。此微件支持地理编码服务 10.1 以及更高版本。",
+    instruction: "建立将用于此微件的地理编码器。单击“添加地理编码器”以引用 URL，指定一个简明易懂的名称，然后设置其他属性。您还可以重新排序、配置或删除下面的地理编码器。",
+    layerInstruction1: "您可以在 ",
+    layerInstruction2: "web 地图的详细信息页面配置搜索条件",
+    searchAddress: "按地址搜索",
+    searchLayer: "按图层搜索",
+    layer: "图层",
+    field: "田赛场地",
+    condition: "条件",
+    contains: "包含",
+    deleteLastGeocoderError: "无法删除最后一个地理编码器。",
+    noSearchFactorError: "您必须至少选择一种功能(按地址搜索或按图层搜索)。",
+    equals: "等于",
+    add: "添加地理编码器",
+    edit: "编辑地理编码器",
+    ok: "确定",
+    cancel: "取消",
+    geocoderNamePlaceHolder: "我的地理编码器",
+    geocodePlaceHolder: "查找地址或地点",
+    REPEATING_ERROR: "以下为重复字段: "
+  })
+);

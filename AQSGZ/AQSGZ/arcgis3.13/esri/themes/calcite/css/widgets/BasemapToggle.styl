@@ -1,0 +1,46 @@
+.calcite
+  .BasemapToggle {}
+  .BasemapToggle .toggleButton {
+    padding: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border:none;
+    font-family: $fontFamilyDefault;
+    color: $textColorDefault;
+    calciteWeb_RoundRadius($borderRadiusSize2);
+    calciteWeb_BoxShadow();
+
+    &:hover,
+    &:focus {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonHover();
+      border-color: CalciteColorBlue1;
+    }
+  }
+  .BasemapToggle .basemapImage img {
+    calciteWeb_RoundRadius($borderRadiusSize1);
+  }
+  .BasemapToggle .basemapImageContainer {
+    overflow hidden
+    calciteWeb_RoundRadius($borderRadiusSize1);
+  }
+  .BasemapToggle .basemapTitle {
+    color: $textColorDefault;
+    margin: 0;
+    font-size: ($fontSizeDefault - 2px)
+    line-height: $fontSizeDefault
+    display: block;
+    padding: 2px 5%;
+    background: CalciteColorWhite
+    background: rgba(255, 255, 255, 0.80);
+    calciteWeb_RoundRadius( 0 0 $borderRadiusSize1 $borderRadiusSize1);
+    text-align: center;
+  }
+  .BasemapToggle .toggleButton:hover .basemapTitle,
+  .BasemapToggle .toggleButton:focus .basemapTitle {
+    calciteArcGISPro_ButtonHover();
+    border none
+  }

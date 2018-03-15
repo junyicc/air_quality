@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Finn hotspots</h2><p/>
+        <h2><img src="../images/GUID-C2575FC6-F14C-4332-B3BF-AB4EDA15177B-web.png" alt="Finn hotspots"></h2>
+        <hr/>
+    <p>Find hotpots-verkt&oslash;yet finner ut om det er noen statistisk signifikante samlinger i det geografiske m&oslash;nsteret i dataene dine.
+        <ul>
+            <li>Er punktene (kriminalitet, tr&aelig;r, trafikkulykker) virkelig samlet i klynger? Hvordan kan du v&aelig;re sikker?
+            </li>
+            <li>Har du virkelig oppdaget et statistisk signifikant hotspot (for forbruk, barned&oslash;delighet, konsekvent h&oslash;ye testresultater), eller kan det hende at kartet kan komme til &aring; fortelle en annen historie hvis du endret symbolene p&aring; det?
+            </li>
+        </ul>
+        Verkt&oslash;yet Finn hotspots hjelper deg med &aring; finne et sikkert svar p&aring; disse sp&oslash;rsm&aring;lene.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="AnalysisFieldPoly">
+        <div><h2>Velg et analysefelt</h2></div>
+        <hr/>
+        <div>
+            <p>Denne analysen besvarer f&oslash;lgende sp&oslash;rsm&aring;l: Hvor samler h&oslash;ye og lave verdier (for et analysefelt du angir) seg i klynger geografisk? 
+            </p>
+            <p>Resultatlaget vil v&aelig;re en kopi av analyselaget.Tabellen vil inneholde analysefeltet du valgte, i tillegg til ekstra felter som angir samlingsstyrken, statistisk signifikans og grad av sikkerhet.
+            </p> 
+        </div>
+    </div>
+    <div id="AnalysisFieldPoint">
+        <div><h2>Velg et analysefelt</h2></div>
+        <hr/>
+        <div>
+            <p>Hvis du angir et analysefelt, besvarer dette verkt&oslash;yet f&oslash;lgende sp&oslash;rsm&aring;l: Hvor samler h&oslash;ye og lave verdier seg mellom punktene? 
+            </p>
+            <p>Resultatlaget vil v&aelig;re en kopi av punktanalyselaget.Tabellen vil inneholde analysefeltet du valgte, i tillegg til ekstra felter som angir samlingsstyrken, statistisk signifikans og grad av sikkerhet.
+            </p>
+            <p>Hvis du ikke velger noe analysefelt, evaluerer dette verkt&oslash;yet den geografiske plasseringen til punktgeoobjektene for &aring; besvare f&oslash;lgende sp&oslash;rsm&aring;l: Hvor har punkter blitt uventet plassert i klynger eller spredt?  
+            </p>
+            <p>N&aring;r det ikke er oppgitt noe analysefelt, lager verkt&oslash;yet et rutenett og teller antallet punkter som havner innenfor hver rute i nettet.Bare ruter med punktantall h&oslash;yere enn null blir analysert.Resultatlaget er rutene i rutenettet. Resultatet inneholder antallet i tillegg til ekstra felter som angir samlingsstyrken, statistisk signifikans og grad av sikkerhet.
+            </p> 
+        </div>
+    </div>
+    <div id="BoundingPolygonLayer">
+        <div><h2>Definer hvor hendelser er mulig</h2></div>
+        <hr/>
+        <div>
+            <p>Du m&aring; enten tegne eller angi et lag med innrammede omr&aring;der for &aring; besvare f&oslash;lgende sp&oslash;rsm&aring;l: Er det noen steder innenfor de innrammede omr&aring;dene som har uventet h&oslash;ye eller lave punktkonsentrasjoner? 
+            </p>
+            <p>Omr&aring;degeoobjektene du tegner eller geoobjektene i omr&aring;delaget du angir, b&oslash;r angi hvor punktene kan komme til &aring; oppst&aring;.For &aring; tegne disse omr&aring;dene klikker du p&aring; tegneknappen f&oslash;r du klikker p&aring; kartet for &aring; lage en omr&aring;deform.For &aring; tegne flere omr&aring;der klikker du p&aring; tegneknappen en gang til f&oslash;r du klikker p&aring; kartet og fortsetter.
+            </p>
+            <p>Merk: Hvis du vil legge punktene over omr&aring;der som ikke er et rutenett, m&aring; du  <b>oppgi samlingsomr&aring;der for summering av hendelser</b>.
+            </p>
+            <p>Resultatlaget for denne analysen vil v&aelig;re et rutenett som dekker de innrammede omr&aring;dene du oppgir.Tabellen vil inneholde antallet punkter i rutenettet i tillegg til ekstra felter som angir samlingsstyrken, statistisk signifikans og grad av sikkerhet. 
+            </p> 
+        </div>
+    </div>
+    <div id="AggregationPolygonLayer">
+        <div><h2>Velg aggregeringsområder</h2></div>
+        <hr/>
+        <div>
+            <p>Velg et omr&aring;delag (vanligvis viser disse til administrative rapporteringsomr&aring;der, f.eks. et folketellingsomr&aring;de, kommunegrenser eller fylker) for &aring; besvare f&oslash;lgende sp&oslash;rsm&aring;l: Gitt antallet punkter innenfor hvert omr&aring;degeoobjekt, er det lokasjoner som har statistisk signifikante geografiske samlinger med et h&oslash;yt eller lavt antall punkter? 
+            </p>
+            <p>Resultatlaget for denne analysen vil v&aelig;re en kopi av aggregeringsomr&aring;dene.Tabellen vil inneholde antallet punkter for hvert omr&aring;de i tillegg til ekstra felter som angir samlingsstyrken, statistisk signifikans og grad av sikkerhet. 
+            </p> 
+        </div>
+    </div>
+    <div id="OutputLayerName">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Angi et navn p&aring; laget som skal opprettes i  <b>Mitt innhold</b> og legges til i kartet. Resultatlaget viser hvor det finnes statistisk signifikante samlinger med h&oslash;ye og lave verdier, eller punktantall.Hvis resultatlaget allerede finnes, blir du bedt om &aring; gi det et nytt navn.
+            </p>
+            <p>Bruk rullegardinlisten  <b>Lagre resultat i</b> til &aring; angi navnet p&aring; en mappe i <b>Mitt innhold</b> som resultatene skal lagres i.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Dissolver Limites</h2><p/>
+        <h2><img src="../images/GUID-D1192DD3-306F-4527-9898-FF2021ABCB0A-web.png" alt="Dissolver Limites"></h2>
+        <hr/>
+    <p>&Aacute;reas que se sobrep&otilde;em ou partilham um limite s&atilde;o fundidas de forma a formar uma &uacute;nica &aacute;rea. 
+    </p>
+    <p>Pode controlar quais os limites a serem fundidos, especificando um campoPor exemplo, se tiver uma camada de concelhos e cada concelho tiver um atributo  <i>State_Name</i>, pode dissolver limites utilizando o atributo <i>State_Name</i>. Concelhos adjacentes ser&atilde;o combinados se tiverem o mesmo valor de <i>State_Name</i>. O resultado final &eacute; uma camada com todos os limites fundidos.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DissolveFields">
+        <div><h2>Escolher método Dissolver</h2></div>
+        <hr/>
+        <div>
+            <p>Pode seleccionar um de dois m&eacute;todos para juntar elementos de &aacute;reas:
+                <ul>
+                    <li> <b>&Aacute;reas sobrepostas ou adjacentes</b>&mdash;Duas ou mais &aacute;reas com limites sobrepostos ser&atilde;o combinadas numa &uacute;nica &aacute;rea. Al&eacute;m disso, as &aacute;reas que s&atilde;o adjacentes (isto &eacute;, que partilham um limite) ser&atilde;o fundidos apenas numa &aacute;rea.
+                    </li>
+                    <li> <b>&Aacute;reas com o mesmo valor do campo</b>&mdash;As &aacute;reas que se sobrep&otilde;em ou partilham um limite ser&atilde;o fundidas apenas numa &aacute;rea, se tiverem o mesmo valor do campo.
+                        <p>Por exemplo, se tiver uma camada de concelhos e cada concelho tiver um atributo   <i>State_Name</i> , pode dissolver limites utilizando o atributo <i>State_Name</i> . Concelhos adjacentes ser&atilde;o combinados se tiverem o mesmo valor de <i>State_Name</i>. O resultado final &eacute; uma camada com todos os limites fundidos.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+            <p>Se a op&ccedil;&atilde;o  <b>Utilizar a extens&atilde;o atual do mapa</b> estiver ativa, apenas os elementos que est&atilde;o vis&iacute;veis na actual extens&atilde;o do mapa ser&atilde;o dissolvidos. Se n&atilde;o estiver ativa, todos os elementos da camada de entrada ser&atilde;o dissolvidos, mesmo que estejam fora da atual extens&atilde;o do mapa.
+            </p>
+        </div>
+    </div>
+    <div id="SummaryFields">
+        <div><h2>Adicionar estatística</h2></div>
+        <hr/>
+        <div>
+            <p>Quando as &aacute;reas s&atilde;o fundidas, &eacute; poss&iacute;vel resumir os respectivos atributos.Por exemplo, se dissolver os limites entre munic&iacute;pios com base em  <i>State_Name</i>, e cada munic&iacute;pio tem o atributo <i>Population</i> , pode calcular a soma de <i>Population</i> para o Estado.
+            </p>
+            <p>Tipos de estat&iacute;stica dispon&iacute;veis:
+            </p>
+            <ul>
+                <li> <b>Soma</b>&mdash;Adiciona o valor total para o campo especifico
+                </li>
+                <li> <b>M&eacute;dia</b>&mdash;Calcula a m&eacute;dia para o campo especifico
+                </li>
+                <li> <b>M&iacute;nimo</b>&mdash;Descobre o valor mais pequeno de todos os registos do campo especificado
+                </li>
+                <li> <b>M&aacute;ximo</b>&mdash;Descobre o valor maior de todos os registos do campo Std especificado
+                </li>
+                <li> <b>. Desvio</b>&mdash;Descobre o desvio-padr&atilde;o dos valores do campo especificado
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Nome da camada resultante</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; o nome da camada que ser&aacute; criada em  <b>O Meu Conte&uacute;do</b> e adicionada ao mapa. O nome por omiss&atilde;o &eacute; baseado no tipo de an&aacute;lise e no nome da camada de an&aacute;lise.Se a camada j&aacute; existir, ser-lhe-&aacute; pedido que forne&ccedil;a outro nome.
+            </p>
+            <p>Ao utilizar a caixa suspensa  <b>Guardar resultado em</b> pode definir o nome da pasta em <b>O Meu Conte&uacute;do</b> onde o resultado ser&aacute; guardado.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

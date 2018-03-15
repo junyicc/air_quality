@@ -1,0 +1,63 @@
+.calcite
+  .LoadingBarsGrey
+    background-image url( $imageLoadingIndicator )
+    background-repeat no-repeat
+    background-position center
+  .LoadingBarsDark
+    background-image url( $imageLoadingIndicatorDark )
+    background-repeat no-repeat
+    background-position center
+  .LoadingBarsLight
+    background-image url( $imageLoadingIndicatorLight )
+    background-repeat no-repeat
+    background-position center
+  .LoadingBarsBlue
+    background-image url( $imageLoadingIndicatorBlue )
+    background-repeat no-repeat
+    background-position center
+  .LoadingBarsBlueLarge
+    background-image url( $imageLoadingIndicatorBlueLarge )
+    background-repeat no-repeat
+    background-position center
+  .LoadingSpinBlue1
+    background-image url( $imageLoadingCircular1 )
+    background-repeat no-repeat
+    background-position center
+  .LoadingSpinBlue2
+    background-image url( $imageLoadingCircular1 )
+    background-repeat no-repeat
+    background-position center
+
+
+  // Animated Spinning Indicators
+  .btn.esriIconLoading.LoadingSpinner16 .dijitButtonText:after
+    top: 5px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #afafaf;
+    background-image url( $imageLoadingCircularWhite16 )
+    background-repeat no-repeat
+    background-position center
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+
+
+  // Class for use on an Image (PNG or SVG) tag, to spin the visual asset
+  .esriIconLoading.LoadingSpinner
+    top: 5px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #afafaf;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    background-position center

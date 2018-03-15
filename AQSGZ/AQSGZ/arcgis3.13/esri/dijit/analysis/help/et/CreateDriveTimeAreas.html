@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Loo sõiduaja pinnad</h2><p/>
+        <h2><img src="../images/GUID-989C4173-4BB2-4D42-ADA5-F5D1BB8CB0CB-web.png" alt="Loo s&otilde;iduaja pinnad"></h2>
+        <hr/>
+    <p>T&ouml;&ouml;vahend Loo s&otilde;iduaja pinnad genereerib alad, milleni j&otilde;utakse vastava s&otilde;iduaja v&auml;ltel, teatud vahemaa l&auml;bis&otilde;itmise v&otilde;i k&otilde;ndimise j&auml;rel jne.Saate m&otilde;&otilde;ta maanteede v&otilde;i k&otilde;nniteede &auml;&auml;res &uuml;he v&otilde;i mitu (kuni 1000) punkti, mis h&otilde;lbustavad vastamist muuhulgas j&auml;rgmistele k&uuml;simustele:
+        <ul>
+            <li>Kuhu on siit v&otilde;imalik j&otilde;uda 30 minutit kestva s&otilde;idu jooksul?
+            </li>
+            <li>Kuhu saan siit s&otilde;ita 30 minutit kestva s&otilde;idu jooksul tipptunni ajal kell 17.30?
+            </li>
+            <li>Mis j&auml;&auml;b minu hotellist kahekilomeetrilise jalutusk&auml;igu piiresse?
+            </li>
+            <li>Millistesse linna piirkondadesse j&otilde;uab tulet&otilde;rjekomando viie minutiga? 
+            </li>
+            <li>Kuidas pareneks tulet&otilde;rjekomandode reageerimiskiirus siia uue tulet&otilde;rjejaama ehitamisega?
+            </li>
+            <li>Millised teeninduspiirkonnad on kaetud minu ettev&otilde;tte pakutavate teenustega?
+            </li>
+        </ul>
+        
+    </p>
+    <p>Te v&otilde;ite olla v&otilde;imeline vastama enda k&uuml;simustele ainult l&auml;bi v&auml;ljundi visualiseerimise.Alternatiivina saate saadud tulemusi kasutada edasiste anal&uuml;&uuml;side tegemiseks.Juhul, kui kasutate t&ouml;&ouml;vahendit &quot;Agregeeri punktid&quot;, saate s&otilde;iduaja pindasid p&otilde;imida demograafilise teabega saamaks hinnangut, millised piirkonnad oleksid Teie ettev&otilde;tlusele k&otilde;ige perspektiivikamad. 
+    </p>
+    <p>
+        <table>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        <tr><td valign="baseline"><img src="../images/tip.png"></td><td valign="baseline"><h2>Tip:&ensp;</h2></td>
+        <td valign="baseline">
+            <p>Sirgjooneliste lineaarsete vahemaade koostamiseks soovitame kasutada t&ouml;&ouml;vahendit &quot;Loo puhvrid&quot;.
+            </p>
+        </td></tr>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        </table>
+    </p>
+    <p>Kui  <b>Kasuta kaardi ulatust</b> on sisse l&uuml;litatud, kasutatakse s&otilde;idule kuluva aja v&otilde;i s&otilde;idu vahemaaga seotud anal&uuml;&uuml;sil ainult neid objekte, mis antud hetkel on ekraanil n&auml;htavad. Kui vastav tingimus on v&auml;lja l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil k&otilde;iki sisendkihis olevaid objekte s&otilde;ltumata asjaolust, kas need on anal&uuml;&uuml;si k&auml;ivitamise hetkel ekraanil n&auml;htavad v&otilde;i mitte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="MeasurementMethod">
+        <div><h2>Mõõda</h2></div>
+        <hr/>
+        <div>
+            <p>Vali liikumisviis (auto ja/v&otilde;i veoautoga s&otilde;itmine v&otilde;i k&otilde;ndimine) ja m&otilde;&otilde;da aega v&otilde;i vahemaad.Kui olete liikumisviisi valinud ja m&otilde;&otilde;tmise sooritanud, sisestage kestus v&otilde;i vahemaa, milleks v&otilde;ib maksimaalselt olla 5 tundi (300 minutit) v&otilde;i 300 miili (482,80 kilomeetrit). 
+            </p>
+            <p>Valiku  <b>S&otilde;iduaeg</b> korral saate s&otilde;iduaja m&otilde;&otilde;tmiseks mitme variandi vahel valida.
+                <ul>
+                    <li>
+                        <p>Kui soovite s&otilde;iduaja pindu luua fikseeritud kiiruse alusel, j&auml;tke valimata  <b>Kasuta liiklusinfot</b>. See on valikute k&uuml;simus, kui soovite &uuml;ldise sisuga s&otilde;iduaja pinda, mis ei kasuta nii spetsiifilist liiklusteavet.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Valige  <b>Kasuta liiklusinfot</b>, et luua s&otilde;iduaja pindu antud algusaja ja muutuvate liiklusolude p&otilde;hjal. Samuti, kui m&auml;rgite ka valiku <b>Elav liiklus</b>, siis m&auml;&auml;ratakse lahkumisaeg sisendpunktidest praeguse aja alusel ning praegused ja eeldatavad liikluskiirused saadakse sensoritelt k&auml;ttesaadava vooginfo alusel. Prognoositud liikluskiirused arvutatakse l&auml;htuvalt liikluse kiirusest reaalajas, varem m&otilde;&otilde;detud kiirustest ja muudest tingimustest (nt ilm).Liikluskiirust saab prognoosida kuni 12 tundi edasi. Seega saate liugurit liigutades m&auml;&auml;rata v&auml;ljumisaja, mis on praegusest kuni 12 tundi edasi.
+                        </p>
+                        <p>Kasuta reaalse elava liikluse seadeid, et leida alad, kuhu j&otilde;uaksite praegu s&otilde;itu alustades n&auml;iteks j&auml;rgneva tunni jooksul jne.
+                        </p>
+                    </li>
+                    <li>
+                        <p>M&auml;rkides valiku  <b>Kasuta liiklusinfot</b> ja valides <b>Liiklusinfo p&otilde;hineb tavap&auml;rastel tingimustel</b> vastava p&auml;eva ja kellaja osas, loob t&ouml;&ouml;vahend s&otilde;iduaja pinnad, mis p&otilde;hinevad ajaloolistel s&otilde;idukiirustel iga viie minuti intervalli alusel kogu n&auml;dala jooksul. Tulemused sisaldavad liiklusinfot, kuid ei sisalda praeguste liiklusolude ja s&uuml;ndmuste m&otilde;ju, mis v&otilde;ib s&otilde;ltuvalt p&auml;evast oluliselt varieeruda.
+                        </p>
+                        <p>Minevikus toimunud liiklusega seotud infot saab kasutada n&auml;iteks situatsioonis, kus on vaja saada vastuseid &uuml;ldisematele k&uuml;simustele a`la &quot;Millistesse piirkondadesse v&otilde;iksin ma reeglina j&otilde;uda, kui alustan s&otilde;itu kolmap&auml;eval kl 11:30?&quot; 
+                        </p>
+                        <p>M&auml;rgitud aeg on seotud ajatsooniga, milles alguspunktid paiknevad.Kui m&auml;&auml;rate kellaaja 8:00 (hommikul) ning Teie kaks l&auml;htepunkti asuvad erinevates ajav&ouml;&ouml;ndites, siis luuakse s&otilde;iduaja pinnad m&otilde;lemas erinevas ajav&ouml;&ouml;ndis v&auml;ljumisajaga 8:00. Ida-Euroopa aeg ja 8.00 (hommikul) L&auml;&auml;ne-Euroopa aeg, 8.00 (hommikul).
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+            <p>V&otilde;tke arvesse, et s&otilde;iduki liikumisel l&auml;htepunktist edasi aeg kulub ja liiklusolud muutuvad.S&otilde;iduaja pindade t&ouml;&ouml;vahend arvestab neid variatsioone, kui valite funktsiooni  <b>S&otilde;iduaeg</b> ja m&auml;rgite ruudu <b>Kasuta liiklusinfot</b>; k&otilde;ik regioonid aga ei toeta liiklusega seotud funktsionaalsust. Kui soovite teada saada, kas see funktsionaalsus on kasutatav ka Teie piirkonnas, kl&otilde;psake linki <b>Vaata k&auml;ttesaadavust</b>.
+            </p>
+            <p>Funktsioonid  <b>K&otilde;ndimise aeg</b> ja <b>K&otilde;ndimise vahemaa</b> kasutavad fikseeritud kiirust, milleks on5 kilomeetrit tunnis (3,1 miili tunnis) ja v&otilde;tavad liikumise aluseks jalgteed ning otstarbelised t&auml;navad (eirates samas autosid m&otilde;jutavaid reegleid, nt &uuml;hesuunalisi t&auml;navaid).
+            </p>
+            <p>Funktsioonid  <b>Veonduse aeg</b> ja <b>Veonduse vahemaa</b> kasutavad fikseeritud kiirusi ja j&auml;rgivad raskeveokitele rakenduvaid reegleid.
+            </p> 
+        </div>
+    </div>
+    <div id="DissolveType">
+        <div><h2>Alad erinevatelt punktidelt</h2></div>
+        <hr/>
+        <div>
+            <p>Vali, kuidas jagatud piirkonnad erinevatest sisendpunktidest on k&auml;sitletavad, kui need &uuml;ksteiseni j&otilde;uavad.Variandid on:
+                <ul>
+                    <li> <b>&Uuml;lekate</b> &ndash; erinevatest sisendpunktidest tekkivad alad v&otilde;ivad katta sama teed. See on asjakohane, kui soovite teada k&otilde;iki sisendpunkte, mis j&otilde;uavad teatud aja v&otilde;i vahemaa tagant kindlasse asukohta.
+                    </li>
+                    <li> <b>Sulanda</b> &ndash; k&otilde;ik alad liidetakse &uuml;htseks tervikuks ning kindlat sihtkohta saab katta vaid &uuml;ks ala. See on asjakohane, kui soovite teada, kas antud ala on ette antud aja v&otilde;i vahemaa kaudu tekkiv, kuid Te ei soovi teada, kuidas sisendpunktid sinna t&auml;pselt j&otilde;uaksid.
+                    </li>
+                    <li> <b>Katkesta</b> &ndash; erinevatest sisendpunktidest tuletatud alad, mis v&otilde;iksid omavahel olla &uuml;lekattes, katkestatakse keskelt, ehk tekivad n&ouml; eraldi tsoonid. See on asjakohane, kui soovite n&auml;ha, millised alad on alguspunktidest l&auml;htuva etteantud s&otilde;iduaja v&otilde;i vahemaa alusel ning samuti saada &uuml;levaadet, milline alguspunkt on l&auml;him &uuml;he v&otilde;i teise ala suhtes.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on selle kihi nimi, mis luuakse  <b>Minu sisu</b> alla ja lisatakse kaardile. Vaikenimi p&otilde;hineb anal&uuml;&uuml;sit&uuml;&uuml;bil ja anal&uuml;&uuml;sitava kihi nimel.Kui see kiht juba eksisteerib, palutakse teil esitada m&otilde;ni muu nimi.
+            </p>
+            <p>Rippmen&uuml;&uuml;  <b>Salvesta tulemused</b> kaudu saate m&auml;&auml;rata selle kausta nime jaotises <b>Minu sisu</b>, kuhu tulemused salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,59 @@
+/* Editor 
+ * 
+ * Styling Editor means styling the Editor inside iframe container (dijitEditorIFrameContainer)
+ * 
+ * 1. Editor iframe container (default styling): 
+ * 		.dijitEditorIFrameContainer - normal state styles: background-color, border, padding
+ *
+ * 2. hovered Editor iframe container (ie, mouse hover on editor)
+ * 		.dijitEditorHover .dijitEditorIFrameContainer/dijitEditorIFrame - styles when mouse hover on the container
+ * 
+ * 3. focused Editor iframe container (ie, mouse focus on the editor pane)
+ * 		.dijitEditorFocused .dijitEditorIFrameContainer/dijitEditorIFrame - styles when container focused
+ * 
+ * 3. disabled Editor iframe container 
+ * 		.dijitEditorDisabled - editor's inner iframe container disable status styles: background, border
+ */
+
+@import "variables";
+
+.calcite .dijitEditorIFrameContainer{
+	padding:3px 3px 1px 10px;
+}
+.calcite .dijitEditorIFrame {
+	background-color: $textbox-background-color;
+}
+.calcite .dijitEditor {
+	border: 1px solid $border-color;
+}
+.calcite .dijitEditor .dijitEditorIFrameContainer{
+	background-color: $textbox-background-color;
+	background-repeat:repeat-x;
+}
+.calcite .dijitEditorHover .dijitEditorIFrameContainer,
+.calcite .dijitEditorHover .dijitEditorIFrameContainer .dijitEditorIFrame{
+	background-color: $textbox-hovered-background-color;
+}
+.calcite .dijitEditorFocused .dijitEditorIFrameContainer,
+.calcite .dijitEditorFocused .dijitEditorIFrameContainer .dijitEditorIFrame{
+	background-color: $textbox-focused-background-color;
+}
+.calcite .dijitEditorHover .dijitEditorIFrameContainer,
+.calcite .dijitEditorFocused .dijitEditorIFrameContainer {
+	textbox-background-image();
+}
+
+/* Disabled */
+.calcite .dijitEditorDisabled {
+	border: 1px solid $disabled-border-color;
+	color: $disabled-text-color;
+}
+
+.calcite .dijitDisabled .dijitEditorIFrame,
+.calcite .dijitDisabled .dijitEditorIFrameContainer,
+.calcite .dijitDisabled .dijitEditorIFrameContainer .dijitEditorIFrame {
+	background-color: $textbox-disabled-background-color;
+	background-image: none;
+}
+
+

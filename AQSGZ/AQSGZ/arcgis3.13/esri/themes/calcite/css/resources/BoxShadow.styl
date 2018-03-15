@@ -1,0 +1,26 @@
+// =======================================================================================================
+// Box Shadows & Box Insets
+// =======================================================================================================
+calciteWeb_BoxShadow() {
+  /* Box Shadow generator: http://www.cssmatic.com/box-shadow */
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(51,51,51,0.55);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(51,51,51,0.55);
+  box-shadow: 0px 0px 3px 1px rgba(51,51,51,0.55);
+}
+calciteWeb_NoBoxShadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+CalciteWeb_TextInput_BoxShadowInset(intype) {
+  if (intype == "error") {
+    -moz-box-shadow:    inset 0 0 10px CalciteColorError1;
+    -webkit-box-shadow: inset 0 0 10px CalciteColorError1;
+    box-shadow:         inset 0 0 10px CalciteColorError1;
+  } else {
+    -moz-box-shadow: inset 0 0 10px $backgroundFillActive;
+    -webkit-box-shadow: inset 0 0 10px $backgroundFillActive;
+    box-shadow: inset 0 0 10px $backgroundFillActive;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kurti upių baseinus</h2><p/>
+        <h2><img src="../images/GUID-D0CDF046-A296-4A66-B0D8-F1F4A8EEA0FC-web.png" alt="Kurti upių baseinus"></h2>
+        <hr/>
+    <p>&Scaron;is įrankis nustato upių baseiną arba kiekvieno ta&scaron;ko, esančio analizės sluoksnyje, vandens papildymo plotą auk&scaron;tupio link. 
+    </p>
+    <p>Pavyzdžiui, įsivaizduokite, kad turite ta&scaron;kus, kuriuose fiksuota vandens tar&scaron;a ir jūs norite surasti tikėtinus tar&scaron;os &scaron;altinius.Tar&scaron;os &scaron;altinis turi būti kažkurioje upės baseino vietoje, esančioje nuo fiksuoto ta&scaron;ko auk&scaron;tupio link, todėl naudosite &scaron;į įrankį, kad nustatytumėte upių baseinus, kuriuose yra tar&scaron;os &scaron;altiniai.
+    </p>
+    <p>Vieta, kurioje yra analizės ta&scaron;kai yra svarbi.Jei jie nėra tiksliai i&scaron;dėlioti ant tėkmės linijos, gaunami upių baseinai gali būti labai maži ir netinkami analizei.Funkcija  <b>Paie&scaron;kos atstumas iki artimiausios tėkmės</b> gali būti naudojama koreguojant analizės ta&scaron;kų vietą, kad jie būtų tiksliai ant tėkmės linijos ir būtų galima nustatyti upės baseiną, kurio vanduo atiteka į nurodytą ta&scaron;ką. Pakoreguotos vietos, naudojamos upių baseinams rasti, įra&scaron;omos i&scaron;vesties sluoksnyje. Jūsų įvesties analizės ta&scaron;kai nekeičiami.
+    </p>
+    <p>Rezultatas bus grupinis sluoksnis, sudarytas i&scaron; dviejų sluoksnių: upių baseinų ir koreguotų ta&scaron;kų, naudotų tiems upių baseinams apskaičiuoti. 
+    </p>
+    <p>Gauti upių baseinai turės visus įvesties ta&scaron;kų atributus ir &scaron;iuos papildomus atributus: 
+        <ul>
+            <li> <i>PourPtID</i> &ndash; Turi įvesties ta&scaron;ko ID reik&scaron;mę
+            </li>
+            <li> <i>Area Square Kilometers</i> &ndash; Turi upės baseino (auk&scaron;tupio link) plotą kvadratiniais kilometrais
+            </li>
+            <li> <i>Description</i> ir <i>DataResolution</i> &ndash; Turi informaciją, susijusią su hidrologiniais duomenimis, kurie naudoti skaičiuojant trasavimą
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jei  <b>Naudoti esamą žemėlapio aprėptį</b> pažymėtas, skaičiuojant vandens baseinus bus naudojamos tik esamos žemėlapio aprėpties ypatybės. Jei nepažymėtas, bus analizuojami visi sluoksnio elementai.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="SearchDistance">
+        <div><h2>Paieškos atstumas iki artimiausios tėkmės</h2></div>
+        <hr/>
+        <div>
+            <p>Jei jūsų analizės ta&scaron;kai nepatenka ant tėkmės linijos, tikėtina, kad gaunami upių baseinai bus labai maži ir nelabai naudingi nustatant prie&scaron; srovę esantį tar&scaron;os &scaron;altinį.Daugeliu atvejų norite, kad analizės ta&scaron;kas būtų pritrauktas prie artimiausio tėkmės linijos tam, kad surastumėte upių baseinus, tekančius pro upės tėkmėje esantį ta&scaron;ką.Norėdami rasti artimiausią upės tėkmę, nustatykite ie&scaron;kos atstumą.Jei nenustatysite ie&scaron;kos atstumo, įrankius skaičiuos ir naudos pastovų ie&scaron;kos atstumą. 
+            </p>
+            <p>Norėdami naudoti tikslią įvesties ta&scaron;ko vietą, ie&scaron;kos atstumą nurodykite kaip nulį. 
+            </p>
+            <p>Analizės tikslais Esri, naudodama standartinius hidrologinius modelius, i&scaron; anksto apskaičiavo upių tėkmes.Jei ie&scaron;kos atstumu nėra upių tėkmių, naudodama ta ie&scaron;kos atstumo vieta, kurioje sukauptas kiekis yra didžiausias.
+            </p> 
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultatų sluoksnio pavadinimas</h2></div>
+        <hr/>
+        <div>
+            <p>Tai sluoksnio, kuris bus sukurtas ir patalpintas  <b>Turinyje</b> ir pridėtas į žemėlapį, pavadinimas. Pagal nutylėjimą pavadinimas atspindi analizės tipą ir analizės sluoksnio pavadinimą.Jei toks sluoksnis jau egzistuoja, jūsų papra&scaron;ys pateikti kitą pavadinimą.
+            </p>
+            <p>Pasirinkę  <b>Rezultatą įra&scaron;yti į</b>, galite nurodyti <b>Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

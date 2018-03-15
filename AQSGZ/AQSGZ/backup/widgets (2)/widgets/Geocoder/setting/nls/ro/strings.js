@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Text substituent",
+    url: "URL geocodificator",
+    name: "Nume geocodificator",
+    example: "Exemplu",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Nu se pot obţine configuraţiile geocodificatorului din portal',
+    actions: "Acţiuni",
+    warning: "Aceasta nu este o versiune acceptată a serviciului de geocodificare. Acest widget acceptă serviciul de geocodificare 10.1 şi versiunile ulterioare.",
+    instruction: "Stabiliţi geocodificatoarele din acest widget. Faceţi clic pe Adăugare geocodificator pentru a face referire la un URL, specifica numele familiar al unui utilizator şi seta alte proprietăţi. De asemenea, puteţi reordona, configura sau şterge geocodificatoare mai jos.",
+    layerInstruction1: "Puteţi configura condiţia de căutare în ",
+    layerInstruction2: "pagina de detalii a hărţii web",
+    searchAddress: "Căutare după adresă",
+    searchLayer: "Căutare după strat tematic",
+    layer: "Strat tematic",
+    field: "Câmp",
+    condition: "Condiţie",
+    contains: "Conţine",
+    deleteLastGeocoderError: "Ultimul geocodificator nu poate fi şters.",
+    noSearchFactorError: "Trebuie să selectaţi cel puţin o capacitate (Căutare după adresă sau căutare după strat tematic).",
+    equals: "Este egal cu",
+    add: "Adăugare geocodificator",
+    edit: "Editare geocodificator",
+    ok: "OK",
+    cancel: "Anulare",
+    geocoderNamePlaceHolder: "Geocodificatorul meu",
+    geocodePlaceHolder: "Găsire adresă sau loc",
+    REPEATING_ERROR: "Următoarele câmpuri se repetă: "
+  })
+);

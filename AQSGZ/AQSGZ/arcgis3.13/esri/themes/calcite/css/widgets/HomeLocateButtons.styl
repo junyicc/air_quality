@@ -1,0 +1,174 @@
+.calcite
+  .HomeButton {}
+  .LocateButton {}
+
+  .HomeButton .home,
+  .homeButton .home,
+  .LocateButton .zoomLocateButton,
+  .locateButton .zoomLocateButton {
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+
+    calciteArcGISPro_ButtonDefault();
+    /*calciteArcGISPro_ButtonBorder();*/
+    calciteWeb_RoundRadius($borderRadiusSize2);
+
+    color: $textColorDefault;
+    calciteWeb_BoxShadow();
+
+    &:hover {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonHover();
+      border-color: CalciteColorBlue1;
+    }
+    &:focus {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonHover();
+      border-color: CalciteColorBlue1;
+    }
+    &:active {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonActive();
+      border-color: CalciteColorBlue1;
+    }
+  }
+
+  .HomeButton .home span,
+  .homeButton .home span,
+  .LocateButton .zoomLocateButton span,
+  .locateButton .zoomLocateButton span {
+    display none
+  }
+
+  .HomeButton .home,
+  .homeButton .home {
+    //background-position: center center;
+    //background-repeat: no-repeat;
+    //background-image:  url( $imageMapWidgetHomeButtonDefault ); //("../dijit/images/home.png");
+    //background-image:  none,url( $imageMapWidgetHomeButtonDefault_SVG ), url( $imageMapWidgetHomeButtonDefault );
+    background-image none
+    color $textColorDefault
+    text-align center
+    display block
+    &:before {
+      iconfont("esriIconHomeExtent")
+      font-size $fontSizeIconDefault
+      position relative
+      top 2px
+      left 1px
+    }
+    &:hover,
+    &:focus {
+      color $textColorHover
+      //background-size: 75% 75%; // scale SVG image
+      //background-image:  url( $imageMapWidgetHomeButtonHover );
+      //background-image:  none,url( $imageMapWidgetHomeButtonHover_SVG ), url( $imageMapWidgetHomeButtonHover );
+    }
+    &:active  {
+      color $textColorActive;
+      /*
+      background-image:  url( $imageMapWidgetHomeButtonActive );
+      background-image:  none,url( $imageMapWidgetHomeButtonActive_SVG ), url( $imageMapWidgetHomeButtonActive );
+      background-size: 75% 75%;
+      */
+    }
+    &.loading {
+      background-image url( $imageLoadingCircular1 )
+      background-repeat no-repeat
+    }
+    &.loading:before { display:none; }
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:focus,
+    &.disabled:active {
+      color $textColorDisabled;
+      /*
+      background-image:  url( $imageMapWidgetHomeButtonDisabled );
+      background-image:  none,url( $imageMapWidgetHomeButtonDisabled_SVG ), url( $imageMapWidgetHomeButtonDisabled );
+      background-size: 75% 75%;
+      */
+    }
+  }
+  .esriSimpleSlider .HomeButton,
+  .esriSimpleSlider .homeButton { border-bottom: 1px solid $borderColorDivider; }
+  .esriSimpleSlider .HomeButton .home,
+  .esriSimpleSlider .homeButton .home {
+    padding:0;
+    height: 28px;
+    border: 1px solid CalciteColorWhite
+    calciteArcGISPro_ButtonDefault();
+    calciteArcGISPro_ButtonBorder();
+    border-color: CalciteColorWhite;
+    calciteWeb_RoundRadius(0)
+    calciteWeb_NoBoxShadow()
+
+    &:hover {
+      calciteArcGISPro_ButtonHover();
+    }
+    &:focus {
+      calciteArcGISPro_ButtonActive();
+    }
+  }
+
+  .LocateButton .zoomLocateButton,
+  .locateButton .zoomLocateButton {
+    /*
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image:  url( $imageMapWidgetLocateButtonDefault ); //("../dijit/images/locate.png");
+    background-image:  none,url( $imageMapWidgetLocateButtonDefault_SVG ), url( $imageMapWidgetLocateButtonDefault );
+    background-size: 75% 75%;
+    */
+    background-image none
+    color $textColorDefault
+    text-align center
+    display block
+    &:before {
+      iconfont("esriIconLocate")
+      font-size $fontSizeIconDefault
+      position relative
+      top 3px
+      left 0px
+    }
+    &:hover,
+    &:focus {
+      color $textColorHover
+      /*
+      background-size: 75% 75%;
+      background-image:  url( $imageMapWidgetLocateButtonHover );
+      background-image:  none,url( $imageMapWidgetLocateButtonHover_SVG ), url( $imageMapWidgetLocateButtonHover );
+      */
+    }
+    &:active {
+      color $textColorActive;
+      /*
+      background-image:  url( $imageMapWidgetLocateButtonActive );
+      background-image:  none,url( $imageMapWidgetLocateButtonActive_SVG ), url( $imageMapWidgetLocateButtonActive );
+      background-size: 75% 75%;
+      */
+    }
+    &.loading {
+      background-image url( $imageLoadingCircular1 )
+      background-repeat no-repeat
+    }
+    &.loading:before { display:none; }
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:focus,
+    &.disabled:active {
+      color $textColorDisabled;
+      /*
+      background-image: url( $imageMapWidgetLocateButtonDisabled );
+      background-image: none,url( $imageMapWidgetLocateButtonDisabled_SVG ), url( $imageMapWidgetLocateButtonDisabled );
+      background-size: 75% 75%;
+      */
+    }
+  }
+  .LocateButton span,
+  .locateButton span { display:none; }

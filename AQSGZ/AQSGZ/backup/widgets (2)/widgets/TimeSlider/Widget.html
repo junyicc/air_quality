@@ -1,0 +1,24 @@
+<div class="jimu-widget-timeslider">
+	<div class="time-icon" data-dojo-attach-point="timeIconNode">
+		<img data-dojo-attach-point="timeIconInner" class="time-icon-inner">
+	</div>
+	<div class="time-content" data-dojo-attach-point="timeContentNode">
+		<div class="time-close" data-dojo-attach-point="closeNode" data-dojo-attach-event="click:_onCloseClick"></div>
+		<div class="time-extent" data-dojo-attach-point="timeExtentLabelNode">${nls.timeExtent}</div>
+		<div class="layer-labels jimu-ellipsis" data-dojo-attach-point="layerLabelsNode">${nls.layers}</div>
+		<div class="slider-content">
+			<div data-dojo-attach-point="sliderNode"></div>
+			<div class="speed-container jimu-float-leading" data-dojo-attach-point="speedContainerNode" data-dojo-attach-event="mouseenter:_onMouseEnterSpeedContainer,mouseleave:_onMouseLeaveSpeedContainer">
+				<div class="speed-label" data-dojo-attach-point="speedLabelNode" data-dojo-attach-event="click:_onSpeedLabelClick">1X</div>
+				<div class="speed-menu" data-dojo-attach-point="speedMenu" data-dojo-attach-event="click:_onSelectSpeedItem">
+					<div class="speed-menu-item item-label jimu-ellipsis" title="${nls.speedLabel}">${nls.speedLabel}</div>
+					<div class="speed-menu-item" speed="0.25">0.25X</div>
+					<div class="speed-menu-item" speed="0.5">0.5X</div>
+					<div class="speed-menu-item" speed="1">1X</div>
+					<div class="speed-menu-item" speed="1.5">1.5X</div>
+					<div class="speed-menu-item" speed="2">2X</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

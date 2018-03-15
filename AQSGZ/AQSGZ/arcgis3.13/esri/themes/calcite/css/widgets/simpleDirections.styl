@@ -1,0 +1,345 @@
+@require "../../dijit/variables"
+
+/*.calcite .simpleDirections .esriDirectionsButton {
+padding: 10px 18px;
+}*/
+.calcite
+  .simpleDirections
+    font-family: $fontFamilyDefault;
+
+  .simpleDirections
+    .esriDirectionsButton
+      outline none
+      calciteWeb_NoBoxShadow()
+    /*.esriDirectionsButton {
+      calciteArcGISPro_ButtonDefault();
+      //calciteWeb_RoundRadius($borderRadiusSize2);
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 5px 10px;
+      text-align: center;
+      display: inline-block;
+      font-family: $fontFamilyDefault;
+    }*/
+
+    .esriGeocoder
+      display: block;
+      margin: 0;
+      padding: 0; /*6px;*/
+      background-image: none
+      filter: none
+      background transparent
+      border none;
+      calciteWeb_NoBoxShadow()
+
+      input
+        outline: 0;
+        margin: 0;
+        width: 98%;
+        font-size: 12px;
+        line-height: 16px;
+        height: 16px;
+        border-width 1px
+        border-style solid
+        padding: 6px;
+        calciteWeb_NoBoxShadow()
+        calciteArcGISPro_ButtonDefault();
+        calciteWeb_RoundRadius($borderRadiusSize2)
+        &:hover {
+          calciteArcGISPro_ButtonHover()
+          background-color CalciteColorWhite
+        }
+        &:focus {
+          CalciteWeb_TextInput_BoxShadowInset("blue")
+          outline 0
+          calciteArcGISPro_ButtonHover()
+          background: CalciteColorWhite
+        }
+
+    .esriStops
+      margin 0
+      padding 0
+      width 100%
+      border-collapse separate
+      border-spacing 0px
+
+    .esriStopsButtons
+      margin 0
+
+    .esriStopsClearDirections
+      calciteCSS_ActionButton("default")
+      padding ($paddingDefaultSpacer - 2) ($paddingDefaultSpacer * 2)
+      outline none
+
+    .esriStopsGetDirections
+      /*calciteCSS_ActionButton_Blue();*/
+      calciteCSS_ActionButton("blue");
+      bidi-value("float", right, left); // mixin for right to left, vs left to right
+      padding ($paddingDefaultSpacer - 2) ($paddingDefaultSpacer * 2)
+
+    .esriLinkButton.esriStopsClearDirections,
+    .esriLinkButton.esriStopsOptionsButton
+      /*calciteCSS_ActionButton_Transparent();*/
+      calciteCSS_ActionButton("transparent");
+      text-align left
+      display inline-block
+      margin 0 0 0 22px
+      padding ($paddingDefaultSpacer - 2) ($paddingDefaultSpacer * 4) ($paddingDefaultSpacer - 2) ($paddingDefaultSpacer * 2);
+
+    .esriLinkButton.esriStopsOptionsButton
+      /*padding:0;*/
+      margin-left ($marginDefaultSpacer * 5);
+      display block
+      padding-top ($paddingDefaultSpacer * 2);
+
+    .esriStopsClearDirections
+      margin 0 $marginDefaultSpacer
+
+    .esriStopsGetDirectionsContainer
+      width: 50%;
+      text-align: right;
+      display: inline-block;
+      float: right;
+      margin-right:32px;
+
+    .esriStopsOptionsMenu
+      margin 0 0 0 35px //0 0 0 33px
+      background-color CalciteColorWhite
+      padding $paddingDefaultSpacer
+      calciteWeb_RoundRadius($borderRadiusSize2);
+
+    .esriTravelModesContainer
+      display: none;
+      word-wrap: break-word;
+      margin: ($marginDefaultSpacer * 2) ($marginDefaultSpacer * 2) 0 ($marginDefaultSpacer * 7);
+      min-width: 270px;
+
+    .esriRoutesError
+      calciteArcGISPro_WarningMessage();
+      padding: ($paddingDefaultSpacer * 2) ($paddingDefaultSpacer * 2) $paddingDefaultSpacer ($paddingDefaultSpacer * 2);
+
+    .esriRoutesError ul
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+
+    .esriRoutesError ul li
+      margin: 0 0 $marginDefaultSpacer 0;
+
+    .esriDirectionsTabButton,
+    .esriDirectionsTabLastButton
+      color: $textColorDefault;
+      calciteWeb_RoundRadius(0);
+
+    .esriTravelModesContainer .esriDirectionsTabButton:first-child,
+    .esriStopsOptionsMenu .esriDirectionsTabButton:first-child
+      calciteWeb_RoundRadius_Left($borderRadiusSize2);
+      calciteWeb_RoundRadius_Right(0)
+
+    .esriDirectionsTabButton.esriDirectionsTabLastButton
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteWeb_RoundRadius_Left(0)
+
+    .esriDirectionsTabButton:hover
+      calciteArcGISPro_ButtonHover()
+
+    .esriDirectionsPressedButton
+      calciteArcGISPro_ButtonActive()
+
+      &:hover {
+        calciteArcGISPro_ButtonActiveHover()
+      }
+
+    /*
+    .esriActivateButton {
+      width: 32px;
+      height: 26px;
+      background-image none
+      calciteWeb_RoundRadius($borderRadiusSize2)
+      //padding: 0 6px 2px 6px;
+      //border: 1px solid #A6A6A6;
+      //background-image: url("../dijit/images/Directions/GreyPin16.png");
+      //background-repeat: no-repeat;
+      //background-position: center;
+      //float: left;
+      color: $textColorDefault
+      &:before {
+        iconfont("esriIconMapPin")
+        font-size: $fontSizeIconDefault;
+        position: relative;
+        top: 0;
+        left: -3px;
+      }
+      &:hover,
+      &:focus {
+        opacity 1
+        //background-position: -16px -16px;
+        color $textColorHover
+      }
+    }
+    .esriActivateButton.esriDirectionsPressedButton
+      color $textColorActive
+    */
+
+    .esriStopsAdd .esriStopsAddDestination
+      display block
+      //text-align right;
+      bidi-value("text-align", right, left); // mixin for right to left, vs left to right
+      margin 0 5px 5px 0
+
+    .esriLinkButton.esriStopsAddDestination,
+    .esriActivateButton
+      /*calciteCSS_ActionButton_PlaceholderAction_Green();*/
+      /*calciteCSS_ActionButton_Green();*/
+      calciteCSS_ActionButton("greenplaceholder");
+      /*float:right;*/
+      text-align center
+      display inline-block //block;
+      margin 0 22px 0 0 //0 32px 0 33px;
+      padding ($paddingDefaultSpacer - 2) ($paddingDefaultSpacer * 2)
+
+    //.esriLinkButton.esriStopsAddDestination
+    //  width 20%
+    .esriActivateButton
+      width 10%
+      margin 0 0 0 35px
+      height 32px
+      //color: $textColorDefault
+      &.esriDirectionsPressedButton
+        calciteCSS_ActionButton_Active("greenplaceholder");
+      &:before {
+        iconfont("esriIconMapPin")
+        font-size: $fontSizeIconDefault;
+        position: relative;
+        top: 0;
+        left: -3px;
+        line-height $fontSizeIconDefault;
+      }
+      &:hover,
+      &:focus,
+      &.esriDirectionsPressedButton:hover,
+      &.esriDirectionsPressedButton:focus  {
+        opacity 1
+        calciteCSS_ActionButton_Hover("greenplaceholder");
+        //background-position: -16px -16px;
+        //color $textColorHover
+      }
+
+
+    .esriStopOrigin .esriStopIcon,
+    .esriStopDestination .esriStopIcon
+      width: 19px;
+      height: 36px;
+      background-repeat: no-repeat;
+      background-position:center;
+      -webkit-background-size: cover; /* For WebKit*/
+      -moz-background-size: cover;    /* Mozilla*/
+      -o-background-size: cover;      /* Opera*/
+      background-size: cover;         /* Generic*/
+
+    .esriStopOrigin .esriStopIcon
+      background: url( $imageDirectionsStopOrigin ); /* PNG */
+      background-image: url( $imageDirectionsStopOrigin_SVG ), none; /* SVG */
+      background-repeat: no-repeat;
+
+    .esriStopDestination .esriStopIcon
+      background: url( $imageDirectionsStopDestination ); /* PNG */
+      background-image: url( $imageDirectionsStopDestination_SVG ), none; /* SVG */
+      background-repeat: no-repeat;
+
+    .esriStopsRemovable .esriStop .esriStopIconRemove
+      display: block;
+      width: 16px; /* 21px */
+      height: 16px; /* 21px */
+      cursor: pointer;
+      background-image none
+      /*background: url("../dijit/images/Directions/remove-destination.png") no-repeat center center;*/
+      //background-image: url( $imageDirectionsStopRemove );
+      //background-repeat:no-repeat;
+      //background-position: -16px 0;
+
+      color: $textColorDefault
+      &:before {
+        iconfont("esriIconClose")
+        font-size: $fontSizeIconDefault;
+        position relative
+        top -4px
+        left -2px
+      }
+      &:hover,
+      &:focus {
+        opacity 1
+        //background-position: -16px -16px;
+        color: $textColorHover
+      }
+
+    .esriStopReverseColumn,
+    .esriStopIconRemoveColumn
+      background-color transparent
+
+    .esriStopsReverse
+      margin: 0;
+      width: 21px;
+      height: 21px;
+      //background-image: url( $imageDirectionsStopReverse ); /*"../dijit/images/Directions/reverse.png"*/
+      //background-repeat no-repeat;
+      //background-position center center;
+      background-image none
+      background-color transparent
+      cursor: pointer;
+      &:before {
+        iconfont("esriIconUpDownArrows")
+        font-size: $fontSizeIconDefault;
+        position: relative;
+        top: 0;
+        left: -2px;
+        line-height $fontSizeIconDefault;
+      }
+      &:hover,
+      &:focus {
+        opacity 1
+        calciteArcGISPro_ButtonActiveHover()
+        border none
+      }
+
+    .esriReturnToStartOption
+      font-family $fontFamilyDefault
+
+    .dojoDndContainerOver,
+    .dojoDndItemOver
+      background-image none
+      background none
+      border-width 0
+
+    .dojoDndItemAnchor,
+    .dojoDndItemSelected
+      background-image: none
+      background-color: CalciteColorBlue5
+
+    .esriStop .esriStopDnDHandle,
+    .esriStop .esriStopDnDHandleHidden,
+    .esriStop .dojoDndHandle.esriStopDnDHandle
+      width 24px !important
+      padding-left 0
+      padding-right 0
+
+    .esriStop .esriStopDnDHandle
+      background-image none
+      color $textColorDefault
+
+      &:before {
+        iconfont("esriIconDirectionsDrag")
+        font-size $fontSizeIconDefault
+        position relative
+        top 0px
+        left 0px
+        line-height $fontSizeIconDefault
+      }
+      &:hover,
+      &:focus {
+        opacity 1
+        calciteArcGISPro_ButtonActiveHover()
+        color: $textColorHover
+      }

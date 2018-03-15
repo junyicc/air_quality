@@ -1,0 +1,127 @@
+.calcite .btn {
+  calciteCSS_ActionButton("default");
+}
+/*
+.calcite .btn:hover {
+  background: gray;
+  color: white;
+}
+*/
+.calcite .btn.disabled,
+.calcite .btn.pseudo-class-disabled {
+  calciteCSS_ActionButton_Disabled("default");
+}
+.calcite .primary {
+  calciteCSS_ActionButton("blue");
+  /*background: #e98d32;*/
+  /*.calcite .primary:hover {
+      background: #e16b17;
+  }*/
+}
+.calcite .primary.disabled,
+.calcite .primary.pseudo-class-disabled {
+  calciteCSS_ActionButton_Disabled("blue");
+  /* background-color: rgb(233, 141, 50);
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;
+  */
+}
+.calcite .secondary {
+  calciteCSS_ActionButton("green");
+  /*background: #5daddd;*/
+}
+/*.calcite .secondary:hover {
+  background: #4997d2;
+}*/
+.calcite .secondary.disabled,
+.calcite .secondary.pseudo-class-disabled {
+  calciteCSS_ActionButton_Green_Disabled();
+  /*background-color: rgb(93, 173, 221);
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;*/
+}
+
+
+.calcite .tertiary {
+  calciteCSS_ActionButton_GrayLight();
+  /*background: #6aa23f;*/
+}
+/*.calcite .tertiary:hover {
+  background: #4b8d2c;
+}*/
+.calcite .tertiary.disabled,
+.calcite .tertiary.pseudo-class-disabled {
+  background-color: rgb(106, 162, 63);
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;
+}
+
+
+.calcite .light {
+  background: #ededed;
+  color: gray;
+  text-shadow: none;
+}
+.calcite .light:hover {
+  background: #cccccc;
+}
+.calcite .light.disabled,
+.calcite .light.pseudo-class-disabled {
+  background-color: rgb(237, 237, 237);
+  color: gray;
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;
+}
+
+
+.calcite .caution {
+  calciteCSS_ActionButton("red");
+  /*background: #b9392f;*/
+}
+/*.calcite .caution:hover {
+    background: #d6564d;
+}*/
+.calcite .caution.disabled,
+.calcite .caution.pseudo-class-disabled {
+  calciteCSS_ActionButton_Disabled("red");
+  /*background-color: rgb(185, 57, 47);
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;*/
+}
+
+
+.calcite .transparent {
+  calciteCSS_ActionButton("transparent");
+  /*
+  background: none;
+  color: #007ac2;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  */
+}
+/*.calcite .transparent:hover {
+    color: #00b9f2;
+    background: none;
+}*/
+.calcite .transparent.disabled,
+.calcite .transparent.pseudo-class-disabled {
+  calciteCSS_ActionButton_Disabled("transparent");
+  /*background-color: transparent;
+  color: rgb(0, 122, 194);
+  background: none;
+  cursor: default !important;
+  background-position: initial initial;
+  background-repeat: initial initial;*/
+}
+
+
+.calcite .dijitButtonDisabled .dijitButtonText,
+.calcite .dijitButtonDisabled .dijitButtonNode,
+.calcite .dijitButtonDisabled .dijitButtonContents { cursor: default; }

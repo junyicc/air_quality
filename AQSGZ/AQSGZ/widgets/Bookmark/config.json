@@ -1,0 +1,162 @@
+﻿{
+	"bookmarks2D": [{
+		"name": "广雅中学",
+		"extent": {
+
+		"xmax":12607666.175005268,
+		"xmin": 12606034.722182944,
+		"ymax": 2649663.5981988157,
+		"ymin": 2648914.754187397,
+			"spatialReference": {
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/GYZX.jpg"
+	},{
+		"name": "番禺中学",
+		"extent": {
+			"xmax": 12623814.69155927,
+			"xmin": 12617288.880269252,
+			"ymax": 2622755.3032018053,
+			"ymin": 2619759.9271558006,
+			"spatialReference": {
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/PYZX.jpg"
+	},{
+		"name": "市监测站",
+		"extent": {
+			"xmax": 12609862.545239894,
+			"xmin": 12608231.09241757,
+			"ymax": 2647722.8142775246,
+			"ymin": 2647351.378093233,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/SJCZX.jpg"
+	},{
+		"name": "市八十六中",
+		"extent": {		
+			"xmax": 12630636.696333665,
+			"xmin": 12627373.790688656,
+			"ymax": 2645581.3831570144,
+			"ymin": 2644719.0779316495,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/SBSLZ.jpg"
+	},{
+		"name": "广东商学院",
+		"extent":{		
+			"xmax": 12621267.188725894,
+			"xmin": 12618004.283080885,
+			"ymax": 2644135.0512624253,
+			"ymin": 2643272.7460370604,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/GDSXY.jpg"
+	},{
+		"extent":{		
+			"xmax": 12617718.83855347,
+			"xmin": 12614455.93290846,
+			"ymax": 2649195.421400622,
+			"ymin": 2648333.116175257,
+			"spatialReference": {
+				"wkid": 102100
+			}
+		},
+		"name": "体育西",
+		"thumbnail": "images/TYX.jpg"
+	},{
+		"name": "市五中",
+		"extent":{
+			"xmax": 12611749.584375823,
+			"xmin": 12608486.678730814,
+			"ymax": 2645954.0136699174,
+			"ymin": 2645091.7084445525,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/SWZ.jpg"
+	},{
+		"name": "天河职幼",
+		"extent":{
+			"xmax": 12617972.286924105,
+			"xmin": 12614709.381279096,
+			"ymax": 2650569.5590955243,
+			"ymin": 2649707.2538701594,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/THZY.jpg"
+	},{
+		"name": "麓湖",
+		"extent":{
+			"xmax": 12615585.767732939,
+			"xmin": 12609059.95644292,
+			"ymax": 2651968.652333113,
+			"ymin": 2650244.041882383,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},		
+		"thumbnail": "images/LUHU.jpg"
+	},{
+		"name": "九龙镇镇龙",
+		"extent":{
+			"xmax": 12647842.193669299,
+			"xmin": 12641316.38237928,
+			"ymax": 2667729.0121026672,
+			"ymin": 2666004.4016519375,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/JLZ.jpg"
+	},{
+		"name": "帽峰山森林公园",
+		"extent":{
+			"xmax": 12639601.32655718,
+			"xmin": 12626549.703977505,
+			"ymax": 2671722.8468305296,
+			"ymin": 2668273.625929166,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},
+		"thumbnail": "images/MFSSLGY.jpg"
+	},{
+		"name": "花都师范",
+		"extent":{
+			"xmax": 12606549.477795294,
+			"xmin": 12603286.572150284,
+			"ymax": 2680326.789826901,
+			"ymin": 2679464.4846015363,
+			"spatialReference":{
+				"wkid": 102100
+			}
+		},	
+		"thumbnail": "images/HDSF.jpg"
+	}],
+	"bookmarks3D": [{
+		"name": "China",
+		"camera": [116.38, 39.9, 100000, 0, 1],
+		"thumbnail": "images/thumbnail_beijing.png"
+	}, {
+		"name": "SF",
+		"camera": [-122.3956840179302, 37.78329055435611, 235.5668830918148, 327.4062957304337, 66.71004825534648],
+		"thumbnail": "images/thumbnail_sf.png"
+	}, {
+		"name": "USA",
+		"camera": [-108.919, 34.2259, 4126880, 340.71, 5.91655],
+		"thumbnail": "images/thumbnail_us.png"
+	}],
+	"flyTime": 3000
+}

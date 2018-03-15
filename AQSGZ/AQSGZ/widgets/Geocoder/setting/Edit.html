@@ -1,0 +1,33 @@
+<div>
+  <table class="setting-table input-table" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="first">*${nls.url}</td>
+        <td class="second">
+          <div class="service-chooser" data-dojo-attach-point="serviceChooser" />
+        </td>
+      </tr>
+      <tr class="example">
+        <td class="first"></td>
+        <td class="second">
+          <span class="example">${nls.example}: http://&lt;myServerName&gt;/arcgis/rest/services/World/GeocodeServer</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="first">*${nls.name}</td>
+        <td class="second">
+          <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="geocodeName" 
+          placeHolder="${nls.geocoderNamePlaceHolder}"
+          required="true" data-dojo-props='style:{width:"100%"}'/>
+        </td>
+      </tr>
+      <tr>
+        <td class="first">${nls.placeholder}</td>
+        <td class="second">
+          <input type="text" data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="geocodePlaceholder" 
+          placeHolder="${nls.geocodePlaceHolder}" data-dojo-props='style:{width:"100%"}'/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

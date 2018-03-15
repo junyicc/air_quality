@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Rasti artimiausią</h2><p/>
+        <h2><img src="../images/GUID-712E0E63-3047-4D1C-B2A9-D336FEC79BF0-web.png" alt="Rasti artimiausią"></h2>
+        <hr/>
+    <p>&Scaron;is įrankis randa visus artimiausius elementus, įvertina ir pateikia jų atstumą iki artimų elementų.Norint surasti artimiausią, įrankis gali naudoti atstumą tiesia linija arba pasirinktą kelionės režimą.Galima apriboti ie&scaron;komų artimiausių elementų skaičių ar paie&scaron;kos atstumą.&Scaron;is įrankis gali padėti atsakyti tokius klausimus:
+        <ul>
+            <li>Kur yra artimiausias parkas?
+            </li>
+            <li>Kurią ligoninę galima pasiekti trumpiausiu važiavimo laiku? Kiek užtruks kelionė i&scaron;vykus antradienį, 5:30, popiet, piko valandą?
+            </li>
+            <li>Koks atstumas tarp miestų automobilių keliais?
+            </li>
+            <li>Kurie pacientai gyvena arčiau nei trijų kilometrų atstumu nuo chemijos pramonės įmonių?
+            </li>
+        </ul>
+        
+    </p>
+    <p>Rasti artimiausią sukuria sluoksnį, turintį artimiausius elementus ir linijinį, sluoksnį, jungiantį įvesties vietas su artimiausiais elementais.Linijiniame sluoksnyje saugoma informacija apie pradžios ir artimiausias vietas bei atstumus tarp jų.
+    </p>
+    <p>Jei  <b>Naudoti esamą žemėlapio aprėptį</b> pažymėtas, bus analizuojami tik žemėlapio aprėptyje matomi elementai. Jei nepažymėta &ndash; analizuojami visi elementai, net jei jie patenka už matomo žemėlapio ribų.  
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="NearbyLocationsLayer">
+        <div><h2>Rasti artimiausias vietas</h2></div>
+        <hr/>
+        <div>
+            <p>Rasti artimiausią i&scaron;matuoja atstumą tarp kiekvienos įvesties vietos analizės sluoksnyje ir vietų &scaron;iame sluoksnyje.Kiekviename sluoksnyje gali būti iki 1000 elementų.
+            </p>
+        </div>
+    </div>
+    <div id="MeasurementMethod">
+        <div><h2>Matuoti</h2></div>
+        <hr/>
+        <div>
+            <p>Nurodykite, ar atstumas bus apskaičiuojamas tiesia linija arba pagal pasirinktą kelionės režimą.Kelionės režimus galima įgalinti tik tada, kai analizės sluoksnyje yra ta&scaron;kų.Galimos parinktys: važiavimo atstumas, važiavimo trukmė, važiavimo sunkvežimiu atstumas, važiavimo sunkvežimiu trukmė, ėjimo atstumas ir ėjimo trukmė. Naudojant vieną i&scaron; kelionės režimų, atliekami kelių ir pėsčiųjų takų matavimai, laikomasi taikomų taisyklių, pvz., važiavimo vienpusėmis gatvėmis, neleistino apsisukimo ir kt.
+            </p>
+            <p>Jei atstumai matuojami tarp linijų ar plotinių objektų, jie apskaičiuojami tarp arčiausiai esančių jų ta&scaron;kų. 
+            </p> 
+            <p>Kai pasirenkate  <b>Važiavimo laiką</b>, galite nurodyti, kaip būtų matuojama važiavimo trukmė.
+                <ul>
+                    <li>
+                        <p>Atžymėkite  <b>Naudoti eismo būseną</b>, jei norite rasti artimiausius objektus tik pagal fiksuotus greičio dydžius, pavyzdžiui, leidžiamą greitį.
+                        </p>
+                        <p>Tai bendro pobūdžio paie&scaron;ka, leidžianti aptikti artimiausius objektus nevertinant eismo sąlygų konkrečiu kelionės metu.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Pažymėkite  <b>Naudoti eismo būseną</b> jei ie&scaron;kote elementų pagal kelionės pradžios laiką ir kintančias transporto sąlygas. Pasirinkus <b>Esamos sąlygos</b>, kelionės pradžios laikas bus prilygintas analizės vykdymo laikui, bus įvertintos esamos transporto sąlygos ir prognozuojamas važiavimo greitis pagal sensorių pateikiamą informaciją. Prognozuojamas važiavimo greitis bus apskaičiuotas pagal esamas transporto sąlygas, istorinius greičio duomenis bei papildomus, pavyzdžiui, meteorologinius, įvykius.Važiavimo greitis prognozuojamas 12 valandų laikotarpiui, todėl kelionės pradžią galite nurodyti iki 12 val. pirmyn nuo esamo laiko.
+                        </p>
+                        <p>Naudokite esamas transporto sąlygas, jei norite rasti trumpiausius atstumus i&scaron;vykdami &scaron;iuo ar artimu laiku, pavyzdžiui, po valandos.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Pažymėjus  <b>Naudoti eismo būseną</b> ir <b>Tipinės eismo sąlygos</b> bei nurodžius dieną ir laiką, įrankis aptinka artimiausius objektus remdamasis istoriniais vidutinio greičio kiekvieną 5 minučių intervalą savaitėje duomenimis. Apskaičiavimas vyks įvertinant transporto sąlygų įtaką, bet ne esamas konkrečias sąlygas; tai gali lemti besiskiriančius rezultatus.
+                        </p>
+                        <p>Galite naudoti istorinius duomenis, jei norite sužinoti kokie artimiausi objektai būtų pasiekiami  greičiausiu būdu, i&scaron;vykus, pavyzdžiui, trečiadienį 11:30. 
+                        </p>
+                        <p>Laikas priklauso nuo pradiniams elementams priskirtos laiko zonos.Taigi, jei laikas bus nurodytas 8:00 ir bus dvi i&scaron;vykimo vietos, viena Niujorke, o kita - Los Andžele, artimiausios vietos bus rastos pagal numanomą i&scaron;vykimo laiką 8:00 Rytų pakrantės laiku ir 8:00 Ramiojo vandenyno pakrantės laiku.
+                        </p>
+                    </li>
+                </ul>
+                Atkreipkite dėmesį, kad automobiliui judant i&scaron; ta&scaron;ko, bėga laikas ir eismo sąlygos kinta. Įrankis įvertins sąlygas pažymėjus <b>Naudoti eismo būseną</b>, tačiau tokie duomenys prieinami ne visuose regionuose. Paspauskite <b>Tikrinti prieinamumą</b>, jei norite sužinoti, ar duomenys prieinami jūsų regione. 
+            </p>
+        </div>
+    </div>
+    <div id="Cutoffs">
+        <div><h2>Kiekvienam objektui iš</h2></div>
+        <hr/>
+        <div>
+            <p>Artimiausių objektų paie&scaron;ką galite apriboti dviem būdais.Viena galimybė yra apriboti ie&scaron;komų elementų skaičių kiekvienam pradiniam elementui.Galite rasti vieną artimiausią parką, du ar daugiau.Kitas  būdas - nurodyti maksimalų paie&scaron;kos atstumą ar važiavimo trukmę.
+            </p>
+            <p>Neapribojus, didžiausias aptinkamų objektų skaičius yra 100, paie&scaron;kos atstumas neribojamas.
+            </p>
+            <p>Analizės trukmė priklauso nuo pradinių elementų skaičiaus, artimiausių ie&scaron;komų objektų skaičiaus bei paie&scaron;kos atstumo.Paie&scaron;ka užtruks ilgiau, jei bus daugiau elementų ar bus didesni paie&scaron;kos atstumai.
+            </p>
+            <p>Atkreipkite dėmesį, kad kai paie&scaron;kos intervalui naudojamas limitas, gali būti, kad įrankis nesuras jokių artimiausių vietų &scaron;iame intervale, arba suras mažiau artimiausių elementų, negu nurodytas maksimalus artimiausių vietų skaičius.
+            </p>
+        </div>
+    </div>
+    <div id="OutputNearestLocationsLayer">
+        <div><h2>Rezultatų sluoksnio pavadinimas</h2></div>
+        <hr/>
+        <div>
+            <p>Rezultatą sudarys du sluoksniai: vienas sluoksnis i&scaron; artimiausių elementų ir antras i&scaron; linijų, jungiančių įvesties elementus ir artimiausius elementus.
+            </p>
+            <p>Linijos bus tiesios, jei atstumai skaičiuojami tiesiomis linijomis, arba atitiks trumpiausius ar greičiausius mar&scaron;rutus kelių tinklu.Papildoma linijų sluoksnio lentelė bus sudaryta i&scaron; tokios informacijos: atstumas arba kelionės laikas apskaičiuotu mar&scaron;rutu, pradinio ir rasto elementų identifikatoriai, artimumo eilė, leidžianti identifikuoti artimiausią elementą, antrą pagal artimumą ir t.t. Kai matuojamas kelionės laikas įvertinant eismą, lentelėje bus i&scaron;vykimo ir atvykimo laikas.
+            </p>
+            <p>&Scaron;io sluoksnio, kuris bus sukurtas ir patalpintas  <b>Turinyje</b> ir pridėtas į žemėlapį, pavadinimas gali būti nurodytas arba pasirinktas pagal nutylėjimą. Pavadinimai pagal nutylėjimą formuojami i&scaron; analizuojamo sluoksnio pavadinimo.Jei toks sluoksnis jau egzistuoja, turėsite pateikti kitą pavadinimą.
+            </p>
+            <p>Pasirinkę  <b>Rezultatą įra&scaron;yti į</b>, nurodykite <b>Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

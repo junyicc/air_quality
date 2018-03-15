@@ -1,0 +1,249 @@
+/* claro/form/Common.css */
+
+/*========================= common css =========================*/
+
+@import "../variables";
+
+/* 'dijitTextBox' refers to 'dijit(TextBox|DateTextBox|CurrencyTextBox|...)' */
+
+.calcite .dijitTextBox,
+.calcite .dijitInputInner {
+	// .dijitInputInner selector needed for ValidationTextBox on IE6 because <input> doesn't inherit
+	// the color setting from the ancestor div.dijitTextBox
+	color: $text-color;
+}
+
+.calcite .dijitValidationTextBoxError .dijitValidationContainer {
+	//background-color: $erroricon-background-color;
+	//background-image: url("../"+ $image-form-error );
+	//background-image: url("../"+ $image-form-error );
+	background-position: top center;
+	border: solid $erroricon-background-color 0;
+	width: 9px;
+}
+
+.calcite .dijitTextBoxError .dijitValidationContainer {
+	border-left-width: 1px;
+}
+
+.calcite .dijitValidationTextBoxError .dijitValidationIcon {
+	width: 0;
+	background-color: transparent; /* so the INPUT doesn't obscure the border in rtl+a11y */
+}
+
+/* Padding for the input area of TextBox based widgets, and corresponding padding for the
+ * down arrow button and the placeholder.   placeholder is explicitly listed  because
+ * dijitPlaceHolder is absolutely positioned, so padding set on dijitInputField
+ * won't affect it
+ */
+.calcite .dijitTextArea,
+.calcite .dijitInputField .dijitPlaceHolder {
+	padding: $textbox-padding;
+}
+
+.calcite .dijitSelect .dijitInputField,
+.calcite .dijitTextBox .dijitInputField {
+	// Subtract 1px from top/bottom because we add 1px to other nodes, see rules below.
+	// Although we are theoretically only adding 1px to top/bottom browsers seem to pad inputs by 1px on left/right,
+	// although that varies by so compensate for that too.
+	padding: $textbox-padding - 1px  $textbox-padding;
+}
+
+.dj_gecko .calcite .dijitTextBox .dijitInputInner,
+.dj_webkit .calcite .dijitTextBox .dijitInputInner {
+	// Although we are theoretically only adding 1px to top/bottom, some browsers seem to pad inputs by 1px on left/right,
+	// so compensate for that too.
+	padding: $textbox-padding - 1px;
+}
+
+.calcite .dijitSelect,
+.calcite .dijitSelect .dijitButtonContents,
+.calcite .dijitTextBox,
+.calcite .dijitTextBox .dijitButtonNode {
+	/* color for (outer) border on *TextBox widgets, and border between input and buttons on ComboBox and Spinner */
+	border-color: $border-color;
+	transition-property: background-color, border;
+ 	transition-duration: .35s;
+}
+
+.calcite .dijitSelect,
+.calcite .dijitTextBox {
+	background-color: $textbox-background-color;
+}
+
+/* hover */
+.calcite .dijitSelectHover,
+.calcite .dijitSelectHover .dijitButtonContents,
+.calcite .dijitTextBoxHover,
+.calcite .dijitTextBoxHover .dijitButtonNode {
+	border-color: $hovered-border-color;
+	transition-duration: .25s;
+}
+
+.calcite .dijitTextBoxHover {
+	background-color: $textbox-hovered-background-color;
+	textbox-background-image();
+}
+
+/* error state */
+.calcite .dijitSelectError,
+.calcite .dijitSelectError .dijitButtonContents,
+.calcite .dijitTextBoxError,
+.calcite .dijitTextBoxError .dijitButtonNode {
+	border-color: $error-border-color;
+}
+
+/* focused state */
+.calcite .dijitSelectFocused,
+.calcite .dijitSelectFocused .dijitButtonContents,
+.calcite .dijitTextBoxFocused,
+.calcite .dijitTextBoxFocused .dijitButtonNode {
+	border-color:$focused-border-color;
+	transition-duration: .1s;
+}
+
+.calcite .dijitTextBoxFocused {
+	background-color: $textbox-focused-background-color;
+	textbox-background-image();
+}
+.calcite .dijitTextBoxFocused .dijitInputContainer {
+	background: $textbox-focused-background-color;
+}
+
+.calcite .dijitSelectErrorFocused,
+.calcite .dijitSelectErrorFocused .dijitButtonContents,
+.calcite .dijitTextBoxErrorFocused,
+.calcite .dijitTextBoxErrorFocused .dijitButtonNode {
+	border-color: $error-focused-border-color;
+}
+
+/* disabled state */
+.calcite .dijitSelectDisabled,
+.calcite .dijitSelectDisabled .dijitButtonContents,
+.calcite .dijitTextBoxDisabled,
+.calcite .dijitTextBoxDisabled .dijitButtonNode {
+	border-color: $disabled-border-color;
+}
+
+.calcite .dijitSelectDisabled,
+.calcite .dijitTextBoxDisabled,
+.calcite .dijitTextBoxDisabled .dijitInputContainer {
+	background-color: $textbox-disabled-background-color;
+	background-image: none;
+}
+
+.calcite .dijitSelectDisabled,
+.calcite .dijitTextBoxDisabled,
+.calcite .dijitTextBoxDisabled .dijitInputInner {
+	color: $disabled-text-color;
+}
+
+.dj_webkit .calcite .dijitDisabled input {
+	/* because WebKit lightens disabled input/textarea no matter what color you specify */
+	color: darken($disabled-text-color, 10%)
+}
+
+.dj_webkit .calcite textarea.dijitTextAreaDisabled {
+	/* because WebKit lightens disabled input/textarea no matter what color you specify */
+	color: darken($disabled-text-color, 80%)
+}
+
+/*========================= for special widgets =========================*/
+
+/* Input boxes with an arrow (for a drop down) */
+
+.calcite .dijitSelect .dijitArrowButtonInner,
+.calcite .dijitComboBox .dijitArrowButtonInner {
+	//background-image: url("../"+ $image-form-common-arrows );
+	background-position: -35px 53%;
+	background-repeat: no-repeat;
+	margin: 0;
+	width: 16px;
+}
+
+.calcite .dijitComboBox .dijitArrowButtonInner {
+	border: 1px solid $arrowbutton-inner-border-color;	// white gutter around the arrow button
+}
+
+.calcite .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+	border: none;
+}
+
+.calcite .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+	border: none;
+}
+
+/* Add 1px vertical padding to the <input> where user types and the validation icon,
+   to match the 1px border on arrow button */
+.calcite .dijitSelectLabel,
+.calcite .dijitTextBox .dijitInputInner,
+.calcite .dijitValidationTextBox .dijitValidationContainer {
+	padding: 1px 0;
+}
+
+.calcite .dijitComboBox .dijitButtonNode {
+	background-color: $arrowbutton-background-color;
+	standard-gradient("../");
+}
+
+/* Arrow "hover" effect:
+ * The arrow button should change color whenever the mouse is in a position such that clicking it
+ * will toggle the drop down.   That's either (1) anywhere over the ComboBox or (2) over the arrow
+ * button, depending on the openOnClick setting for the widget.
+ */
+.calcite .dijitComboBoxOpenOnClickHover .dijitButtonNode,
+.calcite .dijitComboBox .dijitDownArrowButtonHover,
+.calcite .dijitComboBoxFocused .dijitArrowButton {
+	background-color:$arrowbutton-hovered-background-color;
+}
+
+.calcite .dijitComboBoxOpenOnClickHover .dijitArrowButtonInner,
+.calcite .dijitComboBox .dijitDownArrowButtonHover .dijitArrowButtonInner {
+	background-position:-70px 53%;
+}
+
+/* Arrow Button change when drop down is open */
+.calcite .dijitComboBox .dijitHasDropDownOpen {	// .dijitHasDropDown is on dijitArrowButton node
+	background-color: $pressed-background-color;
+	active-gradient("../");
+	padding: 1px;		// Since no border on arrow button (see rule below)
+}	
+
+.dj_iequirks .calcite .dijitComboBox .dijitHasDropDownOpen {
+	padding: 1px 0;
+}
+
+.calcite .dijitComboBox .dijitHasDropDownOpen .dijitArrowButtonInner {
+	background-position:-70px 53%;
+	border: 0 none;
+}
+
+/* disabled state */
+.calcite div.dijitComboBoxDisabled .dijitArrowButtonInner {
+	/* specific selector set to override background-position setting from Button.js
+	 * (.calcite .dijitComboBoxDisabled .dijitArrowButtonInner) */
+	background-position:0 50%;
+	background-color:$disabled-background-color;
+}
+
+/*========================= hacks for browsers =========================*/
+/* it seems the input[type="hidden"] has a height (16px) too... this may cause the widget's height calculate error */
+.dj_ff3 .calcite .dijitInputField input[type="hidden"] {
+	display: none;
+	height: 0;
+	width: 0;
+}
+
+.dj_borderbox .calcite .dijitComboBox .dijitHasDropDownOpen .dijitArrowButtonInner {
+	width:18px;				// quirks mode means border-box sizing, so 18px with the border (same as 16px without border)
+}
+
+.dj_borderbox .calcite .dijitComboBoxFocused .dijitHasDropDownOpen .dijitArrowButtonInner {
+	width:16px;				// when no border, then back to 16px just like content-box sizing
+}
+
+
+/* ======================================================================================================= */
+/* Calcite - Common */
+/* ======================================================================================================= */
+@import "../Calcite_FormCommon.styl";

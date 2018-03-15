@@ -1,0 +1,64 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "height": 40
+        }
+      },{
+        "position": {
+          "left": 25,
+          "bottom": 25
+        }
+      }, {
+        "position": {
+          "left": 45,
+          "top": 5
+        }
+      }, {
+        "position": {
+          "left": 200,
+          "bottom": 20
+        }
+      },{
+        "position": {
+          "left": 55,
+          "bottom": 55,
+          "width": 400,
+          "height": 410
+        }
+      }, {
+        "position": {
+          "left": 105,
+          "bottom": 55,
+          "width": 380,
+          "height": 410
+        }
+      }, {
+        "position": {
+          "left": 155,
+          "bottom": 55,
+          "width": 380,
+          "height": 410
+        }
+      },{
+        "position": {
+          "right": 0,
+          "bottom": 0
+        }
+      }, {
+        "position": {
+          "left": 7,
+          "top": 75
+        }
+      }, {
+        "position": {
+          "left": 7,
+          "top": 110
+        }
+      }]
+  }
+}

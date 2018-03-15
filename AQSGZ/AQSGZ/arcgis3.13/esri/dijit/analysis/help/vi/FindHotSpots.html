@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Tìm Điểm Nóng</h2><p/>
+        <h2><img src="../images/GUID-C2575FC6-F14C-4332-B3BF-AB4EDA15177B-web.png" alt="T&igrave;m Điểm N&oacute;ng"></h2>
+        <hr/>
+    <p>C&ocirc;ng cụ T&igrave;m Điểm N&oacute;ng sẽ x&aacute;c định xem c&oacute; những cụm điểm n&agrave;o c&oacute; &yacute; nghĩa thống k&ecirc; trong m&ocirc; h&igrave;nh kh&ocirc;ng gian dữ liệu của bạn. 
+        <ul>
+            <li>C&aacute;c điểm của bạn (tỷ lệ tội phạm, c&acirc;y xanh, tai nạn giao th&ocirc;ng) c&oacute; thực sự được gom th&agrave;nh nh&oacute;m kh&ocirc;ng? L&agrave;m thế n&agrave;o bạn c&oacute; thể chắc chắn?
+            </li>
+            <li>Bạn đ&atilde; thực sự ph&aacute;t hiện ra một điểm n&oacute;ng c&oacute; &yacute; nghĩa thống k&ecirc; (đối với việc chi ti&ecirc;u, tỷ lệ tử vong ở trẻ sơ sinh, điểm kiểm tra cao li&ecirc;n tục) hoặc bản đồ của bạn sẽ kể một c&acirc;u chuyện kh&aacute;c nếu bạn thay đổi c&aacute;ch m&agrave; n&oacute; được k&iacute; hiệu h&oacute;a?
+            </li>
+        </ul>
+        C&ocirc;ng cụ T&igrave;m Điểm N&oacute;ng sẽ gi&uacute;p bạn tự tin trả lời c&aacute;c c&acirc;u hỏi n&agrave;y.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="AnalysisFieldPoly">
+        <div><h2>Chọn trường phân tích</h2></div>
+        <hr/>
+        <div>
+            <p>Ph&acirc;n t&iacute;ch n&agrave;y trả lời c&acirc;u hỏi sau: Nơi n&agrave;o c&oacute; gi&aacute; trị cao v&agrave; thấp (đối với trường ph&acirc;n t&iacute;ch bạn chỉ định) được gom cụm theo kh&ocirc;ng gian? 
+            </p>
+            <p>Lớp kết quả sẽ l&agrave; một bản sao của lớp ph&acirc;n t&iacute;ch. Bảng n&agrave;y sẽ bao gồm trường ph&acirc;n t&iacute;ch bạn lựa chọn cộng th&ecirc;m c&aacute;c trường bổ sung phản &aacute;nh điểm mạnh của việc gom cụm, &yacute; nghĩa thống k&ecirc;, v&agrave; mức độ tin cậy.
+            </p> 
+        </div>
+    </div>
+    <div id="AnalysisFieldPoint">
+        <div><h2>Chọn trường phân tích</h2></div>
+        <hr/>
+        <div>
+            <p>Nếu bạn cung cấp một trường ph&acirc;n t&iacute;ch, c&ocirc;ng cụ n&agrave;y sẽ trả lời c&acirc;u hỏi: Nơi n&agrave;o c&oacute; gi&aacute; trị gom cụm cao v&agrave; thấp giữa c&aacute;c điểm? 
+            </p>
+            <p>Lớp kết quả sẽ l&agrave; một bản sao của lớp ph&acirc;n t&iacute;ch điểm. Bảng n&agrave;y sẽ bao gồm trường ph&acirc;n t&iacute;ch bạn lựa chọn cộng th&ecirc;m c&aacute;c trường bổ sung phản &aacute;nh điểm mạnh của việc gom cụm, &yacute; nghĩa thống k&ecirc;, v&agrave; mức độ tin cậy.
+            </p>
+            <p>Nếu bạn kh&ocirc;ng cung cấp một trường ph&acirc;n t&iacute;ch, c&ocirc;ng cụ n&agrave;y sẽ đ&aacute;nh gi&aacute; c&aacute;ch bố tr&iacute; kh&ocirc;ng gian của c&aacute;c đối tượng điểm để trả lời c&acirc;u hỏi: Nơi n&agrave;o c&oacute; c&aacute;c điểm được gom cụm hay lan rộng ra kh&ocirc;ng mong? 
+            </p>
+            <p>Khi kh&ocirc;ng cung cấp trường ph&acirc;n t&iacute;ch, c&ocirc;ng cụ tạo ra một mắt lưới v&agrave; đếm số điểm thuộc phạm vi mỗi &ocirc; mắt lưới. Chỉ c&aacute;c &ocirc; c&oacute; số điểm lớn hơn kh&ocirc;ng mới được ph&acirc;n t&iacute;ch. Lớp kết quả l&agrave; c&aacute;c &ocirc; mắt lưới; bảng lớp kết quả bao gồm c&aacute;c gi&aacute; trị t&iacute;nh cộng th&ecirc;m c&aacute;c trường bổ sung phản &aacute;nh điểm mạnh của việc gom cụm, &yacute; nghĩa thống k&ecirc;, v&agrave; mức độ tin cậy.
+            </p> 
+        </div>
+    </div>
+    <div id="BoundingPolygonLayer">
+        <div><h2>Xác định nơi có thể xảy ra sự cố</h2></div>
+        <hr/>
+        <div>
+            <p>Vẽ hoặc cung cấp một lớp khu vực bao quanh để trả lời c&acirc;u hỏi: Trong c&aacute;c khu vực bao quanh, c&oacute; bất kỳ vị tr&iacute; n&agrave;o c&oacute; mật độ điểm cao hay thấp bất ngờ? 
+            </p>
+            <p>C&aacute;c đối tượng khu vực bạn vẽ hoặc c&aacute;c đối tượng tại lớp khu vực bạn chỉ định cần x&aacute;c định nơi c&aacute;c điểm c&oacute; khả năng xuất hiện. Để vẽ c&aacute;c khu vực n&agrave;y, bấm v&agrave;o n&uacute;t vẽ rồi bấm v&agrave;o bản đồ để tạo h&igrave;nh dạng khu vực. Để vẽ c&aacute;c khu vực kh&aacute;c, bấm lại v&agrave;o n&uacute;t vẽ, rồi bấm v&agrave;o bản đồ v&agrave; tiếp tục vẽ.
+            </p>
+            <p>Lưu &yacute;: Nếu bạn muốn chồng lớp c&aacute;c điểm với c&aacute;c khu vực ngo&agrave;i mắt lưới,  <b>Cung cấp c&aacute;c khu vực tổng hợp để cộng tổng c&aacute;c sự cố</b>.
+            </p>
+            <p>Lớp kết quả cho ph&acirc;n t&iacute;ch n&agrave;y sẽ l&agrave; một mắt lưới bao gồm c&aacute;c khu vực bao quanh m&agrave; bạn cung cấp. Bảng n&agrave;y sẽ bao gồm số điểm &ocirc; mắt lưới cộng th&ecirc;m c&aacute;c trường bổ sung phản &aacute;nh điểm mạnh của việc gom cụm, &yacute; nghĩa thống k&ecirc;, v&agrave; mức độ tin cậy. 
+            </p> 
+        </div>
+    </div>
+    <div id="AggregationPolygonLayer">
+        <div><h2>Cung cấp các khu vực tổng hợp</h2></div>
+        <hr/>
+        <div>
+            <p>Cung cấp một lớp v&ugrave;ng (thường phản &aacute;nh c&aacute;c b&aacute;o c&aacute;o của quận huyện về h&agrave;nh ch&iacute;nh như v&ugrave;ng điều tra d&acirc;n số,ranh giới quận, th&agrave;nh phố) để trả lời c&aacute;c c&acirc;u hỏi: Giả sử số điểm trong phạm vi mỗi đối tượng v&ugrave;ng, c&oacute; c&aacute;c vị tr&iacute; được gom cụm kh&ocirc;ng gian c&oacute; &yacute; nghĩa thống k&ecirc; với số điểm cao hay thấp? 
+            </p>
+            <p>Lớp kết quả cho ph&acirc;n t&iacute;ch n&agrave;y sẽ l&agrave; một bản sao của khu vực tổng hợp. Bảng n&agrave;y sẽ bao gồm số điểm cho từng khu vực cộng th&ecirc;m c&aacute;c trường bổ sung phản &aacute;nh điểm mạnh của việc gom cụm, &yacute; nghĩa thống k&ecirc;, v&agrave; mức độ tin cậy. 
+            </p> 
+        </div>
+    </div>
+    <div id="OutputLayerName">
+        <div><h2>Tên lớp kết quả</h2></div>
+        <hr/>
+        <div>
+            <p>Cung cấp t&ecirc;n lớp sẽ được tạo trong mục  <b>Nội dung của T&ocirc;i</b> v&agrave; th&ecirc;m v&agrave;o bản đồ. Lớp kết quả n&agrave;y sẽ cho bạn thấy c&aacute;c cụm điểm c&oacute; &yacute; nghĩa thống k&ecirc; về c&aacute;c gi&aacute; trị cao v&agrave; thấp. Nếu t&ecirc;n lớp kết quả đ&atilde; tồn tại, bạn sẽ được y&ecirc;u cầu đổi t&ecirc;n n&oacute;.
+            </p>
+            <p>Sử dụng hộp xổ xuống  <b>Lưu kết quả trong</b>, bạn c&oacute; thể chỉ định t&ecirc;n thư mục trong mục <b>Nội dung của T&ocirc;i</b> nơi sẽ lưu trữ kết quả của bạn.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,270 @@
+@require "../../dijit/variables"
+
+.calcite
+  .esriPopup
+    position: absolute;
+    z-index: 40;
+    font-family: $fontFamilyDefault;
+    font-size: $fontSizeDefault;
+    background-color: CalciteColorWhite;
+
+    calciteWeb_RoundRadius($borderRadiusSize1);
+    /*border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;*/
+    calciteWeb_BoxShadow();
+    /*box-shadow: 0 0 0.75em #777777;
+    -moz-box-shadow: 0 0 0.75em #777777;
+    -webkit-box-shadow: 0 0 0.75em #777777;
+    -o-box-shadow: 0 0 0.75em #777777;*/
+
+
+    .pointer,
+    .outerPointer {
+      background: CalciteColorWhite;
+      display: none;
+      height: 16px;
+      width: 16px;
+      position: absolute;
+      z-index: 0;
+      transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      calciteWeb_BoxShadow();
+      /*box-shadow: 0 0 0.75em #777777;
+      -webkit-box-shadow: 0 0 0.75em #777777;
+      */
+    }
+
+    .esriPopupWrapper {
+      calciteWeb_RoundRadius($borderRadiusSize1);
+      /* border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -o-border-radius: 5px;*/
+      calciteWeb_BoxShadow();
+      /* box-shadow: 0 0 0.75em #777777;
+      -moz-box-shadow: 0 0 0.75em #777777;
+      -webkit-box-shadow: 0 0 0.75em #777777;
+      -o-box-shadow: 0 0 0.75em #777777; */
+    }
+
+    .titlePane
+      line-height: $paddingDefaultSpacer * 4;
+      padding-top: $paddingDefaultSpacer * 2;
+      padding-right: $paddingDefaultSpacer * 2;
+      padding-bottom: $paddingDefaultSpacer * 2;
+      padding-left: $paddingDefaultSpacer * 2;
+      /*line-height: 20px;
+      padding: 10px 6px 6px 10px;
+      border: 1px solid #666666;*/
+      cursor: default;
+      border-bottom: none;
+      background-color: CalciteColorWhite;
+      /*border-bottom: 1px solid $borderColorDivider;*/
+
+      /* border-radius: 5px 5px 0px 0px;
+      -moz-border-radius: 5px 5px 0px 0px;
+      -webkit-border-radius: 5px 5px 0px 0px;
+      -o-border-radius: 5px 5px 0px 0px; */
+
+
+      .title
+        font-size: $textSectionTitleSize;
+        color: $textColorDefault;
+
+
+    .contentPane
+      position: relative;
+      padding-top: $paddingDefaultSpacer;
+      padding-right: $paddingDefaultSpacer * 2;
+      padding-bottom: $paddingDefaultSpacer;
+      padding-left: $paddingDefaultSpacer * 2;
+      /*padding: 10px 6px 6px 10px;*/
+      max-height: 300px;
+      overflow: auto;
+      background-color: CalciteColorWhite;
+      /*border: 1px solid #999999;*/
+      border-top: none;
+      border-bottom: none;
+      color: $textColorDefault;
+
+      hr {
+        height: 0px;
+        border: none;
+        border-top: 1px solid $borderColorDivider;
+        outline: none;
+      }
+
+    .actionsPane
+      padding-top: $paddingDefaultSpacer * 2; /* 2 times the default spacing */
+      padding-right: $paddingDefaultSpacer;
+      padding-bottom: $paddingDefaultSpacer;
+      padding-left: $paddingDefaultSpacer;
+      background-color: CalciteColorWhite;
+      /*padding: 10px 6px 6px 10px;*/
+      /*border: 1px solid #999999;*/
+      border-top: none;
+      top: 0px;
+      height: $paddingDefaultSpacer * 3; /* 3 times the default spacing */
+
+      /*border-radius: 0px 0px 5px 5px;
+      -moz-border-radius: 0px 0px 5px 5px;
+      -webkit-border-radius: 0px 0px 5px 5px;
+      -o-border-radius: 0px 0px 5px 5px;*/
+
+      .action
+        position: absolute;
+        cursor: pointer;
+        background-image none //url( $imageSpritePopup ); /*("../images/popup-sprite.png");*/
+        width: 12px;
+        height: 12px;
+        //text-indent: -9999px;
+        text-decoration none
+
+        color $textColorDefault
+        &:hover,
+        &:focus,
+        &:hover span,
+        &:focus span {
+          opacity 1
+          color: $textColorHover
+          text-decoration none
+        }
+
+        &.zoomTo
+          position relative
+          top -9px
+          //background-position: 0 -224px;
+          color $textColorDefault
+          &:before {
+            iconfont("esriIconSearchSmall")
+            font-size $fontSizeIconDefault
+            position relative
+            top 4px
+            left 0px
+            line-height $fontSizeIconDefault
+          }
+
+
+
+    .titleButton,
+    .titleButton.prev,
+    .titleButton.next,
+    .titleButton.close,
+    .titleButton.maximize,
+    .titleButton.restore {
+      width: 12px;
+      height: 12px;
+      top: 10px;
+      position: absolute;
+      cursor: pointer;
+      background-image none
+      //background-image: url( $imageSpritePopup ); /*("../images/popup-sprite.png");*/
+
+      color $textColorDefault
+      &:hover,
+      &:focus {
+        opacity 1
+        color: $textColorHover
+      }
+    }
+
+    .titleButton.prev {
+      //background-position: 0 -64px;
+      &:before {
+        iconfont("esriIconLeftArrowSmall")
+        font-size $fontSizeIconDefault
+        position relative
+        top -4px
+        left -4px
+        line-height $fontSizeIconDefault
+      }
+    }
+
+    .titleButton.next {
+      //background-position: 0 -64px;
+      &:before {
+        iconfont("esriIconRightArrowSmall")
+        font-size $fontSizeIconDefault
+        position relative
+        top -4px
+        left -4px
+        line-height $fontSizeIconDefault
+      }
+    }
+
+    .titleButton.close {
+      right: 6px;
+      //background-position: 0 -32px;
+      &:before {
+        iconfont("esriIconCloseSmall")
+        font-size $fontSizeIconDefault
+        position relative
+        top -4px
+        left -4px
+        line-height $fontSizeIconDefault
+      }
+    }
+
+    .titleButton.maximize {
+      right: 24px;
+      //background-position: 0 -160px;
+      color $textColorDefault
+      &:before {
+        iconfont("esriIconMaximize")
+        font-size $fontSizeIconDefault
+        position relative
+        top -4px
+        left -4px
+        line-height $fontSizeIconDefault
+      }
+    }
+
+    .titleButton.restore {
+      right: 24px;
+      //background-position: 0 -64px;
+      &:before {
+        iconfont("esriIconMinimize")
+        font-size $fontSizeIconDefault
+        position relative
+        top -4px
+        left -4px
+        line-height $fontSizeIconDefault
+      }
+    }
+
+  /*
+.calcite .esriPopup .charts-dark { width: 12px; height: 12px; background-position: 0 0; }
+.calcite .esriPopup .charts-light { width: 12px; height: 12px; background-position: 0 -16px; }
+.calcite .esriPopup .close-dark { width: 12px; height: 12px; background-position: 0 -32px; }
+.calcite .esriPopup .close-light { width: 12px; height: 12px; background-position: 0 -48px; }
+.calcite .esriPopup .collapse-dark { width: 12px; height: 12px; background-position: 0 -64px; }
+.calcite .esriPopup .collapse-light { width: 12px; height: 12px; background-position: 0 -80px; }
+.calcite .esriPopup .directions-dark { width: 12px; height: 12px; background-position: 0 -96px; }
+.calcite .esriPopup .directions-light { width: 12px; height: 12px; background-position: 0 -112px; }
+.calcite .esriPopup .edit-dark { width: 12px; height: 12px; background-position: 0 -128px; }
+.calcite .esriPopup .edit-light { width: 12px; height: 12px; background-position: 0 -144px; }
+.calcite .esriPopup .expand-dark { width: 12px; height: 12px; background-position: 0 -160px; }
+.calcite .esriPopup .expand-light { width: 12px; height: 12px; background-position: 0 -176px; }
+.calcite .esriPopup .media-dark { width: 12px; height: 12px; background-position: 0 -192px; }
+.calcite .esriPopup .media-light { width: 12px; height: 12px; background-position: 0 -208px; }
+.calcite .esriPopup .zoom-dark { width: 12px; height: 12px; background-position: 0 -224px; }
+.calcite .esriPopup .zoom-light { width: 12px; height: 12px; background-position: 0 -240px; }
+*/
+
+/*.calcite .esriPopup .titleButton.next {
+  right: 46px;
+  background-position: -16px -0;
+  width: 9px;
+  height: 17px;
+}
+.calcite .esriPopup .titleButton.prev {
+  right: 64px;
+  background-position: -29px 0;
+  width: 9px;
+  height: 17px;
+}*/

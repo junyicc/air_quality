@@ -1,0 +1,71 @@
+.jimu-widget-swipe {
+	width: 32px !important;
+	height: 30px !important;
+	position: absolute;
+}
+.jimu-widget-swipe .swipe-icon{
+	width: 30px;
+	height: 100%;
+	padding: 5px;
+	border-radius: 5px;
+	background: #666;
+	background: rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+.jimu-widget-swipe .swipe-icon:hover{
+	background: #333;
+	background: rgba(0,0,0,0.4);
+}
+.jimu-widget-swipe .swipe-icon-enable{
+	background: #333;
+	background: rgba(0,0,0,0.6);
+}
+.jimu-widget-swipe .swipe-icon .swipe-icon-inner{
+	width: 20px;
+	height: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("images/loading.gif");
+}
+.jimu-widget-swipe .swipe-layer-menu{
+	position: absolute;
+	top: 0;
+	left: 32px;
+	min-width: 320px;
+	font-size: 14px;
+	color: #686868;
+	padding: 14px;
+	background: #fff;
+	z-index: 50;
+}
+.jimu-rtl .jimu-widget-swipe .swipe-layer-menu{
+	right: 32px;
+	left: auto;
+}
+.jimu-widget-swipe .swipe-layer-menu .hint{
+	display: inline-block;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitSelect {
+  color: #7989a0;
+  border-color: #d2dade;
+}
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitSelectHover,
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitSelectFocused {
+  border-color: #759dc0;
+}
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitArrowButton{
+	padding: 1px;
+}
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitSelect .dijitButtonContents {
+  border-style: none;
+  border-width: 0;
+  background: #fafafc !important;
+}
+.claro .jimu-widget-swipe .swipe-layer-menu .dijitSelect .dijitArrowButton {
+  border-style: none;
+  border-width: 0;
+  background: #fafafc !important;
+}

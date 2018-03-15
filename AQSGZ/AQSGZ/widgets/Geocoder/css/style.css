@@ -1,0 +1,23 @@
+.jimu-widget-geocoder{
+  width: 225px !important;
+  height: 30px !important;
+  background-color: rgba(72, 85, 102, 0.5);
+  border-radius: 5px;
+}
+.jimu-widget-geocoder input::-ms-clear {
+    display: none;
+}
+.jimu-widget-geocoder .simpleGeocoder .esriGeocoder {
+  border: 1px solid #666;
+  opacity: 0.9;
+}
+.jimu-widget-geocoder .simpleGeocoder .esriGeocoderResults{
+  border: 1px solid #666;
+}
+.esriPopup .titlePane {
+	background-color: #5491B8;
+	border-color: #777777;
+}
+.esriPopup .sizer {
+	width: 400px;
+}

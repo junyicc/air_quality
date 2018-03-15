@@ -1,0 +1,126 @@
+{
+  "widgetOnScreen": {
+    "widgets": [{
+      "uri": "themes/FoldableTheme/widgets/HeaderController/Widget",
+      "positionRelativeTo": "browser",
+      "position": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "height": 40
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/Scalebar/Widget",
+      "position": {
+        "left": 25,
+        "bottom": 25
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/Geocoder/Widget",
+      "position": {
+        "left": 45,
+        "top": 5
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/Coordinate/Widget",
+      "position": {
+        "left": 200,
+        "bottom": 20
+      },
+      "version": "1.2"
+    }, {
+      "position": {
+        "left": 55,
+        "top": 45,
+        "width": 400,
+        "height": 410
+      }
+    }, {
+      "position": {
+        "left": 105,
+        "top": 45,
+        "width": 380,
+        "height": 410
+      }
+    }, {
+      "position": {
+        "left": 155,
+        "top": 45,
+        "width": 380,
+        "height": 410
+      }
+    }, {
+      "uri": "widgets/OverviewMap/Widget",
+      "position": {
+        "right": 0,
+        "top": 0
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/HomeButton/Widget",
+      "inPanel": false,
+      "position": {
+        "left": 7,
+        "top": 75
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/MyLocation/Widget",
+      "inPanel": false,
+      "position": {
+        "left": 7,
+        "top": 110
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/AttributeTable/Widget",
+      "positionRelativeTo": "browser",
+      "version": "1.2"
+    }, {
+      "uri": "widgets/Splash/Widget",
+      "visible": false,
+      "positionRelativeTo": "browser",
+      "version": "1.2"
+    }, {
+      "uri": "widgets/TimeSlider/Widget",
+      "visible": false,
+      "position": {
+        "bottom": 55,
+        "left": 7
+      },
+      "version": "1.2"
+    }, {
+      "uri": "widgets/Swipe/Widget",
+      "visible": false,
+      "position": {
+        "top": 145,
+        "left": 7
+      },
+      "version": "1.2"
+    }]
+  },
+
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 40,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "positionRelativeTo": "map",
+      "position": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    }
+  }
+}

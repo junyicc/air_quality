@@ -1,0 +1,41 @@
+.calcite
+  .esriBookmarks
+    width: 215px
+    border-style: solid
+    border-color:transparent
+    border-width: 1px
+
+  .esriBookmarkTable
+    width: 100%
+    border-spacing: 0px
+    border-collapse: collapse
+
+  .esriBookmarkItem
+    width: 100%;
+    height: 24px;
+
+  .esriBookmarkItem.esriBookmarkHighlight,
+  .esriBookmarkItem:hover,
+  .esriBookmarkItem:focus
+    /*background-color: #D9E6F9;*/
+    calciteArcGISPro_ButtonHover();
+    border: none
+
+  .esriBookmarkLabel
+    position: relative;
+    float: left;
+    width: 99%;
+    overflow: hidden;
+    /*line-height: 20px;
+    height: 20px;
+    margin-left: 5px;*/
+    white-space: nowrap;
+    font-size: $fontSizeDefault;
+    text-align: left;
+    vertical-align: middle;
+    color: $textColorDefault;
+    font-family: $fontFamilyDefault; /*Verdana, Helvetica, sans-serif;*/
+    cursor: pointer;
+    line-height: ($fontFamilyDefault + 10px);
+    height: ($fontFamilyDefault + 10px);
+    margin-left: $marginDefaultSpacer;

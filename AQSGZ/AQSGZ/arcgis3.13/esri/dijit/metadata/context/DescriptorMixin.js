@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.13/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/metadata/context/DescriptorMixin","dojo/_base/declare dojo/_base/lang dojo/has dojo/i18n!../nls/i18nFgdc dojo/i18n!../nls/i18nIso dojo/i18n!../nls/i18nInspire dojo/i18n!../nls/i18nGemini ../../../kernel".split(" "),function(a,b,c,d,e,f,g,h){a=a(null,{i18nFgdc:d,i18nIso:e,i18nInspire:f,i18nGemini:g,codeListPrefix:"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#",inspireCodeListPrefix:"http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#",
+constructor:function(a){b.mixin(this,a)}});c("extend-esri")&&b.setObject("dijit.metadata.context.DescriptorMixin",a,h);return a});

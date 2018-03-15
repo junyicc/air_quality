@@ -1,0 +1,86 @@
+/* jimu-widget-swipe-setting */
+.jimu-widget-swipe-setting{
+	margin:0;
+  padding:0;
+  font-size:14px;
+  color: #596679;
+}
+.jimu-widget-swipe-setting .style-text,
+.jimu-widget-swipe-setting .layer-text{
+  font-weight: bold;
+}
+.jimu-widget-swipe-setting .style-section .style-items{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  font-size: 10px;
+}
+.jimu-widget-swipe-setting .style-section .style-item {
+  text-align: center;
+  color: #596679;
+  cursor: pointer;
+}
+.jimu-widget-swipe-setting .style-section .style-item label {
+  font-size: 14px;
+  vertical-align: middle;
+}
+.jimu-widget-swipe-setting .style-section .style-item:first-child{
+  margin-left: 0;
+}
+.jimu-rtl .style-item:first-child {
+  margin-left: 2em;
+  margin-right: 0;
+}
+.jimu-widget-swipe-setting .style-section .style-item-image{
+  position: relative;
+  width: 226px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.jimu-widget-swipe-setting .jimu-radio {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.jimu-widget-swipe-setting .jimu-radio-inner{
+  width: 8px;
+  height: 8px;
+}
+.jimu-widget-swipe-setting .style-item .style-vertical{
+  background: url(images/vertical.png);
+}
+.jimu-widget-swipe-setting .style-item .style-horizontal{
+  background: url(images/horizontal.png);
+}
+.jimu-widget-swipe-setting .style-item .style-scope{
+  background: url(images/scope.png);
+}
+
+.jimu-widget-swipe-setting .layer-text{
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.jimu-widget-swipe-setting .layer-hint{
+  display: inline-block;
+  margin-top: 5px;
+  color: #a0acbf;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.claro .jimu-widget-swipe-setting .dijitSelect {
+  color: #7989a0;
+  border-color: #d2dade;
+}
+.claro .jimu-widget-swipe-setting .dijitSelectHover,
+.claro .jimu-widget-swipe-setting .dijitSelectFocused {
+  border-color: #759dc0;
+}
+.claro .jimu-widget-swipe-setting .dijitSelect .dijitButtonContents {
+  border-style: none;
+  background: #fafafc !important;
+}
+.claro .jimu-widget-swipe-setting .dijitSelect .dijitArrowButton {
+  border-style: none;
+  background: #fafafc !important;
+}

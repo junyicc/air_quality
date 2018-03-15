@@ -1,0 +1,9 @@
+{
+  "overviewMap":{
+    "visible": false
+  },
+  "minWidth": 200,
+  "minHeight": 150,
+  "maxWidth": 400,
+  "maxHeight": 300
+}

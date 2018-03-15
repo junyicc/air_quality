@@ -1,0 +1,7 @@
+{
+  "splash": {
+    "splashContent": "<div class=\"welcomeLogo\" style=\"position: absolute\">\n\t<img id=\"welcome1\" style=\"max-width:140px;position:absolute\" src=\"widgets/Splash/images/Welcome.png\">\n\t<img id=\"welcome2\" style=\"max-width:182px;position:absolute;top:30px;left:33px\" src=\"widgets/Splash/images/Welcome2.png\">\n</div>\n<div class=\"GZmap\" style=\"position: absolute;  top: 20%;left:40%;\">\n\t<img id=\"welcomemap\" src=\"widgets/Splash/images/map.png\">\n</div>\n",
+    "requireConfirm": false,
+    "confirmText": ""
+  }
+}

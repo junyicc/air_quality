@@ -1,0 +1,12 @@
+/*
+	Copyright (c) 2004-2011, The Dojo Foundation All Rights Reserved.
+	Available via Academic Free License >= 2.1 OR the modified BSD license.
+	see: http://dojotoolkit.org/license for details
+*/
+
+//>>built
+define("dojo/cldr/nls/vi/japanese",{"field-sat-relative+0":"th\u1ee9 b\u1ea3y tu\u1ea7n n\u00e0y","field-sat-relative+1":"th\u1ee9 b\u1ea3y tu\u1ea7n sau","field-dayperiod":"SA/CH","field-sun-relative+-1":"ch\u1ee7 nh\u1eadt tu\u1ea7n tr\u01b0\u1edbc","field-mon-relative+-1":"th\u1ee9 hai tu\u1ea7n tr\u01b0\u1edbc","field-minute":"Ph\u00fat","field-day-relative+-1":"h\u00f4m qua","field-weekday":"Ng\u00e0y trong tu\u1ea7n","field-era":"K\u1ef7 nguy\u00ean","field-hour":"Gi\u1edd","field-sun-relative+0":"ch\u1ee7 nh\u1eadt tu\u1ea7n n\u00e0y",
+"field-sun-relative+1":"ch\u1ee7 nh\u1eadt tu\u1ea7n sau","field-wed-relative+-1":"th\u1ee9 t\u01b0 tu\u1ea7n tr\u01b0\u1edbc","field-day-relative+0":"h\u00f4m nay","field-day-relative+1":"ng\u00e0y mai","dateFormat-long":"d MMMM, y G","field-tue-relative+0":"th\u1ee9 ba tu\u1ea7n n\u00e0y","field-zone":"M\u00fai gi\u1edd","field-tue-relative+1":"th\u1ee9 ba tu\u1ea7n sau","field-week-relative+-1":"tu\u1ea7n tr\u01b0\u1edbc","dateFormat-medium":"d MMM, y G","field-year-relative+0":"n\u0103m nay",
+"field-year-relative+1":"n\u0103m sau","field-sat-relative+-1":"th\u1ee9 b\u1ea3y tu\u1ea7n tr\u01b0\u1edbc","field-year-relative+-1":"n\u0103m ngo\u00e1i","field-year":"N\u0103m","field-fri-relative+0":"th\u1ee9 s\u00e1u tu\u1ea7n n\u00e0y","field-fri-relative+1":"th\u1ee9 s\u00e1u tu\u1ea7n sau","field-week":"Tu\u1ea7n","field-week-relative+0":"tu\u1ea7n n\u00e0y","field-week-relative+1":"tu\u1ea7n sau","field-month-relative+0":"th\u00e1ng n\u00e0y","field-month":"Th\u00e1ng","field-month-relative+1":"th\u00e1ng sau",
+"field-fri-relative+-1":"th\u1ee9 s\u00e1u tu\u1ea7n tr\u01b0\u1edbc","field-second":"Gi\u00e2y","field-tue-relative+-1":"th\u1ee9 ba tu\u1ea7n tr\u01b0\u1edbc","field-day":"Ng\u00e0y","field-mon-relative+0":"th\u1ee9 hai tu\u1ea7n n\u00e0y","field-mon-relative+1":"th\u1ee9 hai tu\u1ea7n sau","field-thu-relative+0":"th\u1ee9 n\u0103m tu\u1ea7n n\u00e0y","field-second-relative+0":"b\u00e2y gi\u1edd","dateFormat-short":"d/M/y GGGGG","field-thu-relative+1":"th\u1ee9 n\u0103m tu\u1ea7n sau","dateFormat-full":"EEEE, d MMMM, y G",
+"field-wed-relative+0":"th\u1ee9 t\u01b0 tu\u1ea7n n\u00e0y","field-wed-relative+1":"th\u1ee9 t\u01b0 tu\u1ea7n sau","field-month-relative+-1":"th\u00e1ng tr\u01b0\u1edbc","field-thu-relative+-1":"th\u1ee9 n\u0103m tu\u1ea7n tr\u01b0\u1edbc"});

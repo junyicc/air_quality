@@ -1,0 +1,102 @@
+.jimu-widget-geocoder-setting{
+  width: 100%;
+  height: 100%;
+  margin:0;
+  padding:0;
+  font-size: 14px;
+  color: #596679;
+}
+
+.jimu-geocoder-Edit .setting-table{
+  width: 100%;
+}
+
+.jimu-geocoder-Edit .jimu-basic-service-chooser{
+  width: 100%;
+}
+
+.jimu-geocoder-Edit .setting-table > thead > tr > th,
+.jimu-geocoder-Edit .setting-table > tbody > tr > td{
+  height:40px;
+  vertical-align:middle;
+}
+
+.jimu-geocoder-Edit .setting-table > tbody > tr.example > td{
+  height:20px;
+  vertical-align:middle;
+}
+
+.jimu-geocoder-Edit{
+  font-size: 14px;
+}
+
+.jimu-geocoder-Edit .input-table > tbody > tr > .first{
+  width:auto;
+  text-align: right;
+  padding-right:15px;
+}
+
+.jimu-geocoder-Edit .input-table > tbody > tr > .second{
+  width:450px;
+}
+
+.jimu-geocoder-Edit .input-table > tbody > tr > .second .example{
+  font-style: italic;
+  font-size: 12px;
+  color: #a0acbf;
+  width: 100%;
+  display: inline-block;
+}
+
+.jimu-widget-geocoder-setting .location-section,
+.jimu-widget-geocoder-setting .query-section{
+  overflow: hidden;
+}
+
+.jimu-widget-geocoder-setting .disable-section{
+  color: #a0acbf;
+}
+
+.jimu-widget-geocoder-setting .instruction,
+.jimu-widget-geocoder-setting .add-geocoder,
+.jimu-widget-geocoder-setting .table {
+  padding-left: 19px;
+}
+
+.jimu-widget-geocoder-setting .add-geocoder{
+  margin: 5px 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.jimu-widget-geocoder-setting .geocoder-table {
+  margin-bottom: 20px;
+}
+
+.jimu-widget-geocoder-setting .add-geocoder-icon{
+  background-image: url(images/add_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jimu-widget-geocoder-setting .add-geocoder-label{
+  font-size: 14px;
+  color: #518dca;
+  margin-left: 10px;
+  /* line-height: 24px; */
+  display: inline-block;
+  height: 100%;
+  text-decoration: underline;
+}
+
+.jimu-widget-geocoder-setting .instruction a{
+  color: #518dca;
+}
+
+.jimu-widget-geocoder-setting .query-instruction{
+  margin-bottom: 5px;
+}

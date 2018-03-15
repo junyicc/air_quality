@@ -1,0 +1,448 @@
+{
+  "theme": {
+    "name": "FoldableTheme",
+    "styles": [
+      "green",
+      "cyan",
+      "default",
+      "black"
+    ],
+    "version": "1.2"
+  },
+  "portalUrl": "http://www.arcgisonline.cn/portal",
+  "appId": "",
+  "title": "广州市空气质量监管与预警系统",
+  "subtitle": "",
+  "logo": "images/logo.png",
+  "geometryService": "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+  "links": [
+    {
+      "label": "",
+      "url": ""
+    }
+  ],
+  "widgetOnScreen": {
+    "widgets": [
+      {
+        "uri": "themes/FoldableTheme/widgets/HeaderController/Widget",
+        "positionRelativeTo": "browser",
+        "position": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "height": 40
+        },
+        "version": "1.2",
+        "id": "themes/FoldableTheme/widgets/HeaderController/Widget_1",
+        "name": "HeaderController",
+        "label": "页眉控制器"
+      },
+	   {
+        "uri":"widgets/MyWidgets/AQIPanel/Widget",
+        "positionRelativeTo":"map",
+        "version":"1.2",
+        "id":"widgets/MyWidgets/AQIPanel/Widget_28",
+        "name":"AQIPanel",
+        "label":"AQIPanel"
+	  },
+      {
+        "uri": "widgets/Scalebar/Widget",
+        "position": {
+          "left": 32,
+          "bottom": 60
+        },
+        "version": "1.2",
+        "id": "widgets/Scalebar/Widget_2",
+        "name": "Scalebar",
+        "label": "比例尺",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/Geocoder/Widget",
+        "position": {
+          "left": 45,
+          "top": 5
+        },
+        "version": "1.2",
+        "id": "widgets/Geocoder/Widget_3",
+        "name": "Geocoder",
+        "label": "地理编码器",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/Coordinate/Widget",
+        "position": {
+          "left": 25,
+          "bottom": 25
+        },
+        "version": "1.2",
+        "id": "widgets/Coordinate/Widget_4",
+        "name": "Coordinate",
+        "label": "坐标",
+        "positionRelativeTo": "map"
+      },
+      {
+        "position": {
+          "left": 45,
+          "top": 45,
+          "width": 400,
+          "height": 410
+        },
+        "placeholderIndex": 1,
+        "id": "_5",
+        "positionRelativeTo": "map",
+        "name": "Measurement",
+        "label": "测量",
+        "version": "1.2",
+        "uri": "widgets/Measurement/Widget",
+        "config": "configs/Measurement/config_测量.json"
+      },
+      {
+        "position": {
+          "left": 100,
+          "top": 45,
+          "width": 380,
+          "height": 410
+        },
+        "placeholderIndex": 1,
+        "id": "_6",
+        "positionRelativeTo": "map",
+        "name": "Draw",
+        "label": "绘图",
+        "version": "1.2",
+        "uri": "widgets/Draw/Widget",
+        "config": "configs/Draw/config_绘图.json"
+      },
+      {
+        "position": {
+          "left": 155,
+          "top": 45,
+          "width": 380,
+          "height": 410
+        },
+        "placeholderIndex": 1,
+        "id": "_7",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/OverviewMap/Widget",
+        "position": {
+          "right": 0,
+          "top": 0
+        },
+        "version": "1.2",
+        "id": "widgets/OverviewMap/Widget_8",
+        "name": "OverviewMap",
+        "label": "总览图",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/HomeButton/Widget",
+        "position": {
+          "left": 7,
+          "top": 75
+        },
+        "version": "1.2",
+        "id": "widgets/HomeButton/Widget_9",
+        "name": "HomeButton",
+        "label": "主目录按钮",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/MyLocation/Widget",
+        "position": {
+          "left": 7,
+          "top": 110
+        },
+        "version": "1.2",
+        "id": "widgets/MyLocation/Widget_10",
+        "name": "MyLocation",
+        "label": "我的位置",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/AttributeTable/Widget",
+        "positionRelativeTo": "browser",
+        "version": "1.2",
+        "id": "widgets/AttributeTable/Widget_11",
+        "name": "AttributeTable",
+        "label": "属性表",
+        "position": {
+          "left": 0,
+          "top": 0
+        }
+      },
+      {
+        "uri": "widgets/MyWidgets/Splash/Widget",
+        "positionRelativeTo": "browser",
+        "version": "1.2",
+        "id": "widgetsMyWidgets/Splash/Widget_12",
+        "name": "Splash",
+        "label": "启动",
+        "position": {
+          "left": 0,
+          "top": 0
+        }
+      },
+	  {
+        "uri": "widgets/MyWidgets/StationLoader/Widget",
+        "positionRelativeTo": "browser",
+        "version": "1.2",
+        "id": "widgets/MyWidgets/StationLoader/Widget",
+        "name": "StationLoader",
+        "label": "StationLoader",
+		"visible": true
+      },
+      {
+        "uri": "widgets/TimeSlider/Widget",
+        "visible": false,
+        "position": {
+          "bottom": 55,
+          "left": 7
+        },
+        "version": "1.2",
+        "id": "widgets/TimeSlider/Widget_13",
+        "name": "TimeSlider",
+        "label": "时间滑块",
+        "positionRelativeTo": "map"
+      },
+      {
+        "uri": "widgets/Swipe/Widget",
+        "visible": false,
+        "position": {
+          "top": 145,
+          "left": 7
+        },
+        "version": "1.2",
+        "id": "widgets/Swipe/Widget_14",
+        "name": "Swipe",
+        "label": "卷帘",
+        "positionRelativeTo": "map"
+      },
+	   {
+	    "position": {
+		  "right": 55,
+          "bottom": 335,
+          "width": 1200,
+          "height": 600
+		  },
+        "name": "DanMu",
+        "label": "弹幕",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/DanMu/Widget",
+        "config": "widgets/MyWidgets/DanMu/config.json",
+        "index": 7,
+        "id": "widgets/MyWidgets/DanMu/Widget",
+		"positionRelativeTo": "map"
+      },
+      {
+	    "position": {
+		  "right": 55,
+          "bottom": 245,
+          "width": 1200,
+          "height": 600
+		  },
+        "name": "BasicDataChart",
+        "label": "数据查询图表",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/BasicDataChart/Widget",
+        "config": "widgets/MyWidgets/BasicDataChart/config.json",
+        "index": 7,
+        "id": "widgets/MyWidgets/BasicDataChart/Widget",
+		"positionRelativeTo": "map"
+      },
+      {
+	    "position": {
+		  "right": 55,
+          "bottom": 155,
+          "width": 1200,
+          "height": 600
+		  },
+        "name": "StaticResultChart",
+        "label": "统计结果图",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/StaticResultChart/Widget",
+        "config": "widgets/MyWidgets/StaticResultChart/config.json",
+        "index": 7,
+        "id": "widgets/MyWidgets/StaticResultChart/Widget",
+		"positionRelativeTo": "map"
+      } ,
+	   
+	   {
+	    "position": {
+		  "right": 55,
+          "bottom": 200,
+          "width": 850,
+          "height":600
+		  },
+        "name": "Interpolation",
+        "label": "AQI贡献值预测",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/Prediction/Widget",
+        "config": "widgets/MyWidgets/Prediction/config.json",
+        "index": 9,
+        "id": "widgets/MyWidgets/Prediction/Widget",
+		"positionRelativeTo": "map"
+      },
+	  {
+	    "position": {
+		  "right": 55,
+          "bottom": 110,
+          "width": 850,
+          "height":600
+		  },
+        "name": "FirstPolutant",
+        "label": "首要污染物",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/FirstPolutant/Widget",
+        "config": "widgets/MyWidgets/FirstPolutant/config.json",
+        "index": 10,
+        "id": "widgets/MyWidgets/FirstPolutant/Widget",
+		"positionRelativeTo": "map"
+      },
+	  {
+	    "position": {
+		  "right": 55,
+          "bottom": 65,
+          "width": 550,
+          "height":350
+		  },
+        "name": "Interpolation",
+        "label": "空气质量模拟",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/Interpolation/Widget",
+        "config": "widgets/MyWidgets/Interpolation/config.json",
+        "index": 8,
+        "id": "widgets/MyWidgets/Interpolation/Widget",
+		"positionRelativeTo": "map"
+      },
+	   {
+        "name": "Interpolation",
+        "label": "时间模拟",
+        "version": "1.2",
+        "uri": "widgets/MyWidgets/TimeInterpolation/Widget",
+        "config": "widgets/MyWidgets/TimeInterpolation/config.json",
+        "index": 11,
+        "id": "widgets/MyWidgets/TimeInterpolation/Widget",
+		"positionRelativeTo": "map"
+      }
+    ],
+    "panel": {
+      "uri": "jimu/PreloadWidgetIconPanel",
+      "positionRelativeTo": "map"
+    }
+  },
+  "map": {
+    "3D": false,
+    "2D": true,
+    "position": {
+      "left": 0,
+      "top": 40,
+      "right": 0,
+      "bottom": 0
+    },
+    "itemId": "b3799eb679aa421994ac993fe014a6f8",
+    "mapOptions": {
+      "lods": [
+        {
+          "level": 0,
+          "scale": 577790.554289,
+          "resolution": 152.874056570411
+        },
+        {
+          "level": 1,
+          "scale": 288895.277144,
+          "resolution": 76.4370282850732
+        },
+        {
+          "level": 2,
+          "scale": 144447.638572,
+          "resolution": 38.2185141425366
+        },
+        {
+          "level": 3,
+          "scale": 72223.819286,
+          "resolution": 19.1092570712683
+        },
+        {
+          "level": 4,
+          "scale": 36111.909643,
+          "resolution": 9.55462853563415
+        },
+        {
+          "level": 5,
+          "scale": 18055.954822,
+          "resolution": 4.77731426794937
+        },
+        {
+          "level": 6,
+          "scale": 9027.977411,
+          "resolution": 2.38865713397468
+        },
+        {
+          "level": 7,
+          "scale": 4513.988705,
+          "resolution": 1.19432856685505
+        }
+      ],
+      "extent": {
+        "xmin": 12503715.399523169,
+        "ymin": 2582740.59127802,
+        "xmax": 12764671.41408886,
+        "ymax": 2755029.6530328733,
+        "spatialReference": {"wkid": 102100}
+      },
+	"logo":false
+    },
+    "id": "map",
+    "portalUrl": "http://www.arcgisonline.cn/portal"
+  },
+  "widgetPool": {
+    "panel": {
+      "uri": "themes/FoldableTheme/panels/FoldablePanel/Panel",
+      "positionRelativeTo": "map",
+      "position": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5
+      }
+    },
+    "widgets": [
+      {
+        "uri": "widgets/LayerList/Widget",
+        "version": "1.2",
+        "id": "widgets/LayerList/Widget_16",
+        "name": "LayerList",
+        "label": "图层列表",
+        "index": 3
+      },
+      {
+        "name": "Bookmark",
+        "label": "书签",
+        "version": "1.2",
+        "uri": "widgets/Bookmark/Widget",
+        "config": "widgets/Bookmark/config.json",
+        "index": 4,
+        "id": "widgets/Bookmark/Widget_17"
+      },
+      {
+        "name": "BasemapGallery",
+        "label": "底图库",
+        "version": "1.2",
+        "uri": "widgets/BasemapGallery/Widget",
+        "config": "configs/BasemapGallery/config_底图库.json",
+        "index": 6,
+        "id": "widgets/BasemapGallery/Widget_18"
+      }
+    ],
+    "groups": []
+  },
+  "wabVersion": "1.2",
+  "isWebTier": false,
+  "httpProxy": {
+    "useProxy": true,
+    "alwaysUseProxy": false,
+    "url": "",
+    "rules": []
+  }
+}

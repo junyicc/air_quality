@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" href="css/demo-files/widgets.css">
+    <link rel="stylesheet" href="css/calcite.css" />
+
+
+    <style>
+      #all {
+        padding: 0px 20px;
+        /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQIW2N8/fr1TAYcgBEkKSoqmo5NftBJAgDdhBti2Nd6uAAAAABJRU5ErkJggg==) repeat;*/
+      }
+
+      /* Colors */
+      .quarter {
+        width: 22.5%;
+        float: left;
+        margin: 0px 1.25%;
+      }
+      .color-box {
+        height: 125px;
+        border: 1px solid #DCDCDC;
+        border-bottom: 1px solid transparent;
+      }
+      .color-info {
+        text-align: center;
+        background: white;
+        border: 1px solid #DCDCDC;
+        border-top: 1px solid transparent;
+        border-bottom: 2px solid #DCDCDC;
+      }
+      .color-info p {
+        margin: 10px 0px;
+        font-size: 14px;
+      }
+	  /*
+      #grey {background: #a6a6a6;}
+      #orange {background: #e98d32;}
+      #blue {background: #5daddd;}
+      #green {background: #6aa23f;}
+
+      .left {float: left;}
+      .right {float: right;}
+      .clear {clear: both;}
+
+      #chartContainer {
+        position: relative;
+        height: 660px;
+      }
+      .chart {
+        position: absolute;
+        top:    0;
+        left:   0;
+        width:  300px;
+        height: 200px;
+      }
+      #lines, #area, #columns {
+        left: 320px;
+      }
+      #bubbles, #area, #pieLin {
+        top: 220px;
+      }
+      #pieLin, #pieFan, #ohlc {
+        left:  640px;
+      }
+      #candle, #columns, #ohlc {
+        top: 440px;
+      }
+	  */
+    </style>
+    <script> var dojoConfig = { parseOnLoad: true }; </script>
+    <script src="http://jsdev.arcgis.com/3.13/"></script>
+    <!--<script src="//js.arcgis.com/3.9/"></script>-->
+    <script>
+      require([
+          "dojo/parser",
+          "dojox/charting/widget/Chart",
+          "dojox/charting/plot2d/Pie",
+          "dojox/charting/action2d/Tooltip",
+          "dojox/charting/action2d/MoveSlice",
+          "dojox/charting/themes/PlotKit/green",
+          "dijit/layout/TabContainer",
+          "dijit/layout/ContentPane"
+      ]);
+
+      require(["dojox/charting/Chart", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/StackedAreas", "dojox/charting/themes/Wetland" , "dojo/ready"],
+        function(Chart, Default, StackedAreas, Wetland, ready){
+          ready(function(){
+            var c = new Chart("chartOne");
+            c.addPlot("default", {type: StackedAreas, tension:3})
+              .addAxis("x", {fixLower: "major", fixUpper: "major"})
+              .addAxis("y", {vertical: true, fixLower: "major", fixUpper: "major", min: 0})
+              .setTheme(Wetland)
+              .addSeries("Series A", [1, 2, 0.5, 1.5, 1, 2.8, 0.4])
+              .addSeries("Series B", [2.6, 1.8, 2, 1, 1.4, 0.7, 2])
+              .addSeries("Series C", [6.3, 1.8, 3, 0.5, 4.4, 2.7, 2])
+              .render();
+          });
+      });
+    </script>
+  </head>
+  <body class="calcite">
+    <!--<div class="header">
+      <div class="top">
+        <div class="width">
+          <h2 class="left">Calcite for Dojo</h2>
+          <img class="right" src="images/esri-logo.jpg" />
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="nav">
+        <div class="width">
+          <ul>
+            <li><a href="#">Style</a></li>
+            <li><a href="#">Components</a></li>
+            <li><a href="#">Examples</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>-->
+    <div id="all">
+      <div class="width">
+    
+
+    <section id="guide" class="component guide">
+      <div class="component-content" style="height:120px;">
+      	<p>Calcite Theme for the ArcGIS JS API  ( Devtopia Wiki: <a href="https://devtopia.esri.com/WebGIS/arcgis-js-api/wiki/calcite" target="_blank">https://devtopia.esri.com/WebGIS/arcgis-js-api/wiki/calcite</a> )</p>
+        <p><a href="widgets.html">JS API Widgets</a> | <b>Dojo Dijits</b></p>
+      	<div class="guide done">Done</div>
+      	<div class="guide workinprogress">Work in progress</div>
+      	<div class="guide notstarted">Not Started</div>
+      </div>
+    </section>
+
+      <!--<p style="margin: 0px; padding: 15px 0px;">Form widgets, calcite theme.</p>-->
+
+      <section id="form-button-base" class="component workinprogress">
+
+        <h2>Form Button</h2>
+        <p class="component-description">This is a button used in a form only.</p>
+        <div class="component-content">
+          <button data-dojo-type="dijit/form/Button" type="button" class="">dijit/form/Button</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled">dijit/form/ButtonDisabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="rounded">dijit/form/Button rounded</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn rounded dijitButtonDisabled">dijit/form/ButtonDisabled rounded</button>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span>
+                &lt;button data-dojo-type="dijit/form/Button" type="button" class="btn"&gt;
+                  dijit/form/Button
+                &lt;/button&gt;
+              </span>
+            </code>
+          </pre>
+        </div>
+
+      </section>
+
+      <br>
+      
+      <section id="form-button" class="component workinprogress">
+
+        <h2>Form Button</h2>
+        <p class="component-description">This is a button used in a form only.</p>
+        <div class="component-content">
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW">btnCW Button</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW">btnCW Button Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW blue">btnCW blue</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW blue">btnCW blue Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW green">btnCW green</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW green">btnCW green Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW green placeholder">btnCW green placeholder</button>  <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW green placeholder">btnCW green placeholder Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW orange">btnCW orange</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW orange">btnCW orange Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW light">btnCW light</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW light">btnCW light Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW red">btnCW red</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW red">btnCW red Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW transparent">btnCW transparent</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW transparent">btnCW transparent Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW transparent outline">btnCW transparent outline</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW transparent outline">btnCW transparent outline Disabled</button><br />
+          <button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW white outline">btnCW white outline</button> <button data-dojo-type="dijit/form/Button" type="button" class="btn dijitButtonDisabled btnCW white outline">btnCW white outline Disabled</button>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span>
+                &lt;button data-dojo-type="dijit/form/Button" type="button" class="btn btnCW"&gt;
+                  dijit/form/Button
+                &lt;/button&gt;
+              </span>
+            </code>
+          </pre>
+        </div>
+
+      </section>
+
+      <br>
+
+      <section id="form-combo" class="component notstarted">
+
+        <h2>Form Combo Button</h2>
+        <p class="component-description">This is a combo button used in a form only.</p>
+        <div class="component-content">
+          <div data-dojo-type="dijit/form/ComboButton" class="btn">
+            <span>dijit/form/ComboButton</span>
+            <div data-dojo-type="dijit/DropDownMenu">
+              <div data-dojo-type="dijit/MenuItem">jojo</div>
+              <div data-dojo-type="dijit/MenuItem">dquery</div>
+            </div>
+          </div>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;div data-dojo-type="dijit/form/ComboButton" class="btn"&gt;
+                  &lt;span&gt;dijit/form/ComboButton&lt;/span&gt;
+                  &lt;div data-dojo-type="dijit/DropDownMenu"&gt;
+                    &lt;div data-dojo-type="dijit/MenuItem">jojo&lt;/div&gt;
+                    &lt;div data-dojo-type="dijit/MenuItem">dquery&lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              </span>
+            </code>
+          </pre>
+        </div>
+
+      </section>
+
+      <br>
+
+      <section id="form-dropdown" class="component notstarted">
+
+        <h2>Form Drop Down</h2>
+        <p class="component-description">This is a drop down button used in a form only.</p>
+        <div class="component-content">
+          <div data-dojo-type="dijit/form/DropDownButton" class="btn">
+            <span>dijit/form/DropDownButton</span>
+            <div data-dojo-type="dijit/TooltipDialog">
+               <label for="name">Name:</label> <input data-dojo-type="dijit/form/TextBox" id="name" name="name"><br>
+               <label for="hobby">Hobby:</label> <input data-dojo-type="dijit/form/TextBox" id="hobby" name="hobby"><br>
+               <button data-dojo-type="dijit/form/Button" type="submit" class="btn secondary">Save</button>
+            </div>
+          </div>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;div data-dojo-type="dijit/form/DropDownButton" class="btn">
+                  &lt;span>dijit/form/DropDownButton&lt;/span>
+                  &lt;div data-dojo-type="dijit/TooltipDialog">
+                     &lt;label for="name">Name:&lt;/label> &lt;input data-dojo-type="dijit/form/TextBox" id="name" name="name">&lt;br>
+                     &lt;label for="hobby">Hobby:&lt;/label> &lt;input data-dojo-type="dijit/form/TextBox" id="hobby" name="hobby">&lt;br>
+                     &lt;button data-dojo-type="dijit/form/Button" type="submit" class="btn secondary">Save&lt;/button>
+                  &lt;/div>
+                &lt;/div>
+              </span>
+            </code>
+          </pre>
+        </div>
+
+      </section>
+
+      <br>
+
+      <section id="form-toggle" class="component notstarted">
+
+        <h2>Form Toggle Button</h2>
+        <p class="component-description">This is a toggle button used in a form only.</p>
+        <div class="component-content">
+          <button data-dojo-type="dijit/form/ToggleButton" data-dojo-props="iconClass:'dijitCheckBoxIcon', checked: true">
+            dijit/form/ToggleButton
+          </button>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;button data-dojo-type="dijit/form/ToggleButton" data-dojo-props="iconClass:'dijitCheckBoxIcon', checked: true">
+                  dijit/form/ToggleButton
+                &lt;/button>
+              </span>
+            </code>
+          </pre>
+        </div>
+
+      </section>
+
+      <br>
+
+      <section id="form-select" class="component done">
+
+        <h2>Form Select</h2>
+        <p class="component-description">This is a select used in a form only.</p>
+        <div class="component-content">
+          <select name="select1" data-dojo-type="dijit/form/Select">
+            <option value="TN">Tennessee</option>
+            <option value="VA" selected="selected">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="FL">Florida</option>
+            <option value="CA">California</option>
+          </select>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;select name="select1" data-dojo-type="dijit/form/Select">
+                  &lt;option value="TN">Tennessee&lt;/option>
+                  &lt;option value="VA" selected="selected">Virginia&lt;/option>
+                  &lt;option value="WA">Washington&lt;/option>
+                  &lt;option value="FL">Florida&lt;/option>
+                  &lt;option value="CA">California&lt;/option>
+                &lt;/select>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"><span>NOTE:</span> Dijit / Form / Select</p>
+
+      </section>
+
+      <br>
+
+      <section id="form-combobox" class="component notstarted">
+
+        <h2>Form ComboBox</h2>
+        <p class="component-description">This is a combobox used in a form only.</p>
+        <div class="component-content">
+          <label>dijit/form/ComboBox:</label>
+          <select data-dojo-type="dijit/form/ComboBox" id="fruit" name="fruit">
+            <option>Apples</option>
+            <option selected>Oranges</option>
+            <option>Pears</option>
+          </select>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;select data-dojo-type="dijit/form/ComboBox" id="fruit" name="fruit">
+                  &lt;option>Apples&lt;/option>
+                  &lt;option selected>Oranges&lt;/option>
+                  &lt;option>Pears&lt;/option>
+                &lt;/select>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-filter" class="component notstarted">
+
+        <h2>Form Filter Select</h2>
+        <p class="component-description">This is a filter used in a form only.</p>
+        <div class="component-content">
+          <label>dijit/form/FilteringSelect:</label>
+          <select data-dojo-type="dijit/form/FilteringSelect" id="fruit1" name="fruit1">
+            <option value="AP">Apples</option>
+            <option value="OR" selected>Oranges</option>
+            <option value="PE" >Pears</option>
+          </select>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;select data-dojo-type="dijit/form/FilteringSelect" id="fruit1" name="fruit1">
+                  &lt;option value="AP">Apples&lt;/option>
+                  &lt;option value="OR" selected>Oranges&lt;/option>
+                  &lt;option value="PE" >Pears&lt;/option>
+                &lt;/select>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-multi" class="component notstarted">
+
+        <h2>Form Multi Select</h2>
+        <p class="component-description">This is a multi select used in a form only.</p>
+        <div class="component-content">
+          <label>dijit/form/MultiSelect:</label>
+          <select data-dojo-type="dijit/form/MultiSelect" id="fruit2" name="fruit2" size="4">
+            <option value="AP">Apples</option>
+            <option value="OR">Oranges</option>
+            <option value="PE" selected="selected">Pears</option>
+          </select>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;select data-dojo-type="dijit/form/MultiSelect" id="fruit2" name="fruit2" size="4">
+                  &lt;option value="AP">Apples&lt;/option>
+                  &lt;option value="OR">Oranges&lt;/option>
+                  &lt;option value="PE" selected="selected">Pears&lt;/option>
+                &lt;/select>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-currency" class="component notstarted">
+
+        <h2>Form Currency Text Box</h2>
+        <p class="component-description">This is a currency text box used in a form only.</p>
+        <div class="component-content">
+          <label for="income1">dijit/form/CurrencyTextBox</label>
+          <input type="text" name="income1" id="income1" value="54775.53" required="true"
+              data-dojo-type="dijit/form/CurrencyTextBox"
+              data-dojo-props="constraints:{fractional:true},
+              currency:'USD',
+              invalidMessage:'Invalid amount. Cents are required.'" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input type="text" name="income1" id="income1" value="54775.53" required="true"
+                    data-dojo-type="dijit/form/CurrencyTextBox"
+                    data-dojo-props="constraints:{fractional:true},
+                    currency:'USD',
+                    invalidMessage:'Invalid amount. Cents are required.'" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br><br>
+
+      <section id="form-date" class="component notstarted">
+
+        <h2>Form Date Text Box</h2>
+        <p class="component-description">This is a date text box used in a form only.</p>
+        <div class="component-content">
+          <label for="date1">dijit/form/DateTextBox:</label>
+          <input type="text" name="date1" id="date1" value="2014-5-1"
+              data-dojo-type="dijit/form/DateTextBox"
+              required="true" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input type="text" name="date1" id="date1" value="2005-12-30"
+                    data-dojo-type="dijit/form/DateTextBox"
+                    required="true" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-spinner" class="component notstarted">
+
+        <h2>Form Number Spinner</h2>
+        <p class="component-description">This is a number spinner used in a form only.</p>
+        <div class="component-content">
+          <label for="integerspinner2">dijit/form/NumberSpinner:</label>
+          <input data-dojo-type="dijit/form/NumberSpinner"
+              id="integerspinner2"
+              value="1000"
+              data-dojo-props="smallDelta:10, constraints:{min:9,max:1550,places:0}"
+              name="someNumber"
+              />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input data-dojo-type="dijit/form/NumberSpinner"
+                    id="integerspinner2"
+                    value="1000"
+                    data-dojo-props="smallDelta:10, constraints:{min:9,max:1550,places:0}"
+                    name="someNumber"
+                    />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-numbertext" class="component notstarted">
+
+        <h2>Form Number Text Box</h2>
+        <p class="component-description">This is a number text box used in a form only.</p>
+        <div class="component-content">
+          <label for="q05">dijit/form/NumberTextBox:</label>
+          <input id="q05" type="text"
+              data-dojo-type="dijit/form/NumberTextBox"
+              name= "elevation"
+              required="true"
+              value="3000"
+              data-dojo-props="constraints:{min:-20000,max:20000,places:0},
+              invalidMessage:'Invalid elevation.'" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input id="q05" type="text"
+                    data-dojo-type="dijit/form/NumberTextBox"
+                    name= "elevation"
+                    required="true"
+                    value="3000"
+                    data-dojo-props="constraints:{min:-20000,max:20000,places:0},
+                    invalidMessage:'Invalid elevation.'" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-simpletextarea" class="component notstarted">
+
+        <h2>Form Simple Text Area</h2>
+        <p class="component-description">This is a simple text area used in a form only.</p>
+        <div class="component-content">
+          <label for="textarea1">dijit/form/SimpleTextarea:</label>
+          <textarea id="textarea1" name="textarea1" data-dojo-type="dijit/form/SimpleTextarea" rows="4" cols="50" style="width:auto;">
+            Bandwidth supply-chains cross-platform e-business benchmark bleeding-edge grow methodologies scale. Grow, aggregate paradigms initiatives ecologies synthesize, mission-critical wikis e-markets strategic innovative generate; next-generation e-tailers; sexy disintermediate; maximize functionalities standards-compliant seize back-end integrated. Enable architect solutions incubate brand, architect, synergize networks strategize cutting-edge networks social podcasts. E-business incubate impactful communities supply-chains; semantic webservices, engage compelling. Convergence, clicks-and-mortar. Source:  http://bullshitipsum.com/?paragraphs=1
+          </textarea>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;textarea id="textarea1" name="textarea1" data-dojo-type="dijit/form/SimpleTextarea" rows="4" cols="50" style="width:auto;">
+                  Bandwidth supply-chains cross-platform e-business benchmark bleeding-edge grow methodologies scale. Grow, aggregate paradigms initiatives ecologies synthesize, mission-critical wikis e-markets strategic innovative generate; next-generation e-tailers; sexy disintermediate; maximize functionalities standards-compliant seize back-end integrated. Enable architect solutions incubate brand, architect, synergize networks strategize cutting-edge networks social podcasts. E-business incubate impactful communities supply-chains; semantic webservices, engage compelling. Convergence, clicks-and-mortar. Source:  http://bullshitipsum.com/?paragraphs=1
+                &lt;/textarea>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-textarea" class="component notstarted">
+
+        <h2>Form Text Area</h2>
+        <p class="component-description">This is a text area used in a form only.</p>
+        <div class="component-content">
+          <label for="textarea2">dijit/form/Textarea:</label>
+          <textarea id="textarea2" name="textarea2" data-dojo-type="dijit/form/Textarea" style="width:200px;">
+            Envisioneer dynamic seize scalable integrate channels models communities recontextualize, one-to-one, social. Cluetrain dynamic communities killer reinvent semantic enable compelling global, distributed integrated, vortals reinvent implement. Seamless plug-and-play front-end sticky; interactive; collaborative architectures--visualize user-centric drive benchmark exploit ROI!
+          </textarea>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;textarea id="textarea2" name="textarea2" data-dojo-type="dijit/form/Textarea" style="width:200px;">
+                  Envisioneer dynamic seize scalable integrate channels models communities recontextualize, one-to-one, social. Cluetrain dynamic communities killer reinvent semantic enable compelling global, distributed integrated, vortals reinvent implement. Seamless plug-and-play front-end sticky; interactive; collaborative architectures--visualize user-centric drive benchmark exploit ROI!
+                &lt;/textarea>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-text" class="component workinprogress">
+
+        <h2>Form Text Box</h2>
+        <p class="component-description">This is a text box used in a form only.</p>
+        <div class="component-content">
+          <label for="dtb">dijit/form/TextBox:</label>
+          <input id="dtb" data-dojo-type="dijit/form/TextBox" /><br /><br />
+          <label for="dtb">dijit/form/TextBox Error:</label>
+          <input id="dtb_error" data-dojo-type="dijit/form/TextBox" class="dijitTextBoxError" /><br /><br />
+            <label for="dtb">dijit/form/TextBox small *** (this is an addition added):</label>
+            <input id="dtb_small" data-dojo-type="dijit/form/TextBox" class="small" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input id="dtb" data-dojo-type="dijit/form/TextBox" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-time-text" class="component notstarted">
+
+        <h2>Form Time Text Box</h2>
+        <p class="component-description">This is a time text box used in a form only.</p>
+        <div class="component-content">
+          <label for="time1">dijit/form/TimeTextBox:</label>
+          <input type="text" name="date1" id="time1" value="T15:00:00" data-dojo-type="dijit/form/TimeTextBox" onChange="require(['dojo/dom'], function(dom){dom.byId('val').value=dom.byId('time1').value.toString().replace(/.*1970\s(\S+).*/,'T$1')})" required="true" />
+          <br><br>
+          string value: <input id="val" value="value not changed" readonly disabled="disabled" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input type="text" name="date1" id="time1" value="T15:00:00" data-dojo-type="dijit/form/TimeTextBox" onChange="require(['dojo/dom'], function(dom){dom.byId('val').value=dom.byId('time1').value.toString().replace(/.*1970\s(\S+).*/,'T$1')})" required="true" />
+                &lt;br>&lt;br>
+                string value: &lt;input id="val" value="value not changed" readonly="readonly" disabled="disabled" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-vald" class="component notstarted">
+
+        <h2>Form Validation Text Box</h2>
+        <p class="component-description">This is a validation text box used in a form only.</p>
+        <div class="component-content">
+          <label for="zip">dijit/form/ValidationTextBox:</label>
+          <input type="text" name="zip" value="00000" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="regExp:'\\d{5}', invalidMessage:'Invalid zip code.'" />
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input type="text" name="zip" value="00000" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="regExp:'\\d{5}', invalidMessage:'Invalid zip code.'" />
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-check" class="component notstarted">
+
+        <h2>Form Check Box</h2>
+        <p class="component-description">This is a check box used in a form only.</p>
+        <div class="component-content">
+          <label for="mycheck">dijit/form/CheckBox</label>
+          <input id="mycheck" name="mycheck" data-dojo-type="dijit/form/CheckBox" value="agreed" checked /> <label for="mycheck">I agree</label>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input id="mycheck" name="mycheck" data-dojo-type="dijit/form/CheckBox" value="agreed" checked /> <label for="mycheck">
+                  I agree
+                &lt;/label>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+      <section id="form-radio" class="component notstarted">
+
+        <h2>Form Radio Button</h2>
+        <p class="component-description">This is a radio button used in a form only.</p>
+        <div class="component-content">
+          <label>dijit/form/RadioButton:</label><br>
+          <input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioOne" checked value="tea"/>
+          <label for="radioOne">Tea</label><br>
+          <input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioTwo" value="coffee"/>
+          <label for="radioTwo">Coffee</label>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioOne" checked value="tea"/>
+                &lt;label for="radioOne">Tea&lt;/label>&lt;br>
+                &lt;input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioTwo" value="coffee"/>
+                &lt;label for="radioTwo">Coffee&lt;/label>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+      <br>
+
+    <section id="tab-container" class="component notstarted">
+
+        <h2>Tabs</h2>
+        <p class="component-description">Tab containers.</p>
+        <div class="component-content">
+            <div style="width: 350px; height: 300px">
+                <div data-dojo-type="dijit/layout/TabContainer" style="width: 100%; height: 100%;">
+                    <div data-dojo-type="dijit/layout/ContentPane" title="My first tab" data-dojo-props="selected:true">
+                        Lorem ipsum and all around...
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" title="My second tab">
+                        Lorem ipsum and all around - second...
+                    </div>
+                    <div data-dojo-type="dijit/layout/ContentPane" title="My last tab" data-dojo-props="closable:true">
+                        Lorem ipsum and all around - last...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;div data-dojo-type="dijit/layout/ContentPane" title="My first tab" data-dojo-props="selected:true"&gt;
+                    Lorem ipsum and all around...
+                &lt;/div&gt;
+                &lt;div data-dojo-type="dijit/layout/ContentPane" title="My second tab"&gt;
+                    Lorem ipsum and all around - second...
+                &lt;/div&gt;
+                &lt;div data-dojo-type="dijit/layout/ContentPane" title="My last tab" data-dojo-props="closable:true"&gt;
+                    Lorem ipsum and all around - last...
+                &lt;/div&gt;
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+    </section>
+
+      <section id="modal-window" class="component notstarted">
+
+        <h2>Modal Window</h2>
+        <p class="component-description">This is a modal window.</p>
+        <div class="component-content">
+          <div data-dojo-type="dijit/Dialog" data-dojo-id="myDialog" title="Name and Address" class="calcite">
+            <table class="dijitDialogPaneContentArea">
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input data-dojo-type="dijit/form/TextBox" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td><input data-dojo-type="dijit/form/TextBox" name="address"></td>
+                </tr>
+            </table>
+            <div class="dijitDialogPaneActionBar">
+                <button data-dojo-type="dijit/form/Button" type="submit" class="btn secondary">OK</button>
+                <button data-dojo-type="dijit/form/Button" type="button" data-dojo-props="onClick:function(){myDialog.hide();}" id="cancel" class="btn">Cancel</button>
+            </div>
+          </div>
+          <button data-dojo-type="dijit/form/Button" type="button" onClick="myDialog.show();" class="btn secondary" id="modal1">Modal Open!</button>
+
+          <div data-dojo-type="dijit/Dialog" data-dojo-id="myDialog" title="Name and Address" class="calcite">
+            
+          </div>
+          <button data-dojo-type="dijit/form/Button" type="button" onClick="myDialog.show();" class="btn secondary" id="modal2">Popup Modal Open!</button>
+        </div>
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;div data-dojo-type="dijit/Dialog" data-dojo-id="myDialog" title="Name and Address" class="calcite">
+                  &lt;table class="dijitDialogPaneContentArea">
+                      &lt;tr>
+                          &lt;td>&lt;label for="name">Name:&lt;/label>&lt;/td>
+                          &lt;td>&lt;input data-dojo-type="dijit/form/TextBox" name="name">&lt;/td>
+                      &lt;/tr>
+                      &lt;tr>
+                          &lt;td>&lt;label for="address">Address:&lt;/label>&lt;/td>
+                          &lt;td>&lt;input data-dojo-type="dijit/form/TextBox" name="address">&lt;/td>
+                      &lt;/tr>
+                  &lt;/table>
+                  &lt;div class="dijitDialogPaneActionBar">
+                      &lt;button data-dojo-type="dijit/form/Button" type="submit" class="btn secondary">OK&lt;/button>
+                      &lt;button data-dojo-type="dijit/form/Button" type="button" data-dojo-props="onClick:function(){myDialog.hide();}" id="cancel" class="btn">Cancel&lt;/button>
+                  &lt;/div>
+                &lt;/div>
+                &lt;button data-dojo-type="dijit/form/Button" type="button" onClick="myDialog.show();" class="btn secondary">Modal Open!&lt;/button>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"></p>
+
+      </section>
+
+    <!--
+      <br>
+
+      <p>Button Styles</p>
+
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn">Default Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn pseudo-class-disabled" disabled>Default Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn primary">Orange Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn primary pseudo-class-disabled" disabled>Orange Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn secondary">Blue Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn secondary pseudo-class-disabled" disabled>Blue Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn tertiary">Green Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn tertiary pseudo-class-disabled" disabled>Green Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn light">Light Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn light pseudo-class-disabled" disabled>Light Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn caution">Red Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn caution pseudo-class-disabled" disabled>Red Disabled Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn transparent">Transparent Button</button>
+      <br>
+      <button data-dojo-type="dijit/form/Button" type="button" class="btn transparent pseudo-class-disabled" disabled>Transparent Disabled Button</button>
+      <br>
+
+-->
+
+      <section id="richttexteditor" class="component notstarted">
+
+        <h2>Rich Text Editor</h2>
+        <p class="component-description">This is rarely used.</p>
+        <div class="component-content">
+          <div data-dojo-type="dijit/Editor" id="editor1" data-dojo-props="onChange:function(){console.log('editor1 onChange handler: ' + arguments[0])}">
+            <p>I'm awesome and I know it! Yes, yes you are.</p>
+          </div>
+        </div>
+        <div class="component-code">
+          <code>
+            <span class="tag">
+
+            </span>
+          </code>
+        </div>
+
+      </section>
+
+      <br>
+
+      <section id="menu" class="component notstarted">
+
+        <h2>Dijit Menu</h2>
+        <p class="component-description">This is only used when on top of a map and you need to have a control action. Rarely used.</p>
+
+<!--         <div data-dojo-type="dijit/Menu" id="windowContextMenu" data-dojo-props="contextMenuForWindow:true" style="display: none;">
+          <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut',
+              onClick:function(){alert('not actually cutting anything, just a test!')}">Cut</div>
+          <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy',
+              onClick:function(){alert('not actually copying anything, just a test!')}">Copy</div>
+          <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste',
+              onClick:function(){alert('not actually pasting anything, just a test!')}">Paste</div>
+          <div data-dojo-type="dijit/MenuSeparator"></div>
+          <div data-dojo-type="dijit/PopupMenuItem">
+              <span>Enabled Submenu</span>
+              <div data-dojo-type="dijit/Menu" id="submenu1">
+                  <div data-dojo-type="dijit/MenuItem" data-dojo-props="onClick:function(){alert('Submenu 1!')}">Submenu Item One</div>
+                  <div data-dojo-type="dijit/MenuItem" data-dojo-props="onClick:function(){alert('Submenu 2!')}">Submenu Item Two</div>
+              </div>
+          </div>
+          <div data-dojo-type="dijit/PopupMenuItem">
+              <span>Popup of something other than a menu</span>
+              <div data-dojo-type="dijit/ColorPalette"></div>
+          </div>
+        </div> -->
+
+        <div class="component-code">
+          <pre>
+            <code>
+              <span class="tag">
+                &lt;div data-dojo-type="dijit/Menu" id="windowContextMenu" data-dojo-props="contextMenuForWindow:true" style="display: none;">
+                  &lt;div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut',
+                      onClick:function(){alert('not actually cutting anything, just a test!')}">Cut&lt;/div>
+                  &lt;div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy',
+                      onClick:function(){alert('not actually copying anything, just a test!')}">Copy&lt;/div>
+                  &lt;div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste',
+                      onClick:function(){alert('not actually pasting anything, just a test!')}">Paste&lt;/div>
+                  &lt;div data-dojo-type="dijit/MenuSeparator">&lt;/div>
+                  &lt;div data-dojo-type="dijit/PopupMenuItem">
+                      &lt;span>Enabled Submenu&lt;/span>
+                      &lt;div data-dojo-type="dijit/Menu" id="submenu1">
+                          &lt;div data-dojo-type="dijit/MenuItem" data-dojo-props="onClick:function(){alert('Submenu 1!')}">Submenu Item One&lt;/div>
+                          &lt;div data-dojo-type="dijit/MenuItem" data-dojo-props="onClick:function(){alert('Submenu 2!')}">Submenu Item Two&lt;/div>
+                      &lt;/div>
+                  &lt;/div>
+                  &lt;div data-dojo-type="dijit/PopupMenuItem">
+                      &lt;span>Popup of something other than a menu&lt;/span>
+                      &lt;div data-dojo-type="dijit/ColorPalette">&lt;/div>
+                  &lt;/div>
+                &lt;/div>
+              </span>
+            </code>
+          </pre>
+        </div>
+        <p class="component-note"><span>NOTE:</span> Right click anywhere on this page to see a menu</p>
+
+    </section>
+
+
+    <section id="horizontal-slider" class="component notstarted">
+
+      <h2>Horizontal Slider</h2>
+      <p class="component-description">This is rarely used.</p>
+      <div class="component-content">
+        <div id="horizontalSlider" style="width:400px;" name="horizontalSlider" data-dojo-type="dijit/form/HorizontalSlider" data-dojo-props="value:6, minimum: -10, maximum:10, discreteValues:11, intermediateChanges:true, showButtons:false">
+          <ol data-dojo-type="dijit/form/HorizontalRuleLabels" container="topDecoration"
+              style="height:1.5em;font-size:75%;color:gray;">
+              <li> </li>
+              <li>20%</li>
+              <li>40%</li>
+              <li>60%</li>
+              <li>80%</li>
+              <li> </li>
+          </ol>
+          <div data-dojo-type="dijit/form/HorizontalRule" container="bottomDecoration"
+              count=11 style="height:5px;"></div>
+          <ol data-dojo-type="dijit/form/HorizontalRuleLabels" container="bottomDecoration"
+              style="height:1em;font-size:75%;color:gray;">
+              <li>0%</li>
+              <li>50%</li>
+              <li>100%</li>
+          </ol>
+        </div>
+      </div>
+      <div class="component-code">
+        <pre>
+          <code>
+            <span class="tag">
+
+            </span>
+          </code>
+        </pre>
+      </div>
+
+    </section>
+
+    <section id="toolbar" class="component notstarted">
+
+      <h2>Toolbar</h2>
+      <p class="component-description">This is a toolbar</p>
+      <div class="component-content">
+        <div id="fancy" data-dojo-type="dijit/Toolbar">
+          <div data-dojo-type="dijit/form/DropDownButton">
+            <span>Color</span>
+            <div data-dojo-type="dijit/ColorPalette"></div>
+          </div>
+          <div data-dojo-type="dijit/form/DropDownButton">
+              <span>Dialog</span>
+              <div data-dojo-type="dijit/TooltipDialog">
+                  <label for="first">First name:</label> <input data-dojo-type="dijit/form/TextBox" name="first" id="first"/>
+                  <br/>
+                  <label for="last">Last name:</label> <input data-dojo-type="dijit/form/TextBox" name="last" id="last"/>
+              </div>
+          </div>
+          <!-- The following adds a line between toolbar sections -->
+          <span data-dojo-type="dijit/ToolbarSeparator"></span>
+          <div data-dojo-type="dijit/form/Button" id="toolbar1.cut" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut', showLabel:false">Cut</div>
+          <div data-dojo-type="dijit/form/Button" id="toolbar1.copy" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy', showLabel:false">Copy</div>
+          <div data-dojo-type="dijit/form/Button" id="toolbar1.paste" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste', showLabel:false">Paste</div>
+          <div data-dojo-type="dijit/form/ToggleButton" id="toolbar1.bold" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconBold', showLabel:false">Bold</div>
+        </div>
+      </div>
+      <div class="component-code">
+        <pre>
+          <code>
+            <span class="tag">
+
+            </span>
+          </code>
+        </pre>
+      </div>
+
+    </section>
+
+
+    <section id="tree" class="component notstarted">
+        <h2>Tree</h2>
+        <p class="component-description">.</p>
+        <div class="component-content">
+            <div data-dojo-type="dojo/store/Memory" data-dojo-id="memoryStore">
+                <script type="dojo/method">
+                           this.setData([
+                              { id: 'world', name:'The earth', type:'planet', population: '6 billion'},
+                              { id: 'AF', name:'Africa', type:'continent', population:'900 million', area: '30,221,532 sq km',
+                                      timezone: '-1 UTC to +4 UTC', parent: 'world'},
+                                  { id: 'EG', name:'Egypt', type:'country', parent: 'AF' },
+                                  { id: 'KE', name:'Kenya', type:'country', parent: 'AF' },
+                                      { id: 'Nairobi', name:'Nairobi', type:'city', parent: 'KE' },
+                                      { id: 'Mombasa', name:'Mombasa', type:'city', parent: 'KE' },
+                                  { id: 'SD', name:'Sudan', type:'country', parent: 'AF' },
+                                      { id: 'Khartoum', name:'Khartoum', type:'city', parent: 'SD' },
+                              { id: 'AS', name:'Asia', type:'continent', parent: 'world' },
+                                  { id: 'CN', name:'China', type:'country', parent: 'AS' },
+                                  { id: 'IN', name:'India', type:'country', parent: 'AS' },
+                                  { id: 'RU', name:'Russia', type:'country', parent: 'AS' },
+                                  { id: 'MN', name:'Mongolia', type:'country', parent: 'AS' },
+                              { id: 'OC', name:'Oceania', type:'continent', population:'21 million', parent: 'world'},
+                              { id: 'EU', name:'Europe', type:'continent', parent: 'world' },
+                                  { id: 'DE', name:'Germany', type:'country', parent: 'EU' },
+                                  { id: 'FR', name:'France', type:'country', parent: 'EU' },
+                                  { id: 'ES', name:'Spain', type:'country', parent: 'EU' },
+                                  { id: 'IT', name:'Italy', type:'country', parent: 'EU' },
+                              { id: 'NA', name:'North America', type:'continent', parent: 'world' },
+                              { id: 'SA', name:'South America', type:'continent', parent: 'world' }
+                          ]);
+                        </script>
+                <script type="dojo/method" data-dojo-event="getChildren" data-dojo-args="object">
+                          return this.query({parent: object.id});
+                        </script>
+            </div>
+            <div data-dojo-type="dijit/tree/ObjectStoreModel" data-dojo-id="myModel" data-dojo-props="store: memoryStore, query: {id: 'world'}"></div>
+
+            <div data-dojo-type="dijit/Tree" id="mytree" data-dojo-props="model: myModel, openOnClick: true"></div>
+
+        </div>
+        <div class="component-code">
+        <pre>
+              <code>
+
+              </code>
+            </pre>
+        </div>
+
+    </section>
+
+
+    <section id="popup" class="component notstarted">
+        <h2>Pop Up</h2>
+        <p class="component-description">.</p>
+        <div class="component-content">
+            <button onclick="myDialog.show();">show</button>
+        </div>
+        <div class="component-code">
+        <pre>
+              <code>
+
+              </code>
+            </pre>
+        </div>
+
+    </section>
+    <!--
+    <h2>Colors</h2>
+
+    <div class="colors">
+      <div class="quarter">
+        <div class="color-box" id="grey"></div>
+        <div class="color-info">
+          <h5>Color Name</h5>
+          <p>#a6a6a6</p>
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box" id="orange"></div>
+        <div class="color-info">
+          <h5>Color Name</h5>
+          <p>#e98d32</p>
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box" id="blue"></div>
+        <div class="color-info">
+          <h5>Color Name</h5>
+          <p>#5daddd</p>
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box" id="green"></div>
+        <div class="color-info">
+          <h5>Color Name</h5>
+          <p>#6aa23f</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <h2>Typography</h2>
+
+    <p>This is an awesome paragraph that will be filled by Cassidy Bishop or Stacey Triche</p>
+
+    <div class="type">
+      <div class="quarter">
+        <div class="color-box"></div>
+        <div class="color-info">
+
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box"></div>
+        <div class="color-info">
+          <h1>Aa</h1>
+          <p>Regular</p>
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box"></div>
+        <div class="color-info">
+          <h1>Aa</h1>
+          <p>Bold</p>
+        </div>
+      </div>
+
+      <div class="quarter">
+        <div class="color-box"></div>
+        <div class="color-info">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+-->
+    <!--
+    <h2>Map Popup
+
+    <p></p>
+    <iframe src="map-example.html" width="960" height="400"></iframe>
+    -->
+
+    <section id="charts" class="component notstarted">
+        <h2>Charts</h2>
+        <p class="component-description">Choose a theme from the list below, a theme will be loaded dynamically, and the charts will be rendered using it.</p>
+        <div class="component-content">
+            <p class="controls"><label for="themeChooser">Available themes:&nbsp;</label>
+              <select id="themeChooser">
+                <optgroup label="Gradients">
+                  <option value="Julie" selected="selected">Julie</option>
+                  <option value="ThreeD">ThreeD</option>
+                  <option value="Chris">Chris</option>
+                  <option value="Tom">Tom</option>
+                  <option value="PrimaryColors">PrimaryColors</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Charged">Charged</option>
+                  <option value="Renkoo">Renkoo</option>
+                </optgroup>
+                <optgroup label="Classic">
+                  <option value="Adobebricks">Adobebricks</option>
+                  <option value="Algae">Algae</option>
+                  <option value="Bahamation">Bahamation</option>
+                  <option value="BlueDusk">BlueDusk</option>
+                  <option value="CubanShirts">CubanShirts</option>
+                  <option value="Desert">Desert</option>
+                  <option value="Distinctive">Distinctive</option>
+                  <option value="Dollar">Dollar</option>
+                  <option value="Grasshopper">Grasshopper</option>
+                  <option value="Grasslands">Grasslands</option>
+                  <option value="GreySkies">GreySkies</option>
+                  <option value="Harmony">Harmony</option>
+                  <option value="IndigoNation">IndigoNation</option>
+                  <option value="Ireland">Ireland</option>
+                  <option value="MiamiNice">MiamiNice</option>
+                  <option value="Midwest">Midwest</option>
+                  <option value="Minty">Minty</option>
+                  <option value="PurpleRain">PurpleRain</option>
+                  <option value="RoyalPurples">RoyalPurples</option>
+                  <option value="SageToLime">SageToLime</option>
+                  <option value="Shrooms">Shrooms</option>
+                  <option value="Tufte">Tufte</option>
+                  <option value="WatersEdge">WatersEdge</option>
+                  <option value="Wetland">Wetland</option>
+                </optgroup>
+                <optgroup label="PlotKit">
+                  <option value="PlotKit.blue">PlotKit.blue</option>
+                  <option value="PlotKit.cyan">PlotKit.cyan</option>
+                  <option value="PlotKit.green">PlotKit.green</option>
+                  <option value="PlotKit.orange">PlotKit.orange</option>
+                  <option value="PlotKit.purple">PlotKit.purple</option>
+                  <option value="PlotKit.red">PlotKit.red</option>
+                </optgroup>
+              </select>
+              &nbsp;&nbsp;&nbsp;
+              <input id="pageStyleChooser" type="checkbox" checked="checked" value="">
+              <label for="pageStyleChooser">&nbsp;use suggested page style</label>
+            </p>
+            <br />
+            <div id="chartContainer">
+              <div class="chart" id="bars"></div>
+              <div class="chart" id="lines"></div>
+              <div class="chart" id="pieFan"></div>
+              <div class="chart" id="bubbles"></div>
+              <div class="chart" id="area"></div>
+              <div class="chart" id="pieLin"></div>
+              <div class="chart" id="columns"></div>
+              <div class="chart" id="candle"></div>
+              <div class="chart" id="ohlc"></div>
+              <div class="chart" id="scatter"></div>
+            </div>
+            <br />
+            <div id="simplechart" style="width: 250px; height: 150px; margin: 5px auto 0px auto;"></div>
+            <br />
+            <div data-dojo-type="dojox/charting/widget/Chart" id="chart" style="width:300px; height:300px; margin:10px;"
+            data-dojo-props="theme: dojox.charting.themes.PlotKit.green">
+              <div class="plot" name="default" type="Pie" fontColor="#000"></div>
+              <div class="series" name="A" data="5,8,10,40,20"></div>
+              <div class="action" type="Tooltip"></div>
+              <div class="action" type="MoveSlice" shift="2"></div>
+            </div>
+            <br />
+            <div id="chartOne" style="width: 400px; height: 240px; margin: 30px auto 0px auto;"></div>
+
+            <div class="clear"></div>
+
+            </div>
+            </div>
+    </div>
+    <div class="component-code">
+        <pre>
+              <code>
+
+              </code>
+            </pre>
+    </div>
+
+    </section>
+  </body>
+</html>

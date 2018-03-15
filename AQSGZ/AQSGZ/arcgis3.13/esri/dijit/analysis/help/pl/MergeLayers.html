@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Połącz warstwy</h2><p/>
+        <h2><img src="../images/GUID-DACDAC49-3ECE-45A2-AC42-69016B3B8ADA-web.png" alt="Połącz warstwy"></h2>
+        <hr/>
+    <p>Narzędzie kopiuje obiekty z&nbsp;dw&oacute;ch warstw do jednej nowej warstwy. Warstwy, kt&oacute;re mają być połączone, muszą zawierać te same typy obiekt&oacute;w (punkty, linie lub obszary). Można sterować procesem łączenia i&nbsp;kopiowania p&oacute;l z&nbsp;warstw wejściowych. Przykład:
+        <ul>
+            <li>Mam trzy warstwy dla Anglii, Walii i&nbsp;Szkocji i&nbsp;chcę mieć jedną warstwę dla Wielkiej Brytanii. 
+            </li>
+            <li>Mam 12&nbsp;warstw i&nbsp;każda z&nbsp;nich zawiera informacje o&nbsp;działkach w&nbsp;przylegających do siebie obszarach miejskich. Chcę je połączyć w&nbsp;jedną warstwę, zachowując tylko te pola, kt&oacute;re mają tę samą nazwę i&nbsp;typ we wszystkich 12&nbsp;warstwach wejściowych.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jeśli jest zaznaczona opcja  <b>Użyj bieżącego zasięgu mapy</b>, połączone zostaną tylko obiekty widoczne w&nbsp;bieżącym zasięgu mapy. Jeśli powyższa opcja nie jest zaznaczona, zostaną połączone wszystkie obiekty z&nbsp;obu warstw, nawet jeśli będą znajdować się poza bieżącym zasięgiem mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="MergeLayer">
+        <div><h2>Wybierz warstwę</h2></div>
+        <hr/>
+        <div>
+            <p>Wybierz warstwę, kt&oacute;ra ma być połączona z warstwą analizy.
+            </p>
+        </div>
+    </div>
+    <div id="MergingAttributes">
+        <div><h2>Zmień pola łączenia</h2></div>
+        <hr/>
+        <div>
+            <p>Domyślnie do danych wynikowych zostaną przeniesione wszystkie pola z&nbsp;obu warstw wejściowych. Można zmienić spos&oacute;b przenoszenia p&oacute;l do warstwy wynikowej, korzystając z&nbsp;następujących opcji:
+                <ul>
+                    <li> <b>Zmień nazwę</b> &mdash; pole otrzyma nową nazwę w&nbsp;warstwie wynikowej.
+                    </li>
+                    <li> <b>Usuń</b> &mdash; pole zostanie usunięte z&nbsp;warstwy wynikowej.
+                    </li>
+                    <li> <b>Dopasuj</b> &mdash; nazwy p&oacute;l pozostaną takie same. Wartości pola z&nbsp;warstwy, kt&oacute;ra ma być połączona, zostaną przeniesione do odpowiedniego pola w&nbsp;warstwie wynikowej.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Nazwa warstwy 
+wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w&nbsp;zakładce  <b>Moje zasoby</b> i&nbsp;zostanie dodana do mapy. Nazwa domyślna jest tworzona na podstawie typu analizy i&nbsp;nazwy warstwy analizy. Jeśli warstwa już istnieje, wyświetlony zostanie komunikat z&nbsp;prośbą o&nbsp;podanie innej nazwy.
+            </p>
+            <p>Za pomocą listy rozwijanej  <b>Zapisz wynik&nbsp;w</b> można podać nazwę folderu w&nbsp;zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

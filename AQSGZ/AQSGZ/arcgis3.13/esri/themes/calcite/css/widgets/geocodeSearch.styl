@@ -1,0 +1,481 @@
+/* ======================================================================================================= */
+/* ArcGIS API for JavasScript: Calcite Theme - API Widgets - new Geocode Search by MD */
+/* (Added 2014-11-18 by FG) */
+/* Note:
+	- Features of Stylus CSS: http://learnboost.github.io/stylus/
+	- Dojo Doc on Themes: http://dojotoolkit.org/reference-guide/1.10/dijit/themes.html
+/* ======================================================================================================= */
+//@require calcite_variables;
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* Geocode Search Widget (by MD) .arcgis-search  */
+/* ------------------------------------------------------------------------------------------------------- */
+.calcite
+  .arcgisSearch
+    .searchGroup
+      position relative
+      border 0
+      //background-color transparent
+      background-color #fff
+      font-family $fontFamilyDefault
+      font-size $fontSizeDefault
+      color $textColorDefault
+      calciteWeb_BoxShadow()
+      calciteWeb_RoundRadius($borderRadiusSize2)
+      -moz-box-sizing content-box
+      -webkit-box-sizing content-box
+      box-sizing content-box
+
+    .searchInputGroup
+      bidi-value("float", left, right);  //float: left;
+      //.dj_rtl .arcgisSearch .searchInputGroup { float: right; }
+
+    // Button
+    .searchBtn {
+      display block
+      //float left
+      bidi-value("float", left, right);
+      padding 6px 12px
+      margin-bottom: 0;
+      font-size: $fontSizeDefault;
+      font-weight: normal;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid CalciteColorWhite;
+      border-left: 1px solid $borderColorDivider;
+      calciteWeb_RoundRadius($borderRadiusSize2)
+      calciteWeb_RoundRadius_Left(0)
+      color: $textColorDefault;
+      background: CalciteColorWhite
+    }
+  .dj_rtl .arcgisSearch .searchBtn {
+    //float left
+    border 1px solid CalciteColorWhite
+    border-right: 1px solid $borderColorDivider;
+    calciteWeb_RoundRadius($borderRadiusSize2)
+    calciteWeb_RoundRadius_Right(0)
+  }
+
+  .arcgisSearch
+    .searchBtn
+      color: $textColorDefault
+
+      &.searchToggle
+        border-right 1px solid $borderColorDivider
+
+        &:hover span.esriIconSearch:before,
+        &:focus span.esriIconSearch:before
+          color $textColorHover
+
+      //.searchBtn:focus,
+      //.searchBtn.focus
+      //  outline none
+      //  calciteArcGISPro_ButtonHover()
+      //  background: CalciteColorWhite
+
+      &:hover,
+      &:focus,
+      &.focus
+        outline none
+        text-decoration none
+        calciteArcGISPro_ButtonHover()
+        color $textColorHover
+
+      &:hover span.esriIconSearch:before,
+      &:focus span.esriIconSearch:before
+        color $textColorHover
+      &:active,
+      &.active
+        outline 0
+        calciteArcGISPro_ButtonActive()
+        color: $textColorActive
+      &:active:focus,
+      &.active:focus,
+      &:active.focus,
+      &.active.focus
+        outline none
+        calciteArcGISPro_ButtonActiveHover()
+        color $textColorHover
+
+      .searchButtonText
+        display none
+
+  /* Input */
+  .arcgisSearch
+    .searchGroup .searchInput
+      position: relative;
+      z-index: 2;
+      float: left;
+      margin-bottom: 0;
+      display: block;
+      height: 20px;
+      width: 200px;
+      padding: 6px 23px 6px 12px;
+      font-size: $fontSizeDefault;
+      line-height: normal;
+      color: $textColorDefault;
+      background: CalciteColorWhite
+      border: 1px solid CalciteColorWhite;
+      /*border-right: 0;*/
+      calciteWeb_RoundRadius($borderRadiusSize2)
+      calciteWeb_RoundRadius_Right(0)
+      calciteWeb_NoBoxShadow()
+
+      &:focus
+        CalciteWeb_TextInput_BoxShadowInset("blue");
+        outline 0
+        calciteArcGISPro_ButtonActiveHover()
+        background CalciteColorWhite
+
+      &::-moz-placeholder
+        color CalciteColorGray130
+        opacity 1
+
+      &::-ms-clear
+        display none
+
+      &:-ms-input-placeholder
+        color CalciteColorGray130
+
+      &::-webkit-input-placeholder
+        color CalciteColorGray130
+
+
+  .dj_rtl .arcgisSearch .searchGroup.hasMultipleSources .searchInput {
+    float: right;
+    text-align: right;
+    /*border: 1px solid CalciteColorWhite;*/
+    /*border-left: 0;
+    calciteWeb_RoundRadius($borderRadiusSize2)*/
+    calciteWeb_RoundRadius(0)
+  }
+
+  .arcgisSearch .searchInputGroup {
+    position relative
+    display inline-block
+  }
+  .arcgisSearch .searchClear {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .dj_rtl .arcgisSearch .searchClear {left:0; right: auto;}
+
+  .arcgisSearch .sourceName {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .arcgisSearch .hasValue .searchClear {
+    display: block;
+    outline: none;
+  }
+  .arcgisSearch .searchClearIcon {
+    line-height: 32px;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      outline none
+      color $textColorHover
+    }
+  }
+
+  /* Loading */
+  .arcgisSearch
+    .searchLoading .searchClearIcon {
+      display: none;
+    }
+    .searchLoading .searchClear {
+      cursor: default;
+      display: block;
+      background url( $imageLoadingCircular1 ) center center no-repeat
+      width: 23px;
+      height: 32px;
+    }
+
+    // Sources Menu
+    .searchMenu
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 200px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      font-size: $fontSizeDefault;
+      text-align: left;
+      list-style: none;
+      background: CalciteColorWhite
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid CalciteColorWhite
+      calciteWeb_RoundRadius($borderRadiusSize2)
+      //border-radius: 4px;
+      //-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+      //box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+
+      ul
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+      li {
+        padding $paddingDefaultSpacer
+        //padding $paddingDefaultSpacer ( $paddingDefaultSpacer *2 )
+        cursor pointer
+        font-family $fontFamilyDefault
+        outline none
+
+        &:hover,
+        &:focus {
+          outline none
+          calciteArcGISPro_ButtonHover()
+        }
+      }
+
+  .dj_rtl .arcgisSearch .searchMenu li { text-align: right; }
+  .arcgisSearch .searchMenu li.active {
+    //background-color: #eee;
+    calciteArcGISPro_ButtonActive()
+
+    &:hover,
+    &:focus {
+      calciteArcGISPro_ButtonActiveHover()
+    }
+  }
+  .arcgisSearch .searchMenu .menuHeader {
+    color: CalciteColorWhite;
+    padding: 6px 12px;
+    font-weight:normal
+    font-size: ($fontSizeDefault - 2px);
+    font-family: $fontFamilyDefault;
+    background: CalciteColorGray145
+  }
+  .dj_rtl .arcgisSearch .searchMenu .menuHeader { text-align:right; }
+  .arcgisSearch .showSuggestions .suggestionsMenu {
+    display: block;
+    width: 100%;
+  }
+
+  /* Sources / Toggle */
+  .arcgisSearch .showSources .sourcesMenu {
+    display: block;
+  }
+  .dj_rtl .arcgisSearch .showSources .sourcesMenu {
+    left: auto;
+    right:0;
+  }
+  .arcgisSearch
+    .searchToggle {
+      display: none;
+      calciteWeb_RoundRadius_Left($borderRadiusSize2)
+      calciteWeb_RoundRadius_Right(0)
+    }
+    .hasMultipleSources .searchInput {
+      /*border-left: 0;*/
+      calciteWeb_RoundRadius_Left(0)
+      calciteWeb_RoundRadius_Right(0)
+    }
+    .hasMultipleSources .searchToggle {
+      display: inline-block;
+      outline: none;
+    }
+  .dj_rtl .arcgisSearch .hasMultipleSources .searchToggle {
+    float: right;
+    border-left: 1px solid $borderColorDivider;
+    calciteWeb_RoundRadius_Left(0)
+    calciteWeb_RoundRadius_Right($borderRadiusSize2)
+  }
+
+  /* Alternative Results */
+  .arcgisSearch
+    .moreResults
+      .moreHeader
+        font-weight bold
+        margin-bottom 2px
+
+      .moreItem
+        margin-bottom 10px
+
+      .resultsList
+        display none
+
+        ul
+          list-style none
+          margin 0
+          padding 0
+
+        li
+          margin 0 0 2px 0
+          font-family $fontFamilyDefault
+
+          a
+            padding 4px 0
+            outline none
+
+            &:hover,
+            &:focus {
+              color CalciteColorGray160
+            }
+
+        .popupHeader
+          margin 10px 0 2px 0
+          //font-weight: bold;
+          //color: #007AC2;
+          color: CalciteColorWhite;
+          padding: 3px 6px;
+          font-weight: normal
+          font-size: ($fontSizeDefault - 2px);
+          font-family: $fontFamilyDefault;
+          background: CalciteColorGray145
+
+    .showAlternativeResults .resultsList
+      display: block
+
+    .noResultsMenu
+      display none
+      width 100%
+
+    .noResultsBody
+      padding $paddingDefaultSpacer
+
+      div
+        padding $paddingDefaultSpacer;
+        //padding $paddingDefaultSpacer $paddingDefaultSpacer ($paddingDefaultSpacer * 2) $paddingDefaultSpacer;
+        calciteArcGISPro_WarningMessage();
+        cursor default
+
+    .noResultsHeader
+      font-weight bold
+      margin-bottom 5px
+
+    .showNoResults .noResultsMenu
+      display block
+
+    .showMoreResults .resultsList
+      display block
+
+    .searchClearFloat
+      clear both
+
+    /* Icons */
+  .arcgisSearch
+    .noResultsBody div
+      color $textColorDefault
+      // no HOVER & FOCUS state
+
+    .esriIconSearch:before
+      iconfont("esriIconSearch")
+      position relative
+      top -2px
+      font-size $fontSizeIconDefault
+
+    .esriIconDownDir:before
+      iconfont("esriIconDownArrow")
+      font-size $fontSizeIconSmall
+
+    .noResultsBody div
+      position relative
+      top -4px
+    .noResultsBody div:before
+      iconfont("esriIconNotice")
+      font-size: $fontSizeIconDefault;
+      position relative
+      top 3px
+
+    .searchClearIcon :before
+      iconfont("esriIconCloseSmall")
+      font-size $fontSizeIconDefault
+      position relative
+      top 5px
+
+    .esriIconSearch:before,
+    .esriIconDownDir:before,
+    .esriIconCancel:before
+      color $textColorDefault
+      &:hover,
+      &:focus {
+        color $textColorHover
+        opacity 1
+      }
+      &:active
+        color $textColorActive
+
+    .showSources .searchToggleIcon,
+    .showSources .searchToggleIcon:before
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+      -o-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+      transition: transform 150ms ease;
+
+    // Button Mode
+    .arcgisSearch .searchExpandContainer {
+      //float: left;
+      bidi-value("float", left, right);
+    }
+    //.dj_rtl .arcgisSearch .searchExpandContainer {
+    //  float: right;
+    //}
+    .hasButtonMode
+      .searchExpandContainer
+        -webkit-transition: width .175s ease-in;
+        -moz-transition: width .175s ease-in;
+        -ms-transition: width .175s ease-in;
+        -o-transition: width .175s ease-in;
+        transition: width .175s ease-in;
+        overflow: hidden;
+        height: 34px;
+
+      &.showSuggestions .searchExpandContainer
+        overflow inherit
+
+      &.searchCollapsed .searchBtn.searchSubmit
+        padding 2px
+        width 27px
+        height 27px
+        calciteWeb_RoundRadius($borderRadiusSize2);
+        //color: $textColorDefault;
+        border-width 0
+
+        .esriIconSearch:before
+          top 2px
+          left -2px
+
+      &.searchExpanded .searchBtn.searchSubmit
+        display inline-block
+        margin 0
+        height 20px
+
+      &.searchCollapsed .searchExpandContainer
+        width 0px
+        display none
+
+      &.searchExpanded .searchExpandContainer,
+      .searchAnimate
+        width 236px
+
+      &.searchExpanded.hasMultipleSources .searchExpandContainer,
+      &.hasMultipleSources .searchAnimate
+        width: 286px; //286px;
+        bidi-value("float", left, right);
+
+      &.searchExpanded.hasMultipleSources .searchToggle
+        bidi-value("float", left, right);

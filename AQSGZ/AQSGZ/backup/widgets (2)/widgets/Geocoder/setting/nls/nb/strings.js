@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Plassholdertekst",
+    url: "Geokoder-URL",
+    name: "Geokodernavn",
+    example: "Eksempel",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Kan ikke hente konfigurasjonene av geokoderen fra portalen',
+    actions: "Handlinger",
+    warning: "Dette er ikke en støttet versjon av geokodingstjenesten. Dette miniprogrammet støtter geokodingstjeneste 10.1 og nyere.",
+    instruction: "Angi geokoderne i dette miniprogrammet. Klikk på Legg til geokoder for å henvise til en URL, angi et brukervennlig navn og andre egenskaper. Du kan også endre rekkefølgen, konfigurere eller slette geokoderne nedenfor.",
+    layerInstruction1: "Du kan konfigurere søkebetingelsen på ",
+    layerInstruction2: "detaljsiden for webkartet",
+    searchAddress: "Søk etter adresse",
+    searchLayer: "Søk etter lag",
+    layer: "Lag",
+    field: "Felt",
+    condition: "Betingelse",
+    contains: "Inneholder",
+    deleteLastGeocoderError: "Kan ikke slette den siste geokoderen.",
+    noSearchFactorError: "Du må velge minst én funksjon (Søk etter adresse eller Søk etter lag)",
+    equals: "Like",
+    add: "Legg til geokoder",
+    edit: "Rediger geokoder",
+    ok: "OK",
+    cancel: "Avbryt",
+    geocoderNamePlaceHolder: "Min geokoder",
+    geocodePlaceHolder: "Finn adresse eller sted",
+    REPEATING_ERROR: "Følgende felter blir gjentatt: "
+  })
+);

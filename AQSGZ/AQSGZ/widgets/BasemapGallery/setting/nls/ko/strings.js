@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "포털의 베이스맵 포함",
+    settings: "설정",
+    add: "새 베이스맵을 추가하려면 클릭",
+    edit: "등록정보",
+    title: "제목",
+    titlePH: "베이스맵 제목",
+    thumbnail: "섬네일",
+    thumbnailHint: "업데이트할 이미지 클릭",
+    url: "URL",
+    urlPH: "레이어 URL",
+    addlayer: "베이스맵 추가",
+    actions: "작업",
+    warning: "잘못된 입력",
+    save: "돌아가서 저장",
+    back: "돌아가서 취소",
+    addUrl: "URL 추가",
+    autoCheck: "자동 확인",
+    checking: "확인 중...",
+    ok: "확인",
+    cancel: "취소",
+    result: "저장되었습니다.",
+    spError: "갤러리에 추가된 모든 베이스맵에는 동일한 공간 기준 체계가 있어야 합니다.",
+    invalidTitle1:"'",
+    invalidTitle2:"' 베이스맵이 이미 있습니다. 다른 제목을 선택하세요.",
+    invalidBasemapUrl1: "이 레이어 유형은 베이스맵으로 사용할 수 없습니다.",
+    invalidBasemapUrl2: "현재 맵과 다른 공간 기준 체계가 있습니다.",
+    addBaselayer: "베이스맵 레이어 추가"
+  })
+);

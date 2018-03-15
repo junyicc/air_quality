@@ -1,0 +1,132 @@
+﻿
+
+
+.jimu-widget-BasicDataChart hr {
+    border: none;
+    border-top: 1px solid rgb(24, 145, 155);
+    position: relative;
+    top: 36px;
+}
+
+.jimu-widget-BasicDataChart .heading {
+    position:relative;
+    height: 50px;
+    padding-top: 4px;
+}
+
+.jimu-widget-BasicDataChart .heading a {
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 25px;
+    margin-left: 15px;
+    background-color: rgb(83, 184, 67);
+    -webkit-transition:transform 0.2s linear;
+}
+
+@-webkit-keyframes animationAll {
+    0% {left:0%;opacity:1;}
+    25% {left:100%;opacity:0;}
+    50% {left:-60%;opacity:0;}
+    75% {left:0%;opacity:1;}
+    100% {left:0%;opacity:1;}
+}
+@-webkit-keyframes animationAll2 {
+    0% {left:0%;opacity:1;}
+    25% {left:-60%;opacity:0;}
+    50% {left:100%;opacity:0;}
+    75% {left:0%;opacity:1;}
+    100% {left:0%;opacity:1;}
+}
+@-webkit-keyframes animationInput {
+    0% {right:0%;opacity:1;}
+    25% {right:-25%;opacity:0;}
+    50% {right:100%;opacity:0;}
+    75% {right:0%;opacity:1;}
+    100% {right:0%;opacity:1;}
+}
+@-webkit-keyframes animationInput2 {
+    0% {right:0%;opacity:1;}
+    25% {right:100%;opacity:0;}
+    50% {right:-25%;opacity:0;}
+    75% {right:0%;opacity:1;}
+    100% {right:0%;opacity:1;}
+}
+
+.jimu-widget-BasicDataChart .heading input {
+    width: 25%;
+    position: absolute;
+    right: 0;
+    margin-top: 11px;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgb(212, 233, 221);
+    -webkit-animation-delay:0.1s;
+}
+
+.jimu-widget-BasicDataChart .heading a img {
+    width:100%;
+}
+
+.jimu-widget-BasicDataChart .heading a.selected {
+    -webkit-transform: scale(1.2);
+    background-color:rgb(61, 132, 50);
+}
+
+.jimu-widget-BasicDataChart .heading a:hover {
+    background-color:rgb(61, 132, 50);
+}
+
+.jimu-widget-BasicDataChart .body {
+    overflow:hidden;
+    width:100%;
+}
+
+.jimu-widget-BasicDataChart .body img {
+    position: absolute;
+    height: 162px;
+    opacity: 0;
+    -webkit-transition:opacity 0.5s linear;
+}
+
+.jimu-widget-BasicDataChart .body .Datatable .altrowstable tr .value{
+    background-color: rgb(212, 233, 221);
+}
+
+.jimu-widget-BasicDataChart .body .Datatable img {
+    top: 70px;
+    right: 0px;
+}
+
+.jimu-widget-BasicDataChart .body .Highchart img {
+    top: 84px;
+    left:0px;
+}
+
+.jimu-widget-BasicDataChart .body img:hover {
+    opacity: 1;
+}
+
+.jimu-widget-BasicDataChart .body .Datatable {
+  width: 100%;
+  position: absolute;
+  -webkit-transition-property:opacity,transform;
+  -webkit-transition:0.5s ease-out;
+  opacity:1;
+}
+
+.jimu-widget-BasicDataChart .body .Highchart {
+    width:100%;
+    position:absolute;
+    -webkit-transform:translateX(100%);
+    -webkit-transition-property:opacity,transform;
+    -webkit-transition:0.5s ease-out;
+    opacity:0;
+}
+
+.jimu-widget-BasicDataChart .body .Datatable .altrowstable tr td:hover{
+      background-color: rgb(201, 226, 209);
+}
+

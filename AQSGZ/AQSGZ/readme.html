@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Readme</title>  
+
+  <style>
+.selector{color:red;}
+.heading{
+background-color:#D8E0E2;
+background-repeat:repeat-x;
+border-bottom:1px solid #FFFFFF;
+border-top:1px solid #FFFFFF;
+color:black;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:16px;
+font-weight:bold;
+letter-spacing:1.1px;
+margin:15px 0 10px;
+padding:3px 10px;
+text-align:center;
+}
+  </style>
+
+</head>
+
+<body>
+<h3>Deploy the app</h3>
+<p>Deploy the app based on the authentication of the portal your app connects.</p>
+<li>If your portal is ArcGIS Online or Portal for ArcGIS configured with OAuth2 or SAML authentication, do the following to deploy the app on your web server:</li>
+<ul>
+	<ol>
+	  <li>Unzip the downloaded app.</li>
+    <li>Deploy it on your web server.</li>
+    <li>Browse to the directory where the app from step 2 is locally hosted and open the app config.json file.</li>
+	  <li>Add a proxy to the locally hosted app. The default proxy in the config.json file is empty. It must be overwritten by your own proxy. Refer to <a href="http://doc.arcgis.com/en/web-appbuilder/manage-apps/use-proxy.htm">Use proxy</a> for details. </li>
+	  <li>Add and register the locally hosted app in your portal. Refer to <a href="http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm"> Add apps </a> and <a href="http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm">Register your app </a>.</li>
+	  <li>Copy and paste the AppID to the appId property in the locally hosted app's config.json file. Save the file.</li>
+	  <li>View the locally hosted app in your browser.</li>
+	  <ol>
+</ul>
+<li>If your portal is Portal for ArcGIS configured with IWA, PKI, or LDAP authentication, do the following to deploy the app on your web server:</li>
+<ul>
+	<ol>
+	  <li>Unzip the downloaded app.</li>
+    <li>Deploy it on your web server.</li>
+    <li>Browse to the directory where the app from step 2 is locally hosted and open the app config.json file.</li>
+    <li>Add a proxy to the locally hosted app. The default proxy in the config.json file is empty. It must be overwritten by your own proxy. Refer to <a href="http://doc.arcgis.com/en/web-appbuilder/manage-apps/use-proxy.htm">Use proxy</a> for details. </li>
+    <li>Save the config.json file.</li>
+    <li>View the locally hosted app in your browser.</li>
+	  <ol>
+</ul>
+<h3>Customize the app</h3>
+<p>Optionally, do the following to customize the application by editing JSON files directly:</p>
+<ul>
+  <li>Add custom widgets
+    <ol>
+      <li>Put your custom widget in the widgets folder.</li>
+      <li>Add the widget into the app's config.json file.<br>
+      The example below uses the Demo widget. Add it into the config.json file<br>
+        <p>{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"name": "Demo",<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;"label": "Demo",<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;"uri": "widgets/Demo/Widget",<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;"index": 13,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;"id": "widgets/Demo/Widget_1"<br>},</p>
+      </li>
+    </ol>
+  </li>
+  <li>Configure the app and widgets. Refer to <a href="https://developers.arcgis.com/web-appbuilder/api-reference/app-configuration.htm">JSON reference </a> for details.</li>
+  <li>Reference the preferred ArcGIS API for JavaScript. Refer to <a href="https://developers.arcgis.com/web-appbuilder/sample-code/change-url-of-arcgis-api-for-javascript.htm">Change URL of ArcGIS API for JavaScript </a>.</li>
+</ul>
+<h3>Supported browsers</h3>
+<p>Supported browsers for deployed apps are the same as Web AppBuilder.</p>
+<ul>
+  <li>Chrome</li>
+  <li>Firefox</li>
+  <li>Safari 3+</li>
+  <li>Internet Explorer 8+</li>
+</ul>
+<h3>Supported versions of ArcGIS API for JavaScript</h3>
+<ul>
+  <li>ArcGIS API for JavaScript 3.13.</li>
+</ul>
+</body>
+</html>

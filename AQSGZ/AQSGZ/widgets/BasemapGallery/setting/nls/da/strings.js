@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "Medtag Portal-baggrundskort",
+    settings: "Indstillinger",
+    add: "Klik for at tilføje et nyt baggrundskort",
+    edit: "Egenskaber",
+    title: "Titel",
+    titlePH: "Baggrundskortets titel",
+    thumbnail: "Miniature",
+    thumbnailHint: "Klik på billedet for at opdatere",
+    url: "URL",
+    urlPH: "Lag-URL",
+    addlayer: "Tilføj baggrundskort",
+    actions: "Handlinger",
+    warning: "Forkert input",
+    save: "Tilbage og gem",
+    back: "Tilbage og annullér",
+    addUrl: "Tilføj URL",
+    autoCheck: "Automatisk kontrol",
+    checking: "Kontrollerer...",
+    ok: "OK",
+    cancel: "Annuller",
+    result: "Gemt",
+    spError: "Alle baggrundskort, der er føjet til galleriet, skal have de samme  spatiale referencer.",
+    invalidTitle1:"Et baggrundskort '",
+    invalidTitle2:"' findes i forvejen. Vælg en anden titel.",
+    invalidBasemapUrl1: "Denne type lag kan ikke bruges som baggrundskort.",
+    invalidBasemapUrl2: "Det aktuelle kort har en anden spatial reference.",
+    addBaselayer: "Tilføj baggrundskortlag"
+  })
+);

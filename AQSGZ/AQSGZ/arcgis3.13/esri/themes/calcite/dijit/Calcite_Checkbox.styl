@@ -1,0 +1,39 @@
+.calcite
+
+  .dijitCheckBox,
+  .dijitCheckBoxIcon
+    background-image none
+    width: 16px;
+    height: 16px;
+    position: relative;
+    font-size $fontSizeIconDefault
+    &:before
+      iconfont("esriIconCheckboxUnchecked");
+      position relative
+      top 23px
+      left -3px
+    &:hover,
+    &:focus {
+      color $textColorHover
+      opacity 1
+    }
+    &:active
+      color $textColorActive
+
+  .dijitCheckBoxChecked
+    background-image none
+    font-size $fontSizeIconDefault
+    color $textColorDefault
+    &:before
+      iconfont("esriIconCheckboxChecked");
+      position relative
+      top 23px
+      left -3px
+
+  .dijitToggleButton .dijitCheckBoxIcon
+    background-image none !important
+    &:before
+      iconfont("esriIconCheckMark");
+      position relative
+      top -3px
+      left -2px

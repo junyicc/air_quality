@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.13/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/metadata/base/Templated","dojo/_base/declare dojo/_base/lang dojo/dom-style dojo/has ./etc/docUtil dijit/_WidgetBase dijit/_TemplatedMixin dijit/_WidgetsInTemplateMixin dojo/i18n!../nls/i18nBase ../../../kernel".split(" "),function(a,d,e,f,c,g,h,k,l,m){a=a([g,h,k],{_destroyWasCalled:!1,i18nBase:l,templateString:"\x3cdiv data-dojo-attach-point\x3d'containerNode'\x3e\x3c/div\x3e",hide:!1,postCreate:function(){this.inherited(arguments);this.hide&&e.set(this.domNode,"display","none")},
+destroy:function(){this._destroyWasCalled=!0;this.inherited(arguments)},setI18nNodeText:function(a,b){c.setI18nNodeText(a,b)},setNodeText:function(a,b){c.setNodeText(a,b)}});f("extend-esri")&&d.setObject("dijit.metadata.base.Templated",a,m);return a});

@@ -1,0 +1,59 @@
+/* ======================================================================================================= */
+/* Calcite - Menu */
+/* ======================================================================================================= */
+@import "variables";
+
+.calcite
+  .dijitPopup.dijitMenuPopup
+    calciteWeb_NoBoxShadow();
+
+  .dijitMenu
+    border-color $borderColorDefault
+
+  .dijitMenu .dijitMenuItem,
+  .dijitMenu .dijitMenuItem .dijitMenuItemLabel,
+  .dijitComboBoxMenu .dijitMenuItem .dijitMenuItemLabel
+    padding: $paddingDefaultSpacer; //$paddingDefaultSpacer ($paddingDefaultSpacer * 2);
+    font-family $fontFamilyDefault
+    font-size $fontSizeDefault
+
+  .dijitMenu .dijitMenuItem td,
+  .dijitComboBoxMenu .dijitMenuItem
+    background-image none
+    border none
+    calciteArcGISPro_ButtonDefault()
+    font-family $fontFamilyDefault
+    font-size $fontSizeDefault
+
+  .dijitMenu .dijitMenuItemHover td,
+  .dijitMenuItemHover,
+  .dijitComboBoxMenu .dijitMenuItemHover
+    background-image none
+    border none
+    calciteArcGISPro_ButtonHover()
+
+  .dijitMenuItemActive,
+  .dijitMenu .dijitMenuItemActive td,
+  .dijitMenu .dijitMenuItemSelected td,
+  .dijitComboBoxMenu .dijitMenuItemActive,
+  .dijitMenuItemSelected
+    border none
+    font-weight normal
+    calciteArcGISPro_ButtonActive()
+
+  .dijitMenuItemActive.dijitMenuItemHover,
+  .dijitMenu .dijitMenuItemActive.dijitMenuItemHover td,
+  .dijitComboBoxMenu .dijitMenuItemActive.dijitMenuItemHover
+    border none
+    //calciteArcGISPro_ButtonActiveHover()
+    calciteArcGISPro_ButtonHover()
+
+  .dijitMenuItemSelected.dijitMenuItemHover,
+  .dijitMenu .dijitMenuItemSelected.dijitMenuItemHover td,
+  .dijitComboBoxMenu .dijitMenuItemSelected.dijitMenuItemHover
+    border none
+    //calciteArcGISPro_ButtonActiveHover()
+    calciteArcGISPro_ButtonHover()
+
+  .dijitMenuItemLabel
+    font-size $fontSizeDefault

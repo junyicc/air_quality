@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Vaatepiirkonna loomine</h2><p/>
+        <h2><img src="../images/GUID-DB51F8AF-EF67-4656-942D-8F629B7FC2F5-web.png" alt="Vaatepiirkonna loomine"></h2>
+        <hr/>
+    <p>Vaatev&auml;lja loomise t&ouml;&ouml;riistaga saate luua alad, kus vaatleja saab n&auml;ha maapinnal olevaid objekte.Anal&uuml;&uuml;sipunktid v&otilde;ivad t&auml;histada kas vaatlejaid (nt maapinnal v&otilde;i vaatetornis asuvaid inimesi) v&otilde;i vaadeldavaid objekte (nt tuuleturbiinid, veetornid, s&otilde;idukid v&otilde;i teised inimesed).Tulemuseks saadud alad on piirkonnad, kus vaatlejad n&auml;evad vaadeldavaid objekte ja vastupidi: vaadeldavad objektid n&auml;evad vaatlejaid.
+    </p>
+    <p>Nii vaatlejatel kui ka vaadeldavatel objektidel v&otilde;ib olla kindel k&otilde;rgus maapinnast ning seda k&otilde;rgust kasutatakse n&auml;htavuse m&auml;&auml;ratlemisel.N&auml;iteks 120 m k&otilde;rguse tuuleturbiini ja maapinnal seisva 180 cm pikkuse inimese jaoks arvutatud vaatev&auml;li on &uuml;ldjuhul suurem kui 60 m k&otilde;rguse tuuleturbiini ja 180 cm pikkuse inimese korral.
+    </p>
+    <p>Pange t&auml;hele, et vaatev&auml;lja arvutamisel ei v&otilde;eta arvesse takistusi (nt puid v&otilde;i hooneid).Arvutamisel l&auml;htutakse sisuliselt lagedast maapinnast, kus pole peale vaatleja ja vaadeldavate objektide mitte midagi muud.
+    </p>
+    <p>Tulemkiht sisaldab n&auml;htavaid piirkondi kujutavaid pindobjekte.V&auml;ljal  <i>Frequency</i> registreeritakse iga ala n&auml;gevate anal&uuml;&uuml;sipunktide arv. Kui Teil on n&auml;iteks viis sisendpunkti, millest iga&uuml;ks t&auml;histab tulet&otilde;rje vaatlustorni, kuvatakse v&auml;ljal <i>Frequency</i> v&auml;&auml;rtused vahemikus &uuml;ks kuni viis: alasid, mille v&auml;&auml;rtus on &uuml;ks, saab n&auml;ha ainult &uuml;hest tornist, samas kui alasid, mille v&auml;&auml;rtus on viis, n&auml;eb k&otilde;igist tornidest. Tulemkiht sisaldab ka v&auml;lja <i>DEMResolution</i>, millel registreeritakse vaatev&auml;ljade loomiseks kasutatud digitaalse k&otilde;rgusmudeli (DEM) resolutsiooni.
+    </p>
+    <p>Kui ruut  <b>Kasuta praegust kaardi ulatust</b> on m&auml;rgitud, anal&uuml;&uuml;sitakse ainult neid objekte, mis on kaardil praegu n&auml;htavad. Kui see ruut pole m&auml;rgitud, kasutatakse k&otilde;iki anal&uuml;&uuml;sikihi objekte ka siis, kui neid pole praegu kuvataval kaardi osal n&auml;ha.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="ObserverHeight">
+        <div><h2>Analüüsipunktide kõrgus</h2></div>
+        <hr/>
+        <div>
+            <p>See on Teie anal&uuml;&uuml;sipunktide k&otilde;rgus maapinnast.Vaikev&auml;&auml;rtus v&otilde;rdub ligikaudu keskmise inimese kasvuga. 
+            </p>
+        </div>
+    </div>
+    <div id="TargetHeight">
+        <div><h2>Muude maapinnal olevate objektide kõrgus</h2></div>
+        <hr/>
+        <div>
+            <p>See v&auml;&auml;rtus t&auml;histab n&auml;htavuse arvutamiseks kasutatavat rajatiste k&otilde;rgust maapinnast v&otilde;i inimeste pikkust.Tulemuseks saadav vaatev&auml;li h&otilde;lmab alasid, kus anal&uuml;&uuml;sipunkt n&auml;eb neid teisi objekte.Sama kehtib ka p&ouml;&ouml;rdv&auml;&auml;rtusena: teised objektid n&auml;evad anal&uuml;&uuml;sipunkti. 
+            </p>
+            <p>
+                <ul>
+                    <li>Kui Teie anal&uuml;&uuml;sipunktid t&auml;histavad n&auml;iteks tuuleturbiine ja soovite m&auml;&auml;ratleda, kus kohas n&auml;evad maapinnal seisvad inimesed turbiine, sisestage keskmise inimese kasv (ligikaudu 180 cm). Tulemuseks on alad, kus maapinnal seisev inimene n&auml;eb tuuleturbiine.
+                    </li>
+                    <li>Kui Teie anal&uuml;&uuml;sipunktid t&auml;histavad tulet&otilde;rje vaatlustorne ja soovite kindlaks m&auml;&auml;rata, millistest vaatlustornidest n&auml;eb v&auml;hemalt 6 m k&otilde;rgust suitsujuga, sisestage k&otilde;rguseks 6 m. Tulemuseks on alad, kus tulet&otilde;rje vaatlustornist on v&otilde;imalik n&auml;ha v&auml;hemalt 6 m k&otilde;rgust suitsujuga.
+                    </li>
+                    <li>Kui teie anal&uuml;&uuml;sipunktid t&auml;histavad looduse imetlemiseks m&otilde;eldud vaatluskohta maantee v&otilde;i teeraja &auml;&auml;res ja soovite kindlaks m&auml;&auml;rata, kust n&auml;eb v&auml;hemalt 120 m k&otilde;rgusi tuuleturbiine, sisestage k&otilde;rguseks 120 m. Tulemuseks on alad, kus vaatluskohas seisev inimene n&auml;eb v&auml;hemalt 120 m k&otilde;rgusi tuuleturbiine.
+                    </li>
+                    <li>Kui teie anal&uuml;&uuml;sipunktid t&auml;histavad looduse imetlemiseks m&otilde;eldud vaatluskohta ja soovite kindlaks m&auml;&auml;rata, kui suurt maa-ala vaatluskohas seisvad inimesed n&auml;evad, sisestage v&auml;&auml;rtuseks null. Tulemuseks on alad, mida vaatluskohast n&auml;eb. 
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MaximumDistance">
+        <div><h2>Maksimaalne kaugus</h2></div>
+        <hr/>
+        <div>
+            <p>See t&auml;histab kaugust, millest alates n&auml;htavate alade arvutamine peatub.Sellest kaugusest edasi pole teada, kas anal&uuml;&uuml;sipunktid ja muud objektid on &uuml;ksteise vaatev&auml;ljas.Suurte v&auml;&auml;rtuste korral kulub arvutamiseks rohkem aega.Suurim lubatud v&auml;&auml;rtus on 50 km (31 miili).
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on selle kihi nimi, mis luuakse  <b>Minu sisu</b> alla ja lisatakse kaardile. Vaikenimi p&otilde;hineb anal&uuml;&uuml;sit&uuml;&uuml;bil ja anal&uuml;&uuml;sitava kihi nimel.Kui see kiht juba eksisteerib, palutakse teil esitada m&otilde;ni muu nimi.
+            </p>
+            <p>Rippmen&uuml;&uuml;  <b>Salvesta tulemused</b> kaudu saate m&auml;&auml;rata selle kausta nime jaotises <b>Minu sisu</b>, kuhu tulemused salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

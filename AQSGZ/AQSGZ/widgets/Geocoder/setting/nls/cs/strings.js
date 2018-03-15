@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Zástupný text",
+    url: "URL geokodéru",
+    name: "Název geokodéru",
+    example: "Příklad",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Z portálu nelze získat konfigurace geokodéru.',
+    actions: "Akce",
+    warning: "Tato verze služby geokódování není podporována. Tento widget podporuje verze geokódování 10.1 a novější.",
+    instruction: "Umožňuje stanovit geokodéry widgetu. Kliknutím na možnost Přidat geokodér můžete vložit odkaz na URL adresu, zadat srozumitelný název pro uživatele a nastavit další vlastnosti. Můžete také změnit uspořádání níže uvedených geokodérů, konfigurovat je, nebo je mazat.",
+    layerInstruction1: "Podmínku vyhledávání můžete nastavit na ",
+    layerInstruction2: "stránce podrobností mapy.",
+    searchAddress: "Hledat podle adresy",
+    searchLayer: "Hledat podle vrstvy",
+    layer: "Vrstva",
+    field: "Pole",
+    condition: "Podmínka",
+    contains: "Obsahuje",
+    deleteLastGeocoderError: "Poslední zbývající geokodér nelze odstranit.",
+    noSearchFactorError: "Je nutné vybrat alespoň jednu možnost (Hledat podle adresy nebo Hledat podle vrstvy).",
+    equals: "Rovná se",
+    add: "Přidat geokodér",
+    edit: "Upravit geokodér",
+    ok: "OK",
+    cancel: "Storno",
+    geocoderNamePlaceHolder: "Můj geokodér",
+    geocodePlaceHolder: "Najít adresu nebo místo",
+    REPEATING_ERROR: "Následující pole se opakují: "
+  })
+);

@@ -1,0 +1,119 @@
+.calcite
+  .esriSimpleSlider
+    text-align center
+    border none
+    background-color transparent
+    calciteWeb_BoxShadow();
+    //&:hover {
+    //     background-color: $backgroundFillHover;
+    //     border-color: $borderFillHover;
+    //}
+    //&:focus {
+    //}
+
+    span
+      display none
+
+    .esriSimpleSliderIncrementButton,
+    .esriSimpleSliderDecrementButton
+      width: 30px;
+      height: 30px;
+      calciteArcGISPro_ButtonDefault();
+      calciteArcGISPro_ButtonBorder();
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      border-color: CalciteColorWhite;
+      /*text-indent -9999px;*/
+      background-repeat: no-repeat;
+      background-position: center;
+
+      color: $textColorDefault
+      &:hover {
+        calciteArcGISPro_ButtonHover();
+        //color: CalciteColorBlueDark;
+        /*border-color: $borderColorDefault;*/
+        border-color: CalciteColorBlue1;
+        color: $textColorHover
+      }
+      &:focus {
+        calciteArcGISPro_ButtonActive();
+        /*border-color: $borderColorDefault;*/
+        border-color: CalciteColorBlue1;
+        color: $textColorHover
+      }
+      &:disabled,
+      &:disabled:hover {
+        color: $textColorDisabled
+      }
+
+    .esriSimpleSliderIncrementButton
+      //.calcite .dijitSliderButtonContainer.dijitSliderButtonContainerV {
+      border-bottom: 1px solid $borderColorDivider;
+      calciteWeb_RoundRadius($borderRadiusSize2 $borderRadiusSize2 0 0);
+
+      &:hover {
+        border-bottom: 1px solid $borderColorDivider;
+      }
+      &:before {
+        iconfont("esriIconZoomIn");
+        position relative
+        top 2px
+        left 0px
+      }
+
+    .esriSimpleSliderDecrementButton
+      //.calcite .dijitSliderButtonContainer.dijitSliderButtonContainerV {
+      border-top:0;
+      calciteWeb_RoundRadius( 0 0 $borderRadiusSize2 $borderRadiusSize2);
+
+      &:hover,
+      &:focus
+        border-top 0
+
+      &:before {
+        iconfont("esriIconZoomOut");
+        position relative
+        top 2px
+        left 0px
+      }
+
+.calcite .esriSimpleSliderVertical .esriSimpleSliderDisabledButton {
+  calciteArcGISPro_ButtonDisabled()
+  border-color: CalciteColorGray120
+  background-color CalciteColorGray120
+  &:hover {
+    background-color CalciteColorGray120
+  }
+}
+.calcite .esriSimpleSliderVertical .esriSimpleSliderDisabledButton.esriSimpleSliderIncrementButton {
+  /*background-image:  url( $imageMapWidgetZoomInDisabled );
+  background-image:  none,url( $imageMapWidgetZoomInDisabled_SVG ), url( $imageMapWidgetZoomInDisabled );
+  background-size: 75% 75%;*/
+  color: $textColorDisabled
+  &:hover,
+  &:focus {
+    color: $textColorDisabled
+    /*border-color CalciteColorGray120
+    background-color CalciteColorGray120
+    background-image:  url( $imageMapWidgetZoomInDisabled );
+    background-image:  none,url( $imageMapWidgetZoomInDisabled_SVG ), url( $imageMapWidgetZoomInDisabled );
+    background-size: 75% 75%;
+    */
+  }
+}
+.calcite .esriSimpleSliderVertical .esriSimpleSliderDisabledButton.esriSimpleSliderDecrementButton {
+  /*background-image:  url( $imageMapWidgetZoomOutDisabled );
+  background-image:  none,url( $imageMapWidgetZoomOutDisabled_SVG ), url( $imageMapWidgetZoomOutDisabled );
+  background-size: 75% 75%;
+  */
+  color: $textColorDisabled
+  &:hover,
+  &:focus {
+    color: $textColorDisabled
+    /*border-color CalciteColorGray120
+    background-color CalciteColorGray120
+    background-image:  url( $imageMapWidgetZoomOutDisabled );
+    background-image:  none,url( $imageMapWidgetZoomOutDisabled_SVG ), url( $imageMapWidgetZoomOutDisabled );
+    background-size: 75% 75%;
+    */
+  }
+}

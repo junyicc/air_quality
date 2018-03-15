@@ -1,0 +1,16 @@
+{
+  "name": "FacePanel",
+  "label": "浮动面板",
+  "platform": "HTML",
+  "version": "1.1",
+  "wabVersion": "1.1",
+  "author": "ZGB",
+  "description": "",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "inPanel": false,
+    "hasUIFile": false,
+    "keepConfigAfterMapSwithched": false
+  }
+}

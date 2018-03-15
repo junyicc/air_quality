@@ -1,0 +1,130 @@
+/* ======================================================================================================= */
+/* ArcGIS API for JavasScript: Calcite Theme - Icon Fonts */
+/* (Added 2014-11-26 by FG) */
+/* Note:
+	- Based on font created using IconMoon
+/* ======================================================================================================= */
+$fontFamilyName = "CalciteWebCoreIcons";
+
+$iconFontLookup = {
+  esriIconClose: "\e600",
+  esriIconHDrag: "\e601",
+  esriIconVDrag: "\e602",
+  esriIconZoom: "\e603",
+  esriIconDirectionHDragHandles: "\e604",
+  esriIconDirectionVDragHandles: "\e605",
+  esriIconCheckMark: "\e606",
+  esriIconLeftArrow: "\e607",
+  esriIconRightArrow: "\e608",
+  esriIconDownArrow: "\e609",
+  esriIconUpArrow: "\e60a",
+  esriIconOverview1: "\e60b",
+  esriIconOverview2: "\e60c",
+  esriIconOverview3: "\e60d",
+  esriIconOverview4: "\e60e",
+  esriIconMaximize: "\e60f",
+  esriIconMinimize: "\e610",
+  esriIconCheckboxUnchecked: "\e611",
+  esriIconCheckboxChecked: "\e612",
+  esriIconRadioUnchecked: "\e613",
+  esriIconRadioChecked: "\e614",
+  esriIconCircledDownArrow: "\e615",
+  esriIconCircledLeftArrow: "\e616",
+  esriIconCircledRightArrow: "\e617",
+  esriIconCircledClose: "\e618",
+  esriIconFixedZoomOut: "\e619",
+  esriIconFixedZoomIn: "\e61a",
+  esriIconAjaxLoaderArrow: "\e61b",
+  esriIconEditingSketchTool: "\e61c",
+  esriIconChart: "\e61d",
+  esriIconMapPin: "\e61e",
+  esriIconMapPin2: "\e61f",
+  esriIconGenericCalendar: "\e620",
+  esriIconZoomIn: "\e621",
+  esriIconZoomOut: "\e622",
+  esriIconReverse: "\e623",
+  esriIconBeginning: "\e624",
+  esriIconPause: "\e625",
+  esriIconPlay: "\e626",
+  esriIconEnd: "\e627",
+  esriIconForward: "\e628",
+  esriIconGenericEraser: "\e629",
+  esriIconUpDownArrows: "\e62a",
+  esriIconSquareArrowLeft: "\e62b",
+  esriIconSquareArrowRight: "\e62c",
+  esriIconNoticeRound: "\e62d",
+  esriIconNoticeTriangle: "\e62e",
+  esriIconHomeExtent: "\e62f",
+  esriIconLocate: "\e630",
+  esriIconCloseArrows: "\e631",
+  esriIconOpenArrows: "\e632",
+  esriIconLayerList: "\e633",
+  esriIconBasemap: "\e634",
+  esriIconCollection: "\e635",
+  esriIconGlobe: "\e636",
+  esriIconFeatureLayer: "\e637",
+  esriIconError: "\e638",
+  esriIconDownload: "\e639",
+  esriIconResendInvitation: "\e63a",
+  esriIconDeny: "\e63b",
+  esriIconGrant: "\e63c",
+  esriIconReview: "\e63d",
+  esriIconDescription: "\e63e",
+  esriIconMedia: "\e63f"
+}
+
+/* Icon Function */
+iconfont(args)
+  font-family $fontFamilyName;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  content: $iconFontLookup[args]
+
+
+/* Icon - Initial references to font files */
+iconfont_init($path)
+  $url_path = $path + 'icons/fonts/'
+  $urlEot1  = $url_path + $fontFamilyName + '.eot?1nhw6q'
+  $urlEot2  = $url_path + $fontFamilyName + '.eot?#iefix1nhw6q'
+  $urlWoff  = $url_path + $fontFamilyName + '.woff?1nhw6q'
+  $urlTtf   = $url_path + $fontFamilyName + '.ttf?1nhw6q'
+  $urlSvg   = $url_path + $fontFamilyName + '.svg?1nhw6q#' + $fontFamilyName
+
+  @font-face
+    font-family: $fontFamilyName;
+    src: url( $urlEot1 );
+    src: url( $urlEot2 ) format('embedded-opentype'),
+    url( $urlWoff ) format('woff'),
+    url( $urlTtf ) format('truetype'),
+    url( $urlSvg ) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+
+/* Icon - CSS Classes */
+iconfont_classes()
+  [class^="esriIcon"], [class*=" esriIcon"]
+    font-family: $fontFamilyName;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+  for className, contentCode in $iconFontLookup
+    .{className}:before
+      content: contentCode;
+

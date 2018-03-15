@@ -1,0 +1,27 @@
+﻿<div style="width: 100%; height: 100%">
+    <div class="Highchart">
+        <div class="head">
+            <label for="FromDate" style="width: 10%">监测时间：</label>
+            <input type="date" id="Date" data-dojo-attach-event="onchange:OptChange" />
+        </div>
+        <div style="overflow:hidden;width:100%;height:95%" id="SpiderChart"></div>
+    </div>
+    <div class="About">
+        <div class="head">
+            <p class="value" data-dojo-attach-point="AQIvalue" style="font-size: 60px; float: left; margin-top: 10px; margin-left: 18px;">--</p>
+            <span class="grade" data-dojo-attach-point="AQIgrade" style="position: absolute; top: 80px; right: 17%; font-size: 18px;">--</span>
+            <img class="Img" data-dojo-attach-point="AQIpicture" style="position: absolute; right: 10px; width: 85px;" />
+            <p style="clear: both; margin-left: 20px;">
+                空气质量指数AQI
+            </p>
+        </div>
+        <div class="body">
+            <p data-dojo-attach-point="stationName" style="padding: 10px;"></p>
+            <label data-dojo-attach-type="lable" style="padding: 10px;">首要污染物：</label>
+            <span data-dojo-attach-point="Firstpolu">--</span>
+            <p data-dojo-attach-point="tips" style="margin-left: 7px;"></p>
+            <p data-dojo-attach-point="time" style="float: right; margin-right: 20px"></p>
+        </div>
+        <div class="foot"></div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div style="width:100%;">
+  <div class="instruction">
+    <span class="instruction-inner">${nls.instruction}</span>
+  </div>
+  <div class="editor-container" data-dojo-attach-point="editorContainer">
+  	<div data-dojo-attach-point="editor"></div>
+  </div>
+  <div class="splash-footer">
+    <div class="require-continue">
+      <div class="check" data-dojo-attach-point="requireConfirm"></div>
+    </div>
+    <div class="confirm-text" data-dojo-attach-point="confirmContainer">
+    	<span class="spinner-label jimu-ellipsis" title="${nls.confirmLabel}">${nls.confirmLabel}</span>
+    	<input class="jimu-input jimu-float-trailing" type="text" value="${nls.defaultConfirmText}" data-dojo-attach-point="confirmText">
+    </div>
+  </div>
+</div>

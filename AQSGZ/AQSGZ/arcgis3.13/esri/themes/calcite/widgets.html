@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Esri widgets - Calcite</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+
+  <link rel="stylesheet" href="http://jsdev.arcgis.com/3.13/esri/css/esri.css">
+  <link rel="stylesheet" href="css/demo-files/widgets.css">
+
+  <script src="http://jsdev.arcgis.com/3.13/"></script>
+  <script src="css/demo-files/widgets.js"></script>
+</head>
+
+<body>
+  <div id="all">
+    <div class="width">
+      <section id="guide" class="component guide">
+        <div class="component-content" style="height:120px;">
+          <p>Calcite Theme for the ArcGIS JS API ( Devtopia Wiki: <a href="https://devtopia.esri.com/WebGIS/arcgis-js-api/wiki/calcite" target="_blank">https://devtopia.esri.com/WebGIS/arcgis-js-api/wiki/calcite</a> )</p>
+          <p><b>JS API Widgets</b> | <a href="examples.html">Dojo Dijits</a></p>
+          <div class="guide done">Done</div>
+          <div class="guide workinprogress">Work in progress</div>
+          <div class="guide notstarted">Not Started</div>
+        </div>
+      </section>
+
+      <section id="IconFont" class="component workinprogress">
+        <h2>{icon font - sample set}</h2>
+        <p class="component-description">from <a href="https://devtopia.esri.com/fran6733/calcite-for-js-api-icons" target="_blank">https://devtopia.esri.com/fran6733/calcite-for-js-api-icons</a></p>
+        <div class="component-content iconfonts">
+          <!-- Stylus file: calcite-dojo-theme-stylus / css / iconfonts.styl  -->
+          <p><span class="esriIconBasemap"></span> <code>.esriIconBasemap</code></p>
+          <!--<p><span class="icon-Clear_24"></span> <code>.icon-Clear_24</code></p>
+          <p><span class="icon-Close_Arrow_24"></span> <code>.icon-Close_Arrow_24</code></p>
+          <p><span class="icon-Open_Arrow_24"></span> <code>.icon-Open_Arrow_24</code></p>
+          <p><span class="icon-DownArrow_24"></span> <code>.icon-DownArrow_24</code></p>
+          <p><span class="icon-Collection_24"></span> <code>.icon-Collection_24</code></p>
+          <p><span class="icon-FeatureLayer_24"></span> <code>.icon-FeatureLayer_24</code></p>
+          <p><span class="icon-Globe_24"></span> <code>.icon-Globe_24</code></p>
+          <p><span class="icon-Home_Extent_24"></span> <code>.icon-Home_Extent_24</code></p>
+          <p><span class="icon-Layer_List_24"></span> <code>.icon-Layer_List_24</code></p>
+          <p><span class="icon-Locate_24"></span> <code>.icon-Locate_24</code></p>
+          <p><span class="icon-MapPin_24"></span> <code>.icon-MapPin_24</code></p>
+          <p><span class="icon-Notice_24"></span> <code>.icon-Notice_24</code></p>
+          <p><span class="icon-Search_24"></span> <code>.icon-Search_24</code></p>-->
+          <p><span class="esriIconZoomIn"></span> <code>.esriIconZoomIn</code></p>
+          <p><span class="esriIconZoomOut"></span> <code>.esriIconZoomOut</code></p>
+        </div>
+      </section>
+
+      <section id="loading" class="component workinprogress">
+        <h2>{loading indicators}</h2>
+        <p class="component-description">(use cases coming soon)</p>
+        <div class="component-content">
+          <p><span class="loading LoadingBarsGrey"></span> <code>.LoadingBarsGrey</code></p>
+          <p><span class="loading LoadingBarsDark"></span> <code>.LoadingBarsDark</code></p>
+          <!--<p><span class="loading LoadingBarsLight"></span> <code>.LoadingBarsLight</code></p>-->
+          <p><span class="loading LoadingBarsBlue"></span> <code>.LoadingBarsBlue</code></p>
+          <p><span class="loading LoadingBarsBlueLarge"></span> <code>.LoadingBarsBlueLarge</code></p>
+          <p><span class="loading LoadingSpinBlue1"></span> <code>.LoadingSpinBlue1</code></p>
+        </div>
+      </section>
+
+      <section id="Attachment-Editor" class="component done">
+        <h2>Attachment Editor</h2>
+        <p class="component-description">Click a feature to view attachment editor</p>
+        <div class="component-content">
+          <div id="attachmentMapDiv"></div>
+        </div>
+      </section>
+
+      <section id="Basemap-Gallery" class="component done">
+        <h2>Basemap Gallery</h2>
+        <p class="component-description">The basemap gallery displays a collection of basemaps from ArcGIS.com</p>
+        <div class="component-content">
+          <div id="basemapGalleryDiv"></div>
+        </div>
+      </section>
+
+      <section id="Basemap-Toggle" class="component done">
+        <h2>Basemap Toggle</h2>
+        <p class="component-description">Switch between two basemaps</p>
+        <div class="component-content">
+          <div id="basemapToggleDiv"></div>
+        </div>
+      </section>
+
+      <section id="Bookmarks" class="component done">
+        <h2>Bookmarks</h2>
+        <p class="component-description">Bookmark the current map extent</p>
+        <div class="component-content">
+          <div id="bookmarkDiv"></div>
+        </div>
+      </section>
+
+      <section id="Color-Picker" class="component notstarted">
+        <h2>Color Picker</h2>
+        <p class="component-description">Simple color picker</p>
+        <div class="component-content">
+          <div data-dojo-type="esri/dijit/ColorPicker"></div>
+        </div>
+      </section>
+
+      <section id="Directions" class="component workinprogress">
+        <h2>Directions</h2>
+        <p class="component-description">Calculate directions between two or more input locations</p>
+        <div class="component-content">
+          <div id="directionsDiv" style="height:400px;width:300px;"></div>
+        </div>
+      </section>
+
+      <section id="Editor" class="component notstarted">
+        <h2>Editor</h2>
+        <p class="component-description">Edit layers</p>
+        <div class="component-content">
+          <div id="editorDiv" style="height:400px;width:300px;"></div>
+        </div>
+      </section>
+
+      <!--
+          <section id="Gauge" class="component notstarted">
+            <h2>Gauge</h2>
+            <p class="component-description">Dashboard-like interface and display data on a semi-circular gauge. To test hover over features in the map below to see gauge values change.</p>
+            <div class="component-content">
+                    <div id="gaugeDiv"></div>
+            </div>
+          </section>
+      -->
+
+      <section id="Geocoder" class="component workinprogress" >
+        <h2>Geocoder (Simple)</h2>
+        <p class="component-description">Find locations on the map</p>
+        <div class="component-content" style="" >
+          <p>mode 1 - when <em>not</em> displayed over a map</p>
+          <div class="geocoderDivRelative">
+            <div id="geocoderDiv"></div>
+          </div>
+          <p>mode 2 - when displayed over a map</p>
+          <div id="mapgeocoder2">
+            <div id="geocoderDiv2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Geocoder-Search" class="component workinprogress" >
+        <h2>Geocoder Search</h2>
+        <p class="component-description">Find locations on the map</p>
+        <div class="component-content" style="" >
+          <div id="mapgeocoder3">
+            <div id="geocoderDiv3"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Home-Button" class="component done" >
+        <h2>Home Button</h2>
+        <p class="component-description">Return map to initial extent</p>
+        <div class="component-content" style="" >
+          <div id="homeDiv"></div>
+        </div>
+      </section>
+
+      <section id="Horizontal-Slider" class="component notstarted">
+        <h2>Horizontal Slider</h2>
+        <p class="component-description">Simple horizontal slider</p>
+        <div class="component-content">
+          <div data-dojo-type="esri/dijit/HorizontalSlider"></div>
+        </div>
+      </section>
+
+      <section id="Horizontal-Slider-Labels" class="component notstarted">
+        <h2>Horizontal Slider Labels</h2>
+        <p class="component-description">Simple horizontal slider with labels</p>
+        <div class="component-content">
+          <div data-dojo-type="esri/dijit/HorizontalSlider" data-dojo-props="labels: ['0%', '25%' ,'50%' ,'100%']"></div>
+        </div>
+      </section>
+
+      <section id="Locate-Button" class="component done" >
+        <h2>Locate Button</h2>
+        <p class="component-description">Find position on the map</p>
+        <div class="component-content" style="" >
+          <div id="locateDiv"></div>
+        </div>
+      </section>
+
+      <!--
+       <section id="Basemap-Button" class="component notstarted" >
+           <h2>Basemap Button</h2>
+           <p class="component-description">Return map to initial extent</p>
+           <div class="component-content" style="" >
+               <div id="BasemapBtnDiv"></div>
+           </div>
+       </section>
+     -->
+
+      <section id="Identity-Manager" class="component notstarted" >
+        <h2>Identity Manager</h2>
+        <p class="component-description">Login dialog to access secure services.</p>
+        <div class="component-content" style="" >
+          <!-- <p> <a id="signIn">Click </a>to display Identity Manager dialog</p>-->
+          <input type="button" id="signIn" value="Click to display id manager"/>
+        </div>
+      </section>
+
+      <section id="Infographics" class="component notstarted" >
+        <h2>Infographics</h2>
+        <p class="component-description">Display geoenrichment info for the selected location</p>
+        <div class="component-content">
+          <div id="infographicMap" style="position:relative;">
+            <div id="infographicDiv" style="width:100px;position:absolute;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Magnify-Glass" class="component notstarted" >
+        <h2>Magnify Glass</h2>
+        <p class="component-description">Compare contents of multiple layers</p>
+        <div class="component-content" style="" >
+          <div id="swipeMap">
+            <div id="swipeDiv"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Layer-Swipe" class="component notstarted" >
+        <h2>Layer Swipe</h2>
+        <p class="component-description">Compare contents of multiple layers</p>
+        <div class="component-content" style="" >
+          <div id="swipeMap2">
+            <div id="swipeDiv2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Legend" class="component done" >
+        <h2>Legend</h2>
+        <p class="component-description">Display a legend for the map layers</p>
+        <div class="component-content" style="" >
+          <div id="legendDiv"></div>
+        </div>
+      </section>
+
+      <section id="Measurement" class="component workinprogress" >
+        <h2>Measurement</h2>
+        <p class="component-description">Provides tools for calculating the current location</p>
+        <div class="component-content" style="" >
+          <div id="measureDiv"></div>
+        </div>
+      </section>
+
+      <section id="Map-with-default" class="component done">
+        <h2>Map with default (small) slider</h2>
+        <p class="component-description">Esri Map with the default small slider.</p>
+        <div class="component-content">
+          <div id="mapDiv" style="height:200px;width:400px;"></div>
+        </div>
+      </section>
+
+      <section id="Map-with-large-slider" class="component notstarted">
+        <h2>Map with large slider</h2>
+        <p class="component-description">Map with the large slider. <a href="http://kelly-mac.esri.com/~kell3008/demos/largeslider.html" target="_blank">Use case example</a></p>
+        <div class="component-content">
+          <div id="smallSliderDiv" style="height:400px;width:400px;"></div>
+        </div>
+      </section>
+
+      <section id="Overview-Map" class="component notstarted">
+        <h2>Overview map</h2>
+        <p class="component-description">The OverviewMap widget displays the current extent of the map within the context of a larger area.</p>
+        <div class="component-content">
+          <div id="overviewDiv"></div>
+          <div id="overviewMapDiv"></div>
+        </div>
+      </section>
+
+      <section id="Print" class="component notstarted">
+        <h2>Print</h2>
+        <p class="component-description">Print map contents. <a href="http://developers.arcgis.com/javascript/samples/widget_print_webmap/" target="_blank">Use case example</a></p>
+        <div class="component-content">
+          <div id="printDiv"></div>
+        </div>
+      </section>
+
+      <section id="Scalebar" class="component notstarted">
+        <h2>Scalebar</h2>
+        <p class="component-description">Scalebar</p>
+        <div class="component-content">
+          <div id="scalebarDiv" style=""></div>
+        </div>
+      </section>
+
+      <section id="Template-Picker" class="component done">
+        <h2>Template Picker</h2>
+        <p class="component-description">Display a gallery of templates from one or more feature layers</p>
+        <div class="component-content">
+          <div id="templatePickerDiv" style=""></div>
+        </div>
+      </section>
+
+      <section id="Time-Slider" class="component notstarted">
+        <h2>Time Slider</h2>
+        <p class="component-description">Time slider with dynamic map service layer</p>
+        <div class="component-content">
+          <div id="timeSliderDiv" style=""></div>
+        </div>
+      </section>
+
+    <section id="Visible-Scale-Range-Slider" class="component notstarted">
+        <h2>Visible Scale Range Slider</h2>
+        <p class="component-description">A slider that helps set the visible scale range for a layer.</p>
+        <div class="component-content">
+            <div id="visibleScaleRangeSliderMapDiv"></div>
+            <div id="visibleScaleRangeSliderDiv"></div>
+        </div>
+    </section>
+
+    </div>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+// =======================================================================================================
+// Border Radius
+// =======================================================================================================
+/* Use stylus interpolation for a "vendor" function */
+/* http://learnboost.github.io/stylus/docs/interpolation.html */
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+calciteWeb_RoundRadius()
+  /* Border Radius Generator: http://border-radius.com/ */
+  vendor('border-radius', arguments)
+
+calciteWeb_RoundRadius_Top()
+  -webkit-border-top-left-radius: arguments
+  -webkit-border-top-right-radius: arguments
+  -moz-border-radius-topleft: arguments
+  -moz-border-radius-topright: arguments
+  border-top-left-radius: arguments
+
+calciteWeb_RoundRadius_Left()
+  -webkit-border-top-left-radius: arguments
+  -webkit-border-bottom-left-radius: arguments
+  -moz-border-radius-topleft: arguments
+  -moz-border-radius-bottomleft: arguments
+  border-top-left-radius: arguments
+
+calciteWeb_RoundRadius_Right()
+  -webkit-border-top-right-radius: arguments
+  -webkit-border-bottom-right-radius: arguments
+  -moz-border-radius-topright: arguments
+  -moz-border-radius-bottomright: arguments
+  border-top-right-radius: arguments
+  border-bottom-right-radius: arguments

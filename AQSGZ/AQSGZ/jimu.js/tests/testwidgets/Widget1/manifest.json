@@ -1,0 +1,13 @@
+{
+  "name": "Widget1",
+  "platform": "HTML",
+  "version": "1.0",
+  "author": "Esri R&D Center Beijing",
+  "description": "the widget",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "hasUIFile": false,
+    "hasVersionManager": false
+  }
+}

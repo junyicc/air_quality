@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Analüüsi kihti</h2><p/>
+        <h2><img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Anal&uuml;&uuml;si kihti"></h2>
+        <hr/>
+    <p>See t&ouml;&ouml;vahend aitab rikastada Teie andmeid, hankides juurde teavet Teie l&auml;heduses olevate inimeste, paikade ja ettev&otilde;tete kohta, v&otilde;imaldades saada t&auml;iendavaid vastuseid k&uuml;simustele, mis oleksid ainult kaardi vahendusel raskendatud.N&auml;ited: Millised inimesed siin piirkonnas elavad? Millega inimesed siin piirkonnas vabal ajal tegelevad?Millised on nende harjumused ja elustiil?Millist t&uuml;&uuml;pi ettev&otilde;tted siin piirkonnas tegutsevad?
+    </p>
+    <p>Tulemuseks on kiht, mis sisaldab lisaks geograafilisele teabele informatsiooni ka demograafilistest n&auml;itajatest jne.Vastav uus info lisatakse v&auml;ljadena tabelisse.
+    </p>
+    <p>Kui ruut  <b>Kasuta praegust kaardi ulatust</b> on m&auml;rgitud, kasutatakse anal&uuml;&uuml;sil ainult neid anal&uuml;&uuml;si- ja alakihi objekte, mis on praegu kaardil n&auml;htavad. Kui see ruut pole m&auml;rgitud, anal&uuml;&uuml;sitakse k&otilde;iki anal&uuml;&uuml;si- ja alakihi objekte ka siis, kui neid pole praegu kuvataval kaardi osal n&auml;ha.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Rikastamise muutujad</h2></div>
+        <hr/>
+        <div>
+            
+            <p>Akna  <b>Andmebrauser</b> avamiseks kl&otilde;psake nuppu <b>Vali muutujad</b>. <b>Andmebrauser</b> aitab Teil rikastamise muutujaid otsida ja valida eraldi v&otilde;i kollektsioonidena.
+            </p>
+            <p>Teie andmete p&otilde;hjal valitakse automaatselt piirkond.Kui Teie andmed h&otilde;lmavad rohkem kui &uuml;hte riiki, saate valida m&otilde;ne muu piirkonna. 
+            </p>
+            <p>Rikastamise muutujad korraldatakse h&otilde;lpsaks juurdep&auml;&auml;suks andmekogude ehk kollektsioonidena.Andmekogu valimisel kuvatakse brauseris m&otilde;ni selle kollektsiooni populaarsem rikastamise muutuja.Jaotises  <b>J&auml;tka sirvimist</b> kuvatakse ka selle kollektsiooni kategooriad. Iga kategooria piires saate valida terveid alamkategooriaid v&otilde;i sirvida alamkategooriat ja valida rikastamise muutujad eraldi.Otsinguv&auml;lja kaudu saate kategooriast ka m&otilde;nda kindlat muutujat otsida.
+            </p>
+            <p>Rikastamise muutujate valimisel lisatakse need  <b>andmebrauseri</b> nurgas asuvasse ostukorvi. Ostukorvis saate j&auml;lgida valitud muutujate arvu.
+            </p>
+            <p>Iga valitud muutuja lisatakse tulemkihis v&auml;ljana.
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Määra piirkonnad analüüsiks</h2></div>
+        <hr/>
+        <div>
+            <p>Saate m&auml;&auml;ratleda sisendpunktide v&otilde;i joonte &uuml;mber asuva ala, mida rikastatakse, kasutades selleks kas sirgjoonelist vahemaad v&otilde;i valitud liikumisviisi.Liikumisviise saab kasutada &uuml;ksnes juhul, kui Teie anal&uuml;&uuml;sikiht sisaldab punkte.Saadaval on j&auml;rgmised variandid: s&otilde;iduvahemaa, s&otilde;iduaeg, autoveo s&otilde;iduvahemaa, autoveo s&otilde;iduaeg, k&otilde;ndimisvahemaa v&otilde;i k&otilde;ndimisaeg. Liikumisviisi kasutamisel m&otilde;&otilde;detakse vahemaad piki maanteid v&otilde;i jalgteid ning arvesse v&otilde;etakse kehtivad reeglid (nt &uuml;hesuunalised teed, keelatud p&ouml;&ouml;rdeid jne).
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on selle kihi nimi, mis luuakse  <b>Minu sisu</b> alla ja lisatakse kaardile. Vaikenimi p&otilde;hineb anal&uuml;&uuml;sit&uuml;&uuml;bil ja anal&uuml;&uuml;sitava kihi nimel.Kui see kiht juba eksisteerib, palutakse teil esitada m&otilde;ni muu nimi.
+            </p>
+            <p>Rippmen&uuml;&uuml;  <b>Salvesta tulemused</b> kaudu saate m&auml;&auml;rata selle kausta nime jaotises <b>Minu sisu</b>, kuhu tulemused salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Tổng kết trong Phạm vi</h2><p/>
+        <h2><img src="../images/GUID-2E97B2ED-56A7-4242-B0E0-C1824E6F643F-web.png" alt="Tổng kết trong Phạm vi"></h2>
+        <hr/>
+    <p>C&ocirc;ng cụ n&agrave;y t&igrave;m c&aacute;c đối tượng (v&agrave; phần đối tượng) nằm trong ranh giới của v&ugrave;ng trong lớp ph&acirc;n t&iacute;ch. V&iacute; dụ:
+        <ul>
+            <li>Với một lớp c&aacute;c ranh giới lưu vực v&agrave; một lớp c&aacute;c ranh giới sử dụng đất theo loại h&igrave;nh sử dụng đất, h&atilde;y t&iacute;nh to&aacute;n tổng diện t&iacute;ch c&aacute;c loại đất sử dụng cho từng lưu vực.
+            </li>
+            <li>Với một lớp l&ocirc; đất trong một quận v&agrave; một lớp ranh giới th&agrave;nh phố, h&atilde;y t&iacute;nh gi&aacute; trị trung b&igrave;nh c&aacute;c l&ocirc; đất trống trong từng ranh giới th&agrave;nh phố.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Nếu chọn  <b>Sử dụng phạm vi bản đồ hiện tại</b>, th&igrave; chỉ c&aacute;c đối tượng nh&igrave;n thấy trong lớp ph&acirc;n t&iacute;ch v&agrave; lớp cần t&oacute;m tắt nằm trong phạm vi bản đồ hiện tại sẽ được ph&acirc;n t&iacute;ch. Nếu bỏ chọn, tất cả c&aacute;c tổng hợp trong cả lớp ph&acirc;n t&iacute;ch v&agrave; lớp cần tổng hợp sẽ được ph&acirc;n t&iacute;ch, ngay cả khi ch&uacute;ng ở ngo&agrave;i phạm vi bản đồ hiện tại.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Chọn lớp để tổng kết</h2></div>
+        <hr/>
+        <div>
+            <p>C&aacute;c đối tượng trong lớp n&agrave;y trong ranh giới đối tượng trong lớp ph&acirc;n t&iacute;ch sẽ được t&oacute;m tắt. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Thêm số liệu thống kê từ</h2></div>
+        <hr/>
+        <div>
+            <p>Bạn c&oacute; thể t&ugrave;y &yacute; t&iacute;nh to&aacute;n thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c điểm thuộc phạm vi ranh giới của c&aacute;c đối tượng. 
+            </p>
+            <p>Hộp chọn  <b>Số lượng điểm</b>, nếu được chọn, sẽ t&iacute;nh to&aacute;n tổng số điểm trong ranh giới từng v&ugrave;ng. Ngo&agrave;i ra, bạn c&oacute; thể t&iacute;nh to&aacute;n số liệu thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c điểm c&oacute; trong ranh giới từng v&ugrave;ng.
+            </p>
+            <ul>
+                <li> <b>Tổng</b>&mdash;Tổng gi&aacute; trị cho trường chỉ định.
+                </li>
+                <li> <b>Trung b&igrave;nh</b>&mdash;Trung b&igrave;nh hoặc b&igrave;nh qu&acirc;n cho trường chỉ định.
+                </li>
+                <li> <b>Tối thiểu</b>&mdash;Gi&aacute; trị nhỏ nhất trong trường chỉ định.
+                </li>
+                <li> <b>Tối đa</b>&mdash;Gi&aacute; trị lớn nhất trong trường chỉ định.
+                </li>
+                <li> <b>Độ lệch chuẩn</b>&mdash;Độ lệch chuẩn đối với c&aacute;c gi&aacute; trị trong trường chỉ định
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Thêm số liệu thống kê từ</h2></div>
+        <hr/>
+        <div>
+            <p>Bạn c&oacute; thể t&ugrave;y &yacute; t&iacute;nh to&aacute;n số liệu thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c đường gần đ&oacute;. 
+            </p>
+            <p>Hộp chọn  <b>Tổng độ d&agrave;i đường trong</b>, nếu được chọn, sẽ t&iacute;nh to&aacute;n tổng độ d&agrave;i đường trong ranh giới từng v&ugrave;ng. Ngo&agrave;i ra, bạn c&oacute; thể t&iacute;nh to&aacute;n số liệu thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c đường c&oacute; trong ranh giới từng v&ugrave;ng.
+            </p>
+            <ul>
+                <li> <b>Tổng</b>&mdash;Tổng gi&aacute; trị cho trường chỉ định.
+                </li>
+                <li> <b>Trung b&igrave;nh</b>&mdash;Trung b&igrave;nh hoặc b&igrave;nh qu&acirc;n cho trường chỉ định.
+                </li>
+                <li> <b>Tối thiểu</b>&mdash;Gi&aacute; trị nhỏ nhất trong trường chỉ định.
+                </li>
+                <li> <b>Tối đa</b>&mdash;Gi&aacute; trị lớn nhất trong trường chỉ định.
+                </li>
+                <li> <b>Độ lệch chuẩn</b>&mdash;Độ lệch chuẩn đối với c&aacute;c gi&aacute; trị trong trường chỉ định
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Thêm số liệu thống kê từ</h2></div>
+        <hr/>
+        <div>
+            <p>Bạn c&oacute; thể t&ugrave;y &yacute; t&iacute;nh to&aacute;n số liệu thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c v&ugrave;ng gần đ&oacute;. 
+            </p>
+            <p>Hộp chọn  <b>Tổng diện t&iacute;ch sử dụng</b>, nếu được chọn, sẽ t&iacute;nh to&aacute;n tổng diện t&iacute;ch của đối tượng c&oacute; trong ranh giới từng v&ugrave;ng thuộc lớp ph&acirc;n t&iacute;ch. Ngo&agrave;i ra, bạn c&oacute; thể t&iacute;nh to&aacute;n số liệu thống k&ecirc; cho c&aacute;c thuộc t&iacute;nh số của c&aacute;c đối tượng c&oacute; trong ranh giới từng v&ugrave;ng.
+            </p>
+            <ul>
+                <li> <b>Tổng</b>&mdash;Tổng gi&aacute; trị cho trường chỉ định.
+                </li>
+                <li> <b>Trung b&igrave;nh</b>&mdash;Trung b&igrave;nh hoặc b&igrave;nh qu&acirc;n cho trường chỉ định.
+                </li>
+                <li> <b>Tối thiểu</b>&mdash;Gi&aacute; trị nhỏ nhất trong trường chỉ định.
+                </li>
+                <li> <b>Tối đa</b>&mdash;Gi&aacute; trị lớn nhất trong trường chỉ định.
+                </li>
+                <li> <b>Độ lệch chuẩn</b>&mdash;Độ lệch chuẩn đối với c&aacute;c gi&aacute; trị trong trường chỉ định
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Chọn trường để nhóm theo</h2></div>
+        <hr/>
+        <div>
+            <p>Đ&acirc;y l&agrave; một thuộc t&iacute;nh của  <b>T&oacute;m tắt</b> c&aacute;c đối tượng m&agrave; bạn c&oacute; thể sử dụng để t&iacute;nh to&aacute;n c&aacute;c số liệu thống k&ecirc; ri&ecirc;ng biệt cho từng gi&aacute; trị thuộc t&iacute;nh duy nhất. V&iacute; dụ, giả sử lớp ph&acirc;n t&iacute;ch c&oacute; chứa ranh giới th&agrave;nh phố v&agrave; <b>T&oacute;m tắt</b> c&aacute;c đối tượng l&agrave; c&aacute;c l&ocirc; đất. Một trong c&aacute;c thuộc t&iacute;nh của l&ocirc; đất l&agrave; <i>Status</i> c&oacute; chứa hai gi&aacute; trị: ĐỂ TRỐNG v&agrave; Đ&Atilde; D&Ugrave;NG. Để t&iacute;nh to&aacute;n tổng diện t&iacute;ch l&ocirc; đất trống v&agrave; đ&atilde; d&ugrave;ng trong ranh giới c&aacute;c th&agrave;nh phố, sử dụng <i>Status</i> gom nh&oacute;m theo thuộc t&iacute;nh. Số liệu thống k&ecirc; cho từng nh&oacute;m, cũng như số lượng c&aacute;c đối tượng, sẽ được hiển thị trong cửa sổ pop-up.
+            </p>
+        </div>
+    </div>
+    <div id="MinorityMajority">
+        <div><h2>Thêm thiểu số, đa số</h2></div>
+        <hr/>
+        <div>
+            <p>Hộp kiểm n&agrave;y được bật khi bạn chọn một trường để gom nh&oacute;m theo. Nếu bạn muốn t&igrave;m ra c&aacute;c gi&aacute; trị thuộc t&iacute;nh trong mỗi nh&oacute;m l&agrave; thiểu số (chiếm &iacute;t ưu thế nhất) hoặc đa số (chiếm nhiều ưu thế nhất) trong mỗi ranh giới của lớp ph&acirc;n t&iacute;ch, chọn  <b>Th&ecirc;m thiểu số, đa số</b>. Khi bạn chọn <b>Th&ecirc;m thiểu số, đa số</b>, hai trường mới được th&ecirc;m v&agrave;o lớp kết quả của bạn. Nếu bạn cũng chọn <b>Th&ecirc;m tỷ lệ phần trăm</b>, hai trường bổ sung được th&ecirc;m v&agrave;o lớp kết quả chứa tỷ lệ phần trăm c&aacute;c gi&aacute; trị thuộc t&iacute;nh thiểu số v&agrave; đa số trong mỗi nh&oacute;m.
+            </p>
+            <ul>
+                <li>Nếu bạn đang t&oacute;m tắt c&aacute;c điểm, c&aacute;c gi&aacute; trị thiểu số v&agrave; đa số được t&iacute;nh to&aacute;n dựa tr&ecirc;n số lượng điểm trong từng v&ugrave;ng bao quanh trong lớp ph&acirc;n t&iacute;ch.
+                </li>
+                <li>Nếu bạn đang t&oacute;m tắt c&aacute;c đường, c&aacute;c gi&aacute; trị thiểu số v&agrave; đa số được t&iacute;nh to&aacute;n dựa tr&ecirc;n độ d&agrave;i đường trong từng v&ugrave;ng bao quanh trong lớp ph&acirc;n t&iacute;ch.
+                </li>
+                <li>Nếu bạn đang t&oacute;m tắt c&aacute;c khu vực, c&aacute;c gi&aacute; trị thiểu số v&agrave; đa số được t&iacute;nh to&aacute;n dựa tr&ecirc;n c&aacute;c v&ugrave;ng trong từng v&ugrave;ng bao quanh trong lớp ph&acirc;n t&iacute;ch.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="PercentShape">
+        <div><h2>Thêm tỷ lệ phần trăm</h2></div>
+        <hr/>
+        <div>
+            <p>&Ocirc; vu&ocirc;ng lựa chọn n&agrave;y được bật khi bạn chọn một trường để nh&oacute;m theo.    Chọn  <b>Th&ecirc;m tỷ lệ phần trăm</b> nếu bạn muốn t&igrave;m tỷ lệ phần trăm của từng gi&aacute; trị thuộc t&iacute;nh tổng từng nh&oacute;m.  Một trường mới sẽ được th&ecirc;m v&agrave;o bảng kết quả v&agrave; chứa tỷ lệ phần trăm của từng gi&aacute; trị thuộc t&iacute;nh trong từng nh&oacute;m.   Nếu bạn chọn <b>Th&ecirc;m thiểu số, đa số</b>, hai trường bổ sung sẽ được th&ecirc;m v&agrave;o lớp kết quả v&agrave; chứa tỷ lệ phần trăm c&aacute;c gi&aacute; trị thuộc t&iacute;nh thiểu số v&agrave; đa số trong mỗi nh&oacute;m.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Tên lớp kết quả</h2></div>
+        <hr/>
+        <div>
+            <p>Đ&acirc;y l&agrave; t&ecirc;n lớp sẽ được tạo trong mục  <b>Nội dung của T&ocirc;i</b> v&agrave; th&ecirc;m v&agrave;o bản đồ. T&ecirc;n mặc định dựa v&agrave;o loại ph&acirc;n t&iacute;ch v&agrave; t&ecirc;n lớp ph&acirc;n t&iacute;ch. Nếu lớp đ&atilde; tồn tại, bạn sẽ được y&ecirc;u cầu cung cấp t&ecirc;n kh&aacute;c.
+            </p>
+            <p>Sử dụng hộp xổ xuống  <b>Lưu kết quả trong</b>, bạn c&oacute; thể chỉ định t&ecirc;n thư mục trong mục <b>Nội dung của T&ocirc;i</b> nơi sẽ lưu trữ kết quả của bạn.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

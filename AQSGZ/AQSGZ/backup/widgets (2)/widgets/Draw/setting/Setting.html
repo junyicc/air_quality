@@ -1,0 +1,18 @@
+<div style="width:100%;height:auto;">
+	<div class="query-setting-content" data-dojo-attach-point="content">
+		<div class="distance-section" data-dojo-attach-point="distanceTabNode" onselectstart="return false;">
+			<div class="btn-add-section"  data-dojo-attach-point="btnAddDistance">
+				<span class="btn-add-icon jimu-float-leading"></span>
+				<span class="btn-add-label jimu-float-leading">${nls.addDistance}</span>
+			</div>
+			<div data-dojo-attach-point="distanceTable" data-dojo-type="jimu/dijit/SimpleTable" data-dojo-props='fields:[{name:"label",title:"${nls.label}","class":"label",type:"empty"},{name:"abbr",title:"${nls.abbr}","class":"abbr",type:"text",editable:false},{name:"conversion",title:"${nls.conversion}","class":"conversion",type:"text",editable:false},{name:"actions",title:"${nls.actions}","class":"actions",type:"actions",actions:["up","down","delete"]}]'></div>
+		</div>
+		<div class="output-section" data-dojo-attach-point="areaTabNode" onselectstart="return false;">
+			<div class="btn-add-section" data-dojo-attach-point="btnAddArea">
+				<span class="btn-add-icon jimu-float-leading"></span>
+				<span class="btn-add-label jimu-float-leading">${nls.addArea}</span>
+			</div>
+			<div data-dojo-attach-point="areaTable" data-dojo-type="jimu/dijit/SimpleTable" data-dojo-props='fields:[{name:"label",title:"${nls.label}","class":"label",type:"empty"},{name:"abbr",title:"${nls.abbr}","class":"abbr",type:"text",editable:false},{name:"conversion",title:"${nls.conversion}","class":"conversion",type:"text",editable:false},{name:"actions",title:"${nls.actions}","class":"actions",type:"actions",actions:["up","down","delete"]}]'></div>
+		</div>
+	</div>
+</div>

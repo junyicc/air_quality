@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>유사한 위치 찾기</h2><p/>
+        <h2><img src="../images/GUID-01EFFE9D-141F-45BA-AB21-C9E3490587F2-web.png" alt="유사한 위치 찾기"></h2>
+        <hr/>
+    <p>유사한 위치 찾기 도구는 지정한 조건에 따라 하나 이상의 참조 위치에 대한 후보 검색 레이어의 위치 유사성을 측정합니다.이 도구는 다음 질문에 대한 대답이 됩니다.
+        <ul>
+            <li>고객 프로필과 관련하여 최고 매출 매장과 가장 비슷한 실적을 내는 매장은 어디입니까?
+            </li>
+            <li>질병으로 인한 피해를 가장 많이 입은 마을의 특성을 볼 때 높은 위험도를 안고 있는 다른 마을은 어디입니까?
+            </li>
+        </ul>
+        이러한 질문에 답변하려면 참조 위치, 후보 검색 위치 및 일치 조건을 나타내는 필드를 제공합니다. 분석을 위해 선택한 레이어(분석 레이어)에는 참조 또는 벤치마크 위치가 포함되어야 합니다.예를 들어 최고 실적을 내는 매장이나 질병으로 인한 타격을 가장 많이 입은 마을을 포함하는 레이어일 수 있습니다. 그런 다음 후보 검색 위치를 포함하는 레이어를 지정합니다.이는 모든 매장 또는 모든 다른 마을이 될 수 있습니다.마지막으로 하나 이상의 필드를 식별하여 시밀러리티를 측정하는 데 사용합니다.次に、[類似場所の検索（Find Similar Locations）] ツールは、候補の検索場所が、選択したすべてのフィールドに対してどれだけ参照場所に一致しているかを基準にして、候補の検索場所に順位を付けます。
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="inputLayer">
+        <div><h2>すべての場所を使用しても一部を選択しても構いません。</h2></div>
+        <hr/>
+        <div>
+            <p>필요한 경우 선택 버튼을 사용하여 참조 위치를 식별합니다. 예를 들어 입력 데이터에 모든 위치(후보 검색 위치뿐만 아니라 참조 위치strLine가 포함되어 있으면 선택 도구 중 하나를 사용하여 참조 위치를 식별해야 합니다. 参照場所が含まれた 1 つのレイヤおよびすべての候補の検索場所を含むもう一方のレイヤの 2 つの別々のレイヤを作成する場合は、選択する必要はありません。
+
+            </p>
+            <p>2 つ以上の参照場所がある場合、類似性の分析に使用される各フィールドの値の平均によって単一の場所が作成されます。
+            </p>
+        </div>
+    </div>
+    <div id="searchLayer">
+        <div><h2>類似場所の検索</h2></div>
+        <hr/>
+        <div>
+            <p>이 레이어에서 후보 검색 위치는 가장 유사한 위치에서 그렇지 않은 위치 순으로 순위가 매겨집니다. 類似性は、各場所が指定したフィールドに対してどれだけ参照場所に一致しているかを基準にします。
+
+            </p>
+        </div>
+    </div>
+    <div id="analysisFields">
+        <div><h2>基準の類似性</h2></div>
+        <hr/>
+        <div>
+            <p>선택한 필드는 시밀러리티를 평가할 때 사용되는 기준이 됩니다. たとえば、人口と収入フィールドを選択すると、最も低い（最高の）順位を持つ候補の検索場所が、参照場所に類似した人口および収入の値を持つ場所になります。
+
+            </p>
+        </div>
+    </div>
+    <div id="numberOfResults">
+        <div><h2>표시할 항목:</h2></div>
+        <hr/>
+        <div>
+            <p>가장 비슷한 곳에서 그렇지 않은 순으로 순위가 매겨진 모든 후보 검색 위치를 보거나 보고자 하는 결과의 수를 지정할 수 있습니다. 
+                <ul>
+                    <li> <b>가장 비슷한 곳에서 그렇지 않은 곳까지의 모든 위치</b>&mdash;후보 검색 레이어의 모든 피처는 결과 레이어의 순위에 포함됩니다.
+                    </li>
+                    <li> <b>상위 </b> <code>1</code>&mdash;결과 레이어에 포함되어야 하는 가장 비슷한 상위 후보 수를 결정합니다.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>결과 레이어 이름</h2></div>
+        <hr/>
+        <div>
+            <p> <b>내 콘텐츠</b>에서 생성되어 맵에 추가되는 레이어의 이름을 제공합니다. 이 결과 레이어는 참조 레이어와 지정한 순위의 후보 검색 위치 수를 포함합니다. 레이어가 이미 있는 경우 결과의 이름을 바꿀지 묻는 메시지가 나타납니다.
+            </p>
+            <p> <b>결과 저장:</b> 드롭다운 상자를 사용하여 <b>내 콘텐츠</b>에서 결과를 저장할 폴더의 이름을 지정할 수 있습니다.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

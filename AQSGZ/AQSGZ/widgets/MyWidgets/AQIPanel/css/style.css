@@ -1,0 +1,294 @@
+.jimu-widget-facepanel{
+  z-index: 101;/*above map's attribute*/
+}
+.jimu-widget-facepanel, .jimu-widget-facepanel-main{
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  bottom: 0px;
+  background-color: #efefef;
+  opacity:0.8;
+
+}
+.jimu-widget-facepanel-main{
+    left:-400px;
+  overflow: hidden;
+}
+
+.jimu-widget-facepanel-bar{
+  width: 17px;
+  height: 63px;
+  left: 0;
+  top: 300px;
+  position: absolute;
+  background-color: #efefef;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.jimu-widget-facepanel-bar:hover{
+  background-color: #bfbfbf;
+}
+.jimu-widget-facepanel-bar.open{
+  background-image: url(images/arrow_left.png);
+  border: none;
+  top: 300px;
+  left:400px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.jimu-widget-facepanel-bar.close{
+  background-image: url(images/arrow_right.png)
+}
+
+.esrifacepanelZoomImage{
+  background-image: url("../images/zoom.png");
+  width: 13px;
+  height: 13px;
+}
+.esrifacepanelCloseImage{
+  background-image: url("../images/close.png");
+  width: 13px;
+  height: 13px;
+}
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+.jimu-widget-facepanel .container {
+            width: 335px;
+            height: 100%;
+            position: absolute;
+            border-radius: 5px;
+            background-color: rgb(31, 30, 30);
+            border: solid 1px chartreuse;
+            overflow: hidden;
+        }
+
+.jimu-widget-facepanel .container a {
+                cursor: pointer;
+                display: block;
+                width: 55px;
+                height: 55px;
+                position: absolute;
+                -webkit-transition: 0.4s linear;
+                background-position: center;
+                background-repeat: no-repeat;
+                /* background-color: rgb(89, 234, 172); */
+                border-radius: 25px;
+            }
+.jimu-widget-facepanel a#AQI {
+            width: 95px;
+            height: 95px;
+            left: 120px;
+            top: 100px;
+            background-image: url("../css/images/AQI/AQI.png");
+            /* -webkit-transform: scale(1.5); */
+        }
+
+.jimu-widget-facepanel a#CO {
+            left: 30px;
+            top: 120px;
+            background-image: url("../css/images/AQI/CO.png");
+            -webkit-transform-origin: 250% 50%;
+        }
+
+.jimu-widget-facepanel a#NO2 {
+            left: 85px;
+            top: 25px;
+            background-image: url("../css/images/AQI/NO2.png");
+            -webkit-transform-origin: 150% 225%;
+        }
+
+.jimu-widget-facepanel a#O3 {
+            left: 195px;
+            top: 25px;
+            background-image: url("../css/images/AQI/O3.png");
+            -webkit-transform-origin: -50% 225%;
+        }
+
+.jimu-widget-facepanel a#PM2_5 {
+            left: 250px;
+            top: 120px;
+            background-image: url("../css/images/AQI/PM2.5.png");
+            -webkit-transform-origin: -150% 50%;
+        }
+
+.jimu-widget-facepanel a#PM10 {
+            left: 195px;
+            top: 216px;
+            background-image: url("../css/images/AQI/PM10.png");
+            -webkit-transform-origin: -50% -125%;
+        }
+
+.jimu-widget-facepanel a#SO2 {
+            left: 85px;
+            top: 216px;
+            background-image: url("../css/images/AQI/SO2.png");
+            -webkit-transform-origin: 150% -125%;
+        }
+
+.jimu-widget-facepanel div.Line,.Detail {
+            position: absolute;
+            top: 120px;
+            left: 30px;
+        }
+
+.jimu-widget-facepanel .Line span {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            -webkit-transition: -webkit-transform,opacity,visibility 0.2s ease-in 0s;
+            /* -webkit-animation: Animation_Line 0.5s linear; */
+            /* background-color: rgb(89, 234, 172); */
+            border-radius: 25px;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+        }
+
+.jimu-widget-facepanel .Detail span {
+            font-family: "Segoe WP", "Segoe UI", "HelveticaNeue", "Helvetica-Neue", "Helvetica", "BBAlpha Sans", "sans-serif";
+            font-size: 16px;
+            color: white;
+            position: absolute;
+            width: 131px;
+            border-bottom: solid 1px rgb(250, 247, 247);
+            padding-left: 21px;
+            padding-bottom: 2px;
+            -webkit-transition: all 0.4s ease-out 0s;
+        }
+
+.jimu-widget-facepanel .Line span.Selected {
+            background-color: gray;
+        }
+
+
+.jimu-widget-facepanel .Line span.CO {
+            background-image: url("../css/images/AQI/CO.png");
+        }
+
+.jimu-widget-facepanel .Line span.NO2 {
+            background-image: url("../css/images/AQI/NO2.png");
+        }
+
+.jimu-widget-facepanel .Line span.O3 {
+            background-image: url("../css/images/AQI/O3.png");
+        }
+
+.jimu-widget-facepanel .Line span.PM2_5 {
+            background-image: url("../css/images/AQI/PM2.5.png");
+        }
+
+.jimu-widget-facepanel .Line span.PM10 {
+            background-image: url("../css/images/AQI/PM10.png");
+        }
+
+.jimu-widget-facepanel .Line span.SO2 {
+            top: 0px;
+            background-image: url("../css/images/AQI/SO2.png");
+        }
+
+.jimu-widget-facepanel .Detail span.AQI {
+            bottom: 40px;
+            padding: 5px;
+            padding-left: 40px;
+            font-size: 22px;
+            color: black;
+            left: 326px;
+            width: 200px;
+            border-radius: 5px;
+            background-color: chartreuse;
+        }
+
+.jimu-widget-facepanel .Detail span.selected {
+            width: 196px;
+        }
+
+.jimu-widget-facepanel .Detail span.CO {
+            top: 405px;
+            left: 362px;
+        }
+
+.jimu-widget-facepanel .Detail span.NO2 {
+            top: 325px;
+            left: 392px;
+        }
+
+.jimu-widget-facepanel .Detail span.O3 {
+            top: 245px;
+            left: 422px;
+        }
+
+.jimu-widget-facepanel .Detail span.PM2_5 {
+            top: 165px;
+            left: 452px;
+        }
+
+.jimu-widget-facepanel .Detail span.PM10 {
+            top: 85px;
+            left: 482px;
+        }
+
+.jimu-widget-facepanel .Detail span.SO2 {
+            top: 5px;
+            left: 512px;
+        }
+
+.jimu-widget-facepanel .Detail span.ColorGrades {
+            height: 0px;
+            padding-left: 0px;
+            padding-bottom: 0px;
+            top: 428px;
+            width: 38px;
+            left: 250px;
+            overflow: hidden;
+            border: none;
+        }
+
+.jimu-widget-facepanel .Detail span.ColorValuePointer {
+            top: 407px;
+            left: 215px;
+            visibility: hidden;
+            padding-left: 0px;
+            padding-bottom: 0px;
+            width: 35px;
+            height: 31px;
+            border: none;
+            -webkit-transition-timing-function: ease-out;
+            background-repeat: no-repeat;
+            background-image: url("../css/images/PointBorder.png");
+            background-color: wheat;
+        }
+
+
+.jimu-widget-facepanel div#Message {
+            position: absolute;
+            top: 300px;
+            left: 20px;
+            width: 292px;
+            height: 280px;
+            /* background-color: #445A52; */
+            /* opacity: 0.5; */
+            /* border-radius: 15px; */
+            -webkit-transition: all 0.5s ease-out 0s;
+        }
+
+.jimu-widget-facepanel #Message div.PartOne {
+            font-size: 30px;
+            background-color: chartreuse;
+            /* clear: both; */
+            /* padding: 0px; */
+            border-radius: 3px;
+            width: 100%;
+            font-family: cursive;
+        }
+
+.jimu-widget-facepanel #Message div.PartTwo span {
+            color: white;
+            position: absolute;
+        }

@@ -1,0 +1,52 @@
+.calcite
+  .esriBasemapGalleryNode
+    width: 105px;
+    margin-top: $marginDefaultSpacer;
+    margin-right: $marginDefaultSpacer;
+    margin-bottom: 0;
+    margin-left: $marginDefaultSpacer;
+    padding: $paddingDefaultSpacer;
+    font-family: $fontFamilyDefault;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+
+    calciteArcGISPro_ButtonDefault();
+    calciteWeb_RoundRadius($borderRadiusSize2);
+
+    color: $textColorDefault;
+    cursor:default;
+    background-color transparent
+
+    &:hover {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonHover();
+      border-color: CalciteColorBlue1;
+    }
+    &:focus {
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonActive();
+      border-color: CalciteColorBlue1;
+    }
+    &.esriBasemapGallerySelectedNode
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      calciteArcGISPro_ButtonActive();
+
+      .esriBasemapGalleryThumbnail
+        margin 0
+
+    .esriBasemapGalleryThumbnail
+      border 1px solid CalciteColorGray130
+      calciteWeb_RoundRadius($borderRadiusSize2);
+      margin 0
+      cursor pointer
+      box-shadow none
+      -webkit-box-shadow none
+      -moz-box-shadow none
+
+    a
+      outline none
+
+.calcite .esriBasemapGalleryNode a:focus .esriBasemapGalleryThumbnail
+  calciteArcGISPro_ButtonHover();
+  outline $borderColorHover solid 1px

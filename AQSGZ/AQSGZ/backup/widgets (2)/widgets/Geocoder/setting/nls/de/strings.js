@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Platzhaltertext",
+    url: "Geocoder-URL",
+    name: "Geocoder-Name",
+    example: "Beispiel",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Geocoder-Konfigurationen können nicht aus dem Portal abgerufen werden',
+    actions: "Aktionen",
+    warning: "Diese Version des Geokodierungs-Service wird nicht unterstützt. Dieses Widget unterstützt Geokodierungs-Service 10.1 und höher.",
+    instruction: "Richten Sie die Geocoder in diesem Widget ein. Klicken Sie auf \"Geocoder hinzufügen\", um auf eine URL zu verweisen, geben Sie einen benutzerfreundlichen Namen an und legen Sie andere Eigenschaften fest. Sie können die folgenden Geocoder auch neu anordnen, konfigurieren oder löschen.",
+    layerInstruction1: "Die Suchbedingung kann auf der ",
+    layerInstruction2: "Detailseite der Webkarte konfiguriert werden",
+    searchAddress: "Nach Adresse suchen",
+    searchLayer: "Nach Layer suchen",
+    layer: "Layer",
+    field: "Feld",
+    condition: "Bedingung",
+    contains: "Enthält",
+    deleteLastGeocoderError: "Der letzte Geocoder kann nicht gelöscht werden.",
+    noSearchFactorError: "Sie müssen mindestens eine Funktion (\"Nach Adresse suchen\" oder \"Nach Layer suchen\") auswählen.",
+    equals: "Gleich",
+    add: "Geocoder hinzufügen",
+    edit: "Geocoder bearbeiten",
+    ok: "OK",
+    cancel: "Abbrechen",
+    geocoderNamePlaceHolder: "Eigener Geocoder",
+    geocodePlaceHolder: "Adresse oder Ort suchen",
+    REPEATING_ERROR: "Die folgenden Felder werden wiederholt: "
+  })
+);

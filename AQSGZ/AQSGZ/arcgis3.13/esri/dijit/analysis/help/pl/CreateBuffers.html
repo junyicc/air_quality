@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Utwórz bufory</h2><p/>
+        <h2><img src="../images/GUID-652EECCB-3A95-4984-9283-16E5CD36D569-web.png" alt="Utw&oacute;rz bufory"></h2>
+        <hr/>
+    <p>Bufor jest obszarem obejmującym swym zasięgiem obszar w&nbsp;określonej odległości od punktu, linii lub obiektu powierzchniowego. 
+    </p>
+    <p>Bufory są zwykle używane do tworzenia obszar&oacute;w, kt&oacute;re można poddać dalszej analizie za pomocą takich narzędzi, jak Nał&oacute;ż warstwy. Na przykład odpowiedź na pytanie &bdquo;Jakie budynki znajdują się w&nbsp;odległości jednego kilometra od szkoły?&rdquo; można znaleźć, tworząc bufor o&nbsp;promieniu jednego kilometra wok&oacute;ł szkoły i&nbsp;nakładając na niego warstwę zawierającą obrys zabudowy za pomocą narzędzia Nał&oacute;ż warstwy. Wynik tej operacji to warstwa z&nbsp;budynkami znajdującymi się w&nbsp;odległości jednego kilometra od szkoły. 
+    </p>
+    <p>Jeśli zaznaczono opcję  <b>Użyj bieżącego zasięgu</b>, utworzone zostaną bufory jedynie dla obiekt&oacute;w widocznych w&nbsp;bieżącym zasięgu mapy. Jeśli opcja ta nie jest zaznaczona, bufory zostaną utworzone dla wszystkich obiekt&oacute;w w&nbsp;warstwie analizy, nawet jeśli znajdują się one poza bieżącym zasięgiem mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="BufferSize">
+        <div><h2>Podaj wielkość bufora</h2></div>
+        <hr/>
+        <div>
+            <p>Możesz wprowadzić pojedynczą wartość odległości lub wiele wartości, oddzielając każdą z&nbsp;nich spacją. Możesz także podać atrybut w&nbsp;warstwie analizy zawierający wartość odległości, klikając opcję  <b>Pole</b>.
+            </p> 
+        </div>
+    </div>
+    <div id="OptionPoint">
+        <div><h2>Opcje</h2></div>
+        <hr/>
+        <div>
+            <p>Zdecyduj, w&nbsp;jaki spos&oacute;b mają być traktowane częściowo pokrywające się bufory. W&nbsp;przypadku bufor&oacute;w, kt&oacute;re nakładają się na siebie, wsp&oacute;lne obszary mogą być zachowane (Nał&oacute;ż) lub połączone (Agreguj).
+            </p>  
+            <p> Gdy korzystasz z&nbsp;wielu wartości odległości, czyli tworzysz wiele bufor&oacute;w, możesz wybrać spos&oacute;b reprezentowania odległości w&nbsp;oparciu o&nbsp;poprzednią wartość&nbsp;odległości. Jeśli na przykład odległości to&nbsp;10 i&nbsp;14:
+                <ul>
+                    <li>Wybranie opcji  <b>Pierścienie</b> powoduje utworzenie następujących bufor&oacute;w: od&nbsp;0 do&nbsp;10 i&nbsp;od&nbsp;10 do&nbsp;14.
+                    </li>
+                    <li>Wybranie opcji  <b>Dyski</b> powoduje utworzenie bufor&oacute;w: od&nbsp;0 do&nbsp;10 i&nbsp;od&nbsp;0 do&nbsp;14.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OptionPoly">
+        <div><h2>Opcje</h2></div>
+        <hr/>
+        <div>
+            <p>Zdecyduj, w&nbsp;jaki spos&oacute;b mają być traktowane częściowo pokrywające się bufory. W&nbsp;przypadku bufor&oacute;w, kt&oacute;re nakładają się na siebie, wsp&oacute;lne obszary mogą być zachowane (Nał&oacute;ż) lub połączone (Agreguj).
+            </p>
+            <p>W&nbsp;przypadku tworzenia pojedynczego buforu wok&oacute;ł obiekt&oacute;w powierzchniowych (wprowadzenie jednej wartości odległości) można wybrać, czy buforowany obiekt ma być włączony, czy wyłączony z&nbsp;bufora wynikowego.
+            </p>
+            <p>Gdy korzystasz z&nbsp;wielu wartości odległości, czyli tworzysz wiele bufor&oacute;w, możesz wybrać spos&oacute;b reprezentowania odległości w&nbsp;oparciu o&nbsp;poprzednią wartość&nbsp;odległości. Jeśli na przykład odległości to&nbsp;10 i&nbsp;14:
+                <ul>
+                    <li>Wybranie opcji  <b>Pierścienie</b> powoduje utworzenie następujących bufor&oacute;w: od&nbsp;0 do&nbsp;10 i&nbsp;od&nbsp;10 do&nbsp;14.
+                    </li>
+                    <li>Wybranie opcji  <b>Dyski</b> powoduje utworzenie bufor&oacute;w: od&nbsp;0 do&nbsp;10 i&nbsp;od&nbsp;0 do&nbsp;14.
+                    </li>
+                </ul>
+                
+            </p> 
+        </div>
+    </div>
+    <div id="OptionLine">
+        <div><h2>Opcje</h2></div>
+        <hr/>
+        <div>
+            <p>Zdecyduj, w&nbsp;jaki spos&oacute;b mają być traktowane częściowo pokrywające się bufory. W&nbsp;przypadku bufor&oacute;w, kt&oacute;re nakładają się na siebie, wsp&oacute;lne obszary mogą być zachowane (Nał&oacute;ż) lub połączone (Agreguj).
+            </p>
+            <p>W&nbsp;przypadku tworzenia pojedynczego buforu wok&oacute;ł linii (wprowadzenie jednej wartości odległości) można wybrać, po kt&oacute;rej stronie linii ma być utworzony bufor. Zwykle wybierane są obie strony. Parametry lewo i&nbsp;prawo są określane, poruszając się od pierwszego punktu linii o&nbsp;wsp&oacute;łrzędnych x,y (wsp&oacute;łrzędne punktu początkowego linii) do ostatniego punktu linii (wsp&oacute;łrzędne punktu końcowego). Wyb&oacute;r parametru lewo lub prawo zwykle oznacza, że obiekt liniowy został utworzony i&nbsp;jest przechowywany z&nbsp;uwzględnieniem&nbsp;określonego kierunku (na przykład w&nbsp;g&oacute;rę rzeki i&nbsp;w&nbsp;d&oacute;ł rzeki w&nbsp;przypadku sieci rzecznej). Na końcach linii bufor może być zaokrąglony (Okrągły) lub prosty (Płaski).
+            </p>
+            <p>Gdy tworzysz wiele bufor&oacute;w (kilka wartości odległości), możesz wybrać spos&oacute;b reprezentowania w&nbsp;oparciu o&nbsp;poprzednią wartość odległości. Jeśli na przykład odległości to 10 i&nbsp;14:
+                <ul>
+                    <li>Wybranie opcji  <b>Pierścienie</b> powoduje utworzenie następujących bufor&oacute;w: od 0 do 10 i&nbsp;od 10 do 14.
+                    </li>
+                    <li>Wybranie opcji  <b>Dyski</b> powoduje utworzenie bufor&oacute;w: od 0 do 10 i&nbsp;od 0 do 14.
+                    </li>
+                </ul>
+                
+            </p> 
+        </div>
+    </div>
+    <div id="BufferLayer">
+        <div><h2>Nazwa warstwy wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w&nbsp;zakładce  <b>Moje zasoby</b> i&nbsp;zostanie dodana do mapy. Nazwa domyślna jest tworzona na podstawie typu analizy i&nbsp;nazwy warstwy analizy. Jeśli warstwa już istnieje, wyświetlony zostanie komunikat z&nbsp;prośbą o&nbsp;podanie innej nazwy.
+            </p>
+            <p>Za pomocą listy rozwijanej  <b>Zapisz wynik&nbsp;w</b> można podać nazwę folderu w&nbsp;zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

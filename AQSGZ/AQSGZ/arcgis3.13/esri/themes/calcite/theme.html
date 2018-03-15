@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Tester</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+  <style>
+      html {
+        height: 100%; width: 100%; margin: 0; padding: 0;
+      }
+      body {
+        margin: 0 auto;
+        width: 100%;
+        padding-bottom: 3em;
+        background-color: #F7F8F8;
+      }
+      h2 {
+        font-weight: normal;
+        margin: 15px 0px;
+      }
+      h5 {
+        font-weight: bold;
+        margin: 10px 0px;
+      }
+      label {
+        display: inline-block;
+        width: 12em;
+      }
+      pre code {
+        display: block;
+      }
+      .width {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .header {
+        background-color:#fff; 
+        padding:0;
+        margin:0;
+      }
+      .header .top, .header .nav {
+        padding: 0px 20px;
+        display:block;
+      }
+      .header .top img {
+        margin: 10px 0px;
+      }
+      .header .nav {
+        background: #007ac2;
+        height: 60px;
+      }
+      .header .nav ul {
+        list-style: none;
+        display: block;
+        margin: 0px;
+        padding: 18px 0px;
+      }
+      .header .nav ul li {
+        display: inline;
+      }
+      .header .nav ul .inside-dropdown:hover ul.inside-nav {
+        display: block;
+        position: absolute;
+        background: #007ac2;
+        width: 125px;
+        padding: 28px 10px 0px 20px;
+        margin-left: 54px;
+      }
+      .header .nav ul.inside-nav li {
+        float: left;
+        width: 100px;
+        height: 40px;
+      }
+      .header .nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 0px 10px;
+      }
+      .header .nav ul li a:hover {
+        color: #DDD;
+      }
+      .header .nav ul li a:first-child {
+        padding-left: 0px;
+      }
+      .header .nav ul .inside-nav {
+        display: none;
+      }
+
+      #all {
+        padding: 0px 20px;
+        /*ackground: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAHElEQVQIW2N8/fr1TAYcgBEkKSoqmo5NftBJAgDdhBti2Nd6uAAAAABJRU5ErkJggg==) repeat;*/
+      }
+
+      pre {
+        white-space: pre-wrap;
+        margin: 0em;
+      }
+
+      /* Section Styles */
+
+      section {
+        background: #fff;
+        /*border: 1px solid #DCDCDC;*/
+        margin-top: 20px;
+      }
+      section h2 {
+        border-bottom: 1px solid #DCDCDC;
+        padding: 14px 18px;
+        font-size: 24px;
+        color: #4D4D4D;
+        margin: 0px;
+      }
+      section .component-description, section .component-note, section .component-content {
+        padding: 14px 18px;
+        border-bottom: 1px solid #DCDCDC;
+        color: #4D4D4D;
+        font-size: 14px;
+        margin: 0px;
+      }
+      section .component-note span {
+        color: #b9392f;
+        font-weight: bold;
+      }
+      
+      .component.done h2,
+      .component.guide .guide.done { background-color: #ddeedb; }
+      .component.workinprogress h2,
+      .component.guide .guide.workinprogress { background-color: #f4eec8; }
+      .component.awaitingdependency h2,
+      .component.guide .guide.awaitingdependency { background-color: #f4eec8; }
+      .component.notstarted h2,
+      .component.guide .guide.notstarted { background-color: #e6e6e6; }
+      
+      .component.guide .guide {
+          width:30%;
+          padding: 10px 10px;
+          margin-right:5px;
+          display:inline-block;
+          float:left;
+          clear:none;
+          text-align:center;
+          vertical-align:middle;
+      }
+      
+      .BasemapToggle { width:62px; }
+	  
+	#swipeMap { position:relative; }
+
+  </style>
+  
+  <script src="http://js.arcgis.com/3.11/"></script>
+  <script>
+    require(["esri/map", "esri/urlUtils", "esri/arcgis/utils", "esri/graphic", "esri/geometry/Point","esri/symbols/SimpleMarkerSymbol", "esri/dijit/editing/AttachmentEditor", "esri/arcgis/Portal", "esri/dijit/BasemapGallery", "esri/dijit/BasemapToggle", "esri/dijit/Bookmarks", "esri/config", "esri/dijit/Directions", "esri/dijit/editing/Editor", "esri/layers/FeatureLayer", "esri/dijit/Gauge", "esri/dijit/Geocoder", "esri/dijit/geoenrichment/Infographic","esri/tasks/geoenrichment/GeometryStudyArea", "esri/dijit/HomeButton", "esri/IdentityManager", "esri/dijit/Legend", "esri/dijit/LocateButton", "esri/dijit/Measurement", "esri/dijit/OverviewMap", "esri/dijit/Print", "esri/tasks/PrintTemplate", "esri/dijit/Scalebar", "esri/dijit/LayerSwipe", "esri/dijit/editing/TemplatePicker", "esri/dijit/TimeSlider", "dojo/_base/array", "dojo/dom", "dojo/dom-class", "dojo/on", "dojo/domReady!"], function(Map, urlUtils, arcgisUtils, Graphic, Point, SimpleMarkerSymbol, AttachmentEditor, arcgisPortal, BasemapGallery, BasemapToggle, Bookmarks,esriConfig, Directions, Editor, FeatureLayer, Gauge, Geocoder, Infographic, GeometryStudyArea, HomeButton, IdentityManager, Legend, LocateButton, Measurement, OverviewMap, Print, PrintTemplate, Scalebar, LayerSwipe, TemplatePicker, TimeSlider, arrayUtils, dom, domClass, on){
+
+
+      //set the theme
+        var theme = "calcite";
+        var urlObject = urlUtils.urlToObject(document.location.href);
+        if(urlObject.query && urlObject.query.theme){
+          theme = urlObject.query.theme.toLowerCase();
+        }
+
+
+        //load the specified theme
+        var themeDir = null;
+        if(theme === "calcite" ){
+          themeDir = "css/calcite.css";
+          //themeDir = document.location.protocol + "//js.arcgis.com/3.11/esri/css/" + theme + "/" + theme + ".css";
+        }else{
+         themeDir = document.location.protocol + "//js.arcgis.com/3.11/dijit/themes/" + theme + "/" + theme + ".css";
+        }
+
+        var style = document.createElement("link")
+        style.rel = "stylesheet";
+        style.href=  themeDir;
+        document.getElementsByTagName("head")[0].appendChild(style);
+        //add class to body 
+        domClass.add(document.body, theme);
+        console.log(theme);
+
+
+      urlUtils.addProxyRule({
+        urlPrefix: "geoenrich.arcgis.com",  
+        proxyUrl: "http://kelly-mac.esri.com/~kell3008/resource_proxy/proxy.php"
+      });  
+      urlUtils.addProxyRule({
+        urlPrefix: "traffic.arcgis.com",  
+        proxyUrl: "http://kelly-mac.esri.com/~kell3008/resource_proxy/proxy.php"
+      });  
+
+      urlUtils.addProxyRule({
+        urlPrefix: "route.arcgis.com",  
+        proxyUrl: "http://kelly-mac.esri.com/~kell3008/resource_proxy/proxy.php"
+      });  
+      esriConfig.defaults.io.proxyUrl = "http://kelly-mac.esri.com/~kell3008/resource_proxy/proxy.php";
+      var map = new Map("mapDiv", {
+        center: [-56.049, 38.485],
+        zoom: 3,
+        basemap: "streets"
+      });
+
+      var fl = new FeatureLayer("http://servicesbeta.esri.com/ArcGIS/rest/services/Hurricanes/Hurricanes/MapServer/0", {
+        "id": "hurricanes",
+        "mode": FeatureLayer.MODE_ONDEMAND, 
+        "outFields": ["OBJECTID", "WINDSPEED", "DAY"]
+      });
+
+      var fl2 = new FeatureLayer("http://servicesbeta.esri.com/ArcGIS/rest/services/SanFrancisco/SFStreetTreesRendered/MapServer/0",{
+        "mode": FeatureLayer.MODE_SNAPSHOT,
+        outFields:["*"]
+      });
+
+      map.on("layers-add-result", function(){
+
+        var templatePicker = new TemplatePicker({
+          map: map,
+          featureLayers: [fl]
+        },"templatePickerDiv");
+        templatePicker.startup();
+
+
+        //add time slider 
+        var timeSlider = new TimeSlider({
+        },"timeSliderDiv");
+   
+       
+        timeSlider.setThumbCount(2);
+        timeSlider.createTimeStopsByTimeInterval(fl2.timeInfo.timeExtent, 1, 'esriTimeUnitsYears');
+        timeSlider.setThumbIndexes([0, 1]);
+        timeSlider.setThumbMovingRate(2000);
+        
+       var labels = arrayUtils.map(timeSlider.timeStops, function(timeStop, i) {
+          if (i === 0) {
+            return timeStop.getUTCFullYear();
+          } else if (i === timeSlider.timeStops.length - 1) {
+            return timeStop.getUTCFullYear();
+          } else {
+            return "";
+          }
+        });
+        timeSlider.setLabels(labels);
+        timeSlider.startup();
+        map.setTimeSlider(timeSlider);
+
+
+
+        var gaugeParams = {
+          "caption": "Hurricane windspeed.",
+          "color": "#c0c",
+          "dataField": "WINDSPEED", 
+          "dataFormat": "value",
+          "dataLabelField": "EVENTID",
+          "layer": fl,
+          "maxDataValue": 120, 
+          "noFeatureLabel": "No name",
+          "title": "Atlantic Hurricanes(2000)",
+          "unitLabel": "MPH"
+        };
+        var gauge = new Gauge(gaugeParams, "gaugeDiv");
+        gauge.startup();
+        gauge.set("value", 60);
+
+
+        var legend = new Legend({
+          map: map
+        },"legendDiv");
+        legend.startup();
+
+      });
+
+      map.addLayers([fl, fl2]);
+      map.on("load", function(){
+
+      });
+
+      var map2 = new Map("smallSliderDiv",{
+        center: [-56.049, 38.485],
+        zoom: 3,
+        basemap: "streets",
+        sliderStyle: "large"      
+      });
+
+      //Setup the Attachment Editor 
+      var map3 = new Map("attachmentMapDiv",{
+        center: [-56.049, 38.485],
+        zoom: 3,
+        basemap: "streets" 
+      });
+      map3.on("load", function(){
+
+        var featureLayer = new FeatureLayer("http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/SanFrancisco/311Incidents/FeatureServer/0",{
+          mode: FeatureLayer.MODE_ONDEMAND
+        });
+       
+        map3.infoWindow.setContent("<div id='content' style='width:100%'></div>");
+        map3.infoWindow.resize(350,200);
+        var attachmentEditor = new AttachmentEditor({}, dom.byId("content"));
+        attachmentEditor.startup();
+
+        featureLayer.on("click", function(evt) {
+          map3.infoWindow.setTitle("Attributes");
+          attachmentEditor.showAttachments(evt.graphic,featureLayer);
+          map3.infoWindow.show(evt.screenPoint, map3.getInfoWindowAnchor(evt.screenPoint));
+        });
+        
+        map3.addLayer(featureLayer);
+
+
+        //Setup the Editor widget 
+        var settings = {
+          map: map3,
+          toolbarVisible: true,
+          layerInfos: [{featureLayer: featureLayer}]
+        }
+
+        var editor = new Editor({settings: settings
+        },"editorDiv");
+
+        editor.startup();
+
+      });
+
+
+
+      //Basemap Gallery widget 
+      var basemapGallery = new BasemapGallery({
+        showArcGISBasemaps: true,
+        map: map
+      },"basemapGalleryDiv");
+      basemapGallery.startup();
+
+      var basemapToggle = new BasemapToggle({
+        map: map,
+        visible: true,
+        basemap: "hybrid"
+      },basemapToggleDiv);
+      basemapToggle.startup();
+
+      var bookmarks = new Bookmarks({
+        map: map,
+        bookmarks: [{
+          "extent": {
+            "spatialReference": {
+              "wkid": 102100
+            },
+            "xmax": -10983636.8866296,
+            "xmin": -14411372.5423473,
+            "ymax": 5109691.46502651,
+            "ymin": 2707598.58754309
+          },
+          "name": "Sonara"
+        },{
+          "extent": {
+            "spatialReference": {
+              "wkid": 102100
+            },
+            "xmax": -11983636.8866296,
+            "xmin": -14411372.5423473,
+            "ymax": 5209691.46502651,
+            "ymin": 2707598.58754309
+          },
+          "name": "Another Bookmark"
+        },{
+          "extent": {
+            "spatialReference": {
+              "wkid": 102100
+            },
+            "xmax": -13983636.8866296,
+            "xmin": -14411372.5423473,
+            "ymax": 5109691.46502651,
+            "ymin": 2507598.58754309
+          },
+          "name": "One more bookmark"
+        }]
+      },"bookmarkDiv");
+
+      var directions = new Directions({
+      showClearButton: true,
+      map: map
+      },"directionsDiv");
+      directions.startup();
+
+
+      //Measurement widget 
+      var measure = new Measurement({
+        map: map
+      },"measureDiv");
+      measure.startup();
+
+      //Geocoder widget 
+
+      var geocoder = new Geocoder({
+        map: map,
+        arcgisGeocoder: true,
+        autoComplete: true,
+        geocoders: [{
+          url: "http://servicesbeta.esri.com/ArcGIS/rest/services/LocateValveByAssetID/GeocodeServer",
+          name: "LocateValveByAssetId",
+          placeholder: "enter asset id"
+        }]
+      }, "geocoderDiv");  
+      geocoder.startup();
+
+
+      var layouts = [{
+        name: "Letter ANSI A Landscape", 
+        label: "Landscape (PDF)", 
+        format: "pdf", 
+        options: { 
+          legendLayers: [], // empty array means no legend
+          scalebarUnit: "Miles",
+          titleText: "Landscape PDF" 
+        }
+      }, {
+        name: "Letter ANSI A Portrait", 
+        label: "Portrait (Image)", 
+        format: "jpg", 
+        options:  { 
+          legendLayers: [],
+          scaleBarUnit: "Miles",
+          titleText:"Portrait JPG"
+        }
+      }];
+
+      var templates = arrayUtils.map(layouts, function(lo) {
+        var t = new PrintTemplate();
+        t.layout = lo.name;
+        t.label = lo.label;
+        t.format = lo.format;
+        t.layoutOptions = lo.options;
+        return t;
+      });
+
+
+      var printer = new Print({
+        map: map,
+        templates: templates,
+        url: "http://servicesbeta4.esri.com/arcgis/rest/services/Utilities/ExportWebMap/GPServer/Export Web Map Task"
+      },"printDiv");
+      printer.startup();
+
+
+      var scalebar = new Scalebar({
+        map: map,
+        scalebarUnit: "english"
+      },dom.byId("scalebarDiv"));
+
+
+      var home = new HomeButton({
+        map: map
+      },"homeDiv");
+      home.startup();
+
+
+      var locateButton = new LocateButton({
+        map: map
+      }, "locateDiv"); 
+      locateButton.startup();
+
+
+      //Identity Manager
+ 
+      on(dom.byId("signIn"), "click", function(){
+       var portal = new arcgisPortal.Portal("http://www.arcgis.com");
+        //portal.signOut();
+        portal.signIn();
+
+      });
+
+      //Geoenrichment
+      var infomap = new esri.Map("infographicMap",{
+          basemap: "topo",
+          center: [-117.17, 34.035],
+          zoom: 16
+      });
+
+      on(infomap, "load", function(){
+
+        var info = new Infographic({
+          type: "AgePyramid",
+          variables: ["Age.*"],
+          returnGeometry: true
+        }, "infographicDiv");
+
+        var enrichPoint = new Point(-117.17, 34.035);
+        infomap.graphics.add(new Graphic(enrichPoint, new SimpleMarkerSymbol().setColor("#ccc")));
+
+        info.set("studyArea", new GeometryStudyArea({geometry: enrichPoint}));
+        info.startup();
+
+      });
+      //Popup
+
+      arcgisUtils.createMap("59bdf3f131854da7b58c76886826bb94","popupDiv").then(function(response){
+        var map = response.map;
+        map.reposition();
+        map.resize();
+      });
+
+      //Swipe 
+      arcgisUtils.createMap("62702544d70648e593bc05d65180fd64","swipeMap").then(function(response){
+        var id;
+        var map = response.map;
+        var title = "2009 Obesity Rates";
+        //loop through all the operational layers in the web map 
+        //to find the one with the specified title;
+        var layers = response.itemInfo.itemData.operationalLayers;
+        arrayUtils.some(layers, function(layer){
+          if(layer.title === title){
+            id = layer.id;
+            if(layer.featureCollection && layer.featureCollection.layers.length){
+              id = layer.featureCollection.layers[0].id;
+            }
+            return true;  
+          }else{
+            return false;
+          }
+        });
+        //get the layer from the map using the id and set it as the swipe layer. 
+        if(id){
+          var swipeLayer = map.getLayer(id);
+          var swipeWidget = new LayerSwipe({
+            type: "scope",  //Try switching to "scope" or "horizontal"
+            map: map,
+            layers: [swipeLayer]
+          }, "swipeDiv");
+          swipeWidget.startup();
+        }       
+      });
+
+
+    });
+  </script>
+
+</head>
+
+<body >
+    <div class="header">
+      <div class="top">
+        <div class="width">
+          <h2 class="left">
+          <img class="right" src="http://clidev.esri.com/team/FrankG/devtopia/calcite-dojo-theme/images/esri-logo.jpg" />
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="nav">
+        <div class="width">
+          <ul>
+            <li><a href="#">Style</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div id="all">
+      <div class="width">
+    
+
+    <section id="guide" class="component guide">
+      <div class="component-content" style="height:30px;">
+        <div class="guide done">Done</div>
+        <div class="guide workinprogress">Work in progress</div>
+        <div class="guide notstarted">Not Started</div>
+      </div>
+    </section>
+
+    <section id="Attachment-Editor" class="component done">
+      <h2>Attachment Editor</h2>
+      <p class="component-description">Click a feature to view attachment editor</p>
+      <div class="component-content">
+              <div id="attachmentMapDiv"></div>
+      </div>
+    </section>
+
+    <section id="Basemap-Gallery" class="component done">
+      <h2>Basemap Gallery</h2>
+      <p class="component-description">The basemap gallery displays a collection of basemaps from ArcGIS.com</p>
+      <div class="component-content">
+              <div id="basemapGalleryDiv"></div>
+      </div>
+    </section>
+
+    <section id="Basemap-Toggle" class="component done">
+      <h2>Basemap Toggle</h2>
+      <p class="component-description">Switch between two basemaps</p>
+      <div class="component-content">
+              <div id="basemapToggleDiv"></div>
+      </div>
+    </section>
+
+    <section id="Bookmarks" class="component done">
+      <h2>Bookmarks</h2>
+      <p class="component-description">Bookmark the current map extent</p>
+      <div class="component-content">
+              <div id="bookmarkDiv"></div>
+      </div>
+    </section>
+
+    <section id="Directions" class="component done">
+      <h2>Directions</h2>
+      <p class="component-description">Calculate directions between two or more input locations</p>
+      <div class="component-content">
+              <div id="directionsDiv" style="height:400px;width:300px;"></div>
+      </div>
+    </section>
+
+    <section id="Editor" class="component notstarted">
+      <h2>Editor</h2>
+      <p class="component-description">Edit layers</p>
+      <div class="component-content">
+              <div id="editorDiv" style="height:400px;width:300px;"></div>
+      </div>
+    </section>
+
+
+    <section id="Gauge" class="component notstarted">
+      <h2>Gauge</h2>
+      <p class="component-description">Dashboard-like interface and display data on a semi-circular gauge. To test hover over features in the map below to see gauge values change.</p>
+      <div class="component-content">
+              <div id="gaugeDiv"></div>
+      </div>
+
+    </section>
+
+    <section id="Geocoder" class="component notstarted" >
+      <h2>Geocoder</h2>
+      <p class="component-description">Find locations on the map</p>
+      <div class="component-content" style="" >
+            <div id="geocoderDiv"></div>
+      </div>
+    </section>
+
+    <section id="Home-Button" class="component notstarted" >
+      <h2>Home Button</h2>
+      <p class="component-description">Return map to initial extent</p>
+      <div class="component-content" style="" >
+            <div id="homeDiv"></div>
+      </div>
+    </section>
+
+    <section id="Locate-Button" class="component notstarted" >
+      <h2>Locate Button</h2>
+      <p class="component-description">Find position on the map</p>
+      <div class="component-content" style="" >
+            <div id="locateDiv"></div>
+      </div>
+    </section>
+
+    <section id="Identity-Manager" class="component notstarted" >
+      <h2>Identity Manager</h2>
+      <p class="component-description">Login dialog to access secure services.</p>
+      <div class="component-content" style="" >
+          <!-- <p> <a id="signIn">Click </a>to display Identity Manager dialog</p>-->
+          <input type="button" id="signIn" value="Click to display id manager"/>
+      </div>
+    </section>
+
+    <section id="Infographics" class="component notstarted" >
+      <h2>Infographics</h2>
+      <p class="component-description">Displays geoenrichment info for a pre-defined location</p>
+      <div class="component-content">
+        <div id="infographicMap" style="position:relative;">
+          <div id="infographicDiv" style="width:100px;position:absolute;"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="Layer-Swipe" class="component notstarted" >
+      <h2>Layer Swipe</h2>
+      <p class="component-description">Compare contents of mulitple layers</p>
+      <div class="component-content" style="" >
+        <div id="swipeMap">
+          <div id="swipeDiv"></div>
+        </div>
+   
+      </div>
+    </section>
+
+    <section id="Legend" class="component notstarted" >
+      <h2>Legend</h2>
+      <p class="component-description">Display a legend for the map layers</p>
+      <div class="component-content" style="" >
+            <div id="legendDiv"></div>
+      </div>
+    </section>
+
+    <section id="Measurement" class="component notstarted" >
+      <h2>Measurement</h2>
+      <p class="component-description">Provides tools for calculating the current location</p>
+      <div class="component-content" style="" >
+            <div id="measureDiv"></div>
+      </div>
+    </section>
+
+    <section id="Map-with-default" class="component done">
+      <h2>Map with default (small) slider</h2>
+      <p class="component-description">Esri Map with the default small slider.</p>
+      <div class="component-content">
+              <div id="mapDiv" style="height:200px;width:400px;"></div>
+      </div>
+    </section>
+
+    <section id="Map-with-large-slider" class="component workinprogress">
+      <h2>Map with large slider</h2>
+      <p class="component-description">Map with the large slider. <a href="http://kelly-mac.esri.com/~kell3008/demos/largeslider.html" target="_blank">Use case example</a></p>
+      <div class="component-content">
+              <div id="smallSliderDiv" style="height:400px;width:400px;"></div>
+      </div>
+    </section>
+    <section id="popup" class="component workinprogress">
+      <h2>Popup</h2>
+      <p class="component-description">Click on the map to display the popup.</p>
+      <div class="component-content">
+              <div id="popupDiv"></div>
+      </div>
+    </section>
+
+    <section id="Print" class="component notstarted">
+      <h2>Print</h2>
+      <p class="component-description">Print map contents. <a href="http://developers.arcgis.com/javascript/samples/widget_print_webmap/" target="_blank">Use case example</a></p>
+      <div class="component-content">
+              <div id="printDiv"></div>
+      </div>
+    </section>
+    
+    <section id="Scalebar" class="component notstarted">
+      <h2>Scalebar</h2>
+      <p class="component-description">Scalebar</p>
+      <div class="component-content">
+          <div id="scalebarDiv" style=""></div>
+      </div>
+    </section>
+
+    <section id="Template-Picker" class="component notstarted">
+      <h2>Template Picker</h2>
+      <p class="component-description">Display a gallery of templates from one or more feature layers</p>
+      <div class="component-content">
+          <div id="templatePickerDiv" style=""></div>
+      </div>
+    </section>
+
+    <section id="Time-Slider" class="component notstarted">
+      <h2>Time Slider</h2>
+      <p class="component-description">Display time slider</p>
+      <div class="component-content">
+          <div id="timeSliderDiv" style=""></div>
+      </div>
+    </section>
+
+    </div>
+    <div class="footer"></div>
+    
+    
+</body>
+</html>

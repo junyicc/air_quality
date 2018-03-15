@@ -1,0 +1,15 @@
+{
+  "name": "Widget-upgrade",
+  "platform": "HTML",
+  "version": "1.1",
+  "author": "Esri R&D Center Beijing",
+  "description": "the widget",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "hasUIFile": false,
+    "hasStyle": false,
+    "hasLocale": false,
+    "hasVersionManager": true
+  }
+}

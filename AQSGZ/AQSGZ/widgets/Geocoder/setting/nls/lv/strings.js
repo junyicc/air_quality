@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Viettura teksts",
+    url: "Ģeokodētāja URL",
+    name: "Ģeokodētāja vārds",
+    example: "Piemērs",
+    singleLineFieldName: "SingleLineFieldName",
+    portalConnectionError: 'Nevar iegūt ģeokodētāja konfigurācijas no portāla',
+    actions: "Darbības",
+    warning: "Šī nav ģeokodēšanas servisa atbalstītā versija. Šis logrīks atbalsta ģeokodēšanas servisa 10.1 un jaunāku versiju.",
+    instruction: "Izveidojiet ģeokodētājus šajā logrīkā. Noklikšķiniet uz Pievienot ģeokodētāju, lai veidotu atsauci uz URL, norādiet lietotājam draudzīgu nosaukumu un iestatiet citus rekvizītus. Varat arī pārkārtot, konfigurēt vai dzēst savus tālāk esošos ģeokodētājus.",
+    layerInstruction1: "Šo meklēšanas nosacījumu varat konfigurēt ",
+    layerInstruction2: "web kartes datu lapā",
+    searchAddress: "Meklēt pēc adreses",
+    searchLayer: "Meklēt pēc slāņa",
+    layer: "Slānis",
+    field: "Lauks",
+    condition: "Nosacījums",
+    contains: "ietver",
+    deleteLastGeocoderError: "Pēdējo ģeokodētāju nevar izdzēst.",
+    noSearchFactorError: "Jums ir jāizvēlas vismaz viena iespēja (meklēt pēc adreses vai meklēt pēc slāņa).",
+    equals: "Vienāds ar",
+    add: "Pievienot ģeokodētāju",
+    edit: "Rediģēt ģeokodētāju",
+    ok: "Labi",
+    cancel: "Atcelt",
+    geocoderNamePlaceHolder: "Mans ģeokodētājs",
+    geocodePlaceHolder: "Atrast adresi vai vietu",
+    REPEATING_ERROR: "Šie lauki atkārtojas: "
+  })
+);

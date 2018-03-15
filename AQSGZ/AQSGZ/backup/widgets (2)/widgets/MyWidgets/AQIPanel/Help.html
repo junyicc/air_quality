@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+.HelpDialog .Content {
+                position: absolute;
+                width:550px;
+                height: 390px;
+                overflow: scroll;
+                background-color:black;
+            }
+
+.Content .title {
+    color:white;
+      margin: 5px;
+  margin-left: 94px;
+  font-size: 18px;
+                }
+
+.Content table {
+                    width: 100%;
+                    height: 300px;
+                    border: 1px solid burlywood;
+                    opacity: 0.7;
+                    text-align: left;
+                }
+
+.Content table th {
+                        background-color: rgb(37, 38, 40);
+                        color: white;
+                        border: none;
+                        font-size: 12px;
+                        height: 43px;
+                    }
+
+.Content table td {
+                        background-color: rgb(37, 38, 40);
+                        color: white;
+                        border: none;
+                        font-size: 12px;
+                        height: 43px;
+                    }
+
+    </style>
+</head>
+<body>
+        <div class="Content">
+            <p class="title">空气质量指数（AQI）相关信息以及建议措施</p>
+            <table>
+                <tbody>
+                    <tr style="text-align: center;">
+                        <th style="width: 48px;">空气质量指数</th>
+                        <th>空气质量指数级别</th>
+                        <th style="width: 50px;">空气质量指数分类</th>
+                        <th>对健康影响情况</th>
+                        <th>建议采取的措施</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">0-50</td>
+                        <td style="text-align: center;">一级</td>
+                        <td style="text-align: center;">优</td>
+                        <td>空气质量令人满意，基本无空气污染</td>
+                        <td>各类人群可正常活动</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">51-100</td>
+                        <td style="text-align: center;">二级</td>
+                        <td style="text-align: center;">良</td>
+                        <td>空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响</td>
+                        <td>极少数异常敏感人群应减少户外活动</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">101-150</td>
+                        <td style="text-align: center;">三级</td>
+                        <td style="text-align: center;">轻度污染</td>
+                        <td>易感人群症状有轻度加剧，健康人群出现刺激症状</td>
+                        <td>有心脏或肺部疾病的人、老人和小孩应该减少长期或沉重的负荷</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">151-200</td>
+                        <td style="text-align: center;">四级</td>
+                        <td style="text-align: center;">中度污染</td>
+                        <td>进一步加剧易感人群症状，可能对健康人群心脏/呼吸系统有影响</td>
+                        <td>有心脏或肺部疾病的人、老人和小孩应该避免长期或沉重的负荷。其他人也应该减少长期或沉重的负荷</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">201-300</td>
+                        <td style="text-align: center;">五级</td>
+                        <td style="text-align: center;">重度污染</td>
+                        <td>心脏病和肺病患者症状显著加剧，运动耐受力降低，健康人群普片出现症状</td>
+                        <td>有心脏或肺部疾病的人、老人和小孩应该避免所有户外活动。其他人也应该避免长期或沉重的负荷</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">&gt;300</td>
+                        <td style="text-align: center;">六级</td>
+                        <td style="text-align: center;">严重污染</td>
+                        <td>健康人群运动耐受力降低，有明显强烈症状，提前出现某些疾病</td>
+                        <td>所有人都应该避免户外活动。有心脏或肺病的人、老人和小孩应该保持在室内，减少活动</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/AQIGrade.png" style="width: 100%; height: 42px;">
+            <p style="color:white;float:left">查看在线文档：</p>
+            <div style="padding: 3px;">
+                <a style="color:white;cursor:pointer" href="http://210.72.1.216:8080/gzaqi/Document/gjzlbz.pdf" target="_blank">1.环境空气质量标准</a><br />
+                <a style="color:white;cursor:pointer" href="http://210.72.1.216:8080/gzaqi/Document/aqijsgd.pdf" target="_blank">2.环境空气质量指数(AQI)技术规定(试行)</a>
+            </div>
+        </div>
+</body>
+</html>

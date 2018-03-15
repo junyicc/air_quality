@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Spor medstrøm</h2><p/>
+        <h2><img src="../images/GUID-CE6ACC70-9851-4DB6-87FD-5BAC70BA6737-web.png" alt="Spor medstr&oslash;m"></h2>
+        <hr/>
+    <p>Dette verkt&oslash;yet finner l&oslash;pet, eller str&oslash;mningslinjen, i nedstr&oslash;ms retning fra punktene i analyselaget.
+    </p>
+    <p>La oss for eksempel si du har punktgeoobjekter som representerer forurensningskilder, og du vil finne ut hvilke deler av studieomr&aring;det forurensningen vil forflytte seg til.Du kan bruke verkt&oslash;yet Spor medstr&oslash;m til &aring; finne hvilket l&oslash;p forurensningen vil ta.Sporingen kan ogs&aring; deles inn i individuelle linjesegmenter ved at du angir avstandsverdi og enheter.Linjen som returneres kan v&aelig;re den totale lengden p&aring; str&oslash;mningslinjen, en angitt maksiumslengde for sporingen eller den kan v&aelig;re begrenset til omr&aring;degeoobjekter, for eksempel studieomr&aring;det.N&aring;r den den totale lengden p&aring; str&oslash;mningslinjen returneres, vil den i mange tilfeller g&aring; fra kilden og helt ut til havet.
+    </p>
+    <p>Resultatet er en linje som representerer nedstr&oslash;mslinjen.Hvis det er angitt en avstand for  <b>Split the trace into line segments</b>, deles sporingslinjen i flere linjer, der hver linje har angitt lengde. Hvis for eksempel inndatapunktene representerer et forurensningsutslipp og elven utslippet flyter inn i, beveger seg 1 km i timen, eller 24 km for dagen, vil du kanskje dele elven inn i segmenter p&aring; 24 km.Ved &aring; dele sporingslinjen inn i intervaller p&aring; 24 km kan du se om lag hvor langt utslippet forflytter seg hver dag.Linjen symboliseres ved hjelp av graderte farger basert p&aring; avstand og merkes med avstanden fra begynnelsen p&aring; sporingslinjen. 
+    </p>
+    <p>Den resulterende sporingen vil ha alle attributtene for inndatapunktene i tillegg til tilleggsattributter
+        <ul>
+            <li> <i>PointID</i> &ndash; Inneholder ID-verdien fra inndatapunktet.
+            </li>
+            <li> <i>LengthKm</i> &ndash; Inneholder lengden i kilometer for den totale nedstr&oslash;mssporingslinjen.
+            </li>
+            <li> <i>Description</i> og <i>DataResolution</i> &ndash; Inneholder informasjon om de hydrologiske dataene som ble brukt til &aring; beregne sporingslinjen.
+            </li>
+            <li> <i>FromDistance</i> og <i>ToDistance</i> &ndash; Inneholder fra- og til-avstanden for hvert linjesegment. Disse attributtene skrives hvis <b>Del opp sporet i linjesegmenter</b> brukes.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Hvis det er merket av for  <b>Bruk gjeldende kartutstrekning</b>, er det kun punktgeoobjektene i analyselaget som vises i gjeldende kartutstrekning, som analyseres. Hvis det ikke er merket av for dette alternativet, brukes alle geoobjektene i analyselaget, selv om de befinner seg utenfor gjeldende kartutstrekning.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="SplitDistance">
+        <div><h2>Del opp sporet i linjesegmenter</h2></div>
+        <hr/>
+        <div>
+            <p>Sporingslinjen deles i flere linjer der hver linje har angitt lengde.Hvis for eksempel inndatapunktene representerer et forurensningsutslipp og elven utslippet flyter inn i, beveger seg 1 km i timen, eller 24 km for dagen, vil du kanskje dele elven inn i segmenter p&aring; 24 km.Ved &aring; dele sporingslinjen inn i intervaller p&aring; 24 km kan du se om lag hvor langt utslippet forflytter seg hver dag.Linjen gjengis i graderte farger basert p&aring; avstand og merkes med avstanden fra begynnelsen p&aring; sporingen.Den resulterende sporingslinjen vil ha flere linjesegmenter, hvert med feltene  <i>FromDistance</i> og <i>ToDistance</i>.
+            </p> 
+        </div>
+    </div>
+    <div id="MaxDistance">
+        <div><h2>Maximum distance of the trace</h2></div>
+        <hr/>
+        <div>
+            <p>Bestemmer den totale lengden p&aring; linjen som returneres.Hvis du angir omr&aring;degeoobjekter for &aring; begrense sporingen, blir resultatet begrenset til omr&aring;degeoobjektet, uavhengig av avtanden du angir her.
+            </p>
+        </div>
+    </div>
+    <div id="ClipArea">
+        <div><h2>Klipp ut udata til</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan enten tegne eller angi et lag med omr&aring;det der du vil at sporingen skal stoppe.Hvis du for eksempel vil at sporingsresultatet skal v&aelig;re innenfor studieomr&aring;det, for eksempel fylket, bruker du fylket som inndata, slik at sporingen stanser ved fylkesgrensen. 
+            </p>
+        </div>
+    </div>
+    <div id="OutputTrace">
+        <div><h2>Navn på
+resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; laget som opprettes i  <b>Mitt innhold</b> og legges til kartet. Standardnavnet er basert p&aring; analysetypen og navnet p&aring; analyselaget.Hvis laget allerede finnes, blir du bedt om &aring; oppgi et annet navn.
+            </p>
+            <p>Bruk rullegardinlisten  <b>Lagre resultat i</b> til &aring; angi navnet p&aring; en mappe i <b>Mitt innhold</b> som resultatene skal lagres i.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

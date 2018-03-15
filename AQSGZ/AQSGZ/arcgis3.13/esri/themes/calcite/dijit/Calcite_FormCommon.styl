@@ -1,0 +1,112 @@
+/* ======================================================================================================= */
+/* Calcite Web Classes - Forms Common */
+/* ======================================================================================================= */
+@import "variables";
+
+.calcite
+  .dijitTextBox,
+  .dijitInputInner
+    color $textColorDefault
+
+  .dijitTextBox,
+  .dijitSelect
+    background-image none
+    calciteArcGISPro_ButtonDefault()
+    calciteArcGISPro_ButtonBorder()
+    calciteWeb_RoundRadius(0);
+
+  .dijitTextBox .dijitInputField.dijitInputContainer
+    padding 0
+    background-image none
+    calciteWeb_RoundRadius(0);
+    font-family $fontFamilyDefault
+
+  .dijitTextBox .dijitInputInner
+    width 98% !important
+    padding $paddingDefaultSpacer
+    padding-left $paddingDefaultSpacer !important
+    font-family $fontFamilyDefault
+
+  .dijitTextBoxHover
+    background-image none
+    calciteArcGISPro_ButtonHover()
+    background: CalciteColorWhite
+
+  .dijitTextBox.dijitTextBoxFocused .dijitInputInner
+    background-image none
+    CalciteWeb_TextInput_BoxShadowInset("blue")
+
+  .dijitTextBox.dijitTextBoxError
+    background-image none
+    border-color CalciteColorError3
+    background-color CalciteColorError1
+
+  .dijitTextBox.dijitTextBoxError.dijitValidationTextBoxError .dijitInputInner
+    CalciteWeb_TextInput_BoxShadowInset("error")
+
+  .dijitValidationTextBoxError .dijitValidationContainer
+    background-color CalciteColorError3
+    padding-top $paddingDefaultSpacer
+    padding-bottom $paddingDefaultSpacer
+
+
+  // Button Down Arrow
+  .dijitArrowButtonChar,
+  .dijitComboBox .dijitArrowButtonInner
+    display none
+
+  .dijitArrowButtonInner,
+  .dijitComboBox .dijitArrowButtonContainer
+    padding 2px
+    background-image none
+    &:before
+      iconfont("esriIconDownArrow");
+      position relative
+      top 0
+      left 0
+
+  .dijitComboButton.dijitComboButtonOpened .dijitArrowButtonInner,
+  .dijitComboButton.dijitComboButtonOpened .dijitArrowButtonInner:before,
+  .dijitDropDownButton.dijitDropDownButtonOpened .dijitArrowButtonInner,
+  .dijitDropDownButton.dijitDropDownButtonOpened .dijitArrowButtonInner:before,
+  .dijitComboBox.dijitComboBoxOpened  .dijitArrowButtonContainer,
+  .dijitComboBox.dijitComboBoxOpened  .dijitArrowButtonContainer:before
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+
+  //Button disabled state
+  .dijitButtonDisabled .dijitButtonText,
+  .dijitButtonDisabled .dijitButtonNode,
+  .dijitButtonDisabled .dijitButtonContents
+    cursor default
+
+  .dijitComboBox .dijitArrowButtonInner
+    border none
+
+  .dijitComboBox .dijitButtonNode,
+  .dijitComboBox .dijitDownArrowButtonHover,
+  .dijitComboBox .dijitDownArrowButtonFocused,
+  .dijitComboBoxOpened .dijitButtonNode,
+  .dijitComboBoxFocused .dijitArrowButton,
+  .dijitSelectFocused,
+  .dijitComboButton.dijitComboButtonHover .dijitButtonNode,
+  .dijitComboButton.dijitComboButtonFocused .dijitButtonNode,
+  .dijitToggleButton.dijitToggleButtonHover .dijitButtonNode,
+  .dijitToggleButton.dijitToggleButtonFocused .dijitButtonNode,
+  .dijitDropDownButton.dijitDropDownButtonHover .dijitButtonNode,
+  .dijitDropDownButton.dijitDropDownButtonFocused .dijitButtonNode
+    calciteArcGISPro_ButtonHover()
+    background-image none
+
+  .dijitTextBox .dijitButtonNode.dijitArrowButton
+    border-color $borderColorDivider
+    background-color transparent
+    background-image none
+    padding-top 6px
+    padding-bottom 3px
+
+    &.dijitDownArrowButtonHover
+      calciteArcGISPro_ButtonHover()

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Apkopot tuvumā esošo</h2><p/>
+        <h2><img src="../images/GUID-8CA4374B-AB5E-44A5-ADD3-4C85E5F0AF71-web.png" alt="Apkopot tuvumā eso&scaron;o"></h2>
+        <hr/>
+    <p>  &Scaron;is rīks atrod un apkopo elementus, kas atrodas noteiktā attālumā no analīzes slāņa elementiem. Attālumu var izmērīt kā lineāro attālumu vai izmantojot atlasīto ceļo&scaron;anas veidu.Ceļo&scaron;anas veida opcijas ir brauk&scaron;anas attālums, brauk&scaron;anas laiks, brauk&scaron;anas attālums ar kravas automa&scaron;īnu, brauk&scaron;anas laiks ar kravas automa&scaron;īnu, ie&scaron;anas attālums un ie&scaron;anas laiks.Statistika tiek aprēķināta par tuvējiem elementiem.Piemērs.
+        <ul>
+            <li>Aprēķiniet kopējo iedzīvotāju skaitu piecu minū&scaron;u brauciena attālumā no piedāvātā jaunā veikala izvietojuma.
+            </li>
+            <li>Aprēķināt automaģistrāļu pieejas rampu skaitu vienas jūdzes brauk&scaron;anas distancē no piedāvātā jaunā veikala izvietojuma, lai to izmantotu kā veikala pieejamības mēru.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Ja  <b>Lietot pa&scaron;reizējo kartes pārklājumu</b> ir atzīmēts, tad tikai tie elementi analīzes slānī un slānī, kas tiks apkopots, veidosies pa&scaron;reizējā kartes pārklājumā. Ja nav atzīmēts, visi elementi abos analīzes slāņos un apkopo&scaron;anas slānī tiks analizēti, arī pa&scaron;reizējā kartes pārklājuma ārpusē
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Izvēlēties slāni, ko apkopot</h2></div>
+        <hr/>
+        <div>
+            <p>Elementi &scaron;ajā slānī, kas atrodas norādītajā distancē no analīzes slāņa elementiem, tiks apkopoti. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Apkopot tuvākos elementus, izmantojot</h2></div>
+        <hr/>
+        <div>
+            <p>Varat definēt, kāda veida attāluma mērī&scaron;anu vēlaties izmantot&nbsp;&mdash; vai nu lineāro attālumu, vai atlasīto ceļo&scaron;anas veidu.Ceļo&scaron;anas veidi ir iespējoti tikai tad, ja jūsu analīzes slānī ir punkti.Pieejamās opcijas ir brauk&scaron;anas attālums, brauk&scaron;anas laiks, brauk&scaron;anas attālums ar kravas automa&scaron;īnu, brauk&scaron;anas laiks ar kravas automa&scaron;īnu, ie&scaron;anas attālums un ie&scaron;anas laiks.Izmantojot kādu no ceļo&scaron;anas veidiem, mērījumi tiek veikti pa ceļu vai taku, respektējot attiecīgos noteikumus, piemēram, vienvirziena ielas, neatļautus pagriezienus u.tml.Brauk&scaron;anas laika aprēķinā tiek ņemts vērā jūsu izvēlētais brauk&scaron;anas ātrums, vai nu pamatojoties uz konkrēto satiksmi vai parasto satiksmi.Konkrētie ātruma dati tiek apkopoti no pa&scaron;reizējiem sensoru rādījumiem un tipiskie ātruma dati tiek aprēķināti no vēsturiskajiem vidējiem datiem. 
+            </p>
+            <p>Jūs varat ievadīt vairākas distances.Tiks apkopoti elementi, kas atrodas jūsu ievadītajās distancēs (vai ir vienādi ar tām). 
+            </p>
+            <p>Ja ir atzīmēta izvēles rūtiņa  <b>Atgriezt robežojo&scaron;os apgabalus</b>, tiek atgriezts norādītā attāluma mērījuma definēto apgabalu rezultātu slānis. Rezultāta slānis ietvers visu pieprasīto apkopojuma informāciju.Piemēram, ja, apkopojot tuvumā eso&scaron;os punktus, tiek izmantots <b>Līnijas distance</b> 5&nbsp;jūdzes, jūsu rezultāts saturēs teritorijas, kas ir 5&nbsp;jūdžu rādiusā ap ievades elementiem, un visu apkopoto informāciju, piemēram, punktu skaitu un jebkādu pievienoto statistiku. Ja izvēles rūtiņa nav atzīmēta, rezultāta slānis atgriež tos pa&scaron;us ievades analīzes slāņa elementus ar visu pieprasīto apkopoto informāciju.
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Pēc izvēles jūs varat aprēķināt statistiku par visiem tuvējo punktu skaitliskajiem atribūtiem. 
+            </p>
+            <p>Ja tiks atzīmēta rūtiņa  <b>Punktu skaits</b>, tiks aprēķināts tuvumā eso&scaron;o punktu kopējais skaits. Turklāt, jūs varat kalkulēt statistiku par tuvējo punktu skaitliskiem atribūtiem.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash; kopējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Vidējais</b>&mdash; vidējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash; mazākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Maksimums</b>&mdash; lelākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Standarta Novirze</b>&mdash; standarta novirze no vērtībām norādītajam laukam
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par visiem tuvējo līniju skaitliskajiem atribūtiem. 
+            </p>
+            <p> <b>Kopējais garums</b> ja rūtiņa ir atzīmēta, tiks kalkulēts tuvējo līniju kopējais garums. Papildus jūs varat aprēķināt, tuvumā eso&scaron;u līniju skaitlisko lauku statistiku.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash; kopējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Vidējais</b>&mdash; vidējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash; mazākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Maksimums</b>&mdash; lielākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Standarta Novirze</b>&mdash; standarta novirze no vērtībām norādītajam laukam
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par visiem tuvējo līniju skaitliskajiem atribūtiem. 
+            </p>
+            <p> <b>Kopējais garums</b> ja rūtiņa ir atzīmēta, tiks kalkulēts tuvējo līniju kopējais garums. Papildus jūs varat aprēķināt, tuvumā eso&scaron;u elementu skaitlisko lauku statistiku.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash; kopējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Vidējais</b>&mdash; vidējā vērtība norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash; mazākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Maksimums</b>&mdash; lielākā vērtība norādītajam laukam
+                </li>
+                <li> <b>Standarta Novirze</b>&mdash; standarta novirze no vērtībām norādītajam laukam
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Izvēlēties lauku, pēc kura grupēt</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir tuvējo elementu atribūts, ko varat lietot, lai aprēķinātu statistiku atsevi&scaron;ķi katrai unikālajai atribūta vērtībai.Piemēram, pieņemsim, ka jūsu analīzes slānis satur neapbūvētus zemes gabalus pārdo&scaron;anai un jūsu tuvējie elementi ir ēkas.Viens no ēkas atribūtiem ir  <i>UseType</i>, kas ietver tādas vērtības kā MAZUMTIRDZNIECĪBA, DZĪVOJAMĀS ĒKAS, RAŽO&Scaron;ANA, SABIEDRISKĀS ĒKAS u.tml. Lai raksturotu ēku veidu pie katra vakantā zemes gabala, jūs varētu aprēķināt kopējo platību katram unikālajam ēku veidam divu kilometru attālumā no brīvajiem zemes gabaliem, izmantojot <i>UseType</i> kā grupas pēc atribūtiem. Katras grupas statistika, kā arī netālu eso&scaron;o elementu skaits tiks parādīti rezultātu slāņa uznirsto&scaron;ajā logā.
+            </p>    
+        </div>
+    </div>
+    <div id="MinorityMajority">
+        <div><h2>Pievienot mazākumu, vairākumu</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;ī izvēles rūtiņa tiek iespējota, kad izvēlaties lauku, pēc kura grupēt.Ja vēlaties noskaidrot, kuras atribūtu vērtības katrā grupā ir mazākums (vismazāk dominējo&scaron;as) vai vairākums (visvairāk dominējo&scaron;as) jūsu norādītajā attālumā vai laikā, atlasiet  <b>Pievienot mazākumu, vairākumu</b>. Ja izvēlēsieties <b>Pievienot mazākumu, vairākumu</b>, rezultātu slānim tiks pievienoti divi jauni lauki. Ja izvēlēsieties arī <b>Pievienot procentus</b>, rezultātu slānim tiks pievienoti divi papildu lauki, kuros būs ietverts katrā grupā eso&scaron;ais mazākuma un vairākuma atribūtu vērtību skaits procentos.
+            </p>
+            <ul>
+                <li>Ja apkopojat tuvumā eso&scaron;us punktus, mazākuma un vairākuma vērtības tiek aprēķinātas, ņemot vērā punktu skaitu jūsu norādītajā attālumā vai laikā.
+                </li>
+                <li>Ja apkopojat tuvumā eso&scaron;as līnijas, mazākuma un vairākuma vērtības tiek aprēķinātas, ņemot vērā līniju garumu jūsu norādītajā attālumā vai laikā. 
+                </li>
+                <li>Ja apkopojat tuvumā eso&scaron;us apgabalus, mazākuma un vairākuma vērtības tiek aprēķinātas, ņemot vērā apgabalus jūsu norādītajā attālumā vai laikā.
+                </li>
+            </ul>
+             
+        </div>
+    </div>
+    <div id="PercentShape">
+        <div><h2>Pievienot procentuālās attiecības</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;ī izvēles rūtiņa tiek iespējota, kad izvēlaties lauku, pēc kura grupēt. Izvēlieties  <b>Pievienot procentus</b>, ja vēlaties atrast katra atribūta vērtības skaitu procentos katrā grupā. Rezultātu tabulai tiek pievienots jauns lauks, kurā ir ietverts katra atribūta vērtības skaits procentos katrā grupā. Ja ir atzīmēta arī opcija <b>Pievienot mazākumu, vairākumu</b>, rezultātu slānim tiks pievienoti divi papildu lauki, kuros būs ietverts katrā grupā eso&scaron;ais mazākuma un vairākuma atribūtu vērtību skaits procentos.
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>Tas ir slāņa nosaukuns, kas tiks izveidots  <b>Mans saturs</b> un pievienots kartei. Noklusējuma nosaukums ir balstīts uz analīzes tipu un ievades slāņa nosaukumu.Ja slānis jau pastāv, jums tiks lūgts norādīt citu nosaukumu.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātus</b> nolaižamajā sarakstlodziņā, jūs varat norādīt nosaukumu mapē <b>Mans saturs</b>, kur tiks saglabāti rezultāti.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

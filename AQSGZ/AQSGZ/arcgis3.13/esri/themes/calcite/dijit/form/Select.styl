@@ -1,0 +1,99 @@
+/* Select
+ * 
+ * Styling Select mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitSelect - for border, background-color
+ * 		.dijitButtonContents - for border
+ *
+ * 2. Arrow
+ * 		.dijitArrowButton - for border, padding and background-color|image
+ * 		.dijitArrowButtonInner - for border, background-color|image, display and width|height
+ * 
+ * 3. Menu
+ * 		.dijitSelectMenu .* - for border, padding
+ * 
+ * 4. Various states
+ * 		.dijitSelectHover|.dijitSelectFocused|.dijitSelectDisabled .* - for border, padding and background-color|image 
+ */
+
+@import "../variables";
+
+/* normal status */
+.calcite .dijitSelect .dijitArrowButtonContainer {
+	border: 1px solid $arrowbutton-inner-border-color;
+}
+
+.calcite .dijitSelect .dijitArrowButton {
+	padding: 0;
+	background-color: $arrowbutton-background-color;
+	standard-gradient("../");
+}
+
+.calcite .dijitSelect .dijitArrowButton .dijitArrowButtonInner {
+	height:16px;
+}
+
+/* hover status */
+.calcite .dijitSelectHover {
+	background-color: $textbox-hovered-background-color;
+	textbox-background-image();
+	background-repeat: repeat-x;
+}
+
+.calcite .dijitSelectHover .dijitArrowButton {
+	background-color:$arrowbutton-hovered-background-color;
+}
+
+.calcite .dijitSelectHover .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 53%;
+}
+
+/* focused status */
+.calcite .dijitSelectFocused .dijitArrowButton {
+	background-color:#7dbefa;		// TODO.  Mailed Jason about inconsistent ComboBox/Spinner behavior.
+	active-gradient("../");
+}
+
+.calcite .dijitSelectFocused .dijitArrowButton {
+	border: none;
+	padding: 1px;
+}
+
+.calcite .dijitSelectFocused .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 53%;
+}
+
+/* disable status */
+.calcite .dijitSelectDisabled {
+	border-color: $disabled-border-color;
+	background-color: $disabled-background-color;
+	background-image: none;
+	color: $disabled-text-color;
+}
+
+.calcite .dijitSelectDisabled .dijitArrowButton .dijitArrowButtonInner {
+	background-position:0 53%
+}
+
+/* Dropdown menu style for select */
+.calcite .dijitSelectMenu td.dijitMenuItemIconCell,
+.calcite .dijitSelectMenu td.dijitMenuArrowCell {
+	/* so that arrow and icon cells from MenuItem are not displayed */
+	display: none;  
+}
+
+.calcite .dijitSelectMenu td.dijitMenuItemLabel {
+	/* line up menu text with text in select box (in LTR and RTL modes) */
+	padding: $textbox-padding;
+}
+
+.calcite .dijitSelectMenu .dijitMenuSeparatorTop {
+	border-bottom:1px solid $focused-border-color;
+}
+
+
+/* ======================================================================================================= */
+/* Calcite - Common */
+/* ======================================================================================================= */
+@import "../Calcite_Select.styl";

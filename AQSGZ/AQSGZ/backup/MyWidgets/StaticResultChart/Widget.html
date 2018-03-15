@@ -1,0 +1,35 @@
+﻿<div style="width: 100%; height: 100%">
+    <hr />
+    <div class="heading">
+        <a id="AQI" class="DataType selected" data-dojo-attach-point="DT_AQI">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/AQI.png">
+        </a>
+        <a id="CO" class="DataType" data-dojo-attach-point="DT_CO">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/CO.png">
+        </a>
+        <a id="NO2" class="DataType" data-dojo-attach-point="DT_NO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/NO2.png">
+        </a>
+        <a id="O3_1" class="DataType" data-dojo-attach-point="DT_O3">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/O3.png">
+        </a>
+        <a id="PM10" class="DataType" data-dojo-attach-point="DT_PM10">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM10.png">
+        </a>
+        <a id="PM25" class="DataType" data-dojo-attach-point="DT_PM25">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/PM2.5.png">
+        </a>
+        <a id="SO2" class="DataType" data-dojo-attach-point="DT_SO2">
+            <img src="widgets/MyWidgets/AQIPanel/css/images/AQI/SO2.png">
+        </a>
+    </div>
+    <div class="body">
+        <div class="Highchart">
+            <label for="FromDate" style="width: 10%">开始时间：</label>
+            <input type="date" id="FromDate" style="width: 30%" data-dojo-attach-event="onchange:OptChange" />
+            <label for="ToDate" style="width: 10%">结束时间：</label>
+            <input type="date" id="ToDate" style="width: 30%" data-dojo-attach-event="onchange:OptChange" />
+            <div id="StaticDataChart" style="width: 100%; height: 100%"></div>
+        </div>
+    </div>
+</div>

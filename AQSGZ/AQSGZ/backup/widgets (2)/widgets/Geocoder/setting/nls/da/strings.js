@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    placeholder: "Pladsholdertekst",
+    url: "Geokodnings-URL",
+    name: "Navn på geokodningsfunktion",
+    example: "Eksempel",
+    singleLineFieldName: "EnkeltLinjeFeltNavn",
+    portalConnectionError: 'Geokodens konfiguration kan ikke hentes fra Portal',
+    actions: "Handlinger",
+    warning: "Dette er ikke en understøttet version af geokodningstjenesten. Denne widget understøtter Geokodningstjeneste version 10.1 og nyere.",
+    instruction: "Bestemmer, hvilke geokodningsfunktioner der skal anvendes i denne widget. Klik på Tilføj geokoder for at henvise til en URL, angive et brugervenligt navn og angive andre egenskaber. Du kan også ændre rækkefølgen af, konfigurere eller slette dine geokodningsfunktioner nedenfor.",
+    layerInstruction1: "Du kan konfigurere søgebetingelsen på ",
+    layerInstruction2: "webkortets oplysningsside",
+    searchAddress: "Søg efter adresse",
+    searchLayer: "Søg efter lag",
+    layer: "Lag",
+    field: "Mark",
+    condition: "Betingelse",
+    contains: "Indeholder",
+    deleteLastGeocoderError: "Den sidste geokodningsfunktion kan ikke slettes.",
+    noSearchFactorError: "Du skal vælge mindst én funktion (Søg efter adresse eller Søg efter lag).",
+    equals: "Er lig med",
+    add: "Tilføj geokodningsfunktion",
+    edit: "Redigér geokodningsfunktion",
+    ok: "OK",
+    cancel: "Annuller",
+    geocoderNamePlaceHolder: "Min geokodningsfunktion",
+    geocodePlaceHolder: "Find adresse eller sted",
+    REPEATING_ERROR: "Følgende felter gentages: "
+  })
+);

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Sulauta rajaukset</h2><p/>
+        <h2><img src="../images/GUID-D1192DD3-306F-4527-9898-FF2021ABCB0A-web.png" alt="Sulauta rajaukset"></h2>
+        <hr/>
+    <p>P&auml;&auml;llekk&auml;iset tai yhteisen rajan jakavat alueet yhdistet&auml;&auml;n yhdeksi alueeksi. 
+    </p>
+    <p>M&auml;&auml;ritt&auml;m&auml;ll&auml; kent&auml;n voi m&auml;&auml;ritt&auml;&auml;, mitk&auml; rajat yhdistet&auml;&auml;n.Esimerkiksi jos taso koostuu piirikunnista ja jos jokainen piirikunta sis&auml;lt&auml;&auml; ominaisuuden  <i>State_Name</i>, voit sulauttaa rajoja k&auml;ytt&auml;m&auml;ll&auml; ominaisuutta <i>State_Name</i>. Vierekk&auml;iset piirikunnat yhdistyv&auml;t, jos niill&auml; on sama ominaisuuden <i>State_Name</i> arvo. Tuloksena on osavaltion rajojen mukainen taso.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DissolveFields">
+        <div><h2>Valitse sulautustapa</h2></div>
+        <hr/>
+        <div>
+            <p>Aluekohteiden yhdist&auml;miseen voi valita kaksi eri tapaa:
+                <ul>
+                    <li> <b>P&auml;&auml;llekk&auml;iset tai vierekk&auml;iset alueet</b>: V&auml;hint&auml;&auml;n kaksi aluetta, joiden rajat menev&auml;t p&auml;&auml;llekk&auml;in, yhdistyv&auml;t yhdeksi alueeksi. Lis&auml;ksi vierekk&auml;iset (eli yhteisen rajan jakavat) alueet yhdistyv&auml;t yhdeksi alueeksi.
+                    </li>
+                    <li> <b>Alueet, joilla on sama kent&auml;n arvo</b>: P&auml;&auml;llekk&auml;iset tai yhteisen rajan jakavat alueet yhdistyv&auml;t yhdeksi alueeksi, jos niill&auml; on sama kent&auml;n arvo.
+                        <p>Jos k&auml;yt&ouml;ss&auml; on esimerkiksi Yhdysvaltain piirikuntien karttataso ja kullakin piirikunnalla on kentt&auml;  <i>State_Name</i>, voit purkaa rajat kentt&auml;&auml; <i>State_Name</i> k&auml;ytt&auml;m&auml;ll&auml;. Vierekk&auml;iset piirikunnat yhdistyv&auml;t, jos niill&auml; on sama ominaisuuden <i>State_Name</i> arvo. Tuloksena on osavaltion rajojen mukainen taso.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+            <p>Jos vaihtoehto  <b>K&auml;yt&auml; nykyist&auml; karttalaajuutta</b> on valittuna, vain nykyisess&auml; karttalaajuudessa n&auml;kyv&auml;ss&auml; analyysitasossa olevat kohteet yhdistet&auml;&auml;n. Jos vaihtoehto ei ole valittuna, kaikki kohteet yhdistet&auml;&auml;n, vaikka ne eiv&auml;t kuuluisi karttalaajuuteen.
+            </p>
+        </div>
+    </div>
+    <div id="SummaryFields">
+        <div><h2>Lisää tilastotieto</h2></div>
+        <hr/>
+        <div>
+            <p>Kun alueet on yhdistetty, voit luoda niiden ominaisuuksien yhteenvedon.Esimerkiksi jos sulautat piirikuntien v&auml;lisen rajan ominaisuuden  <i>State_Name</i> perusteella ja jos jokaisella piirikunnalla on kentt&auml; <i>Population</i>, voit laskea osavaltiolle ominaisuuden <i>Population</i> summan.
+            </p>
+            <p>K&auml;ytett&auml;viss&auml; ovat seuraavat tilastotyypit:
+            </p>
+            <ul>
+                <li> <b>Summa</b>: lis&auml;&auml; m&auml;&auml;ritetyn kent&auml;n kokonaisarvon
+                </li>
+                <li> <b>Keskiarvo</b>: laskee m&auml;&auml;ritetyn kent&auml;n keskiarvon
+                </li>
+                <li> <b>V&auml;himm&auml;isarvo</b>: etsii m&auml;&auml;ritetyn kent&auml;n kaikkien tietueiden pienimm&auml;n arvon
+                </li>
+                <li> <b>Enimm&auml;isarvo</b>: etsii m&auml;&auml;ritetyn kent&auml;n kaikkien tietueiden suurimman arvon
+                </li>
+                <li> <b>Keskihajonta </b>: etsii m&auml;&auml;ritetyn kent&auml;n arvojen keskipoikkeaman.
+                    
+
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Tulostason nimi</h2></div>
+        <hr/>
+        <div>
+            <p>Sen tason nimi, joka luodaan kohtaan  <b>Oma sis&auml;lt&ouml;</b> ja joka lis&auml;t&auml;&auml;n karttaan. Oletusnimi perustuu analyysityyppiin ja analyysitason nimeen.Jos taso on jo luotu, sinua pyydet&auml;&auml;n antamaan toinen nimi.
+            </p>
+            <p>Avattavan  <b>Tallenna tulos kohteeseen</b> -ruudun avulla voit m&auml;&auml;ritt&auml;&auml; sen <b>Oma sis&auml;lt&ouml;</b> -kansion nimen, johon tulos tallennetaan.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

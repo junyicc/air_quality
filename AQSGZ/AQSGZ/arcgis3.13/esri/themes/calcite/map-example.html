@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html> 
+    <head> 
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+      <title>FeatureLayer On Demand</title> 
+      <!-- <link rel="stylesheet" href="http://jsdev.arcgis.com/3.10/js/esri/css/calcite/calcite_theme.css">  -->
+      <link rel="stylesheet" href="css/calcite.css">
+      <link rel="stylesheet" href="http://jsdev.arcgis.com/3.12/js/esri/css/esri.css">
+      <style>
+        html, body, #mapDiv {
+          padding:0;
+          margin:0;
+          height:100%;
+        }
+      </style>
+      <script src="http://jsdev.arcgis.com/3.10/"></script> 
+      <script> 
+        var map;
+        require([
+          "esri/map", "esri/InfoTemplate", "esri/layers/FeatureLayer",
+          "dojo/parser", "dojo/domReady!"
+        ], function(
+          Map, InfoTemplate, FeatureLayer, 
+          parser
+        ) {
+          parser.parse();
+          map = new Map("mapDiv", { 
+            basemap: "national-geographic",
+            center: [-96.541, 38.34],
+            zoom: 6
+          });
+         
+          map.on("load", initOperationalLayer);
+
+          function initOperationalLayer() {
+            var infoTemplate = new InfoTemplate("${state_name}", "Population (2000):  ${pop2000:NumberFormat}");
+            var featureLayer = new FeatureLayer("http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",{
+              mode: FeatureLayer.MODE_ONDEMAND,
+              outFields: ["*"],
+              infoTemplate: infoTemplate
+            });
+            
+            map.addLayer(featureLayer);
+            map.infoWindow.resize(155,75);
+          }
+        });
+      </script> 
+    </head> 
+    <body class="calcite"> 
+      <div id="mapDiv">
+      </div>
+    </body> 
+  </html>

@@ -1,0 +1,3 @@
+arcgis-js-api.git
+#1542-returnFeatureCollection-Fix
+1425f9cc4779a7b7e5afa4f6bc15c593493e0e29

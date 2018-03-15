@@ -1,0 +1,9 @@
+{
+  "geocoder": {
+    "autoComplete": true,
+    "minCharacters": 3,
+    "arcgisGeocoder": {
+      "placeholder": "Find address or place"
+    }
+  }
+}

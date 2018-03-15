@@ -1,0 +1,31 @@
+﻿define(
+   ({
+    showArcgisBasemaps: "Vis portalbakgrunnskart",
+    settings: "Innstillinger",
+    add: "Klikk for å legge til et nytt bakgrunnskart",
+    edit: "Egenskaper",
+    title: "Tittel",
+    titlePH: "Tittel på bakgrunnskart",
+    thumbnail: "Miniatyrbilde",
+    thumbnailHint: "Klikk på bildet for å oppdatere",
+    url: "URL",
+    urlPH: "Lag-URL",
+    addlayer: "Legg til bakgrunnskart",
+    actions: "Handlinger",
+    warning: "Feil inndata",
+    save: "Tilbake og lagre",
+    back: "Tilbake og avbryt",
+    addUrl: "Legg til URL",
+    autoCheck: "Automatisk kontroll",
+    checking: "Kontrollerer ...",
+    ok: "OK",
+    cancel: "Avbryt",
+    result: "Lagring vellykket",
+    spError: "Alle bakgrunnskart som legges til i galleriet, må ha den samme geografiske referansen.",
+    invalidTitle1:"Bakgrunnskartet",
+    invalidTitle2:"finnes allerede. Du må velge en annen tittel.",
+    invalidBasemapUrl1: "Denne typen lag kan ikke brukes som bakgrunnskart.",
+    invalidBasemapUrl2: "Annen geografisk referanse fra gjeldende kart.",
+    addBaselayer: "Legg til bakgrunnskartlag"
+  })
+);

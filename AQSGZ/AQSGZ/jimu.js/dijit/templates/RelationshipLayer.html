@@ -1,0 +1,20 @@
+<div>
+  <div data-dojo-attach-point="contentSection" class="content-section" style="display:none;">
+    <div class="add-btn-section">
+      <span>${nls.relationships}:</span>
+      <div data-dojo-attach-point="relationshipSelect" data-dojo-type="dijit/form/Select">
+      </div>
+      <div data-dojo-attach-point="btnAddExp" data-dojo-attach-event="click:_onBtnAddRelationshipClick" class="add-with-icon add-expression">
+        <span class="add-icon"></span>
+        <span class="add-label">${nls.addRelationshipLayer}</span>
+      </div>
+    </div>
+    <div class="allExpsBox" data-dojo-attach-point="allRelsBox">
+    </div>
+  </div>
+  <div data-dojo-attach-point="errorSection" style="display:none;">
+    <span class="error-icon"></span>
+    <span data-dojo-attach-point="errorTip" class="error-tip"></span>
+  </div>
+  <div data-dojo-attach-point="loading" data-dojo-type="jimu/dijit/LoadingIndicator" data-dojo-props="hidden:true"></div>
+</div>

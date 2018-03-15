@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Validate Attributes</title>
+
+    <!-- include dojo theme -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+    <style>
+      .dj_ie .infowindow .window .top .right .user .content { position: relative; }
+      .dj_ie .simpleInfoWindow .content {position: relative;}
+
+      html, body { height: 100%; width: 100%; margin: 0; padding: 0; overflow:hidden; }
+      #leftPane{
+        overflow:hidden;
+        border:none;
+        color:#5C832F;
+      }
+      #map{
+        border: solid medium #382513;
+        padding:0;
+      }
+
+      .esriAttributeInspector{
+          atiLayerName:'Building Details'
+      }
+      .templatePicker{
+        border:none !important;
+      }
+      .templatePicker .grid .groupLabel{
+        display:none;
+      }
+    </style>
+
+    <!-- specify dojo configuration to parse dijits at load time -->
+    <script>var dojoConfig = { parseOnLoad:true };</script>
+    <!-- reference ArcGIS JavaScript API -->
+    <script src="http://js.arcgis.com/3.10/"></script>
+    <script>
+      //require selection dijit
+      dojo.require("esri.map");
+      dojo.require("esri.dijit.editing.Editor-all");
+      dojo.require("dijit.layout.ContentPane");
+      dojo.require("dijit.layout.BorderContainer");
+      dojo.require("dijit.form.ValidationTextBox");
+
+      var map;
+      
+      function init() {
+        //This sample requires a proxy page to handle communications with the ArcGIS Server services. You will need to  
+        //replace the url below with the location of a proxy on your machine. See the 'Using the proxy page' help topic 
+        //for details on setting up a proxy page.
+        esri.config.defaults.io.proxyUrl = "http://kelly-mac.esri.com/~kell3008/resource_proxy/proxy.php";
+        
+        //This service is for development and testing purposes only. We recommend that you create your own geometry service for use within your applications. 
+        esri.config.defaults.geometryService = new esri.tasks.GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+        
+        map = new esri.Map("map", { 
+          basemap: "topo",
+          center: [-117.282, 34.289],
+          zoom: 13,
+          slider: false
+        });
+        
+        dojo.connect(map, "onLayersAddResult", initEditor);
+        //Add the editable feature layer to the map
+        var pointsOfInterest = new esri.layers.FeatureLayer("http://sampleserver3.arcgisonline.com/arcgis/rest/services/HomelandSecurity/operations/FeatureServer/2/",{
+          mode: esri.layers.FeatureLayer.MODE_ONDEMAND, 
+          outFields: ['*']
+        });
+
+        map.addLayers([pointsOfInterest]);
+      }
+
+      function initEditor(results) {
+        //only one layer 
+        var featureLayer = results[0].layer;
+
+        var templatePicker = new esri.dijit.editing.TemplatePicker({
+          featureLayers: [featureLayer],
+          rows: 'auto',
+          groupingEnabled:false,
+          columns: 1
+        },'editorDiv');
+        templatePicker.startup();
+
+
+       
+        var layerInfos = [{
+          'featureLayer':featureLayer,
+          'showAttachments':true,
+          'showDeleteButton':true,
+          'fieldInfos':[
+            {'fieldName':'name','label':'Name'},
+            {'fieldName':'lifecyclestatus','label':'Status'},
+            {'fieldName':'fcode','label':'Code'},
+            {'fieldName':'incident_number','label':'Incident Number','stringFieldOption':esri.dijit.AttributeInspector.STRING_FIELD_OPTION_TEXTAREA},
+            {'fieldName':'description','label':'Details2', 'stringFieldOption':esri.dijit.AttributeInspector.STRING_FIELD_OPTION_RICHTEXT},
+            {'fieldName':'description','label':'Details3', 'stringFieldOption':esri.dijit.AttributeInspector.STRING_FIELD_OPTION_TEXTBOX},
+            {'fieldName':'collection_time','label':'Date', "visible": true, "stringFieldOption": "textbox", "format":{"time": true}}
+          ]
+        }];   
+        
+        //define the editor settings
+        var settings = {
+          map: map,
+          templatePicker:templatePicker,
+          layerInfos:layerInfos
+        };
+        var params = {settings: settings};
+        //Create the editor widget 
+        var editorWidget = new esri.dijit.editing.Editor(params);
+        editorWidget.startup();
+        
+        //resize the info window (attribute inspector)
+        map.infoWindow.resize(295,245);
+      }
+      
+      dojo.ready(init);
+    </script>
+  </head>
+  <body class="claro">    
+    <div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'sidebar'" style="width:100%;height:100%;">
+      <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div>
+      <div id="leftPane" data-dojo-type="dijit.layout.ContentPane" style="width:100px;"  data-dojo-props="region:'left'">
+        <div>Click the Notes icon - then click location on map to add new map note. When a new phone number is 
+          entered dojo's ValidationTextBox is used to make sure a properly formatted phone number is entered.</div>
+        <div id="editorDiv"></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

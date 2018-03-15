@@ -1,0 +1,3 @@
+﻿define({
+    "zh-cn":true
+});
