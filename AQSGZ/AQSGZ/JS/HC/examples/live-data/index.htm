@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+.ld-label {
+	width:200px;
+	display: inline-block;
+}
+
+.ld-row {
+}
+
+.ld-url-input {
+	width: 500px; 
+}
+
+.ld-time-input {
+	width: 40px;
+}
+
+		</style>
+	</head>
+	<body>
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/modules/data.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<div class="ld-row">
+	<label class="ld-label">
+		Enable Polling
+	</label>
+	<input type="checkbox" checked="checked" id="enablePolling"/>
+</div>
+<div class="ld-row">
+	<label class="ld-label">
+		Polling Time (Seconds)
+	</label>
+	<input class="ld-time-input" type="number" value="2" id="pollingTime"/>
+</div>
+<div class="ld-row">
+	<label class="ld-label">
+		CSV URL
+	</label>
+	<input class="ld-url-input" type="text" id="fetchURL"/>
+</div>
+
+
+
+
+
+		<script type="text/javascript">
+var defaultData = 'https://demo-live-data.highcharts.com/time-data.csv';
+var urlInput = document.getElementById('fetchURL');
+var pollingCheckbox = document.getElementById('enablePolling');
+var pollingInput = document.getElementById('pollingTime');
+
+function createChart() {
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Live Data'
+        },
+        data: {
+            csvURL: urlInput.value,
+            enablePolling: pollingCheckbox.checked === true,
+            dataRefreshRate: parseInt(pollingInput.value, 10)
+        }
+    });
+
+    if (pollingInput.value < 1 || !pollingInput.value) {
+        pollingInput.value = 1;
+    }
+}
+
+urlInput.value = defaultData;
+
+// We recreate instead of using chart update to make sure the loaded CSV
+// and such is completely gone.
+pollingCheckbox.onchange = urlInput.onchange = pollingInput.onchange = createChart;
+
+// Create the chart
+createChart();
+
+		</script>
+	</body>
+</html>
